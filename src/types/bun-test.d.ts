@@ -8,10 +8,12 @@ declare module "bun:test" {
     toContain(expected: string): void;
     toThrow(expected?: string | RegExp): void;
     toBeDefined(): void;
+    toBeNull(): void;
     toBeTruthy(): void;
     toBeFalsy(): void;
     toBeGreaterThan(expected: number): void;
     toBeGreaterThanOrEqual(expected: number): void;
+    toBeLessThan(expected: number): void;
     toBeLessThanOrEqual(expected: number): void;
   }
   export function expect<T>(actual: T): Matchers<T>;

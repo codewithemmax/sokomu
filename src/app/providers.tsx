@@ -2,11 +2,13 @@
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import { NanoReadinessProvider } from "@/hooks/useNanoReadiness";
+import { registerServiceWorker } from "@/lib/db/idb";
 import { getFirebase, type FirebaseServices } from "@/lib/firebase/client";
 import {
   refreshRemoteConfig,
   subscribeToConfigUpdates,
 } from "@/lib/firebase/remote-config";
+import { startSyncEngine } from "@/lib/sync/sync-engine";
 
 export interface FirebaseContextValue {
   services: FirebaseServices | null;
@@ -31,11 +33,15 @@ export function FirebaseProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     let active = true;
     let unsubscribe: (() => void) | undefined;
+    let stopSync: (() => void) | undefined;
+
+    void registerServiceWorker();
 
     try {
       const firebase = getFirebase();
       setServices(firebase);
       setReady(true);
+      stopSync = startSyncEngine();
 
       void refreshRemoteConfig(firebase.remoteConfig).then((activated) => {
         if (active && activated) {
@@ -58,6 +64,9 @@ export function FirebaseProvider({ children }: { children: ReactNode }) {
       active = false;
       if (unsubscribe) {
         unsubscribe();
+      }
+      if (stopSync) {
+        stopSync();
       }
     };
   }, []);

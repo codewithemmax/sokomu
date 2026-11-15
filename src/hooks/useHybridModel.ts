@@ -221,7 +221,10 @@ export interface UseHybridModelResult {
 export function useHybridModel(): UseHybridModelResult {
   const resolveMode = useCallback(async (forceCloud?: boolean): Promise<DrillMode> => {
     const cfg = readRuntimeAiConfig();
-    const online = typeof navigator !== "undefined" ? navigator.onLine : true;
+    const online =
+      typeof navigator !== "undefined" && typeof navigator.onLine === "boolean"
+        ? navigator.onLine
+        : true;
     await syncCloudFallbackUsageWithIdb();
     const withinLimit = canUseCloudFallback(
       cfg.cloudFallbackDailyLimit,
