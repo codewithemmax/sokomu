@@ -1,0 +1,118 @@
+# Sokomu Master Agent Rules (.codexrules)
+
+Project: Sokomu (So in Yoruba, Koya in Hausa, Muta in Igbo)
+Event: Google Firebase #BuildHybridAI 2026 Hackathon
+Submission deadline: November 30, 2026 at 2:00 PM PT (23:00 WAT, 22:00 GMT)
+Judging window: December 10 to 16, 2026
+License: Apache License 2.0 (Copyright 2026 Olayinka Emmanuel)
+Repository: https://github.com/codewithemmax/sokomu
+
+These rules apply to every AI coding agent (Claude Code, Google Antigravity, Cursor, Firebase Studio MCP, Gemini CLI) and every human contributor. They override generic framework habits. When a rule here conflicts with a training-data assumption, this file wins.
+
+---
+
+## Rule 0: Mandatory Context Load (Read Before Writing Any Code)
+
+Before writing, editing, or deleting any file, read the context directory in this exact order:
+
+1. context/1-project-overview.md   (why we build, scope baseline, MoSCoW, personas)
+2. context/2-architecture.md       (sitemap, flows A to D, FRD, NFRs, data contracts)
+3. context/3-ui-context.md         (wireframes, design tokens, components, redlines)
+4. context/4-code-standards.md     (folder structure, init patterns, schemas, anti-patterns)
+5. context/5-ai-workflow-rules.md  (session protocol, verification gates, RACI, testing)
+6. context/6-progress-tracker.md   (WBS, sprint schedule, current status, demo playbook)
+
+Also read AGENTS.md in the repository root. This project runs Next.js 16.4.x with breaking changes relative to older Next.js versions. Before using any Next.js API (routing, metadata, caching, Server Actions, middleware/proxy, fonts, images), read the matching guide in node_modules/next/dist/docs/ and heed every deprecation notice.
+
+If a context file is missing or contradicts another, stop and report the conflict to the Lead Architect instead of guessing.
+
+---
+
+## Rule 1: Toolchain
+
+- Package manager and runtime: Bun only. Use bun install, bun add, bun remove, bun run build, bun run lint, bun dev, bun run test. Never use npm, npx, yarn, or pnpm.
+- After editing any TypeScript file, run bun run build (typecheck plus production build) before running tests or reporting a task complete. A task with a failing build is not complete.
+- Run bun run lint before every commit.
+- Path alias: @/* resolves to ./src/*. All application code lives under src/.
+
+---
+
+## Rule 2: Next.js SSR Window Guards (Zero Tolerance)
+
+Sokomu depends on browser-only APIs: window, navigator, indexedDB, LanguageModel (Chrome Prompt API), AudioContext, localStorage, navigator.onLine, and the Firebase App Check, Remote Config, and AI Logic client SDKs. None of these exist during server rendering.
+
+1. Any module that touches a browser API must begin with the "use client" directive, and the access itself must run inside useEffect, an event handler, or a function that first checks typeof window !== "undefined".
+2. Firebase client initialization (src/lib/firebase/client.ts) must be lazy and idempotent: call getApps().length ? getApp() : initializeApp(config) and only initialize App Check, Remote Config, and AI Logic when typeof window !== "undefined".
+3. Never import firebase/app-check, firebase/remote-config, firebase/ai, or idb at module top level of a Server Component, a route handler, or a layout that renders on the server.
+4. Components that need hardware detection (Gemini Nano availability, RAM, online status) render a deterministic skeleton on the server and hydrate the real state on the client to avoid hydration mismatch errors.
+5. Use next/dynamic with ssr: false only inside Client Components, and only for heavy browser-only widgets (audio waveform player, cultural map canvas).
+
+---
+
+## Rule 3: Strict TypeScript and Schema Contracts
+
+1. tsconfig strict mode stays on. Do not disable strict, noImplicitAny, or strictNullChecks. Do not add // @ts-ignore or // @ts-expect-error without a linked issue comment explaining why.
+2. The any type is forbidden. Use unknown plus a type guard or a Zod-free hand-written guard from src/types/guards.ts.
+3. Every on-device Gemini Nano call must request structured JSON with responseMimeType "application/json" and a responseSchema built with the Firebase AI Logic Schema helpers (Schema.object, Schema.array, Schema.string, Schema.number, Schema.boolean, Schema.enumString). Unconstrained free-text generation on device is forbidden.
+4. The canonical schemas live in src/lib/ai/schemas.ts. Each schema has a matching TypeScript interface in src/types/ai.ts and a runtime guard in src/types/guards.ts. Changing one requires changing all three in the same commit.
+5. Parse model output with JSON.parse inside try/catch, then validate with the guard. On failure, retry once with the same mode, then fall back to the cached deterministic quiz generator in src/lib/ai/fallback-quiz.ts. Never render unvalidated model output.
+
+---
+
+## Rule 4: Security and App Check Preservation
+
+1. Firebase App Check must be initialized before any call to Firestore, Remote Config, or Firebase AI Logic. The initialization order in src/lib/firebase/client.ts is fixed: initializeApp, then initializeAppCheck, then everything else.
+2. Production uses ReCaptchaEnterpriseProvider with isTokenAutoRefreshEnabled: true. Local development and judge testing use the App Check debug token path, activated only when NEXT_PUBLIC_FIREBASE_APPCHECK_DEBUG_TOKEN is set. Never remove, comment out, or bypass App Check to make a request succeed. If App Check rejects a request, fix the token registration in the Firebase console instead.
+3. Firestore Security Rules and Firebase AI Logic enforcement must remain in Enforced mode in the console for the demo build.
+4. Never commit real secrets. Forbidden in git: .env, .env.local, any .env*.local, serviceAccountKey.json, google-services.json, GoogleService-Info.plist, *firebase-adminsdk*.json, .firebase/, private keys, Gemini API keys. Only .env.example with placeholder values may be committed.
+5. Before every commit run git status and git diff --cached and confirm no secrets are staged. If a secret is ever committed, stop all work, rotate the credential in the Firebase and Google Cloud consoles, and purge it from history before pushing.
+6. No server-side Gemini API key exists in this project. All model access flows through the Firebase AI Logic client SDK protected by App Check.
+
+---
+
+## Rule 5: Model and Generation Config Guardrails
+
+1. Approved model identifiers only:
+   - On-device: Gemini Nano 4 via Chrome built-in AI (Chrome 139+), accessed through Firebase AI Logic hybrid inference.
+   - Cloud text fallback: gemini-3.5-flash-lite.
+   - Cloud speech synthesis: gemini-3.1-flash-tts-preview with responseModalities ["AUDIO"].
+2. Model names must be read from Remote Config keys (ai_cloud_text_model, ai_tts_model) with the values above as in-app defaults. Never hardcode a model name anywhere else.
+3. Forbidden generationConfig fields: topK, topP, and thinking level MINIMAL. These trigger 400 Bad Request errors on the target models. Allowed fields: temperature, maxOutputTokens, responseMimeType, responseSchema, responseModalities, speechConfig, candidateCount (1 only).
+4. System instructions and dialect rules come from Remote Config and Server Prompt Templates. Do not hardcode prompts in components. In-app defaults live only in src/lib/firebase/remote-config-defaults.ts.
+
+---
+
+## Rule 6: Hybrid Inference Behaviour
+
+1. Interactive drills use InferenceMode.PREFER_ON_DEVICE. The Airplane Mode demo path uses InferenceMode.ONLY_ON_DEVICE. TTS always runs in cloud (InferenceMode.ONLY_IN_CLOUD semantics) and is blocked with a clear UI state when offline.
+2. Every AI response must surface its inference source (ON_DEVICE or IN_CLOUD) to the InferenceSourcePill component through the useInferenceTelemetry hook.
+3. Every ON_DEVICE completion increments the Mobile Data Saved counter using the formula in context/2-architecture.md (FR-TEL-03). Never fake or inflate the counter.
+4. Gemini Nano download progress must be reported through the monitor callback of LanguageModel.create and rendered by NanoDownloadBanner. Never block the UI while the model downloads.
+
+---
+
+## Rule 7: Progress Tracking Is Part of Done
+
+After every completed task (not every session, every task):
+
+1. Tick the matching checkbox in context/6-progress-tracker.md.
+2. Append one row to the Change Log table at the bottom of that file: date, task ID, agent or human name, files touched, verification result.
+3. If you discovered a new task, add it under the correct Epic with a new ID instead of silently doing it.
+4. If a task is blocked, mark it [!] with a one-line reason.
+
+A task is not done until the build passes, lint passes, the tracker is updated, and the relevant acceptance criteria in context/2-architecture.md are met.
+
+---
+
+## Rule 8: Writing Style for Docs, UI Copy, and Commits
+
+1. Do not use em dashes in any documentation, UI string, or commit message. Use commas, colons, or parentheses.
+2. Commit messages follow Conventional Commits: feat, fix, chore, docs, refactor, test, style, perf. Example: feat(ai): add tonal grading schema for Yoruba drills.
+3. Respect-driven tone in UI copy: address learners as adults, use cultural honorifics correctly (E kaabo, Nnoo, Sannu), and never use childish praise or cartoon mascots.
+4. All Yoruba and Igbo text must be stored and rendered as Unicode NFC normalized strings with full diacritics.
+
+---
+
+## Rule 9: Scope Discipline
+
+Only build what is listed as In-Scope in context/1-project-overview.md section 2. Anything listed as Out-of-Scope or Won't-Have requires written approval from the Lead Architect recorded in the progress tracker. The deadline is fixed: November 30, 2026 at 2:00 PM PT.
