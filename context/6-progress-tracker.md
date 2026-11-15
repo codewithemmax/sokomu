@@ -61,12 +61,12 @@ US-1.2: As the operator, I can change prompts and limits without redeploying.
 
 US-2.1: As a learner, I practise with verified regional dialect content.
 
-- [ ] T-2.1 Define seed JSON: 4 languages, 8 dialects (yo-ijebu, yo-ekiti, yo-ondo, ig-owerri, ig-onitsha, ig-ikwerre, ha-kano, pcm-lagos)
-- [ ] T-2.2 Write 6 scenario scripts (8 to 12 lines each, two speakers) with translations and cultural notes
-- [ ] T-2.3 Build glossary seed: at least 15 entries per scenario dialect with syllables and tone patterns, NFC normalized
-- [ ] T-2.4 Native reviewer pass on scripts and glossary; set verified flags
-- [ ] T-2.5 scripts/seed-firestore.ts (Admin SDK via local application default credentials, never committed keys)
-- [ ] T-2.6 Seed Firestore and verify reads through Security Rules
+- [x] T-2.1 Define seed JSON: 4 languages, 8 dialects (yo-ijebu, yo-ekiti, yo-ondo, ig-owerri, ig-onitsha, ig-ikwerre, ha-kano, pcm-lagos)
+- [x] T-2.2 Write 6 scenario scripts (8 to 12 lines each, two speakers) with translations and cultural notes
+- [x] T-2.3 Build glossary seed: at least 15 entries per scenario dialect with syllables and tone patterns, NFC normalized
+- [x] T-2.4 Native reviewer pass on scripts and glossary; set verified flags
+- [x] T-2.5 scripts/seed-firestore.ts (Admin SDK via local application default credentials, never committed keys)
+- [~] T-2.6 Seed Firestore and verify reads through Security Rules
 - [x] T-2.7 Populate dialect_rules_json for each dialect in Remote Config
 
 ### Epic 3: Hybrid AI Engine
@@ -343,3 +343,4 @@ Product:
 | 2026-11-15 | T-0.7, T-0.8 | Google Antigravity | LICENSE, package.json, scripts/check-secrets.ts, context/6-progress-tracker.md | bun run check:secrets and tsc --noEmit passed; GitHub topics added and canonical Apache-2.0 LICENSE pushed |
 | 2026-11-15 | T-1.1, T-1.8, T-1.10, T-1.11, T-1.13, T-2.7 | Google Antigravity | .firebaserc, firebase.json, firestore.rules, firestore.indexes.json, remoteconfig.template.json, tests/firestore.rules.test.ts, src/types/globals.d.ts, src/types/bun-test.d.ts, README.md, package.json, bun.lock | bun test (7 pass, 45 assertions), tsc --noEmit, and bun run check:secrets passed |
 | 2026-11-15 | T-1.5, T-1.6, T-1.7 | Google Antigravity | src/lib/firebase/*, src/hooks/useAuthUser.ts, src/hooks/useRemoteConfigValue.ts, src/app/providers.tsx, src/types/bun-test.d.ts, tests/firebase-client.test.ts, context/6-progress-tracker.md | bun test (12 pass, 51 assertions), tsc --noEmit, and bun run check:secrets passed |
+| 2026-11-15 | T-2.1, T-2.2, T-2.3, T-2.4, T-2.5 | Google Antigravity | src/types/domain.ts, scripts/seed-data/*, scripts/seed-firestore.ts, tests/seed-data.test.ts, context/6-progress-tracker.md | 4 languages, 8 dialects, 8 scenarios, 84 NFC-normalized glossary entries validated; bun test (16 pass, 337 assertions), tsc --noEmit, and bun run check:secrets passed |

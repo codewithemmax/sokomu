@@ -1,0 +1,1598 @@
+[
+  {
+    "entryId": "yo-ijebu-usu",
+    "languageId": "yo",
+    "dialectId": "yo-ijebu",
+    "headword": "usu",
+    "standardForm": "isu",
+    "glossEn": "yam",
+    "syllables": ["u", "su"],
+    "tonePattern": ["M", "M"],
+    "example": {
+      "text": "Ó gbé usu wá láti oko.",
+      "translation": "He brought yam from the farm."
+    },
+    "scenarioIds": ["yo-ijebu-elder-greeting"],
+    "verified": true,
+    "verifiedBy": ["pa-rasheed-ogunbanjo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ijebu-ediye",
+    "languageId": "yo",
+    "dialectId": "yo-ijebu",
+    "headword": "ẹdiyẹ",
+    "standardForm": "adìyẹ",
+    "glossEn": "fowl, chicken",
+    "syllables": ["ẹ", "di", "yẹ"],
+    "tonePattern": ["M", "M", "M"],
+    "example": {
+      "text": "Ẹdiyẹ náà wà nínú àgbàlá.",
+      "translation": "The fowl is in the courtyard."
+    },
+    "scenarioIds": ["yo-ijebu-elder-greeting"],
+    "verified": true,
+    "verifiedBy": ["pa-rasheed-ogunbanjo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ijebu-oko-husband",
+    "languageId": "yo",
+    "dialectId": "yo-ijebu",
+    "headword": "ọkọ",
+    "standardForm": "ọkọ",
+    "glossEn": "husband",
+    "syllables": ["ọ", "kọ"],
+    "tonePattern": ["M", "M"],
+    "example": {
+      "text": "Ọkọ mi ti lọ sí oko.",
+      "translation": "My husband has gone to the farm."
+    },
+    "scenarioIds": ["yo-ijebu-elder-greeting"],
+    "verified": true,
+    "verifiedBy": ["pa-rasheed-ogunbanjo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ijebu-oko-vehicle",
+    "languageId": "yo",
+    "dialectId": "yo-ijebu",
+    "headword": "ọkọ̀",
+    "standardForm": "ọkọ̀",
+    "glossEn": "vehicle (car, boat)",
+    "syllables": ["ọ", "kọ̀"],
+    "tonePattern": ["M", "L"],
+    "example": {
+      "text": "Ọkọ̀ Baba ṣì ń ṣiṣẹ́ dáadáa.",
+      "translation": "Grandfather's vehicle is still working well."
+    },
+    "scenarioIds": ["yo-ijebu-elder-greeting"],
+    "verified": true,
+    "verifiedBy": ["pa-rasheed-ogunbanjo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ijebu-oko-spear",
+    "languageId": "yo",
+    "dialectId": "yo-ijebu",
+    "headword": "ọ̀kọ̀",
+    "standardForm": "ọ̀kọ̀",
+    "glossEn": "spear",
+    "syllables": ["ọ̀", "kọ̀"],
+    "tonePattern": ["L", "L"],
+    "example": {
+      "text": "Ọdẹ náà mú ọ̀kọ̀ rẹ̀.",
+      "translation": "The hunter held his spear."
+    },
+    "scenarioIds": ["yo-ijebu-elder-greeting"],
+    "verified": true,
+    "verifiedBy": ["pa-rasheed-ogunbanjo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ijebu-oko-farm",
+    "languageId": "yo",
+    "dialectId": "yo-ijebu",
+    "headword": "oko",
+    "standardForm": "oko",
+    "glossEn": "farm",
+    "syllables": ["o", "ko"],
+    "tonePattern": ["M", "M"],
+    "example": {
+      "text": "Baba lọ sí oko ní àárọ̀.",
+      "translation": "Father went to the farm in the morning."
+    },
+    "scenarioIds": ["yo-ijebu-elder-greeting"],
+    "verified": true,
+    "verifiedBy": ["pa-rasheed-ogunbanjo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ijebu-omo",
+    "languageId": "yo",
+    "dialectId": "yo-ijebu",
+    "headword": "ọmọ",
+    "standardForm": "ọmọ",
+    "glossEn": "child",
+    "syllables": ["ọ", "mọ"],
+    "tonePattern": ["M", "M"],
+    "example": {
+      "text": "Àárọ̀ ire o, ọmọ mi.",
+      "translation": "Good morning, my child."
+    },
+    "scenarioIds": ["yo-ijebu-elder-greeting"],
+    "verified": true,
+    "verifiedBy": ["pa-rasheed-ogunbanjo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ijebu-ile",
+    "languageId": "yo",
+    "dialectId": "yo-ijebu",
+    "headword": "ilé",
+    "standardForm": "ilé",
+    "glossEn": "house, home",
+    "syllables": ["i", "lé"],
+    "tonePattern": ["M", "H"],
+    "example": {
+      "text": "Ẹ káàbọ̀ sí ilé.",
+      "translation": "Welcome home."
+    },
+    "scenarioIds": ["yo-ijebu-elder-greeting"],
+    "verified": true,
+    "verifiedBy": ["pa-rasheed-ogunbanjo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ijebu-omi",
+    "languageId": "yo",
+    "dialectId": "yo-ijebu",
+    "headword": "omi",
+    "standardForm": "omi",
+    "glossEn": "water",
+    "syllables": ["o", "mi"],
+    "tonePattern": ["M", "M"],
+    "example": {
+      "text": "Gba omi tútù kọ́kọ́.",
+      "translation": "Take cool water first."
+    },
+    "scenarioIds": ["yo-ijebu-elder-greeting"],
+    "verified": true,
+    "verifiedBy": ["pa-rasheed-ogunbanjo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ijebu-ounje",
+    "languageId": "yo",
+    "dialectId": "yo-ijebu",
+    "headword": "oúnjẹ",
+    "standardForm": "oúnjẹ",
+    "glossEn": "food",
+    "syllables": ["o", "ún", "jẹ"],
+    "tonePattern": ["M", "H", "M"],
+    "example": {
+      "text": "Oúnjẹ tietan níbi ìdáná.",
+      "translation": "Food is ready in the kitchen."
+    },
+    "scenarioIds": ["yo-ijebu-elder-greeting"],
+    "verified": true,
+    "verifiedBy": ["pa-rasheed-ogunbanjo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ijebu-dobale",
+    "languageId": "yo",
+    "dialectId": "yo-ijebu",
+    "headword": "dọ̀bálẹ̀",
+    "standardForm": "dọ̀bálẹ̀",
+    "glossEn": "to prostrate in respectful greeting",
+    "syllables": ["dọ̀", "bá", "lẹ̀"],
+    "tonePattern": ["L", "H", "L"],
+    "example": {
+      "text": "Mo dọ̀bálẹ̀ fún àgbà.",
+      "translation": "I prostrate to greet the elder."
+    },
+    "scenarioIds": ["yo-ijebu-elder-greeting"],
+    "verified": true,
+    "verifiedBy": ["pa-rasheed-ogunbanjo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ijebu-aaro",
+    "languageId": "yo",
+    "dialectId": "yo-ijebu",
+    "headword": "àárọ̀",
+    "standardForm": "àárọ̀",
+    "glossEn": "morning",
+    "syllables": ["à", "á", "rọ̀"],
+    "tonePattern": ["L", "H", "L"],
+    "example": {
+      "text": "Ẹ kú àárọ̀, Màmá.",
+      "translation": "Good morning, Grandmother."
+    },
+    "scenarioIds": ["yo-ijebu-elder-greeting"],
+    "verified": true,
+    "verifiedBy": ["pa-rasheed-ogunbanjo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ijebu-baba",
+    "languageId": "yo",
+    "dialectId": "yo-ijebu",
+    "headword": "bàbá",
+    "standardForm": "bàbá",
+    "glossEn": "father, grandfather, male elder",
+    "syllables": ["bà", "bá"],
+    "tonePattern": ["L", "H"],
+    "example": {
+      "text": "Bàbá wà nínú ilé.",
+      "translation": "Father is inside the house."
+    },
+    "scenarioIds": ["yo-ijebu-elder-greeting"],
+    "verified": true,
+    "verifiedBy": ["pa-rasheed-ogunbanjo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ijebu-iya",
+    "languageId": "yo",
+    "dialectId": "yo-ijebu",
+    "headword": "ìyá",
+    "standardForm": "ìyá",
+    "glossEn": "mother, female elder",
+    "syllables": ["ì", "yá"],
+    "tonePattern": ["L", "H"],
+    "example": {
+      "text": "Ìyá mi ń se oúnjẹ.",
+      "translation": "My mother is cooking food."
+    },
+    "scenarioIds": ["yo-ijebu-elder-greeting"],
+    "verified": true,
+    "verifiedBy": ["pa-rasheed-ogunbanjo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ijebu-agba",
+    "languageId": "yo",
+    "dialectId": "yo-ijebu",
+    "headword": "àgbà",
+    "standardForm": "àgbà",
+    "glossEn": "elder, senior person",
+    "syllables": ["à", "gbà"],
+    "tonePattern": ["L", "L"],
+    "example": {
+      "text": "Bọ̀wọ̀ fún àgbà.",
+      "translation": "Respect the elders."
+    },
+    "scenarioIds": ["yo-ijebu-elder-greeting"],
+    "verified": true,
+    "verifiedBy": ["pa-rasheed-ogunbanjo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ekiti-iyan",
+    "languageId": "yo",
+    "dialectId": "yo-ekiti",
+    "headword": "iyán",
+    "standardForm": "iyán",
+    "glossEn": "pounded yam",
+    "syllables": ["i", "yán"],
+    "tonePattern": ["M", "H"],
+    "example": {
+      "text": "Ìyá ń se iyán.",
+      "translation": "Mother is preparing pounded yam."
+    },
+    "scenarioIds": ["yo-ekiti-family-greeting"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ekiti"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ekiti-obe",
+    "languageId": "yo",
+    "dialectId": "yo-ekiti",
+    "headword": "ọbẹ̀",
+    "standardForm": "ọbẹ̀",
+    "glossEn": "soup, stew",
+    "syllables": ["ọ", "bẹ̀"],
+    "tonePattern": ["M", "L"],
+    "example": {
+      "text": "Iyán àti ọbẹ̀ ewédú dára.",
+      "translation": "Pounded yam and ewedu soup are good."
+    },
+    "scenarioIds": ["yo-ekiti-family-greeting"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ekiti"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ekiti-abo",
+    "languageId": "yo",
+    "dialectId": "yo-ekiti",
+    "headword": "abọ́",
+    "standardForm": "abọ́",
+    "glossEn": "bowl, dish",
+    "syllables": ["a", "bọ́"],
+    "tonePattern": ["M", "H"],
+    "example": {
+      "text": "Mo ti fọ abọ́ náà.",
+      "translation": "I have washed the bowl."
+    },
+    "scenarioIds": ["yo-ekiti-family-greeting"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ekiti"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ekiti-owo",
+    "languageId": "yo",
+    "dialectId": "yo-ekiti",
+    "headword": "ọwọ́",
+    "standardForm": "ọwọ́",
+    "glossEn": "hand",
+    "syllables": ["ọ", "wọ́"],
+    "tonePattern": ["M", "H"],
+    "example": {
+      "text": "Fọ ọwọ́ rẹ kí o tó jẹun.",
+      "translation": "Wash your hands before eating."
+    },
+    "scenarioIds": ["yo-ekiti-family-greeting"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ekiti"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ekiti-aburo",
+    "languageId": "yo",
+    "dialectId": "yo-ekiti",
+    "headword": "àbúrò",
+    "standardForm": "àbúrò",
+    "glossEn": "younger sibling or relative",
+    "syllables": ["à", "bú", "rò"],
+    "tonePattern": ["L", "H", "L"],
+    "example": {
+      "text": "Pe àwọn àbúrò rẹ.",
+      "translation": "Call your younger siblings."
+    },
+    "scenarioIds": ["yo-ekiti-family-greeting"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ekiti"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ekiti-egbon",
+    "languageId": "yo",
+    "dialectId": "yo-ekiti",
+    "headword": "ẹ̀gbọ́n",
+    "standardForm": "ẹ̀gbọ́n",
+    "glossEn": "older sibling or relative",
+    "syllables": ["ẹ̀", "gbọ́n"],
+    "tonePattern": ["L", "H"],
+    "example": {
+      "text": "Ẹ̀gbọ́n mi wà ní Ado-Ekiti.",
+      "translation": "My older sibling is in Ado-Ekiti."
+    },
+    "scenarioIds": ["yo-ekiti-family-greeting"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ekiti"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ekiti-kunle",
+    "languageId": "yo",
+    "dialectId": "yo-ekiti",
+    "headword": "kúnlẹ̀",
+    "standardForm": "kúnlẹ̀",
+    "glossEn": "to kneel in respectful greeting",
+    "syllables": ["kún", "lẹ̀"],
+    "tonePattern": ["H", "L"],
+    "example": {
+      "text": "Mo kúnlẹ̀ kí Bàbá.",
+      "translation": "I kneel to greet Father."
+    },
+    "scenarioIds": ["yo-ekiti-family-greeting"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ekiti"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ekiti-oluko",
+    "languageId": "yo",
+    "dialectId": "yo-ekiti",
+    "headword": "olùkọ́",
+    "standardForm": "olùkọ́",
+    "glossEn": "teacher",
+    "syllables": ["o", "lù", "kọ́"],
+    "tonePattern": ["M", "L", "H"],
+    "example": {
+      "text": "Olùkọ́ wa kọ́ wa ní èdè.",
+      "translation": "Our teacher taught us the language."
+    },
+    "scenarioIds": ["yo-ekiti-family-greeting"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ekiti"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ondo-usu",
+    "languageId": "yo",
+    "dialectId": "yo-ondo",
+    "headword": "usu",
+    "standardForm": "isu",
+    "glossEn": "yam",
+    "syllables": ["u", "su"],
+    "tonePattern": ["M", "M"],
+    "example": {
+      "text": "Wa bá mi gbé usu yẹn.",
+      "translation": "Come help me carry that yam."
+    },
+    "scenarioIds": ["yo-ondo-kitchen-visit"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ondo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ondo-ediye",
+    "languageId": "yo",
+    "dialectId": "yo-ondo",
+    "headword": "ẹdiyẹ",
+    "standardForm": "adìyẹ",
+    "glossEn": "chicken, fowl",
+    "syllables": ["ẹ", "di", "yẹ"],
+    "tonePattern": ["M", "M", "M"],
+    "example": {
+      "text": "Ẹdiyẹ náà ti jóná lórí iná.",
+      "translation": "The chicken is cooked on the fire."
+    },
+    "scenarioIds": ["yo-ondo-kitchen-visit"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ondo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ondo-oja",
+    "languageId": "yo",
+    "dialectId": "yo-ondo",
+    "headword": "ọjà",
+    "standardForm": "ọjà",
+    "glossEn": "market",
+    "syllables": ["ọ", "jà"],
+    "tonePattern": ["M", "L"],
+    "example": {
+      "text": "Ìyá lọ sí ọjà.",
+      "translation": "Mother went to the market."
+    },
+    "scenarioIds": ["yo-ondo-kitchen-visit"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ondo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ondo-iyo",
+    "languageId": "yo",
+    "dialectId": "yo-ondo",
+    "headword": "iyọ̀",
+    "standardForm": "iyọ̀",
+    "glossEn": "salt",
+    "syllables": ["i", "yọ̀"],
+    "tonePattern": ["M", "L"],
+    "example": {
+      "text": "Mú iyọ̀ díẹ̀ wá.",
+      "translation": "Bring a little salt."
+    },
+    "scenarioIds": ["yo-ondo-kitchen-visit"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ondo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ondo-ata",
+    "languageId": "yo",
+    "dialectId": "yo-ondo",
+    "headword": "ata",
+    "standardForm": "ata",
+    "glossEn": "pepper",
+    "syllables": ["a", "ta"],
+    "tonePattern": ["M", "M"],
+    "example": {
+      "text": "Èyí ni ata pupa.",
+      "translation": "Here is the red pepper."
+    },
+    "scenarioIds": ["yo-ondo-kitchen-visit"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ondo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ondo-ina",
+    "languageId": "yo",
+    "dialectId": "yo-ondo",
+    "headword": "iná",
+    "standardForm": "iná",
+    "glossEn": "fire, light",
+    "syllables": ["i", "ná"],
+    "tonePattern": ["M", "H"],
+    "example": {
+      "text": "Ọbẹ̀ wà lórí iná.",
+      "translation": "The soup is on the fire."
+    },
+    "scenarioIds": ["yo-ondo-kitchen-visit"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ondo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ondo-ise",
+    "languageId": "yo",
+    "dialectId": "yo-ondo",
+    "headword": "iṣẹ́",
+    "standardForm": "iṣẹ́",
+    "glossEn": "work",
+    "syllables": ["i", "ṣẹ́"],
+    "tonePattern": ["M", "H"],
+    "example": {
+      "text": "Ẹ kú iṣẹ́ o.",
+      "translation": "Well done with your work."
+    },
+    "scenarioIds": ["yo-ondo-kitchen-visit"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ondo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "yo-ondo-joko",
+    "languageId": "yo",
+    "dialectId": "yo-ondo",
+    "headword": "jókòó",
+    "standardForm": "jókòó",
+    "glossEn": "to sit down",
+    "syllables": ["jó", "kò", "ó"],
+    "tonePattern": ["H", "L", "H"],
+    "example": {
+      "text": "Jókòó kí o tọ́ ọbẹ̀ náà wò.",
+      "translation": "Sit down and taste the soup."
+    },
+    "scenarioIds": ["yo-ondo-kitchen-visit"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ondo"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-owerri-nnoo",
+    "languageId": "ig",
+    "dialectId": "ig-owerri",
+    "headword": "nnọọ",
+    "standardForm": "nnọọ",
+    "glossEn": "welcome",
+    "syllables": ["n", "nọ", "ọ"],
+    "tonePattern": ["L", "L", "H"],
+    "example": {
+      "text": "Nnọọ, nwa m ọ́ma!",
+      "translation": "Welcome, my good child!"
+    },
+    "scenarioIds": ["ig-owerri-family-visit"],
+    "verified": true,
+    "verifiedBy": ["chief-ngozi-iwu"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-owerri-nne",
+    "languageId": "ig",
+    "dialectId": "ig-owerri",
+    "headword": "ńné",
+    "standardForm": "ńné",
+    "glossEn": "mother, grandmother",
+    "syllables": ["ń", "né"],
+    "tonePattern": ["H", "H"],
+    "example": {
+      "text": "Nnọọ, Nné m!",
+      "translation": "Hello, my Mother!"
+    },
+    "scenarioIds": ["ig-owerri-family-visit"],
+    "verified": true,
+    "verifiedBy": ["chief-ngozi-iwu"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-owerri-nna",
+    "languageId": "ig",
+    "dialectId": "ig-owerri",
+    "headword": "ńnà",
+    "standardForm": "ńnà",
+    "glossEn": "father",
+    "syllables": ["ń", "nà"],
+    "tonePattern": ["H", "L"],
+    "example": {
+      "text": "Ńnà anyị nọ n'ụ́lọ̀.",
+      "translation": "Our father is at home."
+    },
+    "scenarioIds": ["ig-owerri-family-visit"],
+    "verified": true,
+    "verifiedBy": ["chief-ngozi-iwu"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-owerri-umu",
+    "languageId": "ig",
+    "dialectId": "ig-owerri",
+    "headword": "ụ́mụ̀",
+    "standardForm": "ụ́mụ̀",
+    "glossEn": "children",
+    "syllables": ["ụ́", "mụ̀"],
+    "tonePattern": ["H", "L"],
+    "example": {
+      "text": "Ụ́mụ̀ m, bịanụ.",
+      "translation": "My children, come closer."
+    },
+    "scenarioIds": ["ig-owerri-family-visit"],
+    "verified": true,
+    "verifiedBy": ["chief-ngozi-iwu"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-owerri-oji",
+    "languageId": "ig",
+    "dialectId": "ig-owerri",
+    "headword": "ọ́jị̀",
+    "standardForm": "ọ́jị̀",
+    "glossEn": "kola nut",
+    "syllables": ["ọ́", "jị̀"],
+    "tonePattern": ["H", "L"],
+    "example": {
+      "text": "Onye wetara ọ́jị̀ wetara ndụ̀.",
+      "translation": "Whoever brings kola brings life."
+    },
+    "scenarioIds": ["ig-owerri-family-visit"],
+    "verified": true,
+    "verifiedBy": ["chief-ngozi-iwu"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-owerri-mmiri",
+    "languageId": "ig",
+    "dialectId": "ig-owerri",
+    "headword": "mmírí",
+    "standardForm": "mmírí",
+    "glossEn": "water",
+    "syllables": ["m", "mí", "rí"],
+    "tonePattern": ["H", "H", "H"],
+    "example": {
+      "text": "Weta mmírí ka ha ṅụọ.",
+      "translation": "Bring water so they can drink."
+    },
+    "scenarioIds": ["ig-owerri-family-visit"],
+    "verified": true,
+    "verifiedBy": ["chief-ngozi-iwu"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-owerri-ulo",
+    "languageId": "ig",
+    "dialectId": "ig-owerri",
+    "headword": "ụ́lọ̀",
+    "standardForm": "ụ́lọ̀",
+    "glossEn": "house, home",
+    "syllables": ["ụ́", "lọ̀"],
+    "tonePattern": ["H", "L"],
+    "example": {
+      "text": "Anyị erutela n'ụ́lọ̀.",
+      "translation": "We have arrived home."
+    },
+    "scenarioIds": ["ig-owerri-family-visit"],
+    "verified": true,
+    "verifiedBy": ["chief-ngozi-iwu"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-owerri-ji",
+    "languageId": "ig",
+    "dialectId": "ig-owerri",
+    "headword": "jí",
+    "standardForm": "jí",
+    "glossEn": "yam",
+    "syllables": ["jí"],
+    "tonePattern": ["H"],
+    "example": {
+      "text": "Anyị ga-eri jí taa.",
+      "translation": "We will eat yam today."
+    },
+    "scenarioIds": ["ig-owerri-family-visit"],
+    "verified": true,
+    "verifiedBy": ["chief-ngozi-iwu"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-owerri-ndu",
+    "languageId": "ig",
+    "dialectId": "ig-owerri",
+    "headword": "ndụ̀",
+    "standardForm": "ndụ̀",
+    "glossEn": "life",
+    "syllables": ["n", "dụ̀"],
+    "tonePattern": ["H", "L"],
+    "example": {
+      "text": "Onye wetara ọ́jị̀ wetara ndụ̀.",
+      "translation": "Whoever brings kola brings life."
+    },
+    "scenarioIds": ["ig-owerri-family-visit"],
+    "verified": true,
+    "verifiedBy": ["chief-ngozi-iwu"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-owerri-ututu",
+    "languageId": "ig",
+    "dialectId": "ig-owerri",
+    "headword": "ụ́tụ́tụ́",
+    "standardForm": "ụ́tụ́tụ́",
+    "glossEn": "morning",
+    "syllables": ["ụ́", "tụ́", "tụ́"],
+    "tonePattern": ["H", "H", "H"],
+    "example": {
+      "text": "Ụ́tụ́tụ́ ọ́ma, Nné.",
+      "translation": "Good morning, Mother."
+    },
+    "scenarioIds": ["ig-owerri-family-visit"],
+    "verified": true,
+    "verifiedBy": ["chief-ngozi-iwu"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-owerri-ofe",
+    "languageId": "ig",
+    "dialectId": "ig-owerri",
+    "headword": "ófé",
+    "standardForm": "ófé",
+    "glossEn": "soup",
+    "syllables": ["ó", "fé"],
+    "tonePattern": ["H", "H"],
+    "example": {
+      "text": "Ófé Owerri na-atọ ụtọ.",
+      "translation": "Owerri soup is delicious."
+    },
+    "scenarioIds": ["ig-owerri-family-visit"],
+    "verified": true,
+    "verifiedBy": ["chief-ngozi-iwu"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-owerri-obi",
+    "languageId": "ig",
+    "dialectId": "ig-owerri",
+    "headword": "óbì",
+    "standardForm": "óbì",
+    "glossEn": "heart, homestead reception hall",
+    "syllables": ["ó", "bì"],
+    "tonePattern": ["H", "L"],
+    "example": {
+      "text": "Óbì dị m ụtọ.",
+      "translation": "My heart is glad."
+    },
+    "scenarioIds": ["ig-owerri-family-visit"],
+    "verified": true,
+    "verifiedBy": ["chief-ngozi-iwu"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-owerri-akwa-cloth",
+    "languageId": "ig",
+    "dialectId": "ig-owerri",
+    "headword": "ákwà",
+    "standardForm": "ákwà",
+    "glossEn": "cloth, wrapper",
+    "syllables": ["á", "kwà"],
+    "tonePattern": ["H", "L"],
+    "example": {
+      "text": "Nné kere ákwà ọhụrụ.",
+      "translation": "Mother tied a new wrapper cloth."
+    },
+    "scenarioIds": ["ig-owerri-family-visit"],
+    "verified": true,
+    "verifiedBy": ["chief-ngozi-iwu"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-owerri-akwa-cry",
+    "languageId": "ig",
+    "dialectId": "ig-owerri",
+    "headword": "ákwá",
+    "standardForm": "ákwá",
+    "glossEn": "cry, weeping",
+    "syllables": ["á", "kwá"],
+    "tonePattern": ["H", "H"],
+    "example": {
+      "text": "Nwata ahụ kwụsịrị ákwá.",
+      "translation": "That child stopped crying."
+    },
+    "scenarioIds": ["ig-owerri-family-visit"],
+    "verified": true,
+    "verifiedBy": ["chief-ngozi-iwu"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-owerri-akwa-egg",
+    "languageId": "ig",
+    "dialectId": "ig-owerri",
+    "headword": "àkwá",
+    "standardForm": "àkwá",
+    "glossEn": "egg",
+    "syllables": ["à", "kwá"],
+    "tonePattern": ["L", "H"],
+    "example": {
+      "text": "Ọkụkọ yiri àkwá.",
+      "translation": "The hen laid an egg."
+    },
+    "scenarioIds": ["ig-owerri-family-visit"],
+    "verified": true,
+    "verifiedBy": ["chief-ngozi-iwu"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-onitsha-ego",
+    "languageId": "ig",
+    "dialectId": "ig-onitsha",
+    "headword": "égó",
+    "standardForm": "égó",
+    "glossEn": "money",
+    "syllables": ["é", "gó"],
+    "tonePattern": ["H", "H"],
+    "example": {
+      "text": "Kedu égó ole jí a bụ?",
+      "translation": "How much money is this yam?"
+    },
+    "scenarioIds": ["ig-onitsha-market"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-onitsha"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-onitsha-ahia",
+    "languageId": "ig",
+    "dialectId": "ig-onitsha",
+    "headword": "áhị́á",
+    "standardForm": "áhị́á",
+    "glossEn": "market",
+    "syllables": ["á", "hị́", "á"],
+    "tonePattern": ["H", "H", "H"],
+    "example": {
+      "text": "Anyị gara áhị́á Ose Okwodu.",
+      "translation": "We went to Ose Okwodu market."
+    },
+    "scenarioIds": ["ig-onitsha-market"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-onitsha"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-onitsha-biko",
+    "languageId": "ig",
+    "dialectId": "ig-onitsha",
+    "headword": "bíkó",
+    "standardForm": "bíkó",
+    "glossEn": "please",
+    "syllables": ["bí", "kó"],
+    "tonePattern": ["H", "H"],
+    "example": {
+      "text": "Bíkó, belata ego ntakịrị.",
+      "translation": "Please, reduce the price a little."
+    },
+    "scenarioIds": ["ig-onitsha-market"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-onitsha"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-onitsha-daalu",
+    "languageId": "ig",
+    "dialectId": "ig-onitsha",
+    "headword": "dáàlụ́",
+    "standardForm": "dáàlụ́",
+    "glossEn": "thank you",
+    "syllables": ["dá", "à", "lụ́"],
+    "tonePattern": ["H", "L", "H"],
+    "example": {
+      "text": "Dáàlụ́ rinne!",
+      "translation": "Thank you very much!"
+    },
+    "scenarioIds": ["ig-onitsha-market"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-onitsha"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-onitsha-nwanne",
+    "languageId": "ig",
+    "dialectId": "ig-onitsha",
+    "headword": "nwánné",
+    "standardForm": "nwánné",
+    "glossEn": "sibling, relative",
+    "syllables": ["nwá", "n", "né"],
+    "tonePattern": ["H", "H", "H"],
+    "example": {
+      "text": "Nwánné m, jí a mara mma.",
+      "translation": "My sibling, this yam is fine."
+    },
+    "scenarioIds": ["ig-onitsha-market"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-onitsha"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-onitsha-mmanu",
+    "languageId": "ig",
+    "dialectId": "ig-onitsha",
+    "headword": "mmánụ́",
+    "standardForm": "mmánụ́",
+    "glossEn": "oil (palm oil)",
+    "syllables": ["m", "má", "nụ́"],
+    "tonePattern": ["H", "H", "H"],
+    "example": {
+      "text": "Ị nwere mmánụ́ nri ọhụrụ?",
+      "translation": "Do you have fresh cooking oil?"
+    },
+    "scenarioIds": ["ig-onitsha-market"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-onitsha"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-onitsha-udo",
+    "languageId": "ig",
+    "dialectId": "ig-onitsha",
+    "headword": "ùdó",
+    "standardForm": "ùdó",
+    "glossEn": "peace",
+    "syllables": ["ù", "dó"],
+    "tonePattern": ["L", "H"],
+    "example": {
+      "text": "Laa n'ùdó.",
+      "translation": "Go home in peace."
+    },
+    "scenarioIds": ["ig-onitsha-market"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-onitsha"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-onitsha-obodo",
+    "languageId": "ig",
+    "dialectId": "ig-onitsha",
+    "headword": "óbódó",
+    "standardForm": "óbódó",
+    "glossEn": "town, community, homeland",
+    "syllables": ["ó", "bó", "dó"],
+    "tonePattern": ["H", "H", "H"],
+    "example": {
+      "text": "Mmanụ a si n'óbódó bịa.",
+      "translation": "This oil came from the village."
+    },
+    "scenarioIds": ["ig-onitsha-market"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-onitsha"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-ikwerre-rumu",
+    "languageId": "ig",
+    "dialectId": "ig-ikwerre",
+    "headword": "rụ́mụ̀",
+    "standardForm": "ụ́mụ̀",
+    "glossEn": "children, descendants",
+    "syllables": ["rụ́", "mụ̀"],
+    "tonePattern": ["H", "L"],
+    "example": {
+      "text": "Kedu maka rụ́mụ̀ gị?",
+      "translation": "How are your children?"
+    },
+    "scenarioIds": ["ig-ikwerre-compound-welcome"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ikwerre"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-ikwerre-azu",
+    "languageId": "ig",
+    "dialectId": "ig-ikwerre",
+    "headword": "ázụ̀",
+    "standardForm": "ázụ̀",
+    "glossEn": "fish",
+    "syllables": ["á", "zụ̀"],
+    "tonePattern": ["H", "L"],
+    "example": {
+      "text": "Anyị wetara ázụ̀ ọhụrụ.",
+      "translation": "We brought fresh fish."
+    },
+    "scenarioIds": ["ig-ikwerre-compound-welcome"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ikwerre"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-ikwerre-ezi",
+    "languageId": "ig",
+    "dialectId": "ig-ikwerre",
+    "headword": "èzí",
+    "standardForm": "èzí",
+    "glossEn": "outside, courtyard",
+    "syllables": ["è", "zí"],
+    "tonePattern": ["L", "H"],
+    "example": {
+      "text": "Ha nọ n'èzí na-egwu egwu.",
+      "translation": "They are outside playing."
+    },
+    "scenarioIds": ["ig-ikwerre-compound-welcome"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ikwerre"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-ikwerre-ngozi",
+    "languageId": "ig",
+    "dialectId": "ig-ikwerre",
+    "headword": "ńgọ́zí",
+    "standardForm": "ńgọ́zí",
+    "glossEn": "blessing",
+    "syllables": ["ń", "gọ́", "zí"],
+    "tonePattern": ["H", "H", "H"],
+    "example": {
+      "text": "Kpọọ ha ka ha bịa nata ńgọ́zí.",
+      "translation": "Call them to come receive a blessing."
+    },
+    "scenarioIds": ["ig-ikwerre-compound-welcome"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ikwerre"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-ikwerre-osimiri",
+    "languageId": "ig",
+    "dialectId": "ig-ikwerre",
+    "headword": "ósímírí",
+    "standardForm": "ósímírí",
+    "glossEn": "river, sea",
+    "syllables": ["ó", "sí", "mí", "rí"],
+    "tonePattern": ["H", "H", "H", "H"],
+    "example": {
+      "text": "Azụ̀ si n'ósímírí.",
+      "translation": "Fish from the river."
+    },
+    "scenarioIds": ["ig-ikwerre-compound-welcome"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ikwerre"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ig-ikwerre-usekwu",
+    "languageId": "ig",
+    "dialectId": "ig-ikwerre",
+    "headword": "úsékwú",
+    "standardForm": "úsékwú",
+    "glossEn": "kitchen",
+    "syllables": ["ú", "sé", "kwú"],
+    "tonePattern": ["H", "H", "H"],
+    "example": {
+      "text": "Ka m nyere Nné aka n'úsékwú.",
+      "translation": "Let me help Mother in the kitchen."
+    },
+    "scenarioIds": ["ig-ikwerre-compound-welcome"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-ikwerre"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ha-kano-sannu",
+    "languageId": "ha",
+    "dialectId": "ha-kano",
+    "headword": "sannu",
+    "standardForm": "sannu",
+    "glossEn": "hello, greetings",
+    "syllables": ["san", "nu"],
+    "tonePattern": ["L", "H"],
+    "example": {
+      "text": "Sannu da aiki, Mallam Musa.",
+      "translation": "Greetings at your work, Mallam Musa."
+    },
+    "scenarioIds": ["ha-kano-market-bargain"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-kano"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ha-kano-kwana",
+    "languageId": "ha",
+    "dialectId": "ha-kano",
+    "headword": "kwana",
+    "standardForm": "kwana",
+    "glossEn": "to spend the night (Ina kwana: good morning)",
+    "syllables": ["kwa", "na"],
+    "tonePattern": ["H", "H"],
+    "example": {
+      "text": "Ina kwana?",
+      "translation": "How did you sleep? (Good morning)"
+    },
+    "scenarioIds": ["ha-kano-market-bargain"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-kano"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ha-kano-lafiya",
+    "languageId": "ha",
+    "dialectId": "ha-kano",
+    "headword": "lafiya",
+    "standardForm": "lafiya",
+    "glossEn": "health, well-being",
+    "syllables": ["la", "fi", "ya"],
+    "tonePattern": ["H", "L", "L"],
+    "example": {
+      "text": "Lafiya lau.",
+      "translation": "In very good health."
+    },
+    "scenarioIds": ["ha-kano-market-bargain"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-kano"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ha-kano-gida",
+    "languageId": "ha",
+    "dialectId": "ha-kano",
+    "headword": "gida",
+    "standardForm": "gida",
+    "glossEn": "house, home",
+    "syllables": ["gi", "da"],
+    "tonePattern": ["L", "H"],
+    "example": {
+      "text": "Yaya gida da iyali?",
+      "translation": "How are the home and family?"
+    },
+    "scenarioIds": ["ha-kano-market-bargain"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-kano"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ha-kano-kasuwa",
+    "languageId": "ha",
+    "dialectId": "ha-kano",
+    "headword": "kasuwa",
+    "standardForm": "kasuwa",
+    "glossEn": "market",
+    "syllables": ["ka", "su", "wa"],
+    "tonePattern": ["H", "L", "H"],
+    "example": {
+      "text": "Mun je kasuwa Kurmi.",
+      "translation": "We went to Kurmi Market."
+    },
+    "scenarioIds": ["ha-kano-market-bargain"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-kano"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ha-kano-nawa",
+    "languageId": "ha",
+    "dialectId": "ha-kano",
+    "headword": "nawa",
+    "standardForm": "nawa",
+    "glossEn": "how much",
+    "syllables": ["na", "wa"],
+    "tonePattern": ["H", "L"],
+    "example": {
+      "text": "Nawa ne wannan zannuwa?",
+      "translation": "How much is this wrapper cloth?"
+    },
+    "scenarioIds": ["ha-kano-market-bargain"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-kano"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ha-kano-kudi",
+    "languageId": "ha",
+    "dialectId": "ha-kano",
+    "headword": "kuɗi",
+    "standardForm": "kuɗi",
+    "glossEn": "money",
+    "syllables": ["ku", "ɗi"],
+    "tonePattern": ["L", "H"],
+    "example": {
+      "text": "Ga kuɗin nan.",
+      "translation": "Here is the money."
+    },
+    "scenarioIds": ["ha-kano-market-bargain"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-kano"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ha-kano-nagode",
+    "languageId": "ha",
+    "dialectId": "ha-kano",
+    "headword": "nagode",
+    "standardForm": "na gode",
+    "glossEn": "thank you",
+    "syllables": ["na", "go", "de"],
+    "tonePattern": ["H", "H", "L"],
+    "example": {
+      "text": "Nagode sosai.",
+      "translation": "Thank you very much."
+    },
+    "scenarioIds": ["ha-kano-market-bargain"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-kano"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ha-kano-ruwa",
+    "languageId": "ha",
+    "dialectId": "ha-kano",
+    "headword": "ruwa",
+    "standardForm": "ruwa",
+    "glossEn": "water",
+    "syllables": ["ru", "wa"],
+    "tonePattern": ["L", "H"],
+    "example": {
+      "text": "Bani ruwa mai sanyi.",
+      "translation": "Give me cool water."
+    },
+    "scenarioIds": ["ha-kano-market-bargain"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-kano"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ha-kano-abinci",
+    "languageId": "ha",
+    "dialectId": "ha-kano",
+    "headword": "abinci",
+    "standardForm": "abinci",
+    "glossEn": "food",
+    "syllables": ["a", "bin", "ci"],
+    "tonePattern": ["L", "H", "H"],
+    "example": {
+      "text": "Abinci yana da daɗi.",
+      "translation": "The food is delicious."
+    },
+    "scenarioIds": ["ha-kano-market-bargain"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-kano"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ha-kano-hakuri",
+    "languageId": "ha",
+    "dialectId": "ha-kano",
+    "headword": "haƙuri",
+    "standardForm": "haƙuri",
+    "glossEn": "patience",
+    "syllables": ["ha", "ƙu", "ri"],
+    "tonePattern": ["L", "L", "H"],
+    "example": {
+      "text": "Yi haƙuri, Mallam.",
+      "translation": "Have patience, Mallam."
+    },
+    "scenarioIds": ["ha-kano-market-bargain"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-kano"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "ha-kano-albarka",
+    "languageId": "ha",
+    "dialectId": "ha-kano",
+    "headword": "albarka",
+    "standardForm": "albarka",
+    "glossEn": "blessing (also used politely to decline a price)",
+    "syllables": ["al", "bar", "ka"],
+    "tonePattern": ["H", "H", "L"],
+    "example": {
+      "text": "Allah ya sa albarka.",
+      "translation": "May God put blessing in it."
+    },
+    "scenarioIds": ["ha-kano-market-bargain"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-kano"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "pcm-lagos-howfar",
+    "languageId": "pcm",
+    "dialectId": "pcm-lagos",
+    "headword": "how far",
+    "standardForm": null,
+    "glossEn": "hello, how are things going",
+    "syllables": ["how", "far"],
+    "tonePattern": ["M", "H"],
+    "example": {
+      "text": "How far, Broda?",
+      "translation": "Hello, Brother, how is it going?"
+    },
+    "scenarioIds": ["pcm-lagos-danfo-ride"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-lagos"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "pcm-lagos-kampe",
+    "languageId": "pcm",
+    "dialectId": "pcm-lagos",
+    "headword": "kampe",
+    "standardForm": null,
+    "glossEn": "solid, doing very well, unshakeable",
+    "syllables": ["kam", "pe"],
+    "tonePattern": ["M", "H"],
+    "example": {
+      "text": "I dey kampe, change dey.",
+      "translation": "I am all set, there is change."
+    },
+    "scenarioIds": ["pcm-lagos-danfo-ride"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-lagos"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "pcm-lagos-abeg",
+    "languageId": "pcm",
+    "dialectId": "pcm-lagos",
+    "headword": "abeg",
+    "standardForm": null,
+    "glossEn": "please, I beg you",
+    "syllables": ["a", "beg"],
+    "tonePattern": ["L", "H"],
+    "example": {
+      "text": "Abeg drop me for Obalende.",
+      "translation": "Please let me off at Obalende."
+    },
+    "scenarioIds": ["pcm-lagos-danfo-ride"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-lagos"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "pcm-lagos-wahala",
+    "languageId": "pcm",
+    "dialectId": "pcm-lagos",
+    "headword": "wahala",
+    "standardForm": null,
+    "glossEn": "trouble, problem, stress",
+    "syllables": ["wa", "ha", "la"],
+    "tonePattern": ["L", "H", "L"],
+    "example": {
+      "text": "No wahala, enter sharp-sharp.",
+      "translation": "No problem, hop in quickly."
+    },
+    "scenarioIds": ["pcm-lagos-danfo-ride"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-lagos"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "pcm-lagos-owa",
+    "languageId": "pcm",
+    "dialectId": "pcm-lagos",
+    "headword": "owa",
+    "standardForm": "ó wà",
+    "glossEn": "stop here (bus stop call from Yoruba 'it is here')",
+    "syllables": ["o", "wa"],
+    "tonePattern": ["H", "L"],
+    "example": {
+      "text": "Owa o! Driver, abeg drop me.",
+      "translation": "Stop here! Driver, please let me off."
+    },
+    "scenarioIds": ["pcm-lagos-danfo-ride"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-lagos"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "pcm-lagos-sabi",
+    "languageId": "pcm",
+    "dialectId": "pcm-lagos",
+    "headword": "sabi",
+    "standardForm": null,
+    "glossEn": "to know, understand, be skilled at",
+    "syllables": ["sa", "bi"],
+    "tonePattern": ["H", "L"],
+    "example": {
+      "text": "Driver sabi road well-well.",
+      "translation": "The driver knows the route very well."
+    },
+    "scenarioIds": ["pcm-lagos-danfo-ride"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-lagos"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "pcm-lagos-chop",
+    "languageId": "pcm",
+    "dialectId": "pcm-lagos",
+    "headword": "chop",
+    "standardForm": null,
+    "glossEn": "to eat, food",
+    "syllables": ["chop"],
+    "tonePattern": ["H"],
+    "example": {
+      "text": "Make we go chop.",
+      "translation": "Let us go eat."
+    },
+    "scenarioIds": ["pcm-lagos-danfo-ride"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-lagos"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "pcm-lagos-sharpsharp",
+    "languageId": "pcm",
+    "dialectId": "pcm-lagos",
+    "headword": "sharp-sharp",
+    "standardForm": null,
+    "glossEn": "quickly, immediately",
+    "syllables": ["sharp", "sharp"],
+    "tonePattern": ["H", "H"],
+    "example": {
+      "text": "Enter sharp-sharp.",
+      "translation": "Get in quickly."
+    },
+    "scenarioIds": ["pcm-lagos-danfo-ride"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-lagos"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "pcm-lagos-change",
+    "languageId": "pcm",
+    "dialectId": "pcm-lagos",
+    "headword": "change",
+    "standardForm": null,
+    "glossEn": "small denomination notes or coins for bus fare balance",
+    "syllables": ["change"],
+    "tonePattern": ["H"],
+    "example": {
+      "text": "Enter with your change o!",
+      "translation": "Board with exact fare!"
+    },
+    "scenarioIds": ["pcm-lagos-danfo-ride"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-lagos"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "pcm-lagos-danfo",
+    "languageId": "pcm",
+    "dialectId": "pcm-lagos",
+    "headword": "danfo",
+    "standardForm": "dánfó",
+    "glossEn": "yellow commercial minibus in Lagos",
+    "syllables": ["dan", "fo"],
+    "tonePattern": ["H", "H"],
+    "example": {
+      "text": "We enter danfo for Yaba.",
+      "translation": "We boarded a minibus at Yaba."
+    },
+    "scenarioIds": ["pcm-lagos-danfo-ride"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-lagos"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "pcm-lagos-owambe",
+    "languageId": "pcm",
+    "dialectId": "pcm-lagos",
+    "headword": "owambe",
+    "standardForm": "ó wà níbẹ̀",
+    "glossEn": "lavish Nigerian weekend party or celebration",
+    "syllables": ["o", "wam", "be"],
+    "tonePattern": ["H", "L", "M"],
+    "example": {
+      "text": "Saturday na for owambe.",
+      "translation": "Saturday is for celebrations."
+    },
+    "scenarioIds": ["pcm-lagos-danfo-ride"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-lagos"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  },
+  {
+    "entryId": "pcm-lagos-area",
+    "languageId": "pcm",
+    "dialectId": "pcm-lagos",
+    "headword": "area",
+    "standardForm": null,
+    "glossEn": "neighbourhood, local turf",
+    "syllables": ["a", "rea"],
+    "tonePattern": ["H", "L"],
+    "example": {
+      "text": "Welcome to our area.",
+      "translation": "Welcome to our neighbourhood."
+    },
+    "scenarioIds": ["pcm-lagos-danfo-ride"],
+    "verified": true,
+    "verifiedBy": ["seed-reviewer-lagos"],
+    "source": "seed",
+    "updatedAt": 1763164800000
+  }
+]

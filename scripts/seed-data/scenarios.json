@@ -1,0 +1,622 @@
+[
+  {
+    "scenarioId": "yo-ijebu-elder-greeting",
+    "dialectId": "yo-ijebu",
+    "title": "Greeting an Elder in Ijebu Ode",
+    "summary": "Tunde visits his grandmother Mama Iyabo in Ijebu Ode, prostrating respectfully and discussing breakfast prepared with fresh yam and courtyard fowl.",
+    "culturalNote": "In Yoruba culture, a young man prostrates (dọ̀bálẹ̀) and a young woman kneels (kúnlẹ̀) when greeting an elder. Using the honorific plural pronoun 'ẹ' is mandatory when addressing anyone older.",
+    "speakers": [
+      {
+        "id": "mama",
+        "displayName": "Mama Iyabo",
+        "role": "Grandmother in Ijebu Ode",
+        "voiceKey": "elder_female"
+      },
+      {
+        "id": "tunde",
+        "displayName": "Tunde",
+        "role": "Visiting grandson from Lagos",
+        "voiceKey": "young_male"
+      }
+    ],
+    "script": [
+      {
+        "speakerId": "tunde",
+        "text": "Ẹ kú àárọ̀, Màmá. Mo dọ̀bálẹ̀.",
+        "translation": "Good morning, Grandmother. I prostrate in respect."
+      },
+      {
+        "speakerId": "mama",
+        "text": "Àárọ̀ire o, ọmọ mi. Dìde, ẹ káàbọ̀ sílé.",
+        "translation": "A good morning to you, my child. Rise, welcome home."
+      },
+      {
+        "speakerId": "tunde",
+        "text": "Ṣé àlàáfíà ni gbogbo ilé wà, Màmá?",
+        "translation": "Is the whole household in good health, Grandmother?"
+      },
+      {
+        "speakerId": "mama",
+        "text": "Aúpẹ́ o. Ọkọ mi ti lọ sí oko ní àárọ̀ yìí.",
+        "translation": "We give thanks. My husband went to the farm this morning."
+      },
+      {
+        "speakerId": "tunde",
+        "text": "Ṣé ọkọ̀ Baba ṣì ń ṣiṣẹ́ dáadáa?",
+        "translation": "Is Grandfather's vehicle still working well?"
+      },
+      {
+        "speakerId": "mama",
+        "text": "Bẹ́ẹ̀ni, ó gbé usu àti ẹdiyẹ wá láti oko àná.",
+        "translation": "Yes, he brought yam and fowl from the farm yesterday."
+      },
+      {
+        "speakerId": "tunde",
+        "text": "Inú mi dùn! Mo fẹ́ràn usu jíjẹ púpọ̀.",
+        "translation": "I am delighted! I love eating yam very much."
+      },
+      {
+        "speakerId": "mama",
+        "text": "Gba omi tútù kọ́kọ́, oúnjẹ tietan níbi ìdáná.",
+        "translation": "Take cool water first, the food is ready in the kitchen."
+      }
+    ],
+    "glossaryEntryIds": [
+      "yo-ijebu-usu",
+      "yo-ijebu-ediye",
+      "yo-ijebu-oko-husband",
+      "yo-ijebu-oko-vehicle",
+      "yo-ijebu-oko-spear",
+      "yo-ijebu-oko-farm",
+      "yo-ijebu-omo",
+      "yo-ijebu-ile",
+      "yo-ijebu-omi",
+      "yo-ijebu-ounje",
+      "yo-ijebu-dobale",
+      "yo-ijebu-aaro",
+      "yo-ijebu-baba",
+      "yo-ijebu-iya",
+      "yo-ijebu-agba"
+    ],
+    "estimatedAudioBytes": 1920000,
+    "order": 1
+  },
+  {
+    "scenarioId": "yo-ekiti-family-greeting",
+    "dialectId": "yo-ekiti",
+    "title": "Morning Compound Greeting in Ado-Ekiti",
+    "summary": "Bisi greets her uncle Baba Ade in an Ado-Ekiti family compound and helps prepare morning water and pounded yam.",
+    "culturalNote": "Ekiti speakers prize warm morning inquiries after every member of the compound before discussing any errand or request.",
+    "speakers": [
+      {
+        "id": "baba",
+        "displayName": "Baba Ade",
+        "role": "Family elder in Ado-Ekiti",
+        "voiceKey": "elder_male"
+      },
+      {
+        "id": "bisi",
+        "displayName": "Bisi",
+        "role": "Niece visiting for the festival",
+        "voiceKey": "young_female"
+      }
+    ],
+    "script": [
+      {
+        "speakerId": "bisi",
+        "text": "Ẹ kú àárọ̀, Bàbá. Mo kúnlẹ̀ o.",
+        "translation": "Good morning, Father. I kneel in greeting."
+      },
+      {
+        "speakerId": "baba",
+        "text": "Ọmọ rere, dìde. Ṣé o jíire lónìí?",
+        "translation": "Good child, rise. Did you wake well today?"
+      },
+      {
+        "speakerId": "bisi",
+        "text": "Mo jíire, Bàbá. Mo mú omi wá fún yín.",
+        "translation": "I woke well, Father. I brought water for you."
+      },
+      {
+        "speakerId": "baba",
+        "text": "Ọlọ́run á bùkún ọ. Níbo ni ìyá rẹ wà?",
+        "translation": "May God bless you. Where is your mother?"
+      },
+      {
+        "speakerId": "bisi",
+        "text": "Ìyá wà nínú ilé, wọ́n ń se iyán.",
+        "translation": "Mother is inside the house, she is preparing pounded yam."
+      },
+      {
+        "speakerId": "baba",
+        "text": "Iyán àti ọbẹ̀ ewédú dára ní àárọ̀.",
+        "translation": "Pounded yam and ewedu soup are wonderful in the morning."
+      },
+      {
+        "speakerId": "bisi",
+        "text": "Mo ti fọ abọ́ àti ọwọ́ mi.",
+        "translation": "I have washed the bowls and my hands."
+      },
+      {
+        "speakerId": "baba",
+        "text": "Ó dára, pe àwọn àbúrò rẹ kí a jọ jẹun.",
+        "translation": "Very good, call your younger siblings so we eat together."
+      }
+    ],
+    "glossaryEntryIds": [
+      "yo-ekiti-iyan",
+      "yo-ekiti-obe",
+      "yo-ekiti-abo",
+      "yo-ekiti-owo",
+      "yo-ekiti-aburo",
+      "yo-ekiti-egbon",
+      "yo-ekiti-kunle",
+      "yo-ekiti-oluko"
+    ],
+    "estimatedAudioBytes": 1800000,
+    "order": 2
+  },
+  {
+    "scenarioId": "yo-ondo-kitchen-visit",
+    "dialectId": "yo-ondo",
+    "title": "Preparing Festival Supper in Ondo Town",
+    "summary": "Ayo helps Auntie Funke sort yams and seasoning in Ondo Town while learning local Ondo words.",
+    "culturalNote": "In Ondo homes, helping elders in the courtyard kitchen is a traditional way younger relatives learn proverbs and regional vocabulary.",
+    "speakers": [
+      {
+        "id": "funke",
+        "displayName": "Auntie Funke",
+        "role": "Maternal aunt in Ondo Town",
+        "voiceKey": "elder_female"
+      },
+      {
+        "id": "ayo",
+        "displayName": "Ayo",
+        "role": "Nephew",
+        "voiceKey": "young_male"
+      }
+    ],
+    "script": [
+      {
+        "speakerId": "ayo",
+        "text": "Ẹ kú iṣẹ́ o, Àńtí Fúnkẹ́.",
+        "translation": "Well done with your work, Auntie Funke."
+      },
+      {
+        "speakerId": "funke",
+        "text": "Oo, Ayọ̀. Wa bá mi gbé usu yẹn.",
+        "translation": "Thank you, Ayo. Come help me carry that yam."
+      },
+      {
+        "speakerId": "ayo",
+        "text": "Usu náà tóbi gan-an! Láti ọjà ni?",
+        "translation": "That yam is very big! Is it from the market?"
+      },
+      {
+        "speakerId": "funke",
+        "text": "Rárá, láti oko wa ni. Mú iyọ̀ àti ata wá.",
+        "translation": "No, it is from our farm. Bring the salt and pepper."
+      },
+      {
+        "speakerId": "ayo",
+        "text": "Èyí ni iyọ̀, èyí sì ni ata pupa.",
+        "translation": "Here is the salt, and here is the red pepper."
+      },
+      {
+        "speakerId": "funke",
+        "text": "Ẹdiyẹ náà ti jóná lórí iná.",
+        "translation": "The chicken is cooked on the fire."
+      },
+      {
+        "speakerId": "ayo",
+        "text": "oorùn ọbẹ̀ náà dùn púpọ̀.",
+        "translation": "The aroma of the soup is very pleasant."
+      },
+      {
+        "speakerId": "funke",
+        "text": "Jókòó kí o tọ́ ọbẹ̀ náà wò.",
+        "translation": "Sit down and taste the soup."
+      }
+    ],
+    "glossaryEntryIds": [
+      "yo-ondo-usu",
+      "yo-ondo-ediye",
+      "yo-ondo-oja",
+      "yo-ondo-iyo",
+      "yo-ondo-ata",
+      "yo-ondo-ina",
+      "yo-ondo-ise",
+      "yo-ondo-joko"
+    ],
+    "estimatedAudioBytes": 1750000,
+    "order": 3
+  },
+  {
+    "scenarioId": "ig-owerri-family-visit",
+    "dialectId": "ig-owerri",
+    "title": "Visiting Nne in Owerri",
+    "summary": "Adaeze arrives from London with her children to greet her mother Nne Ngozi in Owerri, sharing kola nut and palm wine blessings.",
+    "culturalNote": "In Igboland, welcoming a guest begins with presenting kola nut (ọ́jị̀). The proverb 'Onye wetara ọjị wetara ndụ' means 'Whoever brings kola brings life.'",
+    "speakers": [
+      {
+        "id": "nne",
+        "displayName": "Nne Ngozi",
+        "role": "Grandmother in Owerri",
+        "voiceKey": "elder_female"
+      },
+      {
+        "id": "ada",
+        "displayName": "Adaeze",
+        "role": "Daughter visiting from London",
+        "voiceKey": "young_female"
+      }
+    ],
+    "script": [
+      {
+        "speakerId": "ada",
+        "text": "Nnọọ, Nné m! Anyị erutela n'ụ́lọ̀.",
+        "translation": "Hello, my Mother! We have arrived home."
+      },
+      {
+        "speakerId": "nne",
+        "text": "Nnọọ, nwa m ọ́ma! Ụ́mụ̀ m, bịanụ.",
+        "translation": "Welcome, my good child! My grandchildren, come closer."
+      },
+      {
+        "speakerId": "ada",
+        "text": "Ụ́tụ́tụ́ ọ́ma, Nné. Kedu ka ị mere?",
+        "translation": "Good morning, Mother. How are you doing?"
+      },
+      {
+        "speakerId": "nne",
+        "text": "Ọ́ dị̀ mma. Weta mmírí ka ha ṅụọ.",
+        "translation": "It is well. Bring water so they can drink."
+      },
+      {
+        "speakerId": "ada",
+        "text": "Nné, lee ọ́jị̀ anyị ji bịa.",
+        "translation": "Mother, behold the kola nut we brought."
+      },
+      {
+        "speakerId": "nne",
+        "text": "Onye wetara ọ́jị̀ wetara ndụ̀. Chukwu gozie unu.",
+        "translation": "Whoever brings kola brings life. May God bless you all."
+      },
+      {
+        "speakerId": "ada",
+        "text": "Isee! Ụ́mụ̀aka chọrọ ịmụ olu Owerri.",
+        "translation": "Amen! The children want to learn the Owerri dialect."
+      },
+      {
+        "speakerId": "nne",
+        "text": "Obi dị m ụtọ. Anyị ga-eri jí na ofe Owerri taa.",
+        "translation": "My heart is glad. We will eat yam and Owerri soup today."
+      }
+    ],
+    "glossaryEntryIds": [
+      "ig-owerri-nnoo",
+      "ig-owerri-nne",
+      "ig-owerri-nna",
+      "ig-owerri-umu",
+      "ig-owerri-oji",
+      "ig-owerri-mmiri",
+      "ig-owerri-ulo",
+      "ig-owerri-ji",
+      "ig-owerri-ndu",
+      "ig-owerri-ututu",
+      "ig-owerri-ofe",
+      "ig-owerri-obi",
+      "ig-owerri-akwa-cloth",
+      "ig-owerri-akwa-cry",
+      "ig-owerri-akwa-egg"
+    ],
+    "estimatedAudioBytes": 1950000,
+    "order": 4
+  },
+  {
+    "scenarioId": "ig-onitsha-market",
+    "dialectId": "ig-onitsha",
+    "title": "Buying Yams at Ose Okwodu Market in Onitsha",
+    "summary": "Chidi negotiates politely with Mama Ifeoma for Niger-grown yams and fresh palm oil in Onitsha.",
+    "culturalNote": "In Onitsha markets, respectful address ('Mama', 'Nwanne m') before asking the price sets a friendly tone for bargaining.",
+    "speakers": [
+      {
+        "id": "ifeoma",
+        "displayName": "Mama Ifeoma",
+        "role": "Yam trader at Ose Okwodu Market",
+        "voiceKey": "elder_female"
+      },
+      {
+        "id": "chidi",
+        "displayName": "Chidi",
+        "role": "Young buyer",
+        "voiceKey": "young_male"
+      }
+    ],
+    "script": [
+      {
+        "speakerId": "chidi",
+        "text": "Nnọọ, Màmá. Kedu ego ole jí a bụ?",
+        "translation": "Hello, Mama. How much money is this yam?"
+      },
+      {
+        "speakerId": "ifeoma",
+        "text": "Nwanne m, jí a mara mma. Ọ́ bụ̀ puku naira abụọ.",
+        "translation": "My sibling, this yam is fine. It is two thousand naira."
+      },
+      {
+        "speakerId": "chidi",
+        "text": "Biko, belata ego ntakịrị. Achọrọ m ịzụ anọ.",
+        "translation": "Please, reduce the price a little. I want to buy four."
+      },
+      {
+        "speakerId": "ifeoma",
+        "text": "Ngwanụ, kwụọ puku isii maka anọ ahụ.",
+        "translation": "All right, pay six thousand for those four."
+      },
+      {
+        "speakerId": "chidi",
+        "text": "Ị nwere mmanụ nri ọhụrụ taa?",
+        "translation": "Do you have fresh palm oil today?"
+      },
+      {
+        "speakerId": "ifeoma",
+        "text": "Ee, mmanụ a si n'obodo bịa n'ụtụtụ a.",
+        "translation": "Yes, this palm oil came from the village this morning."
+      },
+      {
+        "speakerId": "chidi",
+        "text": "Tinye otu karama. Lee ego gị.",
+        "translation": "Add one bottle. Here is your money."
+      },
+      {
+        "speakerId": "ifeoma",
+        "text": "Daalụ rinne! Laa n'udo.",
+        "translation": "Thank you very much! Go home in peace."
+      }
+    ],
+    "glossaryEntryIds": [
+      "ig-onitsha-ego",
+      "ig-onitsha-ahia",
+      "ig-onitsha-biko",
+      "ig-onitsha-daalu",
+      "ig-onitsha-nwanne",
+      "ig-onitsha-mmanu",
+      "ig-onitsha-udo",
+      "ig-onitsha-obodo"
+    ],
+    "estimatedAudioBytes": 1820000,
+    "order": 5
+  },
+  {
+    "scenarioId": "ig-ikwerre-compound-welcome",
+    "dialectId": "ig-ikwerre",
+    "title": "Welcoming Relatives in an Ikwerre Compound",
+    "summary": "Elder Wobo welcomes his niece Chinyere and the community children in Port Harcourt, highlighting Ikwerre kinship terms.",
+    "culturalNote": "In Ikwerre (Port Harcourt region), 'rụmụ' corresponds to Standard Igbo 'ụmụ' (children or descendants), visible in place names such as Rumuola and Rumuokoro.",
+    "speakers": [
+      {
+        "id": "wobo",
+        "displayName": "Elder Wobo",
+        "role": "Family head in Port Harcourt",
+        "voiceKey": "elder_male"
+      },
+      {
+        "id": "chinyere",
+        "displayName": "Chinyere",
+        "role": "Niece",
+        "voiceKey": "young_female"
+      }
+    ],
+    "script": [
+      {
+        "speakerId": "chinyere",
+        "text": "M̀gbọ́ ọ́ma, Nnà anyị.",
+        "translation": "Good day, our Father."
+      },
+      {
+        "speakerId": "wobo",
+        "text": "Nnọọ, Chinyere. Kedu maka rụmụ gị?",
+        "translation": "Welcome, Chinyere. How are your children?"
+      },
+      {
+        "speakerId": "chinyere",
+        "text": "Rụmụ dị mma, ha nọ n'èzí na-egwu egwu.",
+        "translation": "The children are fine, they are outside playing."
+      },
+      {
+        "speakerId": "wobo",
+        "text": "Kpọọ rụmụ ahụ ka ha bịa nata ngọzi.",
+        "translation": "Call those children so they come receive a blessing."
+      },
+      {
+        "speakerId": "chinyere",
+        "text": "Anyị wetara azụ̀ ọhụrụ si n'osimiri.",
+        "translation": "We brought fresh fish from the river."
+      },
+      {
+        "speakerId": "wobo",
+        "text": "Ọ́ dị̀ mma! Azụ̀ na jí ga-atọ ụtọ.",
+        "translation": "That is wonderful! Fish and yam will be delicious."
+      },
+      {
+        "speakerId": "chinyere",
+        "text": "Ka m nyere Nné aka n'usekwu.",
+        "translation": "Let me help Mother in the kitchen."
+      },
+      {
+        "speakerId": "wobo",
+        "text": "Chukwu debe unu niile.",
+        "translation": "May God preserve you all."
+      }
+    ],
+    "glossaryEntryIds": [
+      "ig-ikwerre-rumu",
+      "ig-ikwerre-azu",
+      "ig-ikwerre-ezi",
+      "ig-ikwerre-ngozi",
+      "ig-ikwerre-osimiri",
+      "ig-ikwerre-usekwu"
+    ],
+    "estimatedAudioBytes": 1700000,
+    "order": 6
+  },
+  {
+    "scenarioId": "ha-kano-market-bargain",
+    "dialectId": "ha-kano",
+    "title": "Bargaining for Indigo Cloth at Kurmi Market in Kano",
+    "summary": "Amina visits Mallam Musa's stall in Kano's historic Kurmi Market, exchanging morning greetings before negotiating for hand-dyed fabric.",
+    "culturalNote": "In Kano Hausa culture, jumping straight to price without asking after health, family, and the morning ('Ina kwana?') is considered hurried. Patience earns respect and a fair price.",
+    "speakers": [
+      {
+        "id": "musa",
+        "displayName": "Mallam Musa",
+        "role": "Cloth merchant at Kurmi Market",
+        "voiceKey": "trader"
+      },
+      {
+        "id": "amina",
+        "displayName": "Amina",
+        "role": "Customer in Kano",
+        "voiceKey": "young_female"
+      }
+    ],
+    "script": [
+      {
+        "speakerId": "amina",
+        "text": "Sannu da aiki, Mallam Musa. Ina kwana?",
+        "translation": "Greetings at your work, Mallam Musa. How did you sleep?"
+      },
+      {
+        "speakerId": "musa",
+        "text": "Lafiya lau, Hajiya Amina. Yaya gida da iyali?",
+        "translation": "In good health, Hajiya Amina. How are the home and family?"
+      },
+      {
+        "speakerId": "amina",
+        "text": "Alhamdulillahi, kowa lafiya. Nawa ne wannan zannuwa?",
+        "translation": "Praise be to God, everyone is well. How much is this wrapper cloth?"
+      },
+      {
+        "speakerId": "musa",
+        "text": "Wannan rini na Kofar Mata ne. Dubu takwas ne.",
+        "translation": "This is indigo-dyed cloth from Kofar Mata. It is eight thousand naira."
+      },
+      {
+        "speakerId": "amina",
+        "text": "Yi hakuri, Mallam. Rage mana kadan, zan sayi biyu.",
+        "translation": "Have patience, Mallam. Reduce it a little for us, I will buy two."
+      },
+      {
+        "speakerId": "musa",
+        "text": "Toh, saboda ke, kawo dubu sha hudu duka biyun.",
+        "translation": "All right, because of you, bring fourteen thousand for both."
+      },
+      {
+        "speakerId": "amina",
+        "text": "Nagode sosai. Ga kudin nan.",
+        "translation": "Thank you very much. Here is the money."
+      },
+      {
+        "speakerId": "musa",
+        "text": "Allah ya sa albarka. Sai anjima!",
+        "translation": "May God put blessing in it. See you later!"
+      }
+    ],
+    "glossaryEntryIds": [
+      "ha-kano-sannu",
+      "ha-kano-kwana",
+      "ha-kano-lafiya",
+      "ha-kano-gida",
+      "ha-kano-kasuwa",
+      "ha-kano-nawa",
+      "ha-kano-kudi",
+      "ha-kano-nagode",
+      "ha-kano-ruwa",
+      "ha-kano-abinci",
+      "ha-kano-hakuri",
+      "ha-kano-albarka"
+    ],
+    "estimatedAudioBytes": 1880000,
+    "order": 7
+  },
+  {
+    "scenarioId": "pcm-lagos-danfo-ride",
+    "dialectId": "pcm-lagos",
+    "title": "Navigating a Danfo from Yaba to Obalende",
+    "summary": "Emeka boards a yellow Lagos danfo bus at Yaba, checking fare and change with the conductor before calling his stop.",
+    "culturalNote": "In Lagos transit, telling the conductor early if you hold a large note ('I hold thousand naira') and calling your stop clearly ('Owa o!') keeps the ride smooth for everyone.",
+    "speakers": [
+      {
+        "id": "conductor",
+        "displayName": "Broda Taju",
+        "role": "Lagos Danfo Conductor",
+        "voiceKey": "trader"
+      },
+      {
+        "id": "emeka",
+        "displayName": "Emeka",
+        "role": "Commuter heading to Obalende",
+        "voiceKey": "young_male"
+      }
+    ],
+    "script": [
+      {
+        "speakerId": "conductor",
+        "text": "Obalende, CMS! Enter with your change o!",
+        "translation": "Obalende, CMS! Board with your exact fare!"
+      },
+      {
+        "speakerId": "emeka",
+        "text": "How far, Broda. How much be Obalende now?",
+        "translation": "Hello, Brother. How much is the fare to Obalende now?"
+      },
+      {
+        "speakerId": "conductor",
+        "text": "Na five hundred naira. No wahala, enter sharp-sharp.",
+        "translation": "It is five hundred naira. No problem, hop in quickly."
+      },
+      {
+        "speakerId": "emeka",
+        "text": "Abeg, na one thousand naira I hold. You get change?",
+        "translation": "Please, I have a one-thousand-naira note. Do you have change?"
+      },
+      {
+        "speakerId": "conductor",
+        "text": "I dey kampe, change dey. Sit down for back seat.",
+        "translation": "I am all set, there is change. Sit in the back row."
+      },
+      {
+        "speakerId": "emeka",
+        "text": "Driver sabi road well-well, we don pass Third Mainland.",
+        "translation": "The driver knows the route well, we have already passed Third Mainland Bridge."
+      },
+      {
+        "speakerId": "conductor",
+        "text": "Oya, collect your five hundred balance. Who dey drop for junction?",
+        "translation": "Here, take your five hundred change. Who is alighting at the junction?"
+      },
+      {
+        "speakerId": "emeka",
+        "text": "Owa o! Driver, abeg drop me for Obalende under bridge.",
+        "translation": "Stop here please! Driver, kindly let me off at Obalende under the bridge."
+      }
+    ],
+    "glossaryEntryIds": [
+      "pcm-lagos-howfar",
+      "pcm-lagos-kampe",
+      "pcm-lagos-abeg",
+      "pcm-lagos-wahala",
+      "pcm-lagos-owa",
+      "pcm-lagos-sabi",
+      "pcm-lagos-chop",
+      "pcm-lagos-sharpsharp",
+      "pcm-lagos-change",
+      "pcm-lagos-danfo",
+      "pcm-lagos-owambe",
+      "pcm-lagos-area"
+    ],
+    "estimatedAudioBytes": 1850000,
+    "order": 8
+  }
+]

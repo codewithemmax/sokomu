@@ -1,0 +1,82 @@
+[
+  {
+    "dialectId": "yo-ijebu",
+    "languageId": "yo",
+    "name": "Ijebu",
+    "region": "Ijebu Ode, Ogun State",
+    "mapRegionId": "region-yo-ijebu",
+    "stampArt": "/stamps/ijebu.svg",
+    "order": 1,
+    "description": "Coastal Ogun Yoruba lect known for u-vowel shifts (usu for isu) and e-initial nouns (ẹdiyẹ for adìyẹ)."
+  },
+  {
+    "dialectId": "yo-ekiti",
+    "languageId": "yo",
+    "name": "Ekiti",
+    "region": "Ado-Ekiti, Ekiti State",
+    "mapRegionId": "region-yo-ekiti",
+    "stampArt": "/stamps/ekiti.svg",
+    "order": 2,
+    "description": "Highland eastern Yoruba lect preserving distinct vowel harmony and respectful compound greetings."
+  },
+  {
+    "dialectId": "yo-ondo",
+    "languageId": "yo",
+    "name": "Ondo",
+    "region": "Ondo Town, Ondo State",
+    "mapRegionId": "region-yo-ondo",
+    "stampArt": "/stamps/ondo.svg",
+    "order": 3,
+    "description": "Southeastern Yoruba lect sharing u-initial and e-initial lexical shifts with distinct tonal cadences."
+  },
+  {
+    "dialectId": "ig-owerri",
+    "languageId": "ig",
+    "name": "Owerri (Isuama)",
+    "region": "Owerri, Imo State",
+    "mapRegionId": "region-ig-owerri",
+    "stampArt": "/stamps/owerri.svg",
+    "order": 4,
+    "description": "Heartland Imo Igbo lect featuring rich consonant aspiration, nasalization, and warm kinship greetings."
+  },
+  {
+    "dialectId": "ig-onitsha",
+    "languageId": "ig",
+    "name": "Onitsha",
+    "region": "Onitsha, Anambra State",
+    "mapRegionId": "region-ig-onitsha",
+    "stampArt": "/stamps/onitsha.svg",
+    "order": 5,
+    "description": "Riverine commercial Igbo lect spoken along the Niger with distinct market and royal salutations."
+  },
+  {
+    "dialectId": "ig-ikwerre",
+    "languageId": "ig",
+    "name": "Ikwerre",
+    "region": "Port Harcourt, Rivers State",
+    "mapRegionId": "region-ig-ikwerre",
+    "stampArt": "/stamps/ikwerre.svg",
+    "order": 6,
+    "description": "Southern Igboid lect where plural children shifts from ụmụ to rụmụ in community and compound names."
+  },
+  {
+    "dialectId": "ha-kano",
+    "languageId": "ha",
+    "name": "Kano Hausa",
+    "region": "Kano, Kano State",
+    "mapRegionId": "region-ha-kano",
+    "stampArt": "/stamps/kano.svg",
+    "order": 7,
+    "description": "Classical commercial Hausa of Kurmi Market and ancient Kano city walls, rich in polite bargaining formulas."
+  },
+  {
+    "dialectId": "pcm-lagos",
+    "languageId": "pcm",
+    "name": "Lagos Pidgin",
+    "region": "Yaba to Obalende, Lagos State",
+    "mapRegionId": "region-pcm-lagos",
+    "stampArt": "/stamps/lagos-pidgin.svg",
+    "order": 8,
+    "description": "Fast-paced urban lingua franca of Lagos transit corridors, markets, and everyday street camaraderie."
+  }
+]

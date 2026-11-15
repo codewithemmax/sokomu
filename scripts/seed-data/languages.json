@@ -1,0 +1,30 @@
+[
+  {
+    "languageId": "yo",
+    "name": "Yoruba",
+    "nativeName": "Èdè Yorùbá",
+    "greeting": "Ẹ kú àbọ̀",
+    "toneSystem": "three-tone"
+  },
+  {
+    "languageId": "ig",
+    "name": "Igbo",
+    "nativeName": "Asụsụ Igbo",
+    "greeting": "Nnọọ",
+    "toneSystem": "two-tone-downstep"
+  },
+  {
+    "languageId": "ha",
+    "name": "Hausa",
+    "nativeName": "Harshen Hausa",
+    "greeting": "Sannu da zuwa",
+    "toneSystem": "two-tone-downstep"
+  },
+  {
+    "languageId": "pcm",
+    "name": "Nigerian Pidgin",
+    "nativeName": "Naija Pidgin",
+    "greeting": "How far",
+    "toneSystem": "none"
+  }
+]
