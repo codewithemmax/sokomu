@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { NanoReadinessProvider } from "@/hooks/useNanoReadiness";
 import { getFirebase, type FirebaseServices } from "@/lib/firebase/client";
 import {
   refreshRemoteConfig,
@@ -73,5 +74,9 @@ export function useFirebase(): FirebaseContextValue {
 }
 
 export function Providers({ children }: { children: ReactNode }) {
-  return <FirebaseProvider>{children}</FirebaseProvider>;
+  return (
+    <FirebaseProvider>
+      <NanoReadinessProvider>{children}</NanoReadinessProvider>
+    </FirebaseProvider>
+  );
 }

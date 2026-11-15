@@ -74,20 +74,20 @@ US-2.1: As a learner, I practise with verified regional dialect content.
 US-3.1: As a learner, drills run instantly on my device and fall back to the cloud when needed.
 US-3.2: As a judge, I can see where each response was generated.
 
-- [ ] T-3.1 Ambient Chrome AI types (src/types/chrome-ai.d.ts) and globals.d.ts
-- [ ] T-3.2 src/lib/ai/nano.ts availability and download with monitor progress
-- [ ] T-3.3 NanoReadinessProvider and useNanoReadiness hook (state machine in Flow A)
-- [ ] T-3.4 src/lib/ai/config.ts sanitizeGenerationConfig plus unit tests
-- [ ] T-3.5 src/lib/ai/schemas.ts plus src/types/ai.ts plus src/types/guards.ts (with tests)
-- [ ] T-3.6 src/lib/ai/models.ts getStructuredModel (PREFER_ON_DEVICE, ONLY_ON_DEVICE, ONLY_IN_CLOUD)
-- [ ] T-3.7 src/lib/ai/grounding.ts local RAG selection and serialization
-- [ ] T-3.8 src/lib/ai/prompts.ts data-only prompt builders
-- [ ] T-3.9 useHybridModel hook: generate, parse, guard, retry, fallback, telemetry record
-- [ ] T-3.10 src/lib/ai/inference-source.ts normalization plus test
-- [ ] T-3.11 src/lib/tone/normalize.ts and compare.ts with full unit tests (Yoruba and Igbo cases including ọkọ, ọkọ̀, ọ̀kọ̀)
-- [ ] T-3.12 Tonal grading pipeline: deterministic compare first, Nano feedback second
-- [ ] T-3.13 src/lib/ai/fallback-quiz.ts deterministic generator plus tests
-- [ ] T-3.14 Cloud fallback daily limit enforcement (cloud_fallback_daily_limit, stored in IDB meta)
+- [x] T-3.1 Ambient Chrome AI types (src/types/chrome-ai.d.ts) and globals.d.ts
+- [x] T-3.2 src/lib/ai/nano.ts availability and download with monitor progress
+- [x] T-3.3 NanoReadinessProvider and useNanoReadiness hook (state machine in Flow A)
+- [x] T-3.4 src/lib/ai/config.ts sanitizeGenerationConfig plus unit tests
+- [x] T-3.5 src/lib/ai/schemas.ts plus src/types/ai.ts plus src/types/guards.ts (with tests)
+- [x] T-3.6 src/lib/ai/models.ts getStructuredModel (PREFER_ON_DEVICE, ONLY_ON_DEVICE, ONLY_IN_CLOUD)
+- [x] T-3.7 src/lib/ai/grounding.ts local RAG selection and serialization
+- [x] T-3.8 src/lib/ai/prompts.ts data-only prompt builders
+- [x] T-3.9 useHybridModel hook: generate, parse, guard, retry, fallback, telemetry record
+- [x] T-3.10 src/lib/ai/inference-source.ts normalization plus test
+- [x] T-3.11 src/lib/tone/normalize.ts and compare.ts with full unit tests (Yoruba and Igbo cases including ọkọ, ọkọ̀, ọ̀kọ̀)
+- [x] T-3.12 Tonal grading pipeline: deterministic compare first, Nano feedback second
+- [x] T-3.13 src/lib/ai/fallback-quiz.ts deterministic generator plus tests
+- [x] T-3.14 Cloud fallback daily limit enforcement (cloud_fallback_daily_limit, stored in IDB meta)
 - [ ] T-3.15 Diagnostics page: Nano status, force cloud toggle, Remote Config values, App Check status
 
 ### Epic 4: Cloud TTS and Offline Caching
@@ -344,3 +344,4 @@ Product:
 | 2026-11-15 | T-1.1, T-1.8, T-1.10, T-1.11, T-1.13, T-2.7 | Google Antigravity | .firebaserc, firebase.json, firestore.rules, firestore.indexes.json, remoteconfig.template.json, tests/firestore.rules.test.ts, src/types/globals.d.ts, src/types/bun-test.d.ts, README.md, package.json, bun.lock | bun test (7 pass, 45 assertions), tsc --noEmit, and bun run check:secrets passed |
 | 2026-11-15 | T-1.5, T-1.6, T-1.7 | Google Antigravity | src/lib/firebase/*, src/hooks/useAuthUser.ts, src/hooks/useRemoteConfigValue.ts, src/app/providers.tsx, src/types/bun-test.d.ts, tests/firebase-client.test.ts, context/6-progress-tracker.md | bun test (12 pass, 51 assertions), tsc --noEmit, and bun run check:secrets passed |
 | 2026-11-15 | T-2.1, T-2.2, T-2.3, T-2.4, T-2.5 | Google Antigravity | src/types/domain.ts, scripts/seed-data/*, scripts/seed-firestore.ts, tests/seed-data.test.ts, context/6-progress-tracker.md | 4 languages, 8 dialects, 8 scenarios, 84 NFC-normalized glossary entries validated; bun test (16 pass, 337 assertions), tsc --noEmit, and bun run check:secrets passed |
+| 2026-11-15 | T-3.1 to T-3.14 | Google Antigravity | src/types/chrome-ai.d.ts, src/types/ai.ts, src/types/guards.ts, src/lib/ai/*, src/lib/tone/*, src/hooks/useNanoReadiness.ts, src/hooks/useHybridModel.ts, src/app/providers.tsx, tests/hybrid-ai-and-tone.test.ts, context/6-progress-tracker.md | Hybrid AI models, Schema.object contracts (with @firebase/ai 3.1.0 LanguageModelMessageContent array content), Nano readiness provider, deterministic NFC tone engine, and daily cloud cap implemented (telemetry provider event emit deferred to U-08); bun test (33 pass, 436 assertions), tsc --noEmit, and bun run check:secrets passed |
