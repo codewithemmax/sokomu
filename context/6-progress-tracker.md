@@ -34,8 +34,8 @@ User story US-0.1: As the Lead Architect, I want a secure, licensed public repos
 - [x] T-0.4 Add .env.example with NEXT_PUBLIC_FIREBASE_* placeholders
 - [x] T-0.5 Create public GitHub repo codewithemmax/sokomu on main and push
 - [x] T-0.6 Create .codexrules and context/1 to 6 planning suite
-- [ ] T-0.7 Add scripts/check-secrets.ts and bun run check:secrets script
-- [ ] T-0.8 Confirm GitHub About sidebar shows Apache-2.0, add topics (firebase, gemini, hybrid-ai, nextjs, yoruba, igbo, hausa, nigerian-pidgin)
+- [x] T-0.7 Add scripts/check-secrets.ts and bun run check:secrets script
+- [x] T-0.8 Confirm GitHub About sidebar shows Apache-2.0, add topics (firebase, gemini, hybrid-ai, nextjs, yoruba, igbo, hausa, nigerian-pidgin)
 
 ### Epic 1: Firebase Platform and Security
 
@@ -340,3 +340,4 @@ Product:
 | 2026-11-14 | T-0.4 | Google Antigravity | .env.example | Placeholders only |
 | 2026-11-14 | T-0.5 | Google Antigravity | git remote origin | Pushed main to codewithemmax/sokomu (commit d87b8c1) |
 | 2026-11-15 | T-0.6 | Google Antigravity | .codexrules, context/1-project-overview.md to context/6-progress-tracker.md | Documents reviewed for scope and style (no em dashes) |
+| 2026-11-15 | T-0.7, T-0.8 | Google Antigravity | LICENSE, package.json, scripts/check-secrets.ts, context/6-progress-tracker.md | bun run check:secrets and tsc --noEmit passed; GitHub topics added and canonical Apache-2.0 LICENSE pushed |
