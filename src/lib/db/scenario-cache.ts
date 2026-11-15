@@ -4,6 +4,10 @@ import { doc, getDoc, getDocs, query, where } from "firebase/firestore";
 import { scenariosColRef } from "@/lib/firebase/firestore";
 import type { DialectId, Scenario } from "@/types/domain";
 import { isIdbSupported, openSokomuDb } from "./idb";
+import {
+  getSeedScenario,
+  getSeedScenariosByDialect,
+} from "./seed-catalog";
 
 const memoryScenarios = new Map<string, Scenario>();
 
@@ -89,20 +93,32 @@ export async function loadScenario(
   }
 
   if (typeof navigator !== "undefined" && navigator.onLine === false) {
-    return null;
+    const seedFallback = getSeedScenario(scenarioId) ?? null;
+    if (seedFallback) {
+      await putScenario(seedFallback);
+    }
+    return seedFallback;
   }
 
   try {
     const ref = doc(scenariosColRef(), scenarioId);
     const snap = await getDoc(ref);
     if (!snap.exists()) {
-      return null;
+      const seedFallback = getSeedScenario(scenarioId) ?? null;
+      if (seedFallback) {
+        await putScenario(seedFallback);
+      }
+      return seedFallback;
     }
     const fetched = snap.data() as Scenario;
     await putScenario(fetched);
     return fetched;
   } catch {
-    return null;
+    const seedFallback = getSeedScenario(scenarioId) ?? null;
+    if (seedFallback) {
+      await putScenario(seedFallback);
+    }
+    return seedFallback;
   }
 }
 
@@ -115,7 +131,11 @@ export async function loadScenarios(
   }
 
   if (typeof navigator !== "undefined" && navigator.onLine === false) {
-    return [];
+    const seeded = getSeedScenariosByDialect(dialectId);
+    if (seeded.length > 0) {
+      await putScenarios(seeded);
+    }
+    return seeded;
   }
 
   try {
@@ -127,10 +147,19 @@ export async function loadScenarios(
       .sort((a, b) => a.order - b.order);
     if (fetched.length > 0) {
       await putScenarios(fetched);
+      return fetched;
     }
-    return fetched;
+    const seeded = getSeedScenariosByDialect(dialectId);
+    if (seeded.length > 0) {
+      await putScenarios(seeded);
+    }
+    return seeded;
   } catch {
-    return [];
+    const seeded = getSeedScenariosByDialect(dialectId);
+    if (seeded.length > 0) {
+      await putScenarios(seeded);
+    }
+    return seeded;
   }
 }
 

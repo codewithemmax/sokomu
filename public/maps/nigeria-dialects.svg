@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" fill="none" role="img" aria-label="Dialect map of Nigeria">
+  <title>Cultural Dialect Map of Nigeria</title>
+  <!-- Nigeria national outline -->
+  <path id="nigeria-outline" d="M88 148L142 86L238 64L348 56L458 68L554 92L584 166L542 258L496 346L424 416L324 468L244 462L186 408L102 388L78 312L88 148Z" fill="#EEEAE1" stroke="#121A3F" stroke-width="2" />
+  <!-- River Niger and River Benue confluence -->
+  <path id="rivers-niger-benue" d="M118 164C188 212 248 256 306 296M532 238C452 262 376 280 306 296M306 296C304 352 292 410 278 462" stroke="#0369A1" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4" opacity="0.45" />
+  <!-- Kano Hausa (Northern savannas) -->
+  <path id="region-ha-kano" d="M278 82L388 82L408 162L302 172L262 126L278 82Z" fill="#FFFFFF" stroke="#121A3F" stroke-width="1.75" />
+  <!-- Lagos Pidgin (Coastal Southwest lagoon) -->
+  <path id="region-pcm-lagos" d="M84 352L134 350L138 388L92 390L84 352Z" fill="#FFFFFF" stroke="#121A3F" stroke-width="1.75" />
+  <!-- Ijebu Yoruba (Ogun coastal belt) -->
+  <path id="region-yo-ijebu" d="M136 336L188 332L194 378L140 382L136 336Z" fill="#FFFFFF" stroke="#121A3F" stroke-width="1.75" />
+  <!-- Ondo Yoruba (Southeastern Yoruba forest) -->
+  <path id="region-yo-ondo" d="M192 324L248 322L252 374L196 376L192 324Z" fill="#FFFFFF" stroke="#121A3F" stroke-width="1.75" />
+  <!-- Ekiti Yoruba (Eastern Yoruba hills) -->
+  <path id="region-yo-ekiti" d="M196 276L254 274L256 318L194 320L196 276Z" fill="#FFFFFF" stroke="#121A3F" stroke-width="1.75" />
+  <!-- Onitsha Igbo (Lower Niger east bank) -->
+  <path id="region-ig-onitsha" d="M304 326L358 322L362 364L306 368L304 326Z" fill="#FFFFFF" stroke="#121A3F" stroke-width="1.75" />
+  <!-- Owerri Igbo (Imo heartland) -->
+  <path id="region-ig-owerri" d="M316 372L376 368L380 412L318 416L316 372Z" fill="#FFFFFF" stroke="#121A3F" stroke-width="1.75" />
+  <!-- Ikwerre (Rivers / Niger Delta north) -->
+  <path id="region-ig-ikwerre" d="M298 420L366 418L362 458L294 456L298 420Z" fill="#FFFFFF" stroke="#121A3F" stroke-width="1.75" />
+</svg>

@@ -5,6 +5,10 @@ import { glossaryColRef } from "@/lib/firebase/firestore";
 import { nfc } from "@/lib/tone/normalize";
 import type { DialectId, GlossaryEntry } from "@/types/domain";
 import { isIdbSupported, openSokomuDb } from "./idb";
+import {
+  getSeedGlossaryByDialect,
+  getSeedGlossaryByScenario,
+} from "./seed-catalog";
 
 const memoryGlossary = new Map<string, GlossaryEntry>();
 
@@ -91,7 +95,11 @@ export async function loadGlossaryForScenario(
   }
 
   if (typeof navigator !== "undefined" && navigator.onLine === false) {
-    return [];
+    const seeded = getSeedGlossaryByScenario(scenarioId, dialectId);
+    if (seeded.length > 0) {
+      await putGlossaryEntries(seeded);
+    }
+    return seeded;
   }
 
   try {
@@ -104,10 +112,19 @@ export async function loadGlossaryForScenario(
     const fetched = snap.docs.map((d) => d.data() as GlossaryEntry);
     if (fetched.length > 0) {
       await putGlossaryEntries(fetched);
+      return fetched;
     }
-    return fetched;
+    const seeded = getSeedGlossaryByScenario(scenarioId, dialectId);
+    if (seeded.length > 0) {
+      await putGlossaryEntries(seeded);
+    }
+    return seeded;
   } catch {
-    return [];
+    const seeded = getSeedGlossaryByScenario(scenarioId, dialectId);
+    if (seeded.length > 0) {
+      await putGlossaryEntries(seeded);
+    }
+    return seeded;
   }
 }
 
@@ -120,7 +137,11 @@ export async function loadGlossaryForDialect(
   }
 
   if (typeof navigator !== "undefined" && navigator.onLine === false) {
-    return [];
+    const seeded = getSeedGlossaryByDialect(dialectId);
+    if (seeded.length > 0) {
+      await putGlossaryEntries(seeded);
+    }
+    return seeded;
   }
 
   try {
@@ -133,10 +154,19 @@ export async function loadGlossaryForDialect(
     const fetched = snap.docs.map((d) => d.data() as GlossaryEntry);
     if (fetched.length > 0) {
       await putGlossaryEntries(fetched);
+      return fetched;
     }
-    return fetched;
+    const seeded = getSeedGlossaryByDialect(dialectId);
+    if (seeded.length > 0) {
+      await putGlossaryEntries(seeded);
+    }
+    return seeded;
   } catch {
-    return [];
+    const seeded = getSeedGlossaryByDialect(dialectId);
+    if (seeded.length > 0) {
+      await putGlossaryEntries(seeded);
+    }
+    return seeded;
   }
 }
 
