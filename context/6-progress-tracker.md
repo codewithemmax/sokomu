@@ -135,15 +135,15 @@ US-6.1: As a learner, the app feels respectful, beautiful, and clear on desktop 
 - [x] T-6.8 StampCard and 8 stamp SVGs
 - [x] T-6.9 RegionDrawer
 - [x] T-6.10 Map dashboard page
-- [ ] T-6.11 Scenario library page
-- [ ] T-6.12 Scenario page: tabs, DualSpeakerPlayer, transcript, cultural note
-- [ ] T-6.13 QuizCard and Vocabulary tab
-- [ ] T-6.14 DiacriticPicker
-- [ ] T-6.15 ToneDrill, ToneChip, FeedbackCard
+- [x] T-6.11 Scenario library page
+- [x] T-6.12 Scenario page: tabs, DualSpeakerPlayer, transcript, cultural note
+- [x] T-6.13 QuizCard and Vocabulary tab
+- [x] T-6.14 DiacriticPicker
+- [x] T-6.15 ToneDrill, ToneChip, FeedbackCard
 - [ ] T-6.16 Progress page (mastery bars, stamps grid, data saved history)
 - [ ] T-6.17 Library page (cached scenarios, storage meter, clear cache)
 - [ ] T-6.18 Settings page with SignInUpgradeModal
-- [ ] T-6.19 Offline dimming applied per matrix in 3-ui-context.md 5.3
+- [x] T-6.19 Offline dimming applied per matrix in 3-ui-context.md 5.3
 - [x] T-6.20 Remote Config demo_announcement bar
 - [ ] T-6.21 Accessibility pass (focus, aria-live, labels, contrast, reduced motion)
 
@@ -350,3 +350,4 @@ Product:
 | 2026-11-15 | T-5.1, T-5.2, T-5.7, T-5.8, T-5.9 | Google Antigravity | src/hooks/useInferenceTelemetry.ts, src/hooks/useDataSaved.ts, src/lib/progress/mastery.ts, src/lib/progress/stamps.ts, src/hooks/useHybridModel.ts, src/lib/ai/tts.ts, src/lib/db/idb.ts, src/app/providers.tsx, src/types/bun-test.d.ts, tests/telemetry-and-progression.test.ts, context/6-progress-tracker.md | Implemented TelemetryProvider and event emitter bound to SDK inferenceSource, FR-TEL-03 mobile data and Naira saved calculator, H/M/L tonal mastery aggregation, Path C stamp unlock logic, and Firestore progress/stamp/telemetry sync; bun test (48 pass, 529 assertions), tsc --noEmit, and bun run check:secrets passed |
 | 2026-11-15 | T-5.3 to T-5.6, T-6.1 to T-6.4, T-6.6, T-6.20 | Google Antigravity | src/app/globals.css, src/app/layout.tsx, src/app/page.tsx, src/components/ui/*, src/components/telemetry/*, src/components/layout/*, public/brand/*, public/icons/*, tests/design-system-and-telemetry-ui.test.ts, context/6-progress-tracker.md | Implemented Tailwind v4 @theme design tokens, Google Fonts (Noto Serif Display, Noto Sans, JetBrains Mono), brand/telemetry SVG icons, accessible UI primitives, live telemetry header/pill/counter/drawer/banners, responsive AppShell (LeftRail + BottomTabBar), and Path C landing page; bun test (53 pass, 566 assertions), tsc --noEmit, and bun run check:secrets passed |
 | 2026-11-15 | T-6.5, T-6.7, T-6.8, T-6.9, T-6.10 | Google Antigravity | public/maps/nigeria-dialects.svg, public/stamps/*.svg, src/lib/db/seed-catalog.ts, src/lib/db/scenario-cache.ts, src/lib/db/glossary-cache.ts, src/lib/progress/profile.ts, src/components/map/*, src/app/onboarding/page.tsx, src/app/map/page.tsx, tests/map-and-onboarding.test.ts, context/6-progress-tracker.md | Implemented 4-step Onboarding wizard, interactive NigeriaMap SVG and component, 8 cultural dialect stamp SVGs, StampCard, RegionDrawer, StampUnlockedModal, and Cultural Map Dashboard (/map); bun test (56 pass, 643 assertions), tsc --noEmit, and bun run check:secrets passed |
+| 2026-11-15 | T-6.11 to T-6.15, T-6.19 | Google Antigravity | src/components/audio/DualSpeakerPlayer.tsx, src/components/drill/*, src/app/scenarios/page.tsx, src/app/scenarios/[scenarioId]/page.tsx, tests/scenarios-and-drills.test.ts, context/6-progress-tracker.md | Implemented Scenario Library (/scenarios), tabbed Scenario detail workspace (/scenarios/[scenarioId]), DualSpeakerPlayer (loaded dynamically with ssr: false), DiacriticPicker (Yoruba/Igbo/Hausa NFC input), ToneChip, FeedbackCard, QuizCard, ToneDrill, and offline dimming; bun test (58 pass, 654 assertions), tsc --noEmit, and bun run check:secrets passed |
