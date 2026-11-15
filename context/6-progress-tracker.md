@@ -46,9 +46,9 @@ US-1.2: As the operator, I can change prompts and limits without redeploying.
 - [~] T-1.2 Enable Authentication providers: Anonymous and Google
 - [~] T-1.3 Create Cloud Firestore database (production mode), choose region (europe-west2 or nearest to users)
 - [~] T-1.4 Create reCAPTCHA Enterprise key, register App Check for the web app, register debug tokens
-- [ ] T-1.5 Implement src/lib/firebase/config.ts, app-check.ts, client.ts (fixed init order)
-- [ ] T-1.6 Implement src/lib/firebase/auth.ts (ensureAnonymousUser, upgradeWithGoogle with linkWithPopup)
-- [ ] T-1.7 Implement remote-config-defaults.ts and remote-config.ts (typed getters, onConfigUpdate)
+- [x] T-1.5 Implement src/lib/firebase/config.ts, app-check.ts, client.ts (fixed init order)
+- [x] T-1.6 Implement src/lib/firebase/auth.ts (ensureAnonymousUser, upgradeWithGoogle with linkWithPopup)
+- [x] T-1.7 Implement remote-config-defaults.ts and remote-config.ts (typed getters, onConfigUpdate)
 - [x] T-1.8 Publish initial Remote Config template matching defaults; export to remoteconfig.template.json
 - [~] T-1.9 Create Server Prompt Templates sokomu-quiz-v1, sokomu-grade-v1, sokomu-tts-dialogue-v1
 - [x] T-1.10 Write firestore.rules and firestore.indexes.json; add firebase.json
@@ -342,3 +342,4 @@ Product:
 | 2026-11-15 | T-0.6 | Google Antigravity | .codexrules, context/1-project-overview.md to context/6-progress-tracker.md | Documents reviewed for scope and style (no em dashes) |
 | 2026-11-15 | T-0.7, T-0.8 | Google Antigravity | LICENSE, package.json, scripts/check-secrets.ts, context/6-progress-tracker.md | bun run check:secrets and tsc --noEmit passed; GitHub topics added and canonical Apache-2.0 LICENSE pushed |
 | 2026-11-15 | T-1.1, T-1.8, T-1.10, T-1.11, T-1.13, T-2.7 | Google Antigravity | .firebaserc, firebase.json, firestore.rules, firestore.indexes.json, remoteconfig.template.json, tests/firestore.rules.test.ts, src/types/globals.d.ts, src/types/bun-test.d.ts, README.md, package.json, bun.lock | bun test (7 pass, 45 assertions), tsc --noEmit, and bun run check:secrets passed |
+| 2026-11-15 | T-1.5, T-1.6, T-1.7 | Google Antigravity | src/lib/firebase/*, src/hooks/useAuthUser.ts, src/hooks/useRemoteConfigValue.ts, src/app/providers.tsx, src/types/bun-test.d.ts, tests/firebase-client.test.ts, context/6-progress-tracker.md | bun test (12 pass, 51 assertions), tsc --noEmit, and bun run check:secrets passed |
