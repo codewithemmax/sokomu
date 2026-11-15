@@ -199,3 +199,7 @@ export async function registerServiceWorker(): Promise<ServiceWorkerRegistration
     return null;
   }
 }
+
+export function clearMemoryMetaForTests(): void {
+  memoryMeta.clear();
+}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback } from "react";
+import { emitInferenceTelemetryEvent } from "@/hooks/useInferenceTelemetry";
 import {
   canUseCloudFallback,
   incrementCloudFallbackCount,
@@ -271,7 +272,7 @@ export function useHybridModel(): UseHybridModelResult {
           dialectRules,
         });
       } catch {
-        return {
+        const outcome: HybridCallOutcome<VocabularyQuiz> = {
           data: buildFallbackVocabularyQuiz(
             options.dialectId,
             fallbackEntries,
@@ -281,9 +282,15 @@ export function useHybridModel(): UseHybridModelResult {
           latencyMs: Math.round(nowMs() - started),
           retried: false,
         };
+        await emitInferenceTelemetryEvent({
+          feature: "vocab_quiz",
+          source: outcome.source,
+          latencyMs: outcome.latencyMs,
+        });
+        return outcome;
       }
 
-      return runGuardedGeneration<VocabularyQuiz>({
+      const outcome = await runGuardedGeneration<VocabularyQuiz>({
         prompt,
         invokeModel: async (text) => {
           const result = await model.generateContent(text);
@@ -299,6 +306,12 @@ export function useHybridModel(): UseHybridModelResult {
           incrementCloudFallbackCount();
         },
       });
+      await emitInferenceTelemetryEvent({
+        feature: "vocab_quiz",
+        source: outcome.source,
+        latencyMs: outcome.latencyMs,
+      });
+      return outcome;
     },
     [resolveMode],
   );
@@ -340,7 +353,7 @@ export function useHybridModel(): UseHybridModelResult {
           dialectRules,
         });
       } catch {
-        return {
+        const outcome: HybridCallOutcome<TonalDrill> = {
           data: buildFallbackTonalDrill(
             options.dialectId,
             fallbackEntries,
@@ -350,9 +363,15 @@ export function useHybridModel(): UseHybridModelResult {
           latencyMs: Math.round(nowMs() - started),
           retried: false,
         };
+        await emitInferenceTelemetryEvent({
+          feature: "tone_drill",
+          source: outcome.source,
+          latencyMs: outcome.latencyMs,
+        });
+        return outcome;
       }
 
-      return runGuardedGeneration<TonalDrill>({
+      const outcome = await runGuardedGeneration<TonalDrill>({
         prompt,
         invokeModel: async (text) => {
           const result = await model.generateContent(text);
@@ -368,6 +387,12 @@ export function useHybridModel(): UseHybridModelResult {
           incrementCloudFallbackCount();
         },
       });
+      await emitInferenceTelemetryEvent({
+        feature: "tone_drill",
+        source: outcome.source,
+        latencyMs: outcome.latencyMs,
+      });
+      return outcome;
     },
     [resolveMode],
   );
@@ -405,12 +430,18 @@ export function useHybridModel(): UseHybridModelResult {
           dialectRules,
         });
       } catch {
-        return {
+        const outcome: HybridCallOutcome<TonalGrading> = {
           data: deterministicGrade,
           source: "CACHED_FALLBACK",
           latencyMs: Math.round(nowMs() - started),
           retried: false,
         };
+        await emitInferenceTelemetryEvent({
+          feature: "tone_grading",
+          source: outcome.source,
+          latencyMs: outcome.latencyMs,
+        });
+        return outcome;
       }
 
       const rawOutcome = await runGuardedGeneration<TonalGrading>({
@@ -429,13 +460,19 @@ export function useHybridModel(): UseHybridModelResult {
         },
       });
 
-      return {
+      const outcome: HybridCallOutcome<TonalGrading> = {
         ...rawOutcome,
         data: mergeDeterministicAndModelGrading(
           deterministicGrade,
           rawOutcome.data,
         ),
       };
+      await emitInferenceTelemetryEvent({
+        feature: "tone_grading",
+        source: outcome.source,
+        latencyMs: outcome.latencyMs,
+      });
+      return outcome;
     },
     [resolveMode],
   );

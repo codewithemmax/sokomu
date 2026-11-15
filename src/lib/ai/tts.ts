@@ -13,7 +13,7 @@ import {
   putCachedAudio,
 } from "@/lib/db/audio-cache";
 import type { AudioCacheRecord } from "@/lib/db/idb";
-import { appendTelemetryEvent } from "@/lib/db/telemetry-store";
+import { emitInferenceTelemetryEvent } from "@/hooks/useInferenceTelemetry";
 import { getFirebase } from "@/lib/firebase/client";
 import { rcBoolean, rcString } from "@/lib/firebase/remote-config";
 import { REMOTE_CONFIG_DEFAULTS } from "@/lib/firebase/remote-config-defaults";
@@ -368,12 +368,11 @@ export async function synthesizeOrReplayScenarioAudio(
   if (cachedRecord) {
     const firstChunkMs = Math.round(nowMs() - started);
     options.onChunk?.(new Uint8Array(cachedRecord.pcm));
-    await appendTelemetryEvent({
+    await emitInferenceTelemetryEvent({
       feature: "cached_replay",
       source: "CACHED_FALLBACK",
       latencyMs: firstChunkMs,
-      bytesSaved: cachedRecord.bytes,
-      ts: Date.now(),
+      customBytesSaved: cachedRecord.bytes,
     });
     return {
       record: cachedRecord,
@@ -429,12 +428,10 @@ export async function synthesizeOrReplayScenarioAudio(
   };
 
   await putCachedAudio(record);
-  await appendTelemetryEvent({
+  await emitInferenceTelemetryEvent({
     feature: "tts_dialogue",
     source: "IN_CLOUD",
     latencyMs: firstChunkLatencyMs ?? Math.round(nowMs() - started),
-    bytesSaved: 0,
-    ts: Date.now(),
   });
 
   return {

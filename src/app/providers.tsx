@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { TelemetryProvider } from "@/hooks/useInferenceTelemetry";
 import { NanoReadinessProvider } from "@/hooks/useNanoReadiness";
 import { registerServiceWorker } from "@/lib/db/idb";
 import { getFirebase, type FirebaseServices } from "@/lib/firebase/client";
@@ -85,7 +86,9 @@ export function useFirebase(): FirebaseContextValue {
 export function Providers({ children }: { children: ReactNode }) {
   return (
     <FirebaseProvider>
-      <NanoReadinessProvider>{children}</NanoReadinessProvider>
+      <NanoReadinessProvider>
+        <TelemetryProvider>{children}</TelemetryProvider>
+      </NanoReadinessProvider>
     </FirebaseProvider>
   );
 }

@@ -111,15 +111,15 @@ US-4.2: As a student, I download once and replay offline forever.
 US-5.1: As a learner, I see honest proof of where my practice ran and what it saved me.
 US-5.2: As a learner, I earn dialect stamps for real cultural milestones.
 
-- [ ] T-5.1 TelemetryProvider and useInferenceTelemetry (event store, latest source)
-- [ ] T-5.2 useDataSaved implementing FR-TEL-03 with Remote Config constants
+- [x] T-5.1 TelemetryProvider and useInferenceTelemetry (event store, latest source)
+- [x] T-5.2 useDataSaved implementing FR-TEL-03 with Remote Config constants
 - [ ] T-5.3 InferenceSourcePill component
 - [ ] T-5.4 DataSavedCounter component
 - [ ] T-5.5 ConnectivityBadge and OfflineBanner (under 100 ms transition)
 - [ ] T-5.6 TelemetryDrawer
-- [ ] T-5.7 Tonal Accuracy Mastery computation and Firestore progress writes
-- [ ] T-5.8 Stamp award logic and StampUnlockedModal
-- [ ] T-5.9 Telemetry summary sync to users/{uid}/telemetry/summary
+- [x] T-5.7 Tonal Accuracy Mastery computation and Firestore progress writes
+- [x] T-5.8 Stamp award logic and StampUnlockedModal (logic complete; modal UI in U-10)
+- [x] T-5.9 Telemetry summary sync to users/{uid}/telemetry/summary
 
 ### Epic 6: UI and Screens
 
@@ -347,3 +347,4 @@ Product:
 | 2026-11-15 | T-3.1 to T-3.14 | Google Antigravity | src/types/chrome-ai.d.ts, src/types/ai.ts, src/types/guards.ts, src/lib/ai/*, src/lib/tone/*, src/hooks/useNanoReadiness.ts, src/hooks/useHybridModel.ts, src/app/providers.tsx, tests/hybrid-ai-and-tone.test.ts, context/6-progress-tracker.md | Hybrid AI models, Schema.object contracts (with @firebase/ai 3.1.0 LanguageModelMessageContent array content), Nano readiness provider, deterministic NFC tone engine, and daily cloud cap implemented (telemetry provider event emit deferred to U-08); bun test (33 pass, 436 assertions), tsc --noEmit, and bun run check:secrets passed |
 | 2026-11-15 | T-4.1, T-4.2, T-4.7, T-4.8, T-4.9 | Google Antigravity | package.json, bun.lock, src/types/telemetry.ts, src/types/bun-test.d.ts, src/lib/db/*, src/lib/sync/sync-engine.ts, src/hooks/useOnlineStatus.ts, src/hooks/useHybridModel.ts, src/app/providers.tsx, src/app/offline/page.tsx, public/sw.js, tests/offline-db-and-sync.test.ts, context/6-progress-tracker.md | Installed idb@8.0.4, implemented IndexedDB sokomu v1 schema and CRUD stores (audioCache, glossary, scenarios, drillQueue, telemetry, meta), IDB-first loaders with Firestore fallback, storage persistence/estimate helpers, app-shell service worker, /offline route, and idempotent clientEventId sync engine; bun test (37 pass, 462 assertions), tsc --noEmit, and bun run check:secrets passed |
 | 2026-11-15 | T-4.3, T-4.4, T-4.5, T-4.6, T-4.10 | Google Antigravity | src/lib/audio/pcm-player.ts, src/lib/ai/tts.ts, src/types/bun-test.d.ts, tests/tts-and-pcm.test.ts, context/6-progress-tracker.md | Implemented gapless 24 kHz 16-bit mono little-endian PCM Web Audio player with odd-byte carry handling, multi-speaker gemini-3.1-flash-tts-preview streaming synthesis, promptHash audioCache persistence and offline replay, and typed TTS error classification; bun test (42 pass, 496 assertions), tsc --noEmit, and bun run check:secrets passed |
+| 2026-11-15 | T-5.1, T-5.2, T-5.7, T-5.8, T-5.9 | Google Antigravity | src/hooks/useInferenceTelemetry.ts, src/hooks/useDataSaved.ts, src/lib/progress/mastery.ts, src/lib/progress/stamps.ts, src/hooks/useHybridModel.ts, src/lib/ai/tts.ts, src/lib/db/idb.ts, src/app/providers.tsx, src/types/bun-test.d.ts, tests/telemetry-and-progression.test.ts, context/6-progress-tracker.md | Implemented TelemetryProvider and event emitter bound to SDK inferenceSource, FR-TEL-03 mobile data and Naira saved calculator, H/M/L tonal mastery aggregation, Path C stamp unlock logic, and Firestore progress/stamp/telemetry sync; bun test (48 pass, 529 assertions), tsc --noEmit, and bun run check:secrets passed |
