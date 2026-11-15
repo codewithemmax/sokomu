@@ -25,12 +25,12 @@ import type {
 } from "@/types/domain";
 
 export default function SettingsPage() {
-  const { user } = useAuthUser();
+  const { user, role: authRole } = useAuthUser();
   const online = useOnlineStatus();
   const { statusState } = useNanoReadiness();
 
   const [profile, setProfile] = useState<UserProfile | null>(null);
-  const role = profile?.role ?? "learner";
+  const role = authRole !== "learner" ? authRole : (profile?.role ?? "learner");
   const [languageId, setLanguageId] = useState<LanguageId>("yo");
   const [dialectId, setDialectId] = useState<DialectId>("yo-ijebu");
   const [goal, setGoal] = useState<LearningGoal>("elder-greetings");

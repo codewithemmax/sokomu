@@ -151,13 +151,13 @@ US-6.1: As a learner, the app feels respectful, beautiful, and clear on desktop 
 
 US-7.1: As a native trainer, I can submit and review dialect entries with correct tones, even on a weak network.
 
-- [ ] T-7.1 Role gating and trainer request flow
-- [ ] T-7.2 EntryForm with DiacriticPicker and tone pattern buttons
-- [ ] T-7.3 Optional on-device TrainerAssist check (Schema.object)
-- [ ] T-7.4 Submission write with offline queue indicator
-- [ ] T-7.5 Review queue with approve or reject batch (no self-approval)
-- [ ] T-7.6 DictionaryDrawer for learners and trainers
-- [ ] T-7.7 Document Remote Config dialect rule promotion procedure
+- [x] T-7.1 Role gating and trainer request flow
+- [x] T-7.2 EntryForm with DiacriticPicker and tone pattern buttons
+- [x] T-7.3 Optional on-device TrainerAssist check (Schema.object)
+- [x] T-7.4 Submission write with offline queue indicator
+- [x] T-7.5 Review queue with approve or reject batch (no self-approval)
+- [x] T-7.6 DictionaryDrawer for learners and trainers
+- [x] T-7.7 Document Remote Config dialect rule promotion procedure
 
 ### Epic 8: Quality, Testing and Hardening
 
@@ -352,3 +352,4 @@ Product:
 | 2026-11-15 | T-6.5, T-6.7, T-6.8, T-6.9, T-6.10 | Google Antigravity | public/maps/nigeria-dialects.svg, public/stamps/*.svg, src/lib/db/seed-catalog.ts, src/lib/db/scenario-cache.ts, src/lib/db/glossary-cache.ts, src/lib/progress/profile.ts, src/components/map/*, src/app/onboarding/page.tsx, src/app/map/page.tsx, tests/map-and-onboarding.test.ts, context/6-progress-tracker.md | Implemented 4-step Onboarding wizard, interactive NigeriaMap SVG and component, 8 cultural dialect stamp SVGs, StampCard, RegionDrawer, StampUnlockedModal, and Cultural Map Dashboard (/map); bun test (56 pass, 643 assertions), tsc --noEmit, and bun run check:secrets passed |
 | 2026-11-15 | T-6.11 to T-6.15, T-6.19 | Google Antigravity | src/components/audio/DualSpeakerPlayer.tsx, src/components/drill/*, src/app/scenarios/page.tsx, src/app/scenarios/[scenarioId]/page.tsx, tests/scenarios-and-drills.test.ts, context/6-progress-tracker.md | Implemented Scenario Library (/scenarios), tabbed Scenario detail workspace (/scenarios/[scenarioId]), DualSpeakerPlayer (loaded dynamically with ssr: false), DiacriticPicker (Yoruba/Igbo/Hausa NFC input), ToneChip, FeedbackCard, QuizCard, ToneDrill, and offline dimming; bun test (58 pass, 654 assertions), tsc --noEmit, and bun run check:secrets passed |
 | 2026-11-15 | T-3.15, T-6.16, T-6.17, T-6.18 | Google Antigravity | src/components/ui/SignInUpgradeModal.tsx, src/app/library/page.tsx, src/app/progress/page.tsx, src/app/settings/page.tsx, src/app/settings/diagnostics/page.tsx, src/app/diagnostics/page.tsx, tests/library-progress-and-diagnostics.test.ts, context/6-progress-tracker.md | Implemented Offline Library (/library), Progress passport (/progress), Account & Learning Settings (/settings) with SignInUpgradeModal, and Hybrid AI / Remote Config / App Check Diagnostics (/settings/diagnostics and /diagnostics); bun test (61 pass, 667 assertions), tsc --noEmit, and bun run check:secrets passed |
+| 2026-11-15 | T-7.1 to T-7.7 | Google Antigravity | src/lib/ai/fallback-quiz.ts, src/hooks/useHybridModel.ts, src/hooks/useAuthUser.ts, src/app/settings/page.tsx, src/lib/trainer/submissions.ts, src/components/trainer/*, src/app/scenarios/[scenarioId]/page.tsx, src/app/trainer/*, docs/remote-config-dialect-promotion.md, tests/trainer-portal.test.ts, context/6-progress-tracker.md | Implemented Native Speaker Trainer Portal (/trainer, /trainer/submit, /trainer/queue, /trainer/entries), live users/{uid}.role subscription, EntryForm with DiacriticPicker and H/M/L toggles, PREFER_ON_DEVICE assistTrainerEntry check, offline Will-sync submission queue, two-trainer peer review batch write blocking self-approval, DictionaryDrawer on scenarios and entries, and Remote Config promotion runbook; bun test (66 pass, 698 assertions), tsc --noEmit, and bun run check:secrets passed |

@@ -9,6 +9,7 @@ import {
 } from "@/lib/ai/config";
 import {
   buildFallbackTonalDrill,
+  buildFallbackTrainerAssist,
   buildFallbackVocabularyQuiz,
 } from "@/lib/ai/fallback-quiz";
 import { selectGroundingEntries } from "@/lib/ai/grounding";
@@ -18,11 +19,13 @@ import {
   buildGradingPrompt,
   buildQuizPrompt,
   buildTonalDrillPrompt,
+  buildTrainerAssistPrompt,
   formatDialectRulesBlock,
 } from "@/lib/ai/prompts";
 import {
   TonalDrillSchema,
   TonalGradingSchema,
+  TrainerAssistSchema,
   VocabularyQuizSchema,
 } from "@/lib/ai/schemas";
 import { getFirebase } from "@/lib/firebase/client";
@@ -35,10 +38,16 @@ import type {
   InferenceSourceLabel,
   TonalDrill,
   TonalGrading,
+  TrainerAssist,
   VocabularyQuiz,
 } from "@/types/ai";
 import type { DialectId, GlossaryEntry, Tone } from "@/types/domain";
-import { isTonalDrill, isTonalGrading, isVocabularyQuiz } from "@/types/guards";
+import {
+  isTonalDrill,
+  isTonalGrading,
+  isTrainerAssist,
+  isVocabularyQuiz,
+} from "@/types/guards";
 
 const RETRY_SUFFIX =
   "\n\nIMPORTANT: Return ONLY valid JSON matching the required schema and CONTEXT entryIds.";
@@ -207,6 +216,13 @@ export interface GradeToneOptions {
   forceCloud?: boolean;
 }
 
+export interface AssistTrainerEntryOptions {
+  dialectId: DialectId;
+  headword: string;
+  glossEn: string;
+  forceCloud?: boolean;
+}
+
 export interface UseHybridModelResult {
   generateQuiz: (
     options: GenerateQuizOptions,
@@ -217,6 +233,9 @@ export interface UseHybridModelResult {
   gradeToneAttempt: (
     options: GradeToneOptions,
   ) => Promise<HybridCallOutcome<TonalGrading>>;
+  assistTrainerEntry: (
+    options: AssistTrainerEntryOptions,
+  ) => Promise<HybridCallOutcome<TrainerAssist>>;
 }
 
 export function useHybridModel(): UseHybridModelResult {
@@ -477,9 +496,96 @@ export function useHybridModel(): UseHybridModelResult {
     [resolveMode],
   );
 
+  const assistTrainerEntry = useCallback(
+    async (
+      options: AssistTrainerEntryOptions,
+    ): Promise<HybridCallOutcome<TrainerAssist>> => {
+      const started = nowMs();
+      const deterministicAssist = buildFallbackTrainerAssist(
+        options.headword,
+        options.dialectId,
+      );
+
+      if (!options.headword.trim()) {
+        const outcome: HybridCallOutcome<TrainerAssist> = {
+          data: deterministicAssist,
+          source: "CACHED_FALLBACK",
+          latencyMs: Math.round(nowMs() - started),
+          retried: false,
+        };
+        await emitInferenceTelemetryEvent({
+          feature: "trainer_assist",
+          source: outcome.source,
+          latencyMs: outcome.latencyMs,
+        });
+        return outcome;
+      }
+
+      const cfg = readRuntimeAiConfig();
+      const mode = await resolveMode(options.forceCloud);
+      const dialectRules = formatDialectRulesBlock(
+        options.dialectId,
+        cfg.dialectRulesJson,
+      );
+      const prompt = buildTrainerAssistPrompt(
+        options.headword,
+        options.glossEn,
+        options.dialectId,
+      );
+
+      let model;
+      try {
+        model = getStructuredModel({
+          mode,
+          schema: TrainerAssistSchema,
+          systemInstructionKey: "ai_system_instruction_tone",
+          temperatureKey: "ai_grading_temperature",
+          dialectRules,
+        });
+      } catch {
+        const outcome: HybridCallOutcome<TrainerAssist> = {
+          data: deterministicAssist,
+          source: "CACHED_FALLBACK",
+          latencyMs: Math.round(nowMs() - started),
+          retried: false,
+        };
+        await emitInferenceTelemetryEvent({
+          feature: "trainer_assist",
+          source: outcome.source,
+          latencyMs: outcome.latencyMs,
+        });
+        return outcome;
+      }
+
+      const outcome = await runGuardedGeneration<TrainerAssist>({
+        prompt,
+        invokeModel: async (text) => {
+          const result = await model.generateContent(text);
+          return {
+            text: result.response.text(),
+            inferenceSource: result.response.inferenceSource,
+          };
+        },
+        guard: isTrainerAssist,
+        buildFallback: () => deterministicAssist,
+        onCloudCall: () => {
+          incrementCloudFallbackCount();
+        },
+      });
+      await emitInferenceTelemetryEvent({
+        feature: "trainer_assist",
+        source: outcome.source,
+        latencyMs: outcome.latencyMs,
+      });
+      return outcome;
+    },
+    [resolveMode],
+  );
+
   return {
     generateQuiz,
     generateTonalDrill,
     gradeToneAttempt,
+    assistTrainerEntry,
   };
 }

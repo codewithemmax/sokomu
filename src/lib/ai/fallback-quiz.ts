@@ -2,11 +2,18 @@ import type {
   QuestionType,
   TonalDrill,
   TonalDrillItem,
+  TrainerAssist,
   VocabularyQuestion,
   VocabularyQuiz,
 } from "@/types/ai";
 import type { DialectId, GlossaryEntry } from "@/types/domain";
-import { nfc, stripTones } from "@/lib/tone/normalize";
+import {
+  extractTonePattern,
+  nfc,
+  splitGraphemeClusters,
+  stripAllDiacritics,
+  stripTones,
+} from "@/lib/tone/normalize";
 
 const FALLBACK_ENGLISH_DISTRACTORS = [
   "morning greeting",
@@ -186,4 +193,86 @@ export function buildFallbackTonalDrill(
   }
 
   return { dialectId, items };
+}
+
+function isVowelCluster(cluster: string): boolean {
+  const base = stripAllDiacritics(cluster).toLowerCase();
+  return base === "a" || base === "e" || base === "i" || base === "o" || base === "u";
+}
+
+function hasExplicitToneNasal(cluster: string): boolean {
+  const plain = stripTones(cluster);
+  const base = stripAllDiacritics(cluster).toLowerCase();
+  return (base === "n" || base === "m") && plain !== nfc(cluster);
+}
+
+/**
+ * Splits a Nigerian language headword into approximate syllables for TrainerAssist fallback.
+ */
+export function segmentSyllablesHeuristic(headword: string): string[] {
+  const normalized = nfc(headword).trim();
+  if (!normalized) return [];
+
+  const tokens = normalized.split(/[\s-]+/).filter(Boolean);
+  const out: string[] = [];
+
+  for (const token of tokens) {
+    const clusters = splitGraphemeClusters(token);
+    let current = "";
+    for (const cluster of clusters) {
+      current += cluster;
+      if (isVowelCluster(cluster) || hasExplicitToneNasal(cluster)) {
+        out.push(current);
+        current = "";
+      }
+    }
+    if (current) {
+      if (out.length > 0 && tokens.length === 1) {
+        out[out.length - 1] = `${out[out.length - 1]}${current}`;
+      } else if (out.length > 0 && !current.includes("'") && current.length <= 2) {
+        out[out.length - 1] = `${out[out.length - 1]}${current}`;
+      } else {
+        out.push(current);
+      }
+    }
+  }
+
+  return out.length > 0 ? out : [normalized];
+}
+
+/**
+ * Deterministic orthography and tone check fallback when on-device and cloud AI are unavailable.
+ */
+export function buildFallbackTrainerAssist(
+  headword: string,
+  dialectId: DialectId,
+): TrainerAssist {
+  const trimmedRaw = headword.trim();
+  const normalized = nfc(trimmedRaw);
+  const syllables = segmentSyllablesHeuristic(normalized);
+  const safeSyllables = syllables.length > 0 ? syllables : [normalized || "?"];
+  const suggestedTonePattern = extractTonePattern(safeSyllables);
+
+  const warnings: string[] = [];
+  if (trimmedRaw !== normalized) {
+    warnings.push(
+      "Input contained decomposed diacritics; saved entries normalize to Unicode NFC.",
+    );
+  }
+  const isTonal = dialectId.startsWith("yo-") || dialectId.startsWith("ig-");
+  if (
+    isTonal &&
+    normalized.length > 0 &&
+    suggestedTonePattern.every((tone) => tone === "M")
+  ) {
+    warnings.push(
+      "No acute (high) or grave (low) tone marks detected; verify whether all syllables are mid tone.",
+    );
+  }
+
+  return {
+    syllables: safeSyllables,
+    suggestedTonePattern,
+    warnings,
+  };
 }

@@ -9,6 +9,7 @@ import { ToneChip } from "@/components/drill/ToneChip";
 import { ToneDrill } from "@/components/drill/ToneDrill";
 import { AppShell } from "@/components/layout/AppShell";
 import { StampUnlockedModal } from "@/components/map/StampUnlockedModal";
+import { DictionaryDrawer } from "@/components/trainer/DictionaryDrawer";
 import { Button } from "@/components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { TabPanel, Tabs } from "@/components/ui/Tabs";
@@ -83,6 +84,7 @@ export default function ScenarioDetailPage() {
     useState<HybridCallOutcome<TonalDrillModel> | null>(null);
   const [loadingDrill, setLoadingDrill] = useState(false);
   const [unlockedStamp, setUnlockedStamp] = useState<EarnedStamp | null>(null);
+  const [dictionaryOpen, setDictionaryOpen] = useState(false);
 
   useEffect(() => {
     let active = true;
@@ -239,20 +241,30 @@ export default function ScenarioDetailPage() {
             </div>
           </div>
 
-          <Tabs<ScenarioTab>
-            items={[
-              { id: "listen", label: "Listen" },
-              {
-                id: "vocab",
-                label: "Vocabulary",
-                badge: glossary.length,
-              },
-              { id: "tone", label: "Tone drill" },
-            ]}
-            activeTab={activeTab}
-            onChange={(tab) => setActiveTab(tab)}
-            ariaLabel="Scenario practice mode"
-          />
+          <div className="flex flex-wrap items-center gap-3">
+            <Button
+              type="button"
+              variant="secondary"
+              size="sm"
+              onClick={() => setDictionaryOpen(true)}
+            >
+              Dictionary
+            </Button>
+            <Tabs<ScenarioTab>
+              items={[
+                { id: "listen", label: "Listen" },
+                {
+                  id: "vocab",
+                  label: "Vocabulary",
+                  badge: glossary.length,
+                },
+                { id: "tone", label: "Tone drill" },
+              ]}
+              activeTab={activeTab}
+              onChange={(tab) => setActiveTab(tab)}
+              ariaLabel="Scenario practice mode"
+            />
+          </div>
         </div>
 
         <TabPanel tabId="listen" activeTab={activeTab}>
@@ -420,6 +432,12 @@ export default function ScenarioDetailPage() {
         onClose={() => setUnlockedStamp(null)}
         stamp={unlockedStamp}
         dialect={dialect}
+      />
+      <DictionaryDrawer
+        open={dictionaryOpen}
+        onClose={() => setDictionaryOpen(false)}
+        dialectId={scenario.dialectId}
+        scenarioId={scenario.scenarioId}
       />
     </AppShell>
   );
