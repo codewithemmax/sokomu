@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useParams, useSearchParams } from "next/navigation";
-import { useCallback, useEffect, useState } from "react";
+import { Suspense, useCallback, useEffect, useState } from "react";
 import { QuizCard } from "@/components/drill/QuizCard";
 import { ToneChip } from "@/components/drill/ToneChip";
 import { ToneDrill } from "@/components/drill/ToneDrill";
@@ -52,7 +52,7 @@ const DualSpeakerPlayer = dynamic(
 
 type ScenarioTab = "listen" | "vocab" | "tone";
 
-export default function ScenarioDetailPage() {
+function ScenarioDetailInner() {
   const params = useParams<{ scenarioId: string }>();
   const searchParams = useSearchParams();
   const { user } = useAuthUser();
@@ -440,5 +440,21 @@ export default function ScenarioDetailPage() {
         scenarioId={scenario.scenarioId}
       />
     </AppShell>
+  );
+}
+
+export default function ScenarioDetailPage() {
+  return (
+    <Suspense
+      fallback={
+        <AppShell>
+          <p className="text-sm text-text-muted" role="status">
+            Loading scenario workspace...
+          </p>
+        </AppShell>
+      }
+    >
+      <ScenarioDetailInner />
+    </Suspense>
   );
 }

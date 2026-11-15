@@ -183,7 +183,7 @@ export function TrainerGate({ children }: TrainerGateProps) {
 
             {existingRequest ? (
               <div
-                className="rounded-xl border border-gold-500/40 bg-gold-100 p-4 space-y-1.5 text-sm text-gold-600"
+                className="rounded-xl border border-gold-400/60 bg-gold-100 p-4 space-y-1.5 text-sm text-offline-600"
                 role="status"
               >
                 <p className="font-semibold">
@@ -239,12 +239,12 @@ export function TrainerGate({ children }: TrainerGateProps) {
               </div>
 
               {requestError ? (
-                <p role="alert" className="text-xs font-medium text-terracotta-700">
+                <p role="alert" className="text-xs font-medium text-danger-600">
                   {requestError}
                 </p>
               ) : null}
               {requestSavedNotice ? (
-                <p role="status" className="text-xs font-medium text-tone-mid">
+                <p role="status" className="text-xs font-medium text-edge-600">
                   {requestSavedNotice}
                 </p>
               ) : null}

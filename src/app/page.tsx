@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { AppShell } from "@/components/layout/AppShell";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
+import { REMOTE_CONFIG_DEFAULTS } from "@/lib/firebase/remote-config-defaults";
 
 const DIALECT_HIGHLIGHTS = [
   {
@@ -159,7 +160,7 @@ export default function LandingPage() {
               </div>
               <div className="rounded-xl border border-border bg-surface-sunken p-3">
                 <p className="font-mono text-xs font-semibold text-cloud-600">
-                  IN_CLOUD &middot; gemini-3.1-flash-tts-preview
+                  IN_CLOUD &middot; {REMOTE_CONFIG_DEFAULTS.ai_tts_model}
                 </p>
                 <p className="mt-1 text-xs text-text-secondary">
                   Two-speaker cultural dialogues synthesized once into 24 kHz

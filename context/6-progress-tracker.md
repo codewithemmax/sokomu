@@ -145,7 +145,7 @@ US-6.1: As a learner, the app feels respectful, beautiful, and clear on desktop 
 - [x] T-6.18 Settings page with SignInUpgradeModal
 - [x] T-6.19 Offline dimming applied per matrix in 3-ui-context.md 5.3
 - [x] T-6.20 Remote Config demo_announcement bar
-- [ ] T-6.21 Accessibility pass (focus, aria-live, labels, contrast, reduced motion)
+- [x] T-6.21 Accessibility pass (focus, aria-live, labels, contrast, reduced motion)
 
 ### Epic 7: Native Trainer Portal
 
@@ -161,14 +161,14 @@ US-7.1: As a native trainer, I can submit and review dialect entries with correc
 
 ### Epic 8: Quality, Testing and Hardening
 
-- [ ] T-8.1 Unit test suite green (bun test)
-- [ ] T-8.2 Rules tests green
+- [x] T-8.1 Unit test suite green (bun test)
+- [x] T-8.2 Rules tests green
 - [ ] T-8.3 Execute usability tests UT-01 to UT-15, log findings in 5-ai-workflow-rules.md
 - [ ] T-8.4 Native audio audit (UT-05) and content audit (UT-06)
 - [ ] T-8.5 Fix all S1 and S2 findings
 - [ ] T-8.6 Lighthouse pass on /map and scenario page (LCP, CLS, INP targets)
 - [ ] T-8.7 Cross-device matrix: Chrome 139+ Nano capable, low-RAM laptop, Android Chrome
-- [ ] T-8.8 Secret audit of full git history (git log -p search for key patterns)
+- [x] T-8.8 Secret audit of full git history (git log -p search for key patterns)
 
 ### Epic 9: Deployment and Submission
 
@@ -292,8 +292,8 @@ Compliance:
 
 Security:
 
-- [ ] git log --all -p searched for patterns: AIza, BEGIN PRIVATE KEY, client_secret, serviceAccount, .env.local contents, debug token values: zero hits
-- [ ] git ls-files shows no .env (other than .env.example), no service account JSON, no .firebase/ directory
+- [x] git log --all -p searched for patterns: AIza, BEGIN PRIVATE KEY, client_secret, serviceAccount, .env.local contents, debug token values: zero hits
+- [x] git ls-files shows no .env (other than .env.example), no service account JSON, no .firebase/ directory
 - [ ] App Check enforcement on for Firestore and AI Logic
 - [ ] Production hosting environment has no debug token variable
 - [ ] Browser API key restricted by HTTP referrer
@@ -303,10 +303,10 @@ Code quality:
 
 - [ ] bun run build passes on a clean clone (bun install then bun run build)
 - [ ] bun run lint passes
-- [ ] bun test passes
-- [ ] Search confirms zero occurrences of topK, topP, and MINIMAL thinking level in src
-- [ ] Search confirms zero any types and zero ts-ignore
-- [ ] No hardcoded model names outside remote-config-defaults.ts
+- [x] bun test passes
+- [x] Search confirms zero occurrences of topK, topP, and MINIMAL thinking level in src
+- [x] Search confirms zero any types and zero ts-ignore
+- [x] No hardcoded model names outside remote-config-defaults.ts
 - [ ] No console errors on /map, scenario page, trainer pages in production build
 
 Product:
@@ -353,3 +353,4 @@ Product:
 | 2026-11-15 | T-6.11 to T-6.15, T-6.19 | Google Antigravity | src/components/audio/DualSpeakerPlayer.tsx, src/components/drill/*, src/app/scenarios/page.tsx, src/app/scenarios/[scenarioId]/page.tsx, tests/scenarios-and-drills.test.ts, context/6-progress-tracker.md | Implemented Scenario Library (/scenarios), tabbed Scenario detail workspace (/scenarios/[scenarioId]), DualSpeakerPlayer (loaded dynamically with ssr: false), DiacriticPicker (Yoruba/Igbo/Hausa NFC input), ToneChip, FeedbackCard, QuizCard, ToneDrill, and offline dimming; bun test (58 pass, 654 assertions), tsc --noEmit, and bun run check:secrets passed |
 | 2026-11-15 | T-3.15, T-6.16, T-6.17, T-6.18 | Google Antigravity | src/components/ui/SignInUpgradeModal.tsx, src/app/library/page.tsx, src/app/progress/page.tsx, src/app/settings/page.tsx, src/app/settings/diagnostics/page.tsx, src/app/diagnostics/page.tsx, tests/library-progress-and-diagnostics.test.ts, context/6-progress-tracker.md | Implemented Offline Library (/library), Progress passport (/progress), Account & Learning Settings (/settings) with SignInUpgradeModal, and Hybrid AI / Remote Config / App Check Diagnostics (/settings/diagnostics and /diagnostics); bun test (61 pass, 667 assertions), tsc --noEmit, and bun run check:secrets passed |
 | 2026-11-15 | T-7.1 to T-7.7 | Google Antigravity | src/lib/ai/fallback-quiz.ts, src/hooks/useHybridModel.ts, src/hooks/useAuthUser.ts, src/app/settings/page.tsx, src/lib/trainer/submissions.ts, src/components/trainer/*, src/app/scenarios/[scenarioId]/page.tsx, src/app/trainer/*, docs/remote-config-dialect-promotion.md, tests/trainer-portal.test.ts, context/6-progress-tracker.md | Implemented Native Speaker Trainer Portal (/trainer, /trainer/submit, /trainer/queue, /trainer/entries), live users/{uid}.role subscription, EntryForm with DiacriticPicker and H/M/L toggles, PREFER_ON_DEVICE assistTrainerEntry check, offline Will-sync submission queue, two-trainer peer review batch write blocking self-approval, DictionaryDrawer on scenarios and entries, and Remote Config promotion runbook; bun test (66 pass, 698 assertions), tsc --noEmit, and bun run check:secrets passed |
+| 2026-11-15 | T-6.21, T-8.1, T-8.2, T-8.8 | Google Antigravity | src/app/globals.css, src/components/layout/AppShell.tsx, src/components/ui/Modal.tsx, src/components/ui/Drawer.tsx, src/components/drill/DiacriticPicker.tsx, src/components/trainer/*, src/app/trainer/entries/page.tsx, src/app/page.tsx, src/app/scenarios/[scenarioId]/page.tsx, tests/audit-and-hardening.test.ts, context/6-progress-tracker.md | Completed U-14 accessibility pass (skip link, Modal/Drawer aria-labelledby and focus restore, DiacriticPicker arrow-key toolbar navigation and Unicode label fix, Tailwind v4 token/contrast alignment, Suspense boundary on scenario page, removed hardcoded model string on landing page), full git-history secret audit, and automated audit test suite; bun test (70 pass, 2119 assertions), next typegen, tsc --noEmit, and bun run check:secrets passed (bun run build and bun run lint stalled on Windows sandbox; live device UT-01 to UT-15, native audio review, and Lighthouse deferred to hardware QA) |

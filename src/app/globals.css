@@ -25,6 +25,7 @@
   --color-success-600: #15803D;
   --color-warning-600: #B45309;
   --color-danger-600: #B91C1C;
+  --color-danger-100: #FEE2E2;
   --color-offline-600: #7C2D12;
   --color-offline-100: #FFEDD5;
 
@@ -74,6 +75,7 @@
   --color-tone-high: #F472B6;
   --color-tone-mid: #A5B4FC;
   --color-tone-low: #5EEAD4;
+  --color-danger-100: #450A0A;
 }
 
 body {

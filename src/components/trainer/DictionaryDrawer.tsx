@@ -238,23 +238,23 @@ export function DictionaryDrawer({
             filteredPending.map((sub) => (
               <article
                 key={sub.submissionId}
-                className="rounded-xl border border-gold-500/40 bg-surface-sunken p-4 space-y-2.5"
+                className="rounded-xl border border-gold-400/60 bg-surface-sunken p-4 space-y-2.5"
               >
                 <div className="flex flex-wrap items-start justify-between gap-2">
                   <div>
-                    <p className="font-dialect text-xl font-semibold text-indigo-900">
+                    <p className="tonal-text text-xl font-semibold text-indigo-900">
                       {sub.headword}
                     </p>
                     <p className="text-sm text-text-primary">{sub.glossEn}</p>
                     {sub.standardForm ? (
                       <p className="text-xs text-text-muted">
                         Standard form:{" "}
-                        <span className="font-dialect">{sub.standardForm}</span>
+                        <span className="tonal-text">{sub.standardForm}</span>
                       </p>
                     ) : null}
                   </div>
                   <div className="flex flex-wrap items-center gap-1.5">
-                    <span className="rounded-full bg-gold-100 px-2.5 py-0.5 font-mono text-[11px] font-medium text-gold-600">
+                    <span className="rounded-full bg-gold-100 px-2.5 py-0.5 font-mono text-[11px] font-medium text-offline-600">
                       Pending peer review
                     </span>
                     {sub.pendingSync ? (
@@ -275,7 +275,7 @@ export function DictionaryDrawer({
                 </div>
                 {sub.example ? (
                   <p className="rounded-lg bg-surface-raised px-3 py-2 text-xs text-text-secondary">
-                    <span className="font-dialect font-medium text-text-primary">
+                    <span className="tonal-text font-medium text-text-primary">
                       {sub.example.text}
                     </span>{" "}
                     &middot; {sub.example.translation}
@@ -292,14 +292,14 @@ export function DictionaryDrawer({
               >
                 <div className="flex flex-wrap items-start justify-between gap-2">
                   <div>
-                    <p className="font-dialect text-xl font-semibold text-indigo-900">
+                    <p className="tonal-text text-xl font-semibold text-indigo-900">
                       {entry.headword}
                     </p>
                     <p className="text-sm text-text-primary">{entry.glossEn}</p>
                     {entry.standardForm ? (
                       <p className="text-xs text-text-muted">
                         Standard form:{" "}
-                        <span className="font-dialect">{entry.standardForm}</span>
+                        <span className="tonal-text">{entry.standardForm}</span>
                       </p>
                     ) : null}
                   </div>
@@ -307,7 +307,7 @@ export function DictionaryDrawer({
                     className={[
                       "rounded-full px-2.5 py-0.5 font-mono text-[11px] font-medium",
                       entry.source === "trainer"
-                        ? "bg-tone-mid-bg text-tone-mid"
+                        ? "bg-edge-100 text-edge-600"
                         : "bg-indigo-100/70 text-indigo-700",
                     ].join(" ")}
                   >
@@ -327,7 +327,7 @@ export function DictionaryDrawer({
                 </div>
                 {entry.example ? (
                   <p className="rounded-lg bg-surface-sunken px-3 py-2 text-xs text-text-secondary">
-                    <span className="font-dialect font-medium text-text-primary">
+                    <span className="tonal-text font-medium text-text-primary">
                       {entry.example.text}
                     </span>{" "}
                     &middot; {entry.example.translation}

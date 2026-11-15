@@ -249,11 +249,11 @@ export function EntryForm({
           <div className="flex flex-wrap items-center justify-between gap-2">
             <CardTitle>1. Dialect &amp; Headword</CardTitle>
             {!online ? (
-              <span className="rounded-full bg-gold-100 px-3 py-1 font-mono text-xs font-medium text-gold-600">
+              <span className="rounded-full bg-gold-100 px-3 py-1 font-mono text-xs font-medium text-offline-600">
                 Offline queue ready (Will sync)
               </span>
             ) : (
-              <span className="rounded-full bg-tone-mid-bg px-3 py-1 font-mono text-xs font-medium text-tone-mid">
+              <span className="rounded-full bg-edge-100 px-3 py-1 font-mono text-xs font-medium text-edge-600">
                 Online &middot; NFC normalized
               </span>
             )}
@@ -322,7 +322,7 @@ export function EntryForm({
                 onFocus={() => setPickerTarget("headword")}
                 onChange={(event) => setHeadword(nfc(event.target.value))}
                 placeholder="e.g. Wọn kò rí i"
-                className="w-full rounded-[10px] border border-border bg-surface-base px-3.5 py-2.5 font-dialect text-base text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+                className="w-full rounded-[10px] border border-border bg-surface-base px-3.5 py-2.5 tonal-text text-base text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
               />
             </div>
 
@@ -341,7 +341,7 @@ export function EntryForm({
                 onFocus={() => setPickerTarget("standard")}
                 onChange={(event) => setStandardForm(nfc(event.target.value))}
                 placeholder="Standard Yoruba / Igbo / Hausa form"
-                className="w-full rounded-[10px] border border-border bg-surface-base px-3.5 py-2.5 font-dialect text-base text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+                className="w-full rounded-[10px] border border-border bg-surface-base px-3.5 py-2.5 tonal-text text-base text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
               />
             </div>
           </div>
@@ -436,7 +436,7 @@ export function EntryForm({
                     handleSyllableTextChange(index, event.target.value)
                   }
                   placeholder={`Syl ${index + 1}`}
-                  className="min-w-28 flex-1 rounded-[10px] border border-border bg-surface-base px-3 py-1.5 font-dialect text-base text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+                  className="min-w-28 flex-1 rounded-[10px] border border-border bg-surface-base px-3 py-1.5 tonal-text text-base text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
                 />
 
                 <div
@@ -471,7 +471,7 @@ export function EntryForm({
                     type="button"
                     onClick={() => handleRemoveSyllable(index)}
                     aria-label={`Remove syllable ${index + 1}`}
-                    className="rounded-[8px] px-2 py-1 text-xs font-medium text-terracotta-600 hover:bg-terracotta-100/60 focus-visible:outline-2 focus-visible:outline-indigo-500"
+                    className="rounded-[8px] px-2 py-1 text-xs font-medium text-danger-600 hover:bg-danger-100 focus-visible:outline-2 focus-visible:outline-indigo-500"
                   >
                     Remove
                   </button>
@@ -529,13 +529,13 @@ export function EntryForm({
               </div>
 
               {assistOutcome.data.warnings.length > 0 ? (
-                <ul className="list-disc pl-5 text-xs text-terracotta-700 space-y-1">
+                <ul className="list-disc pl-5 text-xs text-danger-600 space-y-1">
                   {assistOutcome.data.warnings.map((warning, idx) => (
                     <li key={`warn-${idx}`}>{warning}</li>
                   ))}
                 </ul>
               ) : (
-                <p className="text-xs text-tone-mid">
+                <p className="text-xs text-edge-600">
                   No orthography inconsistencies flagged. Your human verification
                   remains authoritative.
                 </p>
@@ -575,7 +575,7 @@ export function EntryForm({
                 onFocus={() => setPickerTarget("example")}
                 onChange={(event) => setExampleLine(nfc(event.target.value))}
                 placeholder="Natural everyday sentence"
-                className="w-full rounded-[10px] border border-border bg-surface-base px-3.5 py-2.5 font-dialect text-sm text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+                className="w-full rounded-[10px] border border-border bg-surface-base px-3.5 py-2.5 tonal-text text-sm text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
               />
             </div>
 
@@ -619,7 +619,7 @@ export function EntryForm({
       {formErrors.length > 0 ? (
         <div
           role="alert"
-          className="rounded-xl border border-terracotta-500/40 bg-terracotta-100/70 p-4 text-sm text-terracotta-700 space-y-1"
+          className="rounded-xl border border-danger-600/40 bg-danger-100 p-4 text-sm text-danger-600 space-y-1"
         >
           <p className="font-semibold">Please fix before submitting:</p>
           <ul className="list-disc pl-5 text-xs space-y-0.5">
@@ -637,8 +637,8 @@ export function EntryForm({
           className={[
             "rounded-xl border p-4 text-sm font-medium",
             statusMessage.pendingSync
-              ? "border-gold-500/50 bg-gold-100 text-gold-600"
-              : "border-tone-mid/40 bg-tone-mid-bg text-tone-mid",
+              ? "border-gold-400/60 bg-gold-100 text-offline-600"
+              : "border-edge-600/30 bg-edge-100 text-edge-600",
           ].join(" ")}
         >
           {statusMessage.text}

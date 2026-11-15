@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useId, useRef, type ReactNode } from "react";
 
 export interface ModalProps {
   open: boolean;
@@ -19,10 +19,19 @@ export function Modal({
   children,
   footer,
 }: ModalProps) {
+  const titleId = useId();
+  const dialogRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (!open || typeof window === "undefined") {
       return;
     }
+    const previousFocus =
+      document.activeElement instanceof HTMLElement
+        ? document.activeElement
+        : null;
+    dialogRef.current?.focus();
+
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         onClose();
@@ -31,6 +40,7 @@ export function Modal({
     window.addEventListener("keydown", onKeyDown);
     return () => {
       window.removeEventListener("keydown", onKeyDown);
+      previousFocus?.focus?.();
     };
   }, [open, onClose]);
 
@@ -43,17 +53,24 @@ export function Modal({
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
       role="dialog"
       aria-modal="true"
-      aria-label={title}
+      aria-labelledby={titleId}
     >
       <div
         className="fixed inset-0 bg-indigo-900/50 backdrop-blur-[1px]"
         onClick={onClose}
         aria-hidden="true"
       />
-      <div className="relative z-10 w-full max-w-lg rounded-3xl border border-border bg-surface-raised p-6 shadow-[var(--shadow-3)]">
+      <div
+        ref={dialogRef}
+        tabIndex={-1}
+        className="relative z-10 w-full max-w-lg rounded-3xl border border-border bg-surface-raised p-6 shadow-[var(--shadow-3)] focus:outline-none"
+      >
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h2 className="font-display text-2xl font-semibold text-text-primary">
+            <h2
+              id={titleId}
+              className="font-display text-2xl font-semibold text-text-primary"
+            >
               {title}
             </h2>
             {description ? (

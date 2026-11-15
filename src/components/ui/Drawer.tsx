@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useId, useRef, type ReactNode } from "react";
 
 export interface DrawerProps {
   open: boolean;
@@ -21,10 +21,19 @@ export function Drawer({
   children,
   footer,
 }: DrawerProps) {
+  const titleId = useId();
+  const panelRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
     if (!open || typeof window === "undefined") {
       return;
     }
+    const previousFocus =
+      document.activeElement instanceof HTMLElement
+        ? document.activeElement
+        : null;
+    panelRef.current?.focus();
+
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         onClose();
@@ -33,6 +42,7 @@ export function Drawer({
     window.addEventListener("keydown", onKeyDown);
     return () => {
       window.removeEventListener("keydown", onKeyDown);
+      previousFocus?.focus?.();
     };
   }, [open, onClose]);
 
@@ -45,7 +55,7 @@ export function Drawer({
       className="fixed inset-0 z-50 flex justify-end"
       role="dialog"
       aria-modal="true"
-      aria-label={title}
+      aria-labelledby={titleId}
     >
       <div
         className="fixed inset-0 bg-indigo-900/40 backdrop-blur-[1px] transition-opacity"
@@ -53,15 +63,19 @@ export function Drawer({
         aria-hidden="true"
       />
       <aside
+        ref={panelRef}
+        tabIndex={-1}
         className={[
-          "relative z-10 flex w-full flex-col bg-surface-raised border-t lg:border-t-0 lg:border-l border-border shadow-[var(--shadow-3)]",
+          "relative z-10 flex w-full flex-col bg-surface-raised border-t lg:border-t-0 lg:border-l border-border shadow-[var(--shadow-3)] focus:outline-none",
           "mt-auto max-h-[88dvh] rounded-t-3xl lg:mt-16 lg:max-h-[calc(100dvh-4rem)] lg:rounded-none",
           widthClassName,
         ].join(" ")}
       >
         <div className="flex items-start justify-between gap-4 border-b border-border px-5 py-4">
           <div>
-            <h2 className="text-lg font-semibold text-text-primary">{title}</h2>
+            <h2 id={titleId} className="text-lg font-semibold text-text-primary">
+              {title}
+            </h2>
             {subtitle ? (
               <p className="mt-0.5 text-xs text-text-muted">{subtitle}</p>
             ) : null}

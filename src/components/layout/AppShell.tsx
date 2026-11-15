@@ -19,6 +19,12 @@ export function AppShell({ children, hideNavigation = false }: AppShellProps) {
 
   return (
     <div className="min-h-dvh flex flex-col bg-surface-base text-text-primary">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-[10px] focus:bg-indigo-900 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:shadow-[var(--shadow-3)] focus:outline-2 focus:outline-offset-2 focus:outline-gold-400"
+      >
+        Skip to main content
+      </a>
       <DemoAnnouncementBar />
       <TelemetryHeaderBar
         onOpenTelemetryDrawer={() => setTelemetryDrawerOpen(true)}
@@ -34,7 +40,11 @@ export function AppShell({ children, hideNavigation = false }: AppShellProps) {
         }
       >
         {!hideNavigation ? <LeftRail /> : null}
-        <main className="mx-auto w-full max-w-[1376px] px-4 sm:px-5 md:px-6 lg:px-8 py-6 lg:py-8 pb-24 md:pb-8">
+        <main
+          id="main-content"
+          tabIndex={-1}
+          className="mx-auto w-full max-w-[1376px] px-4 sm:px-5 md:px-6 lg:px-8 py-6 lg:py-8 pb-24 md:pb-8 focus:outline-none"
+        >
           {children}
         </main>
       </div>

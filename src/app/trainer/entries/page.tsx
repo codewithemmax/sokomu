@@ -103,10 +103,10 @@ function EntriesWorkspace({ uid }: { uid: string }) {
                   className="rounded-xl border border-border bg-surface-sunken p-3.5 space-y-2"
                 >
                   <div className="flex items-baseline justify-between gap-2">
-                    <span className="font-dialect text-lg font-semibold text-indigo-900">
+                    <span className="tonal-text text-lg font-semibold text-indigo-900">
                       {entry.headword}
                     </span>
-                    <span className="rounded-full bg-tone-mid-bg px-2 py-0.5 font-mono text-[11px] text-tone-mid">
+                    <span className="rounded-full bg-edge-100 px-2 py-0.5 font-mono text-[11px] text-edge-600">
                       Verified (trainer)
                     </span>
                   </div>
@@ -144,12 +144,12 @@ function EntriesWorkspace({ uid }: { uid: string }) {
                   className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border bg-surface-sunken p-3"
                 >
                   <div>
-                    <p className="font-dialect text-base font-semibold text-indigo-900">
+                    <p className="tonal-text text-base font-semibold text-indigo-900">
                       {sub.headword}
                     </p>
                     <p className="text-xs text-text-secondary">{sub.glossEn}</p>
                     {sub.rejectionReason ? (
-                      <p className="mt-1 text-xs text-terracotta-700">
+                      <p className="mt-1 text-xs text-danger-600">
                         Reviewer feedback: {sub.rejectionReason}
                       </p>
                     ) : null}
@@ -164,10 +164,10 @@ function EntriesWorkspace({ uid }: { uid: string }) {
                       className={[
                         "rounded-full px-2.5 py-0.5 font-mono text-[11px] font-medium uppercase",
                         sub.status === "approved"
-                          ? "bg-tone-mid-bg text-tone-mid"
+                          ? "bg-edge-100 text-edge-600"
                           : sub.status === "rejected"
-                            ? "bg-terracotta-100 text-terracotta-700"
-                            : "bg-gold-100 text-gold-600",
+                            ? "bg-danger-100 text-danger-600"
+                            : "bg-gold-100 text-offline-600",
                       ].join(" ")}
                     >
                       {sub.status}

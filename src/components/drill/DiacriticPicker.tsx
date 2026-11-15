@@ -188,10 +188,38 @@ export function DiacriticPicker({
     return null;
   }
 
+  const handleToolbarKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    const target = event.target as HTMLElement | null;
+    if (!target || target.tagName !== "BUTTON") return;
+    const buttons = Array.from(
+      event.currentTarget.querySelectorAll<HTMLButtonElement>("button"),
+    );
+    if (buttons.length <= 1) return;
+    const currentIndex = buttons.indexOf(target as HTMLButtonElement);
+    if (currentIndex === -1) return;
+
+    let nextIndex = -1;
+    if (event.key === "ArrowRight") {
+      nextIndex = (currentIndex + 1) % buttons.length;
+    } else if (event.key === "ArrowLeft") {
+      nextIndex = (currentIndex - 1 + buttons.length) % buttons.length;
+    } else if (event.key === "Home") {
+      nextIndex = 0;
+    } else if (event.key === "End") {
+      nextIndex = buttons.length - 1;
+    }
+
+    if (nextIndex !== -1) {
+      event.preventDefault();
+      buttons[nextIndex]?.focus();
+    }
+  };
+
   return (
     <div
       role="toolbar"
       aria-label="Indigenous diacritic and tone keyboard"
+      onKeyDown={handleToolbarKeyDown}
       className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-border bg-surface-sunken p-3"
     >
       {letters.length > 0 ? (
@@ -222,7 +250,7 @@ export function DiacriticPicker({
             onClick={() => applyAction({ kind: "tone", tone: "H" })}
             className="inline-flex h-11 items-center gap-1.5 rounded-[10px] border border-tone-high/30 bg-surface-raised px-3 text-sm font-semibold text-tone-high shadow-[var(--shadow-1)] hover:bg-indigo-100/40 focus-visible:outline-2 focus-visible:outline-indigo-500 cursor-pointer"
           >
-            <span>\u0301 High</span>
+            <span>{"\u25CC\u0301 High"}</span>
             <sub className="font-mono text-[10px]">H</sub>
           </button>
           <button
@@ -232,7 +260,7 @@ export function DiacriticPicker({
             onClick={() => applyAction({ kind: "tone", tone: "M" })}
             className="inline-flex h-11 items-center gap-1.5 rounded-[10px] border border-tone-mid/30 bg-surface-raised px-3 text-sm font-semibold text-tone-mid shadow-[var(--shadow-1)] hover:bg-indigo-100/40 focus-visible:outline-2 focus-visible:outline-indigo-500 cursor-pointer"
           >
-            <span>{showMidMacron ? "\u0304 Mid" : "Mid"}</span>
+            <span>{showMidMacron ? "\u25CC\u0304 Mid" : "Mid"}</span>
             <sub className="font-mono text-[10px]">M</sub>
           </button>
           <button
@@ -242,7 +270,7 @@ export function DiacriticPicker({
             onClick={() => applyAction({ kind: "tone", tone: "L" })}
             className="inline-flex h-11 items-center gap-1.5 rounded-[10px] border border-tone-low/30 bg-surface-raised px-3 text-sm font-semibold text-tone-low shadow-[var(--shadow-1)] hover:bg-indigo-100/40 focus-visible:outline-2 focus-visible:outline-indigo-500 cursor-pointer"
           >
-            <span>\u0300 Low</span>
+            <span>{"\u25CC\u0300 Low"}</span>
             <sub className="font-mono text-[10px]">L</sub>
           </button>
           <button

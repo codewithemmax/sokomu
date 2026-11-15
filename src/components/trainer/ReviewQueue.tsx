@@ -90,8 +90,8 @@ export function ReviewQueue({
           className={[
             "rounded-xl border p-3.5 text-sm",
             feedback.type === "error"
-              ? "border-terracotta-500/40 bg-terracotta-100/70 text-terracotta-700"
-              : "border-tone-mid/40 bg-tone-mid-bg text-tone-mid",
+              ? "border-danger-600/40 bg-danger-100 text-danger-600"
+              : "border-edge-600/30 bg-edge-100 text-edge-600",
           ].join(" ")}
         >
           {feedback.text}
@@ -99,7 +99,7 @@ export function ReviewQueue({
       ) : null}
 
       {!online ? (
-        <div className="rounded-xl border border-gold-500/40 bg-gold-100 p-3.5 text-xs text-gold-600">
+        <div className="rounded-xl border border-gold-400/60 bg-gold-100 p-3.5 text-xs text-offline-600">
           Peer review approvals and rejections require an active network
           connection so verified entries write atomically to Firestore.
         </div>
@@ -125,7 +125,7 @@ export function ReviewQueue({
               <CardHeader>
                 <div className="flex flex-wrap items-start justify-between gap-2">
                   <div>
-                    <CardTitle className="font-dialect text-2xl text-indigo-900">
+                    <CardTitle className="tonal-text text-2xl text-indigo-900">
                       {sub.headword}
                     </CardTitle>
                     <p className="mt-1 text-sm text-text-primary">
@@ -140,8 +140,8 @@ export function ReviewQueue({
                       className={[
                         "rounded-full px-2.5 py-0.5 font-mono text-[11px] font-medium",
                         isSelf
-                          ? "bg-gold-100 text-gold-600"
-                          : "bg-tone-mid-bg text-tone-mid",
+                          ? "bg-gold-100 text-offline-600"
+                          : "bg-edge-100 text-edge-600",
                       ].join(" ")}
                     >
                       {isSelf
@@ -161,7 +161,7 @@ export function ReviewQueue({
                 {sub.standardForm ? (
                   <p className="text-xs text-text-secondary">
                     Standard equivalent:{" "}
-                    <span className="font-dialect font-medium text-text-primary">
+                    <span className="tonal-text font-medium text-text-primary">
                       {sub.standardForm}
                     </span>
                   </p>
@@ -179,7 +179,7 @@ export function ReviewQueue({
 
                 {sub.example ? (
                   <p className="rounded-xl bg-surface-sunken px-3.5 py-2.5 text-xs text-text-secondary">
-                    <span className="font-dialect font-medium text-text-primary">
+                    <span className="tonal-text font-medium text-text-primary">
                       {sub.example.text}
                     </span>{" "}
                     &middot; {sub.example.translation}
@@ -193,7 +193,7 @@ export function ReviewQueue({
                 ) : null}
 
                 {isRejectOpen && !isSelf ? (
-                  <div className="space-y-2 rounded-xl border border-terracotta-500/30 bg-surface-sunken p-3">
+                  <div className="space-y-2 rounded-xl border border-danger-600/30 bg-surface-sunken p-3">
                     <label
                       htmlFor={`reject-reason-${sub.submissionId}`}
                       className="block text-xs font-medium text-text-primary"
