@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { AppShell } from "@/components/layout/AppShell";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
+import { Icon } from "@/components/ui/Icon";
 import { REMOTE_CONFIG_DEFAULTS } from "@/lib/firebase/remote-config-defaults";
 
 const DIALECT_HIGHLIGHTS = [
@@ -33,51 +34,78 @@ const DIALECT_HIGHLIGHTS = [
 export default function LandingPage() {
   return (
     <AppShell>
-      <div className="space-y-10">
-        <section className="rounded-3xl border border-border bg-surface-raised p-6 sm:p-8 lg:p-12 shadow-[var(--shadow-2)]">
-          <div className="max-w-3xl space-y-5">
-            <div className="inline-flex items-center gap-2 rounded-full border border-gold-600/30 bg-gold-100 px-3.5 py-1 text-xs font-medium text-gold-600">
-              <span>So (Yoruba) &middot; Koya (Hausa) &middot; Muta (Igbo)</span>
-            </div>
+      <div className="space-y-12">
+        <section className="overflow-hidden rounded-2xl border border-border bg-surface-raised shadow-[var(--shadow-2)]">
+          <div className="grid lg:grid-cols-[1.2fr_.8fr]">
+            <div className="p-6 sm:p-8 lg:p-12">
+              <div className="mb-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-gold-600">
+                <span className="inline-flex size-7 items-center justify-center rounded-full bg-gold-100">
+                  <Icon name="globe" size={15} />
+                </span>
+                Nigerian languages, locally taught
+              </div>
 
-            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.15] tracking-tight text-indigo-900">
-              Speak the dialect your elders actually speak, online or in Airplane Mode.
-            </h1>
+              <h1 className="max-w-2xl font-display text-3xl sm:text-4xl lg:text-[3.4rem] font-semibold leading-[1.08] tracking-tight text-indigo-900">
+                Learn the words that sound like home.
+              </h1>
 
-            <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
-              Sokomu is an offline-first hybrid AI tutor for Nigerian indigenous
-              languages and regional dialects. Structured vocabulary and tonal
-              drills run locally on{" "}
-              <span className="font-semibold text-edge-600">Gemini Nano</span>{" "}
-              via Firebase AI Logic, while natural two-speaker conversations
-              stream once in{" "}
-              <span className="font-semibold text-cloud-600">
-                24 kHz PCM audio
-              </span>{" "}
-              and replay offline forever from IndexedDB.
-            </p>
+              <p className="mt-5 max-w-xl text-base sm:text-lg text-text-secondary leading-relaxed">
+                Practical lessons for Yoruba, Igbo, Hausa, and Nigerian Pidgin —
+                with dialects, tones, and audio you can keep using offline.
+              </p>
 
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <div className="flex flex-wrap items-center gap-3 pt-7">
               <Link
                 href="/onboarding?step=language"
-                className="inline-flex min-h-[48px] items-center justify-center rounded-[10px] bg-indigo-700 px-6 py-3 text-base font-medium text-white transition-colors hover:bg-indigo-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-[10px] bg-indigo-700 px-5 py-3 text-base font-semibold text-white transition-colors hover:bg-indigo-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
               >
-                Start learning
+                Start learning <Icon name="arrow-right" size={17} />
               </Link>
               <Link
                 href="/map"
                 className="inline-flex min-h-[48px] items-center justify-center rounded-[10px] border border-border bg-surface-sunken px-5 py-3 text-base font-medium text-text-primary transition-colors hover:bg-indigo-100/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
               >
-                Explore Nigeria dialect map
+                <Icon name="map" size={17} /> Explore the map
               </Link>
-              <Link
-                href="/scenarios"
-                className="inline-flex min-h-[48px] items-center justify-center rounded-[10px] px-4 py-3 text-sm font-medium text-indigo-700 hover:underline"
-              >
-                Browse scenarios &rarr;
-              </Link>
+              </div>
+            </div>
+            <div className="relative hidden min-h-[320px] overflow-hidden bg-indigo-900 p-8 lg:flex lg:flex-col lg:justify-between">
+              <div className="absolute right-0 top-0 size-64 rounded-full border border-gold-400/30" />
+              <div className="absolute bottom-0 left-0 size-72 rounded-full border border-white/10" />
+              <div className="relative flex items-center justify-between text-indigo-100">
+                <span className="text-xs font-semibold uppercase tracking-[0.16em]">Your learning shelf</span>
+                <Icon name="book" size={20} />
+              </div>
+              <div className="relative space-y-4">
+                <p className="font-display text-3xl font-semibold text-white">One place for every voice.</p>
+                <div className="grid grid-cols-2 gap-2 text-sm text-indigo-100">
+                  {["Yoruba", "Igbo", "Hausa", "Pidgin"].map((language) => (
+                    <div key={language} className="flex items-center gap-2 rounded-lg bg-white/10 px-3 py-2">
+                      <span className="size-1.5 rounded-full bg-gold-400" /> {language}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
+        </section>
+
+        <section aria-label="Sokomu features" className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+          {[
+            ["sparkles", "Short, useful practice", "Build confidence with everyday phrases and scenarios."],
+            ["signal", "Hear the difference", "Tone-aware drills help you say the right word, not just a word."],
+            ["database", "Works offline", "Keep your lessons and saved audio close, even without signal."],
+          ].map(([icon, title, copy]) => (
+            <div key={title} className="flex gap-3 rounded-xl border border-border bg-surface-raised p-4">
+              <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-indigo-100 text-indigo-700">
+                <Icon name={icon as "sparkles" | "signal" | "database"} size={18} />
+              </span>
+              <div>
+                <h2 className="text-sm font-semibold text-text-primary">{title}</h2>
+                <p className="mt-1 text-xs leading-relaxed text-text-secondary">{copy}</p>
+              </div>
+            </div>
+          ))}
         </section>
 
         <section

@@ -120,7 +120,7 @@ export function InferenceSourcePill({
       aria-label={meta.ariaLabel}
       onClick={onOpenDetails}
       className={[
-        "inline-flex h-7 lg:h-8 items-center gap-2 rounded-full px-3 text-xs font-medium transition-colors duration-200",
+        "inline-flex h-7 lg:h-8 items-center gap-2 rounded-lg px-3 text-xs font-medium transition-colors duration-200",
         "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 cursor-pointer",
         meta.containerClass,
         className,

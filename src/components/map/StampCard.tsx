@@ -40,12 +40,13 @@ export function StampCard({
       className={[
         "group relative flex w-[144px] sm:w-full shrink-0 flex-col items-center justify-between rounded-2xl p-3.5 text-left transition-all duration-200",
         "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 cursor-pointer",
-        isEarned
-          ? "border-2 border-gold-600 bg-gold-100/60 shadow-[var(--shadow-1)]"
-          : isInProgress
-            ? "border border-indigo-500 bg-surface-raised shadow-[var(--shadow-1)]"
-            : "border border-dashed border-border bg-surface-raised/80",
-        selected ? "ring-2 ring-indigo-500" : "",
+        selected
+          ? "border-2 border-indigo-500 bg-surface-raised shadow-[0_0_0_1px_rgba(68,87,196,0.12),var(--shadow-2)]"
+          : isEarned
+            ? "border-2 border-gold-600 bg-gold-100/60 shadow-[var(--shadow-1)]"
+            : isInProgress
+              ? "border border-indigo-500 bg-surface-raised shadow-[var(--shadow-1)]"
+              : "border border-dashed border-border bg-surface-raised/80 hover:border-indigo-300",
       ]
         .filter(Boolean)
         .join(" ")}

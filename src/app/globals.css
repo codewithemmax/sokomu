@@ -86,6 +86,11 @@ body {
   font-feature-settings: "ccmp" 1, "mark" 1;
 }
 
+::selection {
+  background: var(--color-indigo-100);
+  color: var(--color-indigo-900);
+}
+
 .tonal-text {
   line-height: 1.6;
   letter-spacing: 0.005em;

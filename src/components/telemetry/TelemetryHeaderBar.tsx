@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useAuthUser } from "@/hooks/useAuthUser";
 import { ConnectivityBadge } from "./ConnectivityBadge";
-import { DataSavedCounter } from "./DataSavedCounter";
 import { InferenceSourcePill } from "./InferenceSourcePill";
 
 export interface TelemetryHeaderBarProps {
@@ -21,41 +20,44 @@ export function TelemetryHeaderBar({
     : "Guest";
 
   return (
-    <header className="sticky top-0 z-40 h-14 lg:h-16 w-full border-b border-border bg-surface-raised/95 backdrop-blur-xs px-4 lg:px-8">
-      <div className="mx-auto flex h-full max-w-[1376px] items-center justify-between gap-3">
+    <header className="sticky top-0 z-40 h-16 w-full border-b border-border bg-surface-raised px-4 lg:px-8">
+      <div className="mx-auto grid h-full max-w-[1376px] grid-cols-[1fr_auto] items-center gap-6">
         <div className="flex items-center gap-3">
           <Link
             href="/map"
-            className="inline-flex items-center gap-2.5 rounded-lg focus-visible:outline-2 focus-visible:outline-indigo-500"
+            className="inline-flex min-h-10 min-w-10 items-center justify-center gap-2 rounded-lg focus-visible:outline-2 focus-visible:outline-indigo-500"
           >
-            <span
-              aria-hidden="true"
-              className="inline-flex size-8 items-center justify-center rounded-lg bg-indigo-900 text-gold-400 font-display font-bold text-base"
-            >
-              S
-            </span>
-            <span className="font-display text-lg font-bold tracking-wide text-indigo-900">
-              SOKOMU
+            <img src="/brand/sokomu-mark.svg" alt="" className="size-9" />
+            <span className="hidden sm:inline-flex">
+              <img src="/brand/sokomu-wordmark.svg" alt="Sokomu" className="h-6 w-[140px]" />
             </span>
           </Link>
-          <span className="hidden text-xs font-medium text-text-muted lg:inline">
-            So &middot; Koya &middot; Muta
+          <div className="hidden h-6 w-px bg-border lg:block" />
+          <span className="hidden text-sm text-text-secondary lg:inline">
+            Learn it where it lives
           </span>
         </div>
 
-        <div className="flex items-center gap-2 sm:gap-3">
-          <InferenceSourcePill onOpenDetails={onOpenTelemetryDrawer} />
-          <ConnectivityBadge />
-        </div>
-
-        <div className="flex items-center gap-2 sm:gap-3">
-          <DataSavedCounter onClick={onOpenTelemetryDrawer} />
+        <div className="flex items-center justify-end gap-3">
+          <div className="hidden items-center gap-1 rounded-xl border border-border bg-surface-sunken p-1 sm:flex">
+            <InferenceSourcePill
+              onOpenDetails={onOpenTelemetryDrawer}
+              className="h-8 rounded-lg border-0 bg-transparent px-2.5 text-text-secondary hover:bg-surface-raised"
+            />
+            <ConnectivityBadge className="h-8 rounded-lg border-0 bg-transparent px-2.5 hover:bg-surface-raised" />
+          </div>
+          <div className="flex sm:hidden">
+            <ConnectivityBadge />
+          </div>
           <Link
             href="/settings"
             aria-label={`Account settings (${accountLabel})`}
-            className="hidden sm:inline-flex h-9 items-center gap-1.5 rounded-[10px] border border-border bg-surface-sunken px-3 text-xs font-medium text-text-primary hover:bg-indigo-100/60 focus-visible:outline-2 focus-visible:outline-indigo-500"
+            className="inline-flex h-10 items-center gap-2 rounded-xl border border-border bg-surface-sunken px-2.5 text-xs font-medium text-text-primary hover:bg-indigo-100/60 focus-visible:outline-2 focus-visible:outline-indigo-500 sm:px-3"
           >
-            <span>{accountLabel}</span>
+            <span className="flex size-6 items-center justify-center rounded-full bg-indigo-100 text-[11px] font-semibold text-indigo-900">
+              {accountLabel.slice(0, 1).toUpperCase()}
+            </span>
+            <span className="hidden sm:inline">{accountLabel}</span>
           </Link>
         </div>
       </div>

@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Icon, type IconName } from "@/components/ui/Icon";
 
 const MOBILE_TABS = [
-  { href: "/map", label: "Map", shortCode: "MP" },
-  { href: "/scenarios", label: "Scenarios", shortCode: "SC" },
-  { href: "/library", label: "Library", shortCode: "LB" },
-  { href: "/progress", label: "Progress", shortCode: "PR" },
+  { href: "/map", label: "Explore", icon: "map" },
+  { href: "/scenarios", label: "Practice", icon: "sparkles" },
+  { href: "/library", label: "Library", icon: "book" },
+  { href: "/progress", label: "Progress", icon: "chart" },
 ] as const;
 
 export function BottomTabBar() {
@@ -34,17 +35,7 @@ export function BottomTabBar() {
                 : "text-text-muted hover:text-text-primary",
             ].join(" ")}
           >
-            <span
-              aria-hidden="true"
-              className={[
-                "inline-flex h-6 w-8 items-center justify-center rounded-full text-[11px] font-mono font-bold",
-                isActive
-                  ? "bg-indigo-100 text-indigo-900"
-                  : "text-text-secondary",
-              ].join(" ")}
-            >
-              {tab.shortCode}
-            </span>
+            <Icon name={tab.icon as IconName} size={20} />
             <span>{tab.label}</span>
           </Link>
         );
