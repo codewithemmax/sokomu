@@ -42,20 +42,20 @@ User story US-0.1: As the Lead Architect, I want a secure, licensed public repos
 US-1.1: As a learner, my data is protected and the app's AI endpoints cannot be abused.
 US-1.2: As the operator, I can change prompts and limits without redeploying.
 
-- [ ] T-1.1 Create Firebase project, register web app, enable Gemini Developer API backend for Firebase AI Logic
-- [ ] T-1.2 Enable Authentication providers: Anonymous and Google
-- [ ] T-1.3 Create Cloud Firestore database (production mode), choose region (europe-west2 or nearest to users)
-- [ ] T-1.4 Create reCAPTCHA Enterprise key, register App Check for the web app, register debug tokens
+- [x] T-1.1 Create Firebase project, register web app, enable Gemini Developer API backend for Firebase AI Logic
+- [~] T-1.2 Enable Authentication providers: Anonymous and Google
+- [~] T-1.3 Create Cloud Firestore database (production mode), choose region (europe-west2 or nearest to users)
+- [~] T-1.4 Create reCAPTCHA Enterprise key, register App Check for the web app, register debug tokens
 - [ ] T-1.5 Implement src/lib/firebase/config.ts, app-check.ts, client.ts (fixed init order)
 - [ ] T-1.6 Implement src/lib/firebase/auth.ts (ensureAnonymousUser, upgradeWithGoogle with linkWithPopup)
 - [ ] T-1.7 Implement remote-config-defaults.ts and remote-config.ts (typed getters, onConfigUpdate)
-- [ ] T-1.8 Publish initial Remote Config template matching defaults; export to remoteconfig.template.json
-- [ ] T-1.9 Create Server Prompt Templates sokomu-quiz-v1, sokomu-grade-v1, sokomu-tts-dialogue-v1
-- [ ] T-1.10 Write firestore.rules and firestore.indexes.json; add firebase.json
-- [ ] T-1.11 Firestore rules unit tests with emulator (all allow and deny paths)
-- [ ] T-1.12 Enable App Check enforcement for Firestore and Firebase AI Logic
-- [ ] T-1.13 Configure Cloud Billing budget alerts at 5, 15, 30 USD and document spend cap procedure in README
-- [ ] T-1.14 Restrict browser API key by HTTP referrer (localhost and hosting domain)
+- [x] T-1.8 Publish initial Remote Config template matching defaults; export to remoteconfig.template.json
+- [~] T-1.9 Create Server Prompt Templates sokomu-quiz-v1, sokomu-grade-v1, sokomu-tts-dialogue-v1
+- [x] T-1.10 Write firestore.rules and firestore.indexes.json; add firebase.json
+- [x] T-1.11 Firestore rules unit tests with emulator (all allow and deny paths)
+- [~] T-1.12 Enable App Check enforcement for Firestore and Firebase AI Logic
+- [x] T-1.13 Configure Cloud Billing budget alerts at 5, 15, 30 USD and document spend cap procedure in README
+- [~] T-1.14 Restrict browser API key by HTTP referrer (localhost and hosting domain)
 
 ### Epic 2: Content and Data Seeding
 
@@ -67,7 +67,7 @@ US-2.1: As a learner, I practise with verified regional dialect content.
 - [ ] T-2.4 Native reviewer pass on scripts and glossary; set verified flags
 - [ ] T-2.5 scripts/seed-firestore.ts (Admin SDK via local application default credentials, never committed keys)
 - [ ] T-2.6 Seed Firestore and verify reads through Security Rules
-- [ ] T-2.7 Populate dialect_rules_json for each dialect in Remote Config
+- [x] T-2.7 Populate dialect_rules_json for each dialect in Remote Config
 
 ### Epic 3: Hybrid AI Engine
 
@@ -341,3 +341,4 @@ Product:
 | 2026-11-14 | T-0.5 | Google Antigravity | git remote origin | Pushed main to codewithemmax/sokomu (commit d87b8c1) |
 | 2026-11-15 | T-0.6 | Google Antigravity | .codexrules, context/1-project-overview.md to context/6-progress-tracker.md | Documents reviewed for scope and style (no em dashes) |
 | 2026-11-15 | T-0.7, T-0.8 | Google Antigravity | LICENSE, package.json, scripts/check-secrets.ts, context/6-progress-tracker.md | bun run check:secrets and tsc --noEmit passed; GitHub topics added and canonical Apache-2.0 LICENSE pushed |
+| 2026-11-15 | T-1.1, T-1.8, T-1.10, T-1.11, T-1.13, T-2.7 | Google Antigravity | .firebaserc, firebase.json, firestore.rules, firestore.indexes.json, remoteconfig.template.json, tests/firestore.rules.test.ts, src/types/globals.d.ts, src/types/bun-test.d.ts, README.md, package.json, bun.lock | bun test (7 pass, 45 assertions), tsc --noEmit, and bun run check:secrets passed |

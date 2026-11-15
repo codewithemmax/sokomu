@@ -1,0 +1,31 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "glossary",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "dialectId", "order": "ASCENDING" },
+        { "fieldPath": "verified", "order": "ASCENDING" },
+        { "fieldPath": "updatedAt", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "glossary",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "scenarioIds", "arrayConfig": "CONTAINS" },
+        { "fieldPath": "dialectId", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "trainerSubmissions",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "dialectId", "order": "ASCENDING" },
+        { "fieldPath": "status", "order": "ASCENDING" },
+        { "fieldPath": "createdAt", "order": "ASCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

@@ -1,0 +1,139 @@
+{
+  "parameters": {
+    "ai_cloud_text_model": {
+      "defaultValue": { "value": "gemini-3.5-flash-lite" },
+      "description": "Cloud fallback model for text drills when Gemini Nano is unavailable.",
+      "valueType": "STRING"
+    },
+    "ai_tts_model": {
+      "defaultValue": { "value": "gemini-3.1-flash-tts-preview" },
+      "description": "Cloud speech synthesis model for two-speaker dialect dialogues.",
+      "valueType": "STRING"
+    },
+    "ai_drill_temperature": {
+      "defaultValue": { "value": "0.4" },
+      "description": "Sampling temperature for structured vocabulary and tonal drills.",
+      "valueType": "NUMBER"
+    },
+    "ai_grading_temperature": {
+      "defaultValue": { "value": "0.1" },
+      "description": "Sampling temperature for tonal grading feedback.",
+      "valueType": "NUMBER"
+    },
+    "ai_system_instruction_quiz": {
+      "defaultValue": {
+        "value": "You are Sokomu, a respectful Nigerian language tutor. Create vocabulary quiz questions ONLY from the glossary entries provided in CONTEXT. Never invent words. Preserve every diacritic exactly as written. Write questions and explanations in clear English. Follow the dialect rules provided. Return JSON that matches the schema."
+      },
+      "description": "System instruction for on-device and cloud vocabulary quiz generation.",
+      "valueType": "STRING"
+    },
+    "ai_system_instruction_tone": {
+      "defaultValue": {
+        "value": "You are Sokomu, a tonal drill generator. Using ONLY the glossary entries in CONTEXT, create items that ask the learner to write a word with correct tone marks. Provide syllables and the expected tone pattern using H, M, L. Return JSON that matches the schema."
+      },
+      "description": "System instruction for tonal diacritic drills.",
+      "valueType": "STRING"
+    },
+    "ai_system_instruction_grading": {
+      "defaultValue": {
+        "value": "You are Sokomu, a tonal grader. Compare the learner answer to the expected headword syllable by syllable. Use the provided deterministic comparison as ground truth for correctness. Explain any meaning change respectfully and briefly. Return JSON that matches the schema."
+      },
+      "description": "System instruction for tonal grading feedback.",
+      "valueType": "STRING"
+    },
+    "ai_tts_style_instruction": {
+      "defaultValue": {
+        "value": "Read warmly and naturally, as family members speaking at home."
+      },
+      "description": "Style prefix prepended to multi-speaker TTS prompts.",
+      "valueType": "STRING"
+    },
+    "dialect_rules_json": {
+      "defaultValue": {
+        "value": "{\"yo-ijebu\":{\"name\":\"Ijebu Yoruba\",\"rules\":[\"Initial i- often shifts to u- before rounded vowels (isu -> usu).\",\"Initial a- in certain nouns shifts to e- (adiye -> ediye).\",\"Preserve three-way tonal distinction: High (acute), Mid (unmarked), Low (grave).\"]},\"yo-ekiti\":{\"name\":\"Ekiti Yoruba\",\"rules\":[\"Use Ekiti honorific greeting forms and vowel harmony patterns.\",\"Preserve sub-dots on e, o, s and full three-tone marks.\"]},\"yo-ondo\":{\"name\":\"Ondo Yoruba\",\"rules\":[\"Reflect Ondo lexical variants such as usu for yam and ediye for fowl.\",\"Preserve three-tone diacritics on every syllable.\"]},\"ig-owerri\":{\"name\":\"Owerri Igbo (Isuama)\",\"rules\":[\"Reflect Owerri aspiration and nasalization conventions where present in the glossary.\",\"Preserve sub-dots (i, o, u) and High/Low tone marks.\"]},\"ig-onitsha\":{\"name\":\"Onitsha Igbo\",\"rules\":[\"Use Onitsha lexical forms and riverine greeting conventions from the glossary.\"]},\"ig-ikwerre\":{\"name\":\"Ikwerre\",\"rules\":[\"Reflect Ikwerre lexical shifts such as rumu for children (Standard Igbo umu).\"]},\"ha-kano\":{\"name\":\"Kano Hausa\",\"rules\":[\"Preserve hooked letters (b, d, k, y) and Kano market politeness formulas.\"]},\"pcm-lagos\":{\"name\":\"Lagos Nigerian Pidgin\",\"rules\":[\"Use natural Lagos street and danfo transit expressions from the glossary without artificial anglicization.\"]}}"
+      },
+      "description": "JSON map of dialectId to regional phonetic and lexical rules injected into prompts.",
+      "valueType": "JSON"
+    },
+    "tts_voice_map_json": {
+      "defaultValue": {
+        "value": "{\"elder_female\":\"Kore\",\"elder_male\":\"Charon\",\"young_male\":\"Puck\",\"young_female\":\"Leda\",\"trader\":\"Fenrir\"}"
+      },
+      "description": "JSON map of speaker voiceKey to prebuilt Gemini TTS voice name.",
+      "valueType": "JSON"
+    },
+    "tts_enabled": {
+      "defaultValue": { "value": "true" },
+      "description": "Kill switch for cloud TTS synthesis.",
+      "valueType": "BOOLEAN"
+    },
+    "cloud_fallback_enabled": {
+      "defaultValue": { "value": "true" },
+      "description": "Kill switch for cloud text drill fallback.",
+      "valueType": "BOOLEAN"
+    },
+    "cloud_fallback_daily_limit": {
+      "defaultValue": { "value": "50" },
+      "description": "Maximum cloud fallback text calls per device per UTC day.",
+      "valueType": "NUMBER"
+    },
+    "quiz_question_count": {
+      "defaultValue": { "value": "5" },
+      "description": "Number of questions generated per vocabulary quiz.",
+      "valueType": "NUMBER"
+    },
+    "quiz_grounding_max_entries": {
+      "defaultValue": { "value": "12" },
+      "description": "Maximum glossary entries serialized into local RAG prompt context.",
+      "valueType": "NUMBER"
+    },
+    "stamp_accuracy_threshold": {
+      "defaultValue": { "value": "0.8" },
+      "description": "Minimum accuracy (0 to 1) required to unlock a regional dialect stamp.",
+      "valueType": "NUMBER"
+    },
+    "telemetry_cloud_drill_kb": {
+      "defaultValue": { "value": "48" },
+      "description": "Estimated kilobytes saved per on-device drill completion vs cloud round trip.",
+      "valueType": "NUMBER"
+    },
+    "telemetry_naira_per_mb": {
+      "defaultValue": { "value": "0.78" },
+      "description": "Estimated Naira cost per megabyte (based on 800 NGN / 1024 MB MTN bundle).",
+      "valueType": "NUMBER"
+    },
+    "feature_trainer_portal": {
+      "defaultValue": { "value": "true" },
+      "description": "Enable Native Speaker Trainer Portal routes.",
+      "valueType": "BOOLEAN"
+    },
+    "show_mid_macron": {
+      "defaultValue": { "value": "false" },
+      "description": "Whether the diacritic picker displays an explicit macron key for mid tone.",
+      "valueType": "BOOLEAN"
+    },
+    "demo_announcement": {
+      "defaultValue": { "value": "" },
+      "description": "Live update banner text demonstrated during the hackathon pitch.",
+      "valueType": "STRING"
+    },
+    "prompt_template_quiz_id": {
+      "defaultValue": { "value": "sokomu-quiz-v1" },
+      "description": "Server Prompt Template ID for cloud quiz generation.",
+      "valueType": "STRING"
+    },
+    "prompt_template_grade_id": {
+      "defaultValue": { "value": "sokomu-grade-v1" },
+      "description": "Server Prompt Template ID for cloud tonal grading.",
+      "valueType": "STRING"
+    },
+    "prompt_template_tts_id": {
+      "defaultValue": { "value": "sokomu-tts-dialogue-v1" },
+      "description": "Server Prompt Template ID for cloud multi-speaker TTS.",
+      "valueType": "STRING"
+    }
+  },
+  "version": {
+    "description": "Baseline Remote Config template for Sokomu (#BuildHybridAI 2026)"
+  }
+}

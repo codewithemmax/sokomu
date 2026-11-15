@@ -1,0 +1,79 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isSelf(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function userDoc() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    function hasRole(r) {
+      return signedIn()
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && userDoc().role == r;
+    }
+
+    function isTrainer() {
+      return hasRole("trainer") || hasRole("admin");
+    }
+
+    match /users/{uid} {
+      allow read: if isSelf(uid);
+      allow create: if isSelf(uid) && request.resource.data.role == "learner";
+      allow update: if isSelf(uid) && request.resource.data.role == resource.data.role;
+      allow delete: if false;
+
+      match /{sub=**} {
+        allow read, write: if isSelf(uid);
+      }
+    }
+
+    match /languages/{id} {
+      allow read: if true;
+      allow write: if hasRole("admin");
+    }
+
+    match /dialects/{id} {
+      allow read: if true;
+      allow write: if hasRole("admin");
+    }
+
+    match /scenarios/{id} {
+      allow read: if true;
+      allow write: if hasRole("admin");
+    }
+
+    match /glossary/{id} {
+      allow read: if true;
+      allow create: if isTrainer()
+                    && request.resource.data.verified == true
+                    && request.resource.data.source == "trainer";
+      allow update, delete: if hasRole("admin");
+    }
+
+    match /trainerSubmissions/{id} {
+      allow read: if isTrainer();
+      allow create: if isTrainer()
+                    && request.resource.data.submittedBy == request.auth.uid
+                    && request.resource.data.status == "pending";
+      allow update: if isTrainer()
+                    && resource.data.submittedBy != request.auth.uid
+                    && request.resource.data.status in ["approved", "rejected"]
+                    && request.resource.data.reviewerUid == request.auth.uid
+                    && request.resource.data.submittedBy == resource.data.submittedBy;
+      allow delete: if hasRole("admin");
+    }
+
+    match /trainerRequests/{uid} {
+      allow create, read: if isSelf(uid);
+      allow update, delete: if hasRole("admin");
+    }
+  }
+}

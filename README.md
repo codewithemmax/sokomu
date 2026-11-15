@@ -1,6 +1,6 @@
 # Sokomu
 
-**An offline-first Nigerian dialect and tonal tutor for Yoruba, Igbo, Hausa, and Nigerian Pidgin — built for the Web in Chrome.**
+**An offline-first Nigerian dialect and tonal tutor for Yoruba, Igbo, Hausa, and Nigerian Pidgin, built for the Web in Chrome.**
 
 > Built for the **#BuildHybridAI 2026 Hackathon**
 
@@ -8,7 +8,7 @@
 
 ## Overview & Elevator Pitch
 
-Nigeria is home to over 500 languages, yet younger generations—both at home and in the diaspora—face rapid **regional dialect attrition** and struggle with **tonal accuracy** (such as Yoruba's *do-re-mi* / low-mid-high pitch distinctions or Igbo's high/low tone markers) that standard text-only translators miss. At the same time, high mobile data costs and intermittent connectivity make cloud-only AI tutors impractical for everyday learning.
+Nigeria is home to over 500 languages, yet younger generations, both at home and in the diaspora, face rapid **regional dialect attrition** and struggle with **tonal accuracy** (such as Yoruba's *do-re-mi* / low-mid-high pitch distinctions or Igbo's high/low tone markers) that standard text-only translators miss. At the same time, high mobile data costs and intermittent connectivity make cloud-only AI tutors impractical for everyday learning.
 
 **Sokomu** solves both problems with a **hybrid-first architecture**:
 - **Zero-data interactive drills:** Tonal drills, diacritic checks, and conversational exercises run **on-device** in Chrome using **Gemini Nano 4** via **Firebase AI Logic**, eliminating per-turn network latency and mobile data consumption.
@@ -64,6 +64,15 @@ Sokomu uses Firebase services to secure AI endpoints, manage prompt engineering 
 - **Firebase Authentication:** Manages learner profiles and tracks per-dialect mastery progress.
 - **Cloud Firestore:** Hosts curated dialect glossaries, tonal minimal pairs, and cultural context notes for Yoruba, Igbo, Hausa, and Nigerian Pidgin with offline persistence enabled.
 
+### Cost Predictability, Budget Alerts & Spend Cap Procedure
+
+- **Cloud Billing Budget Alerts:** Configured in Google Cloud Billing with threshold notifications at **5 USD, 15 USD, and 30 USD**.
+- **Runtime Kill Switches & Daily Caps (Remote Config):**
+  - `cloud_fallback_daily_limit` (default `50`): Caps cloud fallback text requests per device per UTC day.
+  - `cloud_fallback_enabled` (default `true`): Can be toggled to `false` in Firebase Remote Config to immediately halt cloud text fallback while keeping on-device Gemini Nano and cached deterministic drills running.
+  - `tts_enabled` (default `true`): Can be toggled to `false` in Firebase Remote Config to halt new cloud TTS synthesis while keeping cached IndexedDB audio replay active.
+- **API Key Restrictions:** The Firebase Web API key is restricted by HTTP referrer (`http://localhost:3000/*` and the production Firebase Hosting domain) and scoped to required Firebase and Gemini Developer APIs.
+
 ---
 
 ## Local Setup
@@ -111,4 +120,4 @@ Open [http://localhost:3000](http://localhost:3000) in Chrome to start using Sok
 
 ## License
 
-This project is licensed under the **Apache License, Version 2.0** — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **Apache License, Version 2.0**. See the [LICENSE](LICENSE) file for details.
