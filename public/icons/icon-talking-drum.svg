@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <title>Talking drum (dundun)</title>
+  <ellipse cx="12" cy="5" rx="6" ry="2" />
+  <ellipse cx="12" cy="19" rx="6" ry="2" />
+  <path d="M6 5C8.5 9.5 8.5 14.5 6 19M18 5C15.5 9.5 15.5 14.5 18 19" />
+  <path d="M8.5 7V17M12 7V17M15.5 7V17" />
+</svg>

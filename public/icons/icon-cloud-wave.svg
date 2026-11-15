@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <title>Cloud voice stream</title>
+  <path d="M6.5 18H17.5C19.985 18 22 15.985 22 13.5C22 11.156 20.208 9.23 17.916 9.02C17.246 5.6 14.23 3 10.6 3C6.458 3 3.1 6.358 3.1 10.5C3.1 10.742 3.112 10.98 3.135 11.215C1.9 11.88 1.1 13.18 1.1 14.65C1.1 16.5 2.6 18 4.45 18H6.5Z" />
+  <path d="M9 14V11M12 15.5V9.5M15 14V11" />
+</svg>

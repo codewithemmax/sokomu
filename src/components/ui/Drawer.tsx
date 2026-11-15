@@ -1,0 +1,89 @@
+"use client";
+
+import { useEffect, type ReactNode } from "react";
+
+export interface DrawerProps {
+  open: boolean;
+  onClose: () => void;
+  title: string;
+  subtitle?: string;
+  widthClassName?: string;
+  children: ReactNode;
+  footer?: ReactNode;
+}
+
+export function Drawer({
+  open,
+  onClose,
+  title,
+  subtitle,
+  widthClassName = "lg:w-[480px]",
+  children,
+  footer,
+}: DrawerProps) {
+  useEffect(() => {
+    if (!open || typeof window === "undefined") {
+      return;
+    }
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open, onClose]);
+
+  if (!open) {
+    return null;
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex justify-end"
+      role="dialog"
+      aria-modal="true"
+      aria-label={title}
+    >
+      <div
+        className="fixed inset-0 bg-indigo-900/40 backdrop-blur-[1px] transition-opacity"
+        onClick={onClose}
+        aria-hidden="true"
+      />
+      <aside
+        className={[
+          "relative z-10 flex w-full flex-col bg-surface-raised border-t lg:border-t-0 lg:border-l border-border shadow-[var(--shadow-3)]",
+          "mt-auto max-h-[88dvh] rounded-t-3xl lg:mt-16 lg:max-h-[calc(100dvh-4rem)] lg:rounded-none",
+          widthClassName,
+        ].join(" ")}
+      >
+        <div className="flex items-start justify-between gap-4 border-b border-border px-5 py-4">
+          <div>
+            <h2 className="text-lg font-semibold text-text-primary">{title}</h2>
+            {subtitle ? (
+              <p className="mt-0.5 text-xs text-text-muted">{subtitle}</p>
+            ) : null}
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close panel"
+            className="inline-flex size-9 items-center justify-center rounded-[10px] text-text-secondary hover:bg-indigo-100/60 hover:text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+          >
+            <span aria-hidden="true" className="text-lg leading-none">
+              &times;
+            </span>
+          </button>
+        </div>
+        <div className="flex-1 overflow-y-auto p-5">{children}</div>
+        {footer ? (
+          <div className="border-t border-border bg-surface-raised px-5 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+            {footer}
+          </div>
+        ) : null}
+      </aside>
+    </div>
+  );
+}

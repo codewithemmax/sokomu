@@ -1,26 +1,106 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-surface-base: #F7F5F0;
+  --color-surface-raised: #FFFFFF;
+  --color-surface-sunken: #EEEAE1;
+  --color-surface-inverse: #121A3F;
+
+  --color-indigo-900: #121A3F;
+  --color-indigo-700: #26337A;
+  --color-indigo-500: #4457C4;
+  --color-indigo-100: #E3E7FB;
+
+  --color-gold-600: #B7791F;
+  --color-gold-400: #E0A93B;
+  --color-gold-100: #FBF1DC;
+
+  --color-edge-600: #047857;
+  --color-edge-100: #D1FAE5;
+  --color-cloud-600: #0369A1;
+  --color-cloud-100: #E0F2FE;
+  --color-cached-600: #475569;
+  --color-cached-100: #E2E8F0;
+
+  --color-success-600: #15803D;
+  --color-warning-600: #B45309;
+  --color-danger-600: #B91C1C;
+  --color-offline-600: #7C2D12;
+  --color-offline-100: #FFEDD5;
+
+  --color-tone-high: #9D174D;
+  --color-tone-mid: #3730A3;
+  --color-tone-low: #0F766E;
+
+  --color-text-primary: #141829;
+  --color-text-secondary: #4A5068;
+  --color-text-muted: #6B7088;
+  --color-border: #D9D4C7;
+
+  --font-display: var(--font-noto-serif-display), "Noto Serif", Georgia, serif;
+  --font-sans: var(--font-noto-sans), system-ui, "Segoe UI", sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --shadow-1: 0 1px 2px rgba(18, 26, 63, 0.08);
+  --shadow-2: 0 4px 12px rgba(18, 26, 63, 0.10);
+  --shadow-3: 0 12px 32px rgba(18, 26, 63, 0.16);
+
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-theme="dark"] {
+  --color-surface-base: #0B1026;
+  --color-surface-raised: #131A3A;
+  --color-surface-sunken: #080C1E;
+  --color-surface-inverse: #F7F5F0;
+  --color-text-primary: #F2F3F8;
+  --color-text-secondary: #B4B9CF;
+  --color-text-muted: #8C92AD;
+  --color-border: #26305E;
+  --color-edge-600: #34D399;
+  --color-edge-100: #052E22;
+  --color-cloud-600: #38BDF8;
+  --color-cloud-100: #072A40;
+  --color-cached-600: #CBD5E1;
+  --color-cached-100: #1E293B;
+  --color-gold-600: #D69E2E;
+  --color-gold-400: #ECC15E;
+  --color-gold-100: #3A2C10;
+  --color-tone-high: #F472B6;
+  --color-tone-mid: #A5B4FC;
+  --color-tone-low: #5EEAD4;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-surface-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  font-feature-settings: "ccmp" 1, "mark" 1;
+}
+
+.tonal-text {
+  line-height: 1.6;
+  letter-spacing: 0.005em;
+  font-feature-settings: "ccmp" 1, "mark" 1;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 120ms !important;
+    scroll-behavior: auto !important;
+  }
 }

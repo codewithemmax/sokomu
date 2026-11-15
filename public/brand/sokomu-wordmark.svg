@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 24" fill="none" role="img" aria-label="Sokomu wordmark">
+  <title>Sokomu</title>
+  <text x="0" y="18" fill="#121A3F" font-family="Georgia, serif" font-size="18" font-weight="700" letter-spacing="1.5">SOKOMU</text>
+  <circle cx="104" cy="12" r="2.5" fill="#B7791F" />
+  <path d="M112 7L118 12L112 17M122 7L128 12L122 17" stroke="#B7791F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
