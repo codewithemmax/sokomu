@@ -88,7 +88,7 @@ US-3.2: As a judge, I can see where each response was generated.
 - [x] T-3.12 Tonal grading pipeline: deterministic compare first, Nano feedback second
 - [x] T-3.13 src/lib/ai/fallback-quiz.ts deterministic generator plus tests
 - [x] T-3.14 Cloud fallback daily limit enforcement (cloud_fallback_daily_limit, stored in IDB meta)
-- [ ] T-3.15 Diagnostics page: Nano status, force cloud toggle, Remote Config values, App Check status
+- [x] T-3.15 Diagnostics page: Nano status, force cloud toggle, Remote Config values, App Check status
 
 ### Epic 4: Cloud TTS and Offline Caching
 
@@ -140,9 +140,9 @@ US-6.1: As a learner, the app feels respectful, beautiful, and clear on desktop 
 - [x] T-6.13 QuizCard and Vocabulary tab
 - [x] T-6.14 DiacriticPicker
 - [x] T-6.15 ToneDrill, ToneChip, FeedbackCard
-- [ ] T-6.16 Progress page (mastery bars, stamps grid, data saved history)
-- [ ] T-6.17 Library page (cached scenarios, storage meter, clear cache)
-- [ ] T-6.18 Settings page with SignInUpgradeModal
+- [x] T-6.16 Progress page (mastery bars, stamps grid, data saved history)
+- [x] T-6.17 Library page (cached scenarios, storage meter, clear cache)
+- [x] T-6.18 Settings page with SignInUpgradeModal
 - [x] T-6.19 Offline dimming applied per matrix in 3-ui-context.md 5.3
 - [x] T-6.20 Remote Config demo_announcement bar
 - [ ] T-6.21 Accessibility pass (focus, aria-live, labels, contrast, reduced motion)
@@ -351,3 +351,4 @@ Product:
 | 2026-11-15 | T-5.3 to T-5.6, T-6.1 to T-6.4, T-6.6, T-6.20 | Google Antigravity | src/app/globals.css, src/app/layout.tsx, src/app/page.tsx, src/components/ui/*, src/components/telemetry/*, src/components/layout/*, public/brand/*, public/icons/*, tests/design-system-and-telemetry-ui.test.ts, context/6-progress-tracker.md | Implemented Tailwind v4 @theme design tokens, Google Fonts (Noto Serif Display, Noto Sans, JetBrains Mono), brand/telemetry SVG icons, accessible UI primitives, live telemetry header/pill/counter/drawer/banners, responsive AppShell (LeftRail + BottomTabBar), and Path C landing page; bun test (53 pass, 566 assertions), tsc --noEmit, and bun run check:secrets passed |
 | 2026-11-15 | T-6.5, T-6.7, T-6.8, T-6.9, T-6.10 | Google Antigravity | public/maps/nigeria-dialects.svg, public/stamps/*.svg, src/lib/db/seed-catalog.ts, src/lib/db/scenario-cache.ts, src/lib/db/glossary-cache.ts, src/lib/progress/profile.ts, src/components/map/*, src/app/onboarding/page.tsx, src/app/map/page.tsx, tests/map-and-onboarding.test.ts, context/6-progress-tracker.md | Implemented 4-step Onboarding wizard, interactive NigeriaMap SVG and component, 8 cultural dialect stamp SVGs, StampCard, RegionDrawer, StampUnlockedModal, and Cultural Map Dashboard (/map); bun test (56 pass, 643 assertions), tsc --noEmit, and bun run check:secrets passed |
 | 2026-11-15 | T-6.11 to T-6.15, T-6.19 | Google Antigravity | src/components/audio/DualSpeakerPlayer.tsx, src/components/drill/*, src/app/scenarios/page.tsx, src/app/scenarios/[scenarioId]/page.tsx, tests/scenarios-and-drills.test.ts, context/6-progress-tracker.md | Implemented Scenario Library (/scenarios), tabbed Scenario detail workspace (/scenarios/[scenarioId]), DualSpeakerPlayer (loaded dynamically with ssr: false), DiacriticPicker (Yoruba/Igbo/Hausa NFC input), ToneChip, FeedbackCard, QuizCard, ToneDrill, and offline dimming; bun test (58 pass, 654 assertions), tsc --noEmit, and bun run check:secrets passed |
+| 2026-11-15 | T-3.15, T-6.16, T-6.17, T-6.18 | Google Antigravity | src/components/ui/SignInUpgradeModal.tsx, src/app/library/page.tsx, src/app/progress/page.tsx, src/app/settings/page.tsx, src/app/settings/diagnostics/page.tsx, src/app/diagnostics/page.tsx, tests/library-progress-and-diagnostics.test.ts, context/6-progress-tracker.md | Implemented Offline Library (/library), Progress passport (/progress), Account & Learning Settings (/settings) with SignInUpgradeModal, and Hybrid AI / Remote Config / App Check Diagnostics (/settings/diagnostics and /diagnostics); bun test (61 pass, 667 assertions), tsc --noEmit, and bun run check:secrets passed |
