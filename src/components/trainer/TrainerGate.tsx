@@ -80,7 +80,7 @@ export function TrainerGate({ children }: TrainerGateProps) {
           </p>
           <Link
             href="/map"
-            className="inline-flex text-xs font-medium text-indigo-700 hover:underline"
+            className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
           >
             &larr; Return to Nigeria dialect map
           </Link>
@@ -116,7 +116,7 @@ export function TrainerGate({ children }: TrainerGateProps) {
             </Button>
             <Link
               href="/scenarios"
-              className="text-xs font-medium text-indigo-700 hover:underline"
+              className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
             >
               Continue learning as guest &rarr;
             </Link>

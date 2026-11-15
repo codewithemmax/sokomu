@@ -95,7 +95,7 @@ export default function SettingsPage() {
           </div>
           <Link
             href="/settings/diagnostics"
-            className="text-xs sm:text-sm font-medium text-indigo-700 hover:underline"
+            className="inline-flex min-h-10 items-center text-xs sm:text-sm font-medium text-indigo-700 hover:underline"
           >
             Open AI &amp; Remote Config Diagnostics &rarr;
           </Link>

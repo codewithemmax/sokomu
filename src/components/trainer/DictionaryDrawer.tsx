@@ -165,7 +165,7 @@ export function DictionaryDrawer({
                 scenarioId ? `&scenarioId=${encodeURIComponent(scenarioId)}` : ""
               }`}
               onClick={onClose}
-              className="inline-flex items-center rounded-[10px] bg-indigo-500 px-3.5 py-2 text-xs font-medium text-white hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-500"
+              className="inline-flex min-h-10 items-center rounded-[10px] bg-indigo-500 px-3.5 py-2 text-xs font-medium text-white hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-500"
             >
               Trainer: add word &rarr;
             </Link>
@@ -202,7 +202,7 @@ export function DictionaryDrawer({
                 aria-pressed={active}
                 onClick={() => setFilter(btn.id)}
                 className={[
-                  "inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium transition-colors focus-visible:outline-2 focus-visible:outline-indigo-500",
+                  "inline-flex min-h-10 sm:min-h-0 items-center gap-1.5 rounded-full px-3.5 py-2 sm:px-3 sm:py-1 text-xs font-medium transition-colors focus-visible:outline-2 focus-visible:outline-indigo-500",
                   active
                     ? "bg-indigo-500 text-white"
                     : "border border-border bg-surface-sunken text-text-secondary hover:bg-indigo-100/50",

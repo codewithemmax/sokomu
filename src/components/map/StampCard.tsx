@@ -90,7 +90,7 @@ export function StampCard({
         <p className="font-display text-base font-semibold text-text-primary leading-tight">
           {dialect.name}
         </p>
-        <p className="mt-0.5 truncate text-xs text-text-muted">
+        <p className="mt-0.5 text-xs leading-snug text-text-muted">
           {earnedDateStr
             ? `Earned ${earnedDateStr}`
             : state === "locked"

@@ -158,7 +158,7 @@ export default function MapDashboardPage() {
           </div>
           <Link
             href="/onboarding"
-            className="text-xs font-medium text-indigo-700 hover:underline"
+            className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
           >
             Change dialect or goal &rarr;
           </Link>
@@ -185,7 +185,7 @@ export default function MapDashboardPage() {
         </div>
 
         <section aria-labelledby="stamps-heading" className="space-y-3">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap items-center justify-between gap-2">
             <h2
               id="stamps-heading"
               className="font-display text-xl font-semibold text-text-primary"
@@ -195,7 +195,7 @@ export default function MapDashboardPage() {
             </h2>
             <Link
               href="/progress"
-              className="text-xs font-medium text-indigo-700 hover:underline"
+              className="inline-flex min-h-10 shrink-0 items-center text-xs font-medium text-indigo-700 hover:underline"
             >
               See full passport &rarr;
             </Link>

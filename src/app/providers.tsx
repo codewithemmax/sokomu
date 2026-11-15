@@ -36,7 +36,17 @@ export function FirebaseProvider({ children }: { children: ReactNode }) {
     let unsubscribe: (() => void) | undefined;
     let stopSync: (() => void) | undefined;
 
-    void registerServiceWorker();
+    if (process.env.NODE_ENV === "production") {
+      void registerServiceWorker();
+    } else if (
+      typeof window !== "undefined" &&
+      "serviceWorker" in navigator
+    ) {
+      // Prevent cached dev chunks from causing hydration skew across HMR rebuilds.
+      void navigator.serviceWorker
+        .getRegistrations()
+        .then((regs) => Promise.all(regs.map((r) => r.unregister())));
+    }
 
     try {
       const firebase = getFirebase();

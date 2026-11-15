@@ -216,7 +216,7 @@ export default function TrainerEntriesPage() {
           <div>
             <Link
               href="/trainer"
-              className="text-xs font-medium text-indigo-700 hover:underline"
+              className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
             >
               &larr; Back to Trainer Portal
             </Link>
@@ -230,7 +230,7 @@ export default function TrainerEntriesPage() {
           </div>
           <Link
             href="/trainer/submit"
-            className="text-xs font-medium text-indigo-700 hover:underline"
+            className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
           >
             + Submit new entry &rarr;
           </Link>

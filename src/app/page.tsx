@@ -50,7 +50,7 @@ export default function LandingPage() {
               </h1>
 
               <p className="mt-5 max-w-xl text-base sm:text-lg text-text-secondary leading-relaxed">
-                Practical lessons for Yoruba, Igbo, Hausa, and Nigerian Pidgin —
+                Practical lessons for Yoruba, Igbo, Hausa, and Nigerian Pidgin,
                 with dialects, tones, and audio you can keep using offline.
               </p>
 
@@ -200,7 +200,7 @@ export default function LandingPage() {
         </section>
 
         <section aria-labelledby="dialects-heading" className="space-y-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap items-center justify-between gap-2">
             <h2
               id="dialects-heading"
               className="font-display text-2xl font-semibold text-text-primary"
@@ -209,7 +209,7 @@ export default function LandingPage() {
             </h2>
             <Link
               href="/trainer"
-              className="text-xs sm:text-sm font-medium text-indigo-700 hover:underline"
+              className="inline-flex min-h-10 shrink-0 items-center text-xs sm:text-sm font-medium text-indigo-700 hover:underline"
             >
               Native Speaker Trainer Portal &rarr;
             </Link>

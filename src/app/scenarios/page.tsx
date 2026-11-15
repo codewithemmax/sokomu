@@ -71,7 +71,7 @@ export default function ScenariosLibraryPage() {
           </div>
           <Link
             href="/library"
-            className="text-xs sm:text-sm font-medium text-indigo-700 hover:underline"
+            className="inline-flex min-h-10 items-center text-xs sm:text-sm font-medium text-indigo-700 hover:underline"
           >
             Manage offline storage ({cachedScenarioIds.size} saved) &rarr;
           </Link>
@@ -83,7 +83,7 @@ export default function ScenariosLibraryPage() {
               type="button"
               onClick={() => setDialectFilter("all")}
               className={[
-                "rounded-full px-3 py-1.5 text-xs font-medium transition-colors cursor-pointer",
+                "inline-flex min-h-10 sm:min-h-0 items-center rounded-full px-3.5 py-2 sm:px-3 sm:py-1.5 text-xs font-medium transition-colors cursor-pointer",
                 dialectFilter === "all"
                   ? "bg-indigo-700 text-white"
                   : "bg-surface-sunken text-text-secondary hover:text-text-primary",
@@ -97,7 +97,7 @@ export default function ScenariosLibraryPage() {
                 type="button"
                 onClick={() => setDialectFilter(dialect.dialectId)}
                 className={[
-                  "rounded-full px-3 py-1.5 text-xs font-medium transition-colors cursor-pointer",
+                  "inline-flex min-h-10 sm:min-h-0 items-center rounded-full px-3.5 py-2 sm:px-3 sm:py-1.5 text-xs font-medium transition-colors cursor-pointer",
                   dialectFilter === dialect.dialectId
                     ? "bg-indigo-700 text-white"
                     : "bg-surface-sunken text-text-secondary hover:text-text-primary",
@@ -113,7 +113,7 @@ export default function ScenariosLibraryPage() {
             aria-pressed={onlyCached}
             onClick={() => setOnlyCached((v) => !v)}
             className={[
-              "rounded-full border px-3 py-1.5 font-mono text-xs font-medium transition-colors cursor-pointer",
+              "inline-flex min-h-10 sm:min-h-0 items-center rounded-full border px-3.5 py-2 sm:px-3 sm:py-1.5 font-mono text-xs font-medium transition-colors cursor-pointer",
               onlyCached
                 ? "border-gold-600 bg-gold-100 text-gold-600"
                 : "border-border bg-surface-sunken text-text-secondary",

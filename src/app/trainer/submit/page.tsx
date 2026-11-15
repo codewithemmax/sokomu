@@ -35,7 +35,7 @@ export default function TrainerSubmitPage() {
           <div>
             <Link
               href="/trainer"
-              className="text-xs font-medium text-indigo-700 hover:underline"
+              className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
             >
               &larr; Back to Trainer Portal
             </Link>
@@ -49,7 +49,7 @@ export default function TrainerSubmitPage() {
           </div>
           <Link
             href="/trainer/queue"
-            className="text-xs font-medium text-indigo-700 hover:underline"
+            className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
           >
             Open peer review queue &rarr;
           </Link>

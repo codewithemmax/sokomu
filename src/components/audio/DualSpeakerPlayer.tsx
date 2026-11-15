@@ -271,12 +271,12 @@ export function DualSpeakerPlayer({
                 isLaneActive ? "opacity-100" : "opacity-35",
               ].join(" ")}
             >
-              <span className="w-28 shrink-0 truncate text-xs font-semibold text-text-primary">
+              <span className="w-20 sm:w-28 shrink-0 truncate text-xs font-semibold text-text-primary">
                 {speaker.displayName}
               </span>
               <div
                 aria-hidden="true"
-                className="flex flex-1 items-center gap-[2px] h-8"
+                className="flex min-w-0 flex-1 items-center gap-px sm:gap-[2px] h-8 overflow-hidden"
               >
                 {peaks.map((amp, barIdx) => {
                   const barRatio = barIdx / peaks.length;
@@ -289,7 +289,7 @@ export function DualSpeakerPlayer({
                       key={`${speaker.id}-${barIdx}`}
                       style={{ height: `${heightPct}%` }}
                       className={[
-                        "w-[3px] flex-1 rounded-full transition-all duration-150",
+                        "min-w-[1px] flex-1 rounded-full transition-all duration-150",
                         barColor,
                         isPlayed ? "opacity-100" : "opacity-55",
                       ].join(" ")}

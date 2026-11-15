@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useFirebase } from "@/app/providers";
 import { AppShell } from "@/components/layout/AppShell";
 import { Button } from "@/components/ui/Button";
@@ -22,10 +22,12 @@ export function DiagnosticsView() {
     useNanoReadiness();
   const online = useOnlineStatus();
 
-  const [cloudCountToday, setCloudCountToday] = useState<number>(() =>
-    getCloudFallbackCountToday(),
-  );
+  const [cloudCountToday, setCloudCountToday] = useState<number>(0);
   const [refreshingRc, setRefreshingRc] = useState(false);
+
+  useEffect(() => {
+    setCloudCountToday(getCloudFallbackCountToday());
+  }, []);
 
   const hasAppCheckSiteKey = Boolean(
     process.env.NEXT_PUBLIC_RECAPTCHA_ENTERPRISE_SITE_KEY,
@@ -51,7 +53,7 @@ export function DiagnosticsView() {
           <div>
             <Link
               href="/settings"
-              className="text-xs font-medium text-indigo-700 hover:underline"
+              className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
             >
               &larr; Back to settings
             </Link>

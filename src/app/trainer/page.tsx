@@ -209,7 +209,7 @@ export default function TrainerHomePage() {
           </div>
           <Link
             href="/scenarios"
-            className="text-xs font-medium text-indigo-700 hover:underline"
+            className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
           >
             Back to learner scenarios &rarr;
           </Link>

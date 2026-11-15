@@ -84,7 +84,7 @@ export function Drawer({
             type="button"
             onClick={onClose}
             aria-label="Close panel"
-            className="inline-flex size-9 items-center justify-center rounded-[10px] text-text-secondary hover:bg-indigo-100/60 hover:text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+            className="inline-flex size-10 shrink-0 items-center justify-center rounded-[10px] text-text-secondary hover:bg-indigo-100/60 hover:text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
           >
             <span aria-hidden="true" className="text-lg leading-none">
               &times;

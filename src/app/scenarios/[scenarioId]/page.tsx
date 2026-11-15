@@ -227,7 +227,7 @@ function ScenarioDetailInner() {
           <div className="space-y-1">
             <Link
               href="/scenarios"
-              className="text-xs font-medium text-indigo-700 hover:underline"
+              className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
             >
               &larr; Back to scenarios
             </Link>

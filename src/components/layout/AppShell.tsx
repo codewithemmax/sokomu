@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { Suspense, useState, type ReactNode } from "react";
 import { DemoAnnouncementBar } from "@/components/telemetry/DemoAnnouncementBar";
 import { NanoDownloadBanner } from "@/components/telemetry/NanoDownloadBanner";
 import { OfflineBanner } from "@/components/telemetry/OfflineBanner";
@@ -39,7 +39,11 @@ export function AppShell({ children, hideNavigation = false }: AppShellProps) {
             : "flex-1 grid grid-cols-1 md:grid-cols-[72px_1fr] lg:grid-cols-[240px_1fr]"
         }
       >
-        {!hideNavigation ? <LeftRail /> : null}
+        {!hideNavigation ? (
+          <Suspense fallback={null}>
+            <LeftRail />
+          </Suspense>
+        ) : null}
         <main
           id="main-content"
           tabIndex={-1}
@@ -49,7 +53,11 @@ export function AppShell({ children, hideNavigation = false }: AppShellProps) {
         </main>
       </div>
 
-      {!hideNavigation ? <BottomTabBar /> : null}
+      {!hideNavigation ? (
+        <Suspense fallback={null}>
+          <BottomTabBar />
+        </Suspense>
+      ) : null}
       <TelemetryDrawer
         open={telemetryDrawerOpen}
         onClose={() => setTelemetryDrawerOpen(false)}
