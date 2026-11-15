@@ -9,6 +9,7 @@ declare module "bun:test" {
     toThrow(expected?: string | RegExp): void;
     toBeDefined(): void;
     toBeNull(): void;
+    toBeInstanceOf(expected: unknown): void;
     toBeTruthy(): void;
     toBeFalsy(): void;
     toBeGreaterThan(expected: number): void;

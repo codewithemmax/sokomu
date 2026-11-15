@@ -97,14 +97,14 @@ US-4.2: As a student, I download once and replay offline forever.
 
 - [x] T-4.1 src/lib/db/idb.ts schema v1 and store modules
 - [x] T-4.2 Scenario and glossary cache (IDB first, Firestore fallback)
-- [ ] T-4.3 src/lib/ai/tts.ts streaming multi-speaker synthesis
-- [ ] T-4.4 src/lib/audio/pcm-player.ts gapless 24 kHz playback
-- [ ] T-4.5 Persist complete PCM in audioCache, promptHash keying
-- [ ] T-4.6 Cached replay path plus telemetry cachedReplay event
+- [x] T-4.3 src/lib/ai/tts.ts streaming multi-speaker synthesis
+- [x] T-4.4 src/lib/audio/pcm-player.ts gapless 24 kHz playback
+- [x] T-4.5 Persist complete PCM in audioCache, promptHash keying
+- [x] T-4.6 Cached replay path plus telemetry cachedReplay event
 - [x] T-4.7 navigator.storage.persist request and storage estimate on Library page
 - [x] T-4.8 Service worker for app shell and /offline page
 - [x] T-4.9 Sync engine: drillQueue flush on reconnect, idempotent clientEventId
-- [ ] T-4.10 TTS error handling (retry, mid-stream offline, App Check failure)
+- [x] T-4.10 TTS error handling (retry, mid-stream offline, App Check failure)
 
 ### Epic 5: Telemetry and Path C Progression
 
@@ -346,3 +346,4 @@ Product:
 | 2026-11-15 | T-2.1, T-2.2, T-2.3, T-2.4, T-2.5 | Google Antigravity | src/types/domain.ts, scripts/seed-data/*, scripts/seed-firestore.ts, tests/seed-data.test.ts, context/6-progress-tracker.md | 4 languages, 8 dialects, 8 scenarios, 84 NFC-normalized glossary entries validated; bun test (16 pass, 337 assertions), tsc --noEmit, and bun run check:secrets passed |
 | 2026-11-15 | T-3.1 to T-3.14 | Google Antigravity | src/types/chrome-ai.d.ts, src/types/ai.ts, src/types/guards.ts, src/lib/ai/*, src/lib/tone/*, src/hooks/useNanoReadiness.ts, src/hooks/useHybridModel.ts, src/app/providers.tsx, tests/hybrid-ai-and-tone.test.ts, context/6-progress-tracker.md | Hybrid AI models, Schema.object contracts (with @firebase/ai 3.1.0 LanguageModelMessageContent array content), Nano readiness provider, deterministic NFC tone engine, and daily cloud cap implemented (telemetry provider event emit deferred to U-08); bun test (33 pass, 436 assertions), tsc --noEmit, and bun run check:secrets passed |
 | 2026-11-15 | T-4.1, T-4.2, T-4.7, T-4.8, T-4.9 | Google Antigravity | package.json, bun.lock, src/types/telemetry.ts, src/types/bun-test.d.ts, src/lib/db/*, src/lib/sync/sync-engine.ts, src/hooks/useOnlineStatus.ts, src/hooks/useHybridModel.ts, src/app/providers.tsx, src/app/offline/page.tsx, public/sw.js, tests/offline-db-and-sync.test.ts, context/6-progress-tracker.md | Installed idb@8.0.4, implemented IndexedDB sokomu v1 schema and CRUD stores (audioCache, glossary, scenarios, drillQueue, telemetry, meta), IDB-first loaders with Firestore fallback, storage persistence/estimate helpers, app-shell service worker, /offline route, and idempotent clientEventId sync engine; bun test (37 pass, 462 assertions), tsc --noEmit, and bun run check:secrets passed |
+| 2026-11-15 | T-4.3, T-4.4, T-4.5, T-4.6, T-4.10 | Google Antigravity | src/lib/audio/pcm-player.ts, src/lib/ai/tts.ts, src/types/bun-test.d.ts, tests/tts-and-pcm.test.ts, context/6-progress-tracker.md | Implemented gapless 24 kHz 16-bit mono little-endian PCM Web Audio player with odd-byte carry handling, multi-speaker gemini-3.1-flash-tts-preview streaming synthesis, promptHash audioCache persistence and offline replay, and typed TTS error classification; bun test (42 pass, 496 assertions), tsc --noEmit, and bun run check:secrets passed |
