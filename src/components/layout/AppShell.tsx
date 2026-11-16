@@ -27,6 +27,7 @@ export function AppShell({ children, hideNavigation = false }: AppShellProps) {
       </a>
       <DemoAnnouncementBar />
       <TelemetryHeaderBar
+        hasSidebar={!hideNavigation}
         onOpenTelemetryDrawer={() => setTelemetryDrawerOpen(true)}
       />
       <NanoDownloadBanner />

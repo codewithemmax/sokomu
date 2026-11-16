@@ -9,6 +9,7 @@ export interface DataSavedCounterProps {
   compact?: boolean;
   onClick?: () => void;
   className?: string;
+  tooltipPlacement?: "top" | "bottom";
 }
 
 export interface FormattedDataSavedDisplay {
@@ -47,6 +48,7 @@ export function DataSavedCounter({
   compact = false,
   onClick,
   className = "",
+  tooltipPlacement = "top",
 }: DataSavedCounterProps) {
   const hookData = useDataSaved();
   const effectiveBytes = bytesSaved ?? hookData.bytesSaved;
@@ -59,14 +61,14 @@ export function DataSavedCounter({
   const tooltipCopy = `Estimated data you would have used if this ran in the cloud. Rate: \u20A6${hookData.nairaPerMb.toFixed(2)} per MB (MTN 1 GB bundle).`;
 
   return (
-    <Tooltip content={tooltipCopy}>
+    <Tooltip content={tooltipCopy} placement={tooltipPlacement}>
       <button
         type="button"
         onClick={onClick}
         aria-live="polite"
         aria-label={`Mobile data saved: ${mbLabel}, approximately ${nairaLabel}`}
         className={[
-          "inline-flex flex-col items-end justify-center rounded-[10px] px-2.5 py-1 text-right transition-colors",
+          "inline-flex flex-col items-end justify-center gap-0.5 rounded-[10px] px-2.5 py-1 text-right leading-none transition-colors",
           "hover:bg-indigo-100/40 focus-visible:outline-2 focus-visible:outline-indigo-500 cursor-pointer",
           className,
         ]

@@ -148,7 +148,7 @@ export function InferenceSourcePill({
         {meta.modelDisplay}
       </span>
       {typeof effectiveLatency === "number" && effectiveLatency > 0 ? (
-        <span className="font-mono tabular-nums text-[11px] opacity-80">
+        <span className="hidden font-mono tabular-nums text-[11px] opacity-80 sm:inline">
           {Math.round(effectiveLatency)} ms
         </span>
       ) : null}
