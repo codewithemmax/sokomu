@@ -52,6 +52,10 @@
   --shadow-3: 0 12px 32px rgba(18, 26, 63, 0.16);
 
   --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --color-ink: #1D2433;
+  --color-clay: #A64B32;
+  --color-clay-light: #F2E3DB;
+  --color-paper-line: rgba(18, 26, 63, 0.11);
 }
 
 [data-theme="dark"] {
@@ -84,6 +88,11 @@ body {
   font-family: var(--font-sans);
   line-height: 1.6;
   font-feature-settings: "ccmp" 1, "mark" 1;
+  background-image:
+    linear-gradient(var(--color-paper-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-paper-line) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: -1px -1px;
 }
 
 ::selection {
@@ -99,6 +108,15 @@ body {
 
 .tabular-nums {
   font-variant-numeric: tabular-nums;
+}
+
+.paper-surface {
+  background-color: var(--color-surface-raised);
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.72),
+    rgba(238, 234, 225, 0.28)
+  );
 }
 
 @media (prefers-reduced-motion: reduce) {

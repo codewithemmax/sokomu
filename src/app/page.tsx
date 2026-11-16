@@ -35,11 +35,11 @@ export default function LandingPage() {
   return (
     <AppShell>
       <div className="space-y-12">
-        <section className="overflow-hidden rounded-2xl border border-border bg-surface-raised shadow-[var(--shadow-2)]">
+        <section className="paper-surface overflow-hidden border border-border shadow-[var(--shadow-2)]">
           <div className="grid lg:grid-cols-[1.2fr_.8fr]">
             <div className="p-6 sm:p-8 lg:p-12">
-              <div className="mb-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-gold-600">
-                <span className="inline-flex size-7 items-center justify-center rounded-full bg-gold-100">
+              <div className="mb-6 inline-flex items-center gap-2 border-l-2 border-gold-600 pl-3 text-xs font-semibold uppercase tracking-[0.12em] text-gold-600">
+                <span className="inline-flex size-6 items-center justify-center bg-gold-100">
                   <Icon name="globe" size={15} />
                 </span>
                 Nigerian languages, locally taught
@@ -70,8 +70,8 @@ export default function LandingPage() {
               </div>
             </div>
             <div className="relative hidden min-h-[320px] overflow-hidden bg-indigo-900 p-8 lg:flex lg:flex-col lg:justify-between">
-              <div className="absolute right-0 top-0 size-64 rounded-full border border-gold-400/30" />
-              <div className="absolute bottom-0 left-0 size-72 rounded-full border border-white/10" />
+              <div className="absolute right-0 top-0 size-64 border border-gold-400/30" />
+              <div className="absolute bottom-0 left-0 size-72 border border-white/10" />
               <div className="relative flex items-center justify-between text-indigo-100">
                 <span className="text-xs font-semibold uppercase tracking-[0.16em]">Your learning shelf</span>
                 <Icon name="book" size={20} />
@@ -80,7 +80,7 @@ export default function LandingPage() {
                 <p className="font-display text-3xl font-semibold text-white">One place for every voice.</p>
                 <div className="grid grid-cols-2 gap-2 text-sm text-indigo-100">
                   {["Yoruba", "Igbo", "Hausa", "Pidgin"].map((language) => (
-                    <div key={language} className="flex items-center gap-2 rounded-lg bg-white/10 px-3 py-2">
+                    <div key={language} className="flex items-center gap-2 border border-white/15 bg-white/10 px-3 py-2">
                       <span className="size-1.5 rounded-full bg-gold-400" /> {language}
                     </div>
                   ))}
@@ -96,8 +96,8 @@ export default function LandingPage() {
             ["signal", "Hear the difference", "Tone-aware drills help you say the right word, not just a word."],
             ["database", "Works offline", "Keep your lessons and saved audio close, even without signal."],
           ].map(([icon, title, copy]) => (
-            <div key={title} className="flex gap-3 rounded-xl border border-border bg-surface-raised p-4">
-              <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-indigo-100 text-indigo-700">
+            <div key={title} className="paper-surface flex gap-3 border border-border p-4">
+              <span className="flex size-9 shrink-0 items-center justify-center bg-indigo-100 text-indigo-700">
                 <Icon name={icon as "sparkles" | "signal" | "database"} size={18} />
               </span>
               <div>

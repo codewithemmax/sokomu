@@ -21,9 +21,10 @@ export function Card({
   return (
     <div
       className={[
-        "rounded-2xl p-4 lg:p-6",
+        "rounded-[4px] p-4 lg:p-6",
         surfaceClass,
         shadowClass,
+        "border-t-2 border-t-indigo-900/80",
         className,
       ]
         .filter(Boolean)
@@ -54,7 +55,7 @@ export function CardTitle({
 }: HTMLAttributes<HTMLHeadingElement>) {
   return (
     <h3
-      className={`text-[1.375rem] leading-[1.35] font-semibold text-text-primary ${className}`}
+      className={`text-[1.25rem] leading-[1.35] font-semibold tracking-[-0.01em] text-text-primary ${className}`}
       {...rest}
     >
       {children}

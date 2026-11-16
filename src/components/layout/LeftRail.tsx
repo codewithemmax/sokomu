@@ -34,7 +34,7 @@ export function LeftRail() {
   return (
     <aside
       aria-label="Primary navigation"
-      className="hidden md:flex md:w-[72px] lg:w-[240px] shrink-0 flex-col justify-between border-r border-border bg-surface-raised px-2 lg:px-3 py-6"
+      className="hidden md:flex md:w-[72px] lg:w-[240px] shrink-0 flex-col justify-between border-r border-border bg-surface-raised px-2 lg:px-4 py-7"
     >
       <nav className="space-y-1">
         {PRIMARY_NAV_ITEMS.map((item) => {
@@ -46,11 +46,11 @@ export function LeftRail() {
               href={item.href}
               aria-current={isActive ? "page" : undefined}
               className={[
-                "flex min-h-[44px] items-center justify-center lg:justify-start gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors",
+                "relative flex min-h-[44px] items-center justify-center lg:justify-start gap-3 border-l-2 px-3 py-2.5 text-sm font-medium transition-colors",
                 "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500",
                 isActive
-                  ? "bg-indigo-100 text-indigo-900 font-semibold"
-                  : "text-text-secondary hover:bg-surface-sunken hover:text-text-primary",
+                  ? "border-l-gold-600 bg-gold-100/45 text-indigo-900 font-semibold"
+                  : "border-l-transparent text-text-secondary hover:border-l-border hover:bg-surface-sunken/70 hover:text-text-primary",
               ].join(" ")}
             >
               <span className={isActive ? "text-indigo-700" : "text-text-muted"}><Icon name={item.icon} size={19} /></span>
@@ -60,7 +60,7 @@ export function LeftRail() {
         })}
       </nav>
 
-      <div className="hidden lg:block space-y-2 rounded-xl border border-border bg-surface-sunken p-3.5 text-xs">
+      <div className="hidden lg:block space-y-2 border-t border-b border-border bg-surface-sunken/70 px-2 py-4 text-xs">
         <div className="flex items-center justify-between">
           <span className="font-medium text-text-primary">
             {nanoLabel}
