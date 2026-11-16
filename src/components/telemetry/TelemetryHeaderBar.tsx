@@ -85,18 +85,17 @@ export function TelemetryHeaderBar({
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/brand/sokomu-mark.svg"
+                src="/brand/sokomu-icon.svg"
                 alt=""
                 className="size-8 sm:size-9 shrink-0 rounded-xl shadow-[var(--shadow-1)] ring-1 ring-indigo-900/10 transition-transform duration-150 group-hover:scale-[1.03]"
               />
               <span className="flex flex-col">
-                <span className="flex items-center gap-1.5 font-display text-[17px] sm:text-[1.3rem] font-bold tracking-tight leading-none text-text-primary">
-                  <span>Sokomu</span>
-                  <span
-                    aria-hidden="true"
-                    className="inline-block size-1.5 rounded-full bg-gold-600"
-                  />
-                </span>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/brand/sokomu-wordmark.svg"
+                  alt="Sokomu"
+                  className="h-4 sm:h-[18px] w-auto self-start"
+                />
                 <span className="hidden sm:block mt-1 text-[11px] font-medium tracking-wide leading-none text-text-muted">
                   Learn it where it lives
                 </span>

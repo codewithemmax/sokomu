@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="160 160 1610 1610" role="img" aria-label="Sokomu">
+  <title>Sokomu</title>
+  <defs>
+    <clipPath id="sk-body"><rect x="500" y="638" width="930" height="837"/></clipPath>
+  </defs>
+
+  <!-- tile -->
+  <rect x="160" y="160" width="1610" height="1610" rx="180" fill="#151F42"/>
+
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- drum top ornaments -->
+    <path d="M795 250 L706 405 M1135 250 L1224 405" stroke="#D9A23A" stroke-width="50"/>
+    <rect x="862" y="322" width="208" height="54" rx="27" fill="#D9A23A" stroke="none"/>
+
+    <!-- drum heads -->
+    <rect x="588" y="480" width="755" height="120" rx="60" fill="#AE7219" stroke="none"/>
+    <rect x="588" y="1515" width="755" height="120" rx="60" fill="#AE7219" stroke="none"/>
+
+    <!-- drum body: lacing + rails, cut flat at top and bottom -->
+    <g clip-path="url(#sk-body)" stroke-linecap="butt">
+      <g stroke="#AE7219" stroke-width="52">
+        <path d="M828 610 C850 720 900 800 950 880"/>
+        <path d="M1100 610 C1075 720 1030 800 985 880"/>
+        <path d="M965 610 C960 690 940 740 915 790"/>
+        <path d="M815 1500 C850 1400 890 1300 950 1205"/>
+        <path d="M960 1500 C972 1400 995 1310 1022 1250 C1050 1310 1090 1400 1120 1500"/>
+      </g>
+      <g stroke="#D9A23A" stroke-width="52">
+        <path d="M672 625 C750 720 800 880 812 1045 C820 1200 760 1360 672 1490"/>
+        <path d="M1258 625 C1180 720 1130 880 1118 1045 C1110 1200 1170 1360 1258 1490"/>
+      </g>
+    </g>
+
+    <!-- centre: ring + dot -->
+    <circle cx="965" cy="1045" r="163" stroke="#D9A23A" stroke-width="54"/>
+    <circle cx="965" cy="1045" r="83" fill="#D9A23A" stroke="none"/>
+
+    <!-- sound waves -->
+    <g stroke="#D9A23A" stroke-width="58">
+      <path d="M676 905 A240 240 0 0 0 676 1170"/>
+      <path d="M590 812 A372 372 0 0 0 592 1257"/>
+      <path d="M503 710 A561 561 0 0 0 508 1372"/>
+      <path d="M1254 905 A240 240 0 0 1 1254 1170"/>
+      <path d="M1340 812 A372 372 0 0 1 1338 1257"/>
+      <path d="M1427 710 A561 561 0 0 1 1422 1372"/>
+    </g>
+  </g>
+</svg>

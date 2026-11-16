@@ -1,6 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 24" fill="none" role="img" aria-label="Sokomu wordmark">
-  <title>Sokomu</title>
-  <text x="0" y="18" fill="#121A3F" font-family="Georgia, serif" font-size="18" font-weight="700" letter-spacing="1.5">SOKOMU</text>
-  <circle cx="104" cy="12" r="2.5" fill="#B7791F" />
-  <path d="M112 7L118 12L112 17M122 7L128 12L122 17" stroke="#B7791F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 684 214" role="img" aria-label="sokomu">
+  <title>sokomu</title>
+  <!-- monoline rounded letters, outlined (no font needed) -->
+  <g fill="none" stroke="#151F42" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+    <!-- s -->
+    <path transform="translate(-4 0)" d="M57.2 103.9 A21.5 21.5 0 1 0 38 135 A21.5 21.5 0 1 1 18.8 166.3"/>
+    <!-- o -->
+    <circle cx="141" cy="135" r="43"/>
+    <!-- k -->
+    <path transform="translate(214 0)" d="M12 12 V178 M66 92 L12 142 M30 125.3 L66 178"/>
+    <!-- o -->
+    <circle cx="365" cy="135" r="43"/>
+    <!-- m -->
+    <path transform="translate(438 0)" d="M12 92 V178 M12 128 A26 36 0 0 1 64 128 V178 M64 128 A26 36 0 0 1 116 128 V178"/>
+    <!-- u -->
+    <path transform="translate(584 0)" d="M12 92 V135 A26 43 0 0 0 64 135 M64 92 V178"/>
+  </g>
+  <!-- the dot from the icon, living inside the first o -->
+  <circle cx="141" cy="135" r="15" fill="#D9A23A"/>
 </svg>
