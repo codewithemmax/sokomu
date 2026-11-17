@@ -90,7 +90,7 @@ export default function ProgressPage() {
     <AppShell>
       <div className="space-y-8">
         <div>
-          <h1 className="font-display text-3xl font-semibold text-indigo-900">
+          <h1 className="font-display text-4xl sm:text-[2.75rem] leading-[0.98] text-indigo-900">
             Cultural Mastery &amp; Data Saved Passport
           </h1>
           <p className="mt-1 text-sm text-text-secondary">
@@ -108,7 +108,7 @@ export default function ProgressPage() {
                   Aggregated across all Yoruba, Igbo, and Hausa tonal drills
                 </p>
               </div>
-              <span className="rounded-full bg-indigo-100 px-3 py-1 font-mono text-xs font-semibold text-indigo-700">
+              <span className="rounded-sm bg-indigo-100 px-3 py-1 font-mono text-xs font-semibold text-indigo-700">
                 Overall: {overallAccuracy}%
               </span>
             </CardHeader>
@@ -137,7 +137,7 @@ export default function ProgressPage() {
           <Card className="lg:col-span-5">
             <CardHeader>
               <CardTitle>Mobile Data &amp; Naira Saved</CardTitle>
-              <span className="rounded-full bg-edge-100 px-2.5 py-0.5 font-mono text-xs font-semibold text-edge-600">
+              <span className="rounded-sm bg-edge-100 px-2.5 py-0.5 font-mono text-xs font-semibold text-edge-600">
                 FR-TEL-03
               </span>
             </CardHeader>

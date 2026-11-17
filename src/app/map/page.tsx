@@ -136,9 +136,9 @@ export default function MapDashboardPage() {
   return (
     <AppShell>
       <div className="space-y-8">
-        <div className="flex flex-wrap items-end justify-between gap-4">
+        <div className="flex flex-wrap items-end justify-between gap-4 border-b-[3px] border-ink pb-5">
           <div>
-            <h1 className="tonal-text font-display text-2xl sm:text-3xl font-semibold text-indigo-900">
+            <h1 className="tonal-text text-3xl sm:text-[2.5rem] font-bold leading-[1.15] tracking-tight text-indigo-900">
               {greeting}, {learnerName}.
             </h1>
             <p className="mt-1 text-sm text-text-secondary">
@@ -260,7 +260,7 @@ export default function MapDashboardPage() {
           <Card>
             <CardHeader>
               <CardTitle>Mobile Data &amp; Naira Saved</CardTitle>
-              <span className="rounded-full bg-edge-100 px-2.5 py-0.5 font-mono text-xs font-semibold text-edge-600">
+              <span className="rounded-sm bg-edge-100 px-2.5 py-0.5 font-mono text-xs font-semibold text-edge-600">
                 ON_DEVICE + Cache
               </span>
             </CardHeader>

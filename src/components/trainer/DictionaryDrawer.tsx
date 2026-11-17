@@ -165,7 +165,7 @@ export function DictionaryDrawer({
                 scenarioId ? `&scenarioId=${encodeURIComponent(scenarioId)}` : ""
               }`}
               onClick={onClose}
-              className="inline-flex min-h-10 items-center rounded-[10px] bg-indigo-500 px-3.5 py-2 text-xs font-medium text-white hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-500"
+              className="inline-flex min-h-10 items-center border-2 border-indigo-900 bg-indigo-900 px-3.5 py-2 text-xs font-semibold text-on-indigo hover:bg-indigo-700 hover:border-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-500"
             >
               Trainer: add word &rarr;
             </Link>
@@ -202,10 +202,10 @@ export function DictionaryDrawer({
                 aria-pressed={active}
                 onClick={() => setFilter(btn.id)}
                 className={[
-                  "inline-flex min-h-10 sm:min-h-0 items-center gap-1.5 rounded-full px-3.5 py-2 sm:px-3 sm:py-1 text-xs font-medium transition-colors focus-visible:outline-2 focus-visible:outline-indigo-500",
+                  "inline-flex min-h-10 sm:min-h-0 items-center gap-1.5 rounded-sm px-3.5 py-2 sm:px-3 sm:py-1 text-xs font-medium transition-colors focus-visible:outline-2 focus-visible:outline-indigo-500",
                   active
-                    ? "bg-indigo-500 text-white"
-                    : "border border-border bg-surface-sunken text-text-secondary hover:bg-indigo-100/50",
+                    ? "border border-indigo-900 bg-indigo-900 text-on-indigo"
+                    : "border border-border bg-surface-sunken text-text-secondary hover:bg-ink/5",
                 ].join(" ")}
               >
                 <span>{btn.label}</span>
@@ -254,11 +254,11 @@ export function DictionaryDrawer({
                     ) : null}
                   </div>
                   <div className="flex flex-wrap items-center gap-1.5">
-                    <span className="rounded-full bg-gold-100 px-2.5 py-0.5 font-mono text-[11px] font-medium text-offline-600">
+                    <span className="rounded-sm bg-gold-100 px-2.5 py-0.5 font-mono text-[11px] font-medium text-offline-600">
                       Pending peer review
                     </span>
                     {sub.pendingSync ? (
-                      <span className="rounded-full bg-surface-raised border border-border px-2.5 py-0.5 font-mono text-[11px] text-text-secondary">
+                      <span className="rounded-sm bg-surface-raised border border-border px-2.5 py-0.5 font-mono text-[11px] text-text-secondary">
                         Will sync
                       </span>
                     ) : null}
@@ -305,7 +305,7 @@ export function DictionaryDrawer({
                   </div>
                   <span
                     className={[
-                      "rounded-full px-2.5 py-0.5 font-mono text-[11px] font-medium",
+                      "rounded-sm px-2.5 py-0.5 font-mono text-[11px] font-medium",
                       entry.source === "trainer"
                         ? "bg-edge-100 text-edge-600"
                         : "bg-indigo-100/70 text-indigo-700",

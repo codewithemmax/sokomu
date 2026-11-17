@@ -93,9 +93,9 @@ export default function OfflineLibraryPage() {
   return (
     <AppShell>
       <div className="space-y-6">
-        <div className="flex flex-wrap items-end justify-between gap-4">
+        <div className="flex flex-wrap items-end justify-between gap-4 border-b-[3px] border-ink pb-5">
           <div>
-            <h1 className="font-display text-3xl font-semibold text-indigo-900">
+            <h1 className="font-display text-4xl sm:text-[2.75rem] leading-[0.98] text-indigo-900">
               Offline Audio &amp; Scenario Library
             </h1>
             <p className="mt-1 text-sm text-text-secondary">
@@ -125,7 +125,7 @@ export default function OfflineLibraryPage() {
             </div>
             <span
               className={[
-                "rounded-full px-3 py-1 font-mono text-xs font-semibold",
+                "rounded-sm px-3 py-1 font-mono text-xs font-semibold",
                 storageInfo.persisted
                   ? "bg-edge-100 text-edge-600"
                   : "bg-gold-100 text-gold-600",
@@ -199,7 +199,7 @@ export default function OfflineLibraryPage() {
             <div className="pt-2">
               <Link
                 href="/scenarios"
-                className="inline-flex min-h-[44px] items-center justify-center rounded-[10px] bg-indigo-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-indigo-900"
+                className="inline-flex min-h-[44px] items-center justify-center border-2 border-indigo-900 bg-indigo-900 px-5 py-2.5 text-sm font-semibold text-on-indigo hover:bg-indigo-700 hover:border-indigo-700"
               >
                 Browse scenarios &rarr;
               </Link>
@@ -226,7 +226,7 @@ export default function OfflineLibraryPage() {
                           {scenario?.title ?? record.scenarioId}
                         </CardTitle>
                       </div>
-                      <span className="rounded-full bg-gold-100 px-2.5 py-0.5 font-mono text-xs font-semibold text-gold-600">
+                      <span className="rounded-sm bg-gold-100 px-2.5 py-0.5 font-mono text-xs font-semibold text-gold-600">
                         {formatStorageBytes(record.bytes)}
                       </span>
                     </CardHeader>

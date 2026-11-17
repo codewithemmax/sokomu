@@ -249,11 +249,11 @@ export function EntryForm({
           <div className="flex flex-wrap items-center justify-between gap-2">
             <CardTitle>1. Dialect &amp; Headword</CardTitle>
             {!online ? (
-              <span className="rounded-full bg-gold-100 px-3 py-1 font-mono text-xs font-medium text-offline-600">
+              <span className="rounded-sm bg-gold-100 px-3 py-1 font-mono text-xs font-medium text-offline-600">
                 Offline queue ready (Will sync)
               </span>
             ) : (
-              <span className="rounded-full bg-edge-100 px-3 py-1 font-mono text-xs font-medium text-edge-600">
+              <span className="rounded-sm bg-edge-100 px-3 py-1 font-mono text-xs font-medium text-edge-600">
                 Online &middot; NFC normalized
               </span>
             )}
@@ -457,7 +457,7 @@ export function EntryForm({
                           "rounded-[8px] border px-2.5 py-1 font-mono text-xs font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-indigo-500",
                           selected
                             ? opt.activeClass
-                            : "border-border bg-surface-raised text-text-secondary hover:bg-indigo-100/50",
+                            : "border-border bg-surface-raised text-text-secondary hover:bg-ink/5",
                         ].join(" ")}
                       >
                         {opt.tone}
@@ -509,7 +509,7 @@ export function EntryForm({
               aria-live="polite"
             >
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <p className="text-xs font-semibold uppercase tracking-wide text-indigo-900">
+                <p className="font-mono text-xs font-semibold text-indigo-900">
                   AI Orthography &amp; Tone Check (Advisory only)
                 </p>
                 <InferenceSourcePill

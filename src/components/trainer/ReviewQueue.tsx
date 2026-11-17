@@ -133,12 +133,12 @@ export function ReviewQueue({
                     </p>
                   </div>
                   <div className="flex flex-wrap items-center gap-1.5">
-                    <span className="rounded-full bg-indigo-100/70 px-2.5 py-0.5 font-mono text-[11px] font-medium text-indigo-700">
+                    <span className="rounded-sm bg-indigo-100/70 px-2.5 py-0.5 font-mono text-[11px] font-medium text-indigo-700">
                       {dialect?.name ?? sub.dialectId}
                     </span>
                     <span
                       className={[
-                        "rounded-full px-2.5 py-0.5 font-mono text-[11px] font-medium",
+                        "rounded-sm px-2.5 py-0.5 font-mono text-[11px] font-medium",
                         isSelf
                           ? "bg-gold-100 text-offline-600"
                           : "bg-edge-100 text-edge-600",
@@ -149,7 +149,7 @@ export function ReviewQueue({
                         : "Ready for peer review"}
                     </span>
                     {sub.pendingSync ? (
-                      <span className="rounded-full border border-border bg-surface-sunken px-2.5 py-0.5 font-mono text-[11px] text-text-muted">
+                      <span className="rounded-sm border border-border bg-surface-sunken px-2.5 py-0.5 font-mono text-[11px] text-text-muted">
                         Will sync
                       </span>
                     ) : null}

@@ -58,7 +58,7 @@ export function Drawer({
       aria-labelledby={titleId}
     >
       <div
-        className="fixed inset-0 bg-indigo-900/40 backdrop-blur-[1px] transition-opacity"
+        className="fixed inset-0 bg-indigo-900/50 transition-opacity"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -66,14 +66,14 @@ export function Drawer({
         ref={panelRef}
         tabIndex={-1}
         className={[
-          "relative z-10 flex w-full flex-col bg-surface-raised border-t lg:border-t-0 lg:border-l border-border shadow-[var(--shadow-3)] focus:outline-none",
-          "mt-auto max-h-[88dvh] rounded-t-3xl lg:mt-16 lg:max-h-[calc(100dvh-4rem)] lg:rounded-none",
+          "relative z-10 flex w-full flex-col bg-surface-raised border-t-[3px] lg:border-t-0 lg:border-l-[3px] border-ink shadow-[var(--shadow-3)] focus:outline-none",
+          "mt-auto max-h-[88dvh] rounded-none lg:mt-16 lg:max-h-[calc(100dvh-4rem)] lg:rounded-none",
           widthClassName,
         ].join(" ")}
       >
         <div className="flex items-start justify-between gap-4 border-b border-border px-5 py-4">
           <div>
-            <h2 id={titleId} className="text-lg font-semibold text-text-primary">
+            <h2 id={titleId} className="font-display text-xl text-text-primary">
               {title}
             </h2>
             {subtitle ? (
@@ -84,7 +84,7 @@ export function Drawer({
             type="button"
             onClick={onClose}
             aria-label="Close panel"
-            className="inline-flex size-10 shrink-0 items-center justify-center rounded-[10px] text-text-secondary hover:bg-indigo-100/60 hover:text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+            className="inline-flex size-10 shrink-0 items-center justify-center border border-transparent text-text-secondary hover:border-ink hover:text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
           >
             <span aria-hidden="true" className="text-lg leading-none">
               &times;

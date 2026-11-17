@@ -56,20 +56,20 @@ export function Modal({
       aria-labelledby={titleId}
     >
       <div
-        className="fixed inset-0 bg-indigo-900/50 backdrop-blur-[1px]"
+        className="fixed inset-0 bg-indigo-900/60"
         onClick={onClose}
         aria-hidden="true"
       />
       <div
         ref={dialogRef}
         tabIndex={-1}
-        className="relative z-10 w-full max-w-lg rounded-3xl border border-border bg-surface-raised p-6 shadow-[var(--shadow-3)] focus:outline-none"
+        className="relative z-10 w-full max-w-lg border-2 border-ink bg-surface-raised p-6 shadow-[var(--shadow-3)] focus:outline-none"
       >
         <div className="flex items-start justify-between gap-4">
           <div>
             <h2
               id={titleId}
-              className="font-display text-2xl font-semibold text-text-primary"
+              className="font-display text-2xl text-text-primary"
             >
               {title}
             </h2>
@@ -81,7 +81,7 @@ export function Modal({
             type="button"
             onClick={onClose}
             aria-label="Close modal"
-            className="inline-flex size-9 items-center justify-center rounded-[10px] text-text-secondary hover:bg-indigo-100/60 hover:text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+            className="inline-flex size-9 items-center justify-center border border-transparent text-text-secondary hover:border-ink hover:text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
           >
             <span aria-hidden="true" className="text-lg leading-none">
               &times;

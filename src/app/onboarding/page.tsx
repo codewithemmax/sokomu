@@ -172,8 +172,8 @@ export default function OnboardingPage() {
                       "flex flex-col items-start justify-between rounded-2xl border p-4 text-left transition-all cursor-pointer",
                       "focus-visible:outline-2 focus-visible:outline-indigo-500",
                       isSelected
-                        ? "border-indigo-700 bg-indigo-100/60"
-                        : "border-border bg-surface-sunken hover:bg-indigo-100/30",
+                        ? "border-ink bg-surface-raised shadow-[inset_4px_0_0_var(--color-gold-400)]"
+                        : "border-ink/25 bg-transparent hover:border-ink",
                     ].join(" ")}
                   >
                     <div>
@@ -223,8 +223,8 @@ export default function OnboardingPage() {
                       "flex w-full items-center justify-between gap-4 rounded-2xl border p-4 text-left transition-all cursor-pointer",
                       "focus-visible:outline-2 focus-visible:outline-indigo-500",
                       isSelected
-                        ? "border-indigo-700 bg-indigo-100/60"
-                        : "border-border bg-surface-sunken hover:bg-indigo-100/30",
+                        ? "border-ink bg-surface-raised shadow-[inset_4px_0_0_var(--color-gold-400)]"
+                        : "border-ink/25 bg-transparent hover:border-ink",
                     ].join(" ")}
                   >
                     <div className="space-y-1">
@@ -232,7 +232,7 @@ export default function OnboardingPage() {
                         <span className="font-display text-lg font-semibold text-text-primary">
                           {dialect.name}
                         </span>
-                        <span className="rounded-full bg-gold-100 px-2.5 py-0.5 font-mono text-xs text-gold-600">
+                        <span className="rounded-sm bg-gold-100 px-2.5 py-0.5 font-mono text-xs text-gold-600">
                           {dialect.region}
                         </span>
                       </div>
@@ -286,8 +286,8 @@ export default function OnboardingPage() {
                       "flex w-full flex-col rounded-2xl border p-4 text-left transition-all cursor-pointer",
                       "focus-visible:outline-2 focus-visible:outline-indigo-500",
                       isSelected
-                        ? "border-indigo-700 bg-indigo-100/60"
-                        : "border-border bg-surface-sunken hover:bg-indigo-100/30",
+                        ? "border-ink bg-surface-raised shadow-[inset_4px_0_0_var(--color-gold-400)]"
+                        : "border-ink/25 bg-transparent hover:border-ink",
                     ].join(" ")}
                   >
                     <span className="font-semibold text-text-primary">
@@ -329,7 +329,7 @@ export default function OnboardingPage() {
                   </span>
                   <span
                     className={[
-                      "rounded-full px-3 py-1 font-mono text-xs font-semibold",
+                      "rounded-sm px-3 py-1 font-mono text-xs font-semibold",
                       status.state === "ready"
                         ? "bg-edge-100 text-edge-600"
                         : "bg-cloud-100 text-cloud-600",

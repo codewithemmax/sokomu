@@ -15,16 +15,15 @@ export function Card({
 }: CardProps) {
   const surfaceClass = sunken
     ? "bg-surface-sunken border border-border"
-    : "bg-surface-raised border border-border";
+    : "bg-surface-raised border border-ink/25";
   const shadowClass = elevated ? "shadow-[var(--shadow-1)]" : "";
 
   return (
     <div
       className={[
-        "rounded-[4px] p-4 lg:p-6",
+        "rounded-none p-4 lg:p-6",
         surfaceClass,
         shadowClass,
-        "border-t-2 border-t-indigo-900/80",
         className,
       ]
         .filter(Boolean)
@@ -55,7 +54,7 @@ export function CardTitle({
 }: HTMLAttributes<HTMLHeadingElement>) {
   return (
     <h3
-      className={`text-[1.25rem] leading-[1.35] font-semibold tracking-[-0.01em] text-text-primary ${className}`}
+      className={`font-display text-[1.3rem] leading-[1.2] text-text-primary ${className}`}
       {...rest}
     >
       {children}

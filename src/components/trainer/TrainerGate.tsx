@@ -169,7 +169,7 @@ export function TrainerGate({ children }: TrainerGateProps) {
           <CardHeader>
             <div className="flex flex-wrap items-center justify-between gap-2">
               <CardTitle>Request Native Trainer Role</CardTitle>
-              <span className="rounded-full bg-surface-sunken px-3 py-1 font-mono text-xs text-text-secondary">
+              <span className="rounded-sm bg-surface-sunken px-3 py-1 font-mono text-xs text-text-secondary">
                 Current role: {role}
               </span>
             </div>

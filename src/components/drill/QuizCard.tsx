@@ -56,7 +56,7 @@ export function QuizCard({
     const accuracyPct = Math.round((correctCount / questions.length) * 100);
     return (
       <Card className="space-y-4 text-center">
-        <p className="font-mono text-xs font-semibold uppercase tracking-wider text-edge-600">
+        <p className="font-mono text-xs font-semibold text-edge-600">
           Vocabulary Drill Complete &middot; {source}
         </p>
         <h3 className="font-display text-2xl font-semibold text-text-primary">
@@ -93,7 +93,7 @@ export function QuizCard({
         </span>
         <span
           className={[
-            "rounded-full px-2.5 py-0.5 font-mono text-[11px] font-semibold",
+            "rounded-sm px-2.5 py-0.5 font-mono text-[11px] font-semibold",
             source === "ON_DEVICE"
               ? "bg-edge-100 text-edge-600"
               : source === "IN_CLOUD"
@@ -116,7 +116,7 @@ export function QuizCard({
           const showResult = selectedIndex !== null;
 
           let stateClasses =
-            "border-border bg-surface-sunken hover:bg-indigo-100/40 text-text-primary";
+            "border-border bg-surface-sunken hover:bg-ink/5 text-text-primary";
           if (showResult) {
             if (isCorrectOption) {
               stateClasses =

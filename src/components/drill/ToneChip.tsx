@@ -37,16 +37,16 @@ export function ToneChip({
   const style = TONE_STYLES[tone] ?? TONE_STYLES.M;
   const statusBorder =
     correct === true
-      ? "ring-1 ring-success-600/50 bg-edge-100/40"
+      ? "outline outline-1 -outline-offset-1 outline-success-600/60 bg-edge-100/50"
       : correct === false
-        ? "ring-1 ring-danger-600/50 bg-offline-100/50"
+        ? "outline outline-1 -outline-offset-1 outline-danger-600/60 bg-danger-100/60"
         : "bg-surface-sunken";
 
   return (
     <span
       aria-label={`Syllable ${syllable}, tone ${style.label}`}
       className={[
-        "inline-flex items-baseline gap-1.5 rounded-[6px] px-2.5 py-1",
+        "inline-flex items-baseline gap-1.5 px-2.5 py-1",
         style.border,
         statusBorder,
         className,

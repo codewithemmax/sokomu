@@ -28,7 +28,7 @@ export function FeedbackCard({
         <div className="flex items-center gap-2">
           <span
             className={[
-              "rounded-full px-2.5 py-0.5 text-xs font-semibold",
+              "rounded-sm px-2.5 py-0.5 text-xs font-semibold",
               grading.isCorrect
                 ? "bg-edge-100 text-edge-600"
                 : "bg-offline-100 text-danger-600",

@@ -37,7 +37,7 @@ export function ProgressBar({
   const safeMax = max > 0 ? max : 100;
   const clamped = Math.min(safeMax, Math.max(0, value));
   const percentage = Math.round((clamped / safeMax) * 100);
-  const heightClass = size === "sm" ? "h-1.5" : "h-2.5";
+  const heightClass = size === "sm" ? "h-1.5" : "h-3";
 
   return (
     <div className={`w-full ${className}`}>
@@ -61,10 +61,10 @@ export function ProgressBar({
         aria-valuenow={percentage}
         aria-valuemin={0}
         aria-valuemax={100}
-        className={`w-full overflow-hidden rounded-full bg-border/60 ${heightClass}`}
+        className={`relative w-full overflow-hidden border border-ink/30 bg-surface-sunken ${heightClass}`}
       >
         <div
-          className={`h-full rounded-full transition-all duration-200 ${FILL_CLASSES[tone]}`}
+          className={`h-full transition-[width] duration-200 ${FILL_CLASSES[tone]}`}
           style={{ width: `${percentage}%` }}
         />
       </div>

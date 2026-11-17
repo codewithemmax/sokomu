@@ -103,7 +103,7 @@ export function ToneDrill({
     const avgPct = Math.round((totalScore / items.length) * 100);
     return (
       <Card className="space-y-4 text-center">
-        <p className="font-mono text-xs font-semibold uppercase tracking-wider text-edge-600">
+        <p className="font-mono text-xs font-semibold text-edge-600">
           Tonal Drill Complete
         </p>
         <h3 className="font-display text-2xl font-semibold text-text-primary">
