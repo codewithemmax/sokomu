@@ -233,7 +233,7 @@ export function DualSpeakerPlayer({
     <Card className="space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div>
-          <p className="text-xs font-mono font-semibold uppercase tracking-wider text-text-muted">
+          <p className="font-mono text-xs font-semibold text-text-muted">
             24 kHz Dual-Speaker PCM Player
           </p>
           <p className="text-xs text-text-secondary">
@@ -243,16 +243,16 @@ export function DualSpeakerPlayer({
         </div>
 
         {cacheState === "cached" ? (
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-gold-600/30 bg-gold-100 px-3 py-1 font-mono text-xs font-semibold text-gold-600">
+          <span className="inline-flex items-center gap-1.5 rounded-sm border border-gold-600/30 bg-gold-100 px-3 py-1 font-mono text-xs font-semibold text-gold-600">
             <span>Saved offline &middot; {cachedMbLabel}</span>
           </span>
         ) : cacheState === "streaming" ? (
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-cloud-600/30 bg-cloud-100 px-3 py-1 font-mono text-xs font-semibold text-cloud-600">
+          <span className="inline-flex items-center gap-1.5 rounded-sm border border-cloud-600/30 bg-cloud-100 px-3 py-1 font-mono text-xs font-semibold text-cloud-600">
             <span className="inline-block size-2 rounded-full bg-cloud-600 animate-ping" />
             <span>IN_CLOUD &middot; streaming</span>
           </span>
         ) : (
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-sunken px-3 py-1 font-mono text-xs text-text-muted">
+          <span className="inline-flex items-center gap-1.5 rounded-sm border border-border bg-surface-sunken px-3 py-1 font-mono text-xs text-text-muted">
             Not saved ({cachedMbLabel})
           </span>
         )}

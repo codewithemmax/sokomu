@@ -84,7 +84,7 @@ export function TelemetryDrawer({ open, onClose }: TelemetryDrawerProps) {
         </div>
 
         <div>
-          <h3 className="mb-2.5 text-xs font-semibold uppercase tracking-wider text-text-muted">
+          <h3 className="mb-2.5 font-mono text-xs font-semibold text-text-muted">
             Last {recentEvents.length} Inference Events
           </h3>
           {recentEvents.length === 0 ? (
@@ -117,7 +117,7 @@ export function TelemetryDrawer({ open, onClose }: TelemetryDrawerProps) {
                     <div className="flex items-center gap-2 text-right font-mono">
                       <span
                         className={[
-                          "rounded-full px-2 py-0.5 text-[11px] font-semibold",
+                          "rounded-sm px-2 py-0.5 text-[11px] font-semibold",
                           event.source === "ON_DEVICE"
                             ? "bg-edge-100 text-edge-600"
                             : event.source === "IN_CLOUD"

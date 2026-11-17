@@ -232,10 +232,10 @@ function ScenarioDetailInner() {
               &larr; Back to scenarios
             </Link>
             <div className="flex flex-wrap items-center gap-2.5">
-              <h1 className="font-display text-2xl sm:text-3xl font-semibold text-indigo-900">
+              <h1 className="font-display text-3xl sm:text-[2.5rem] leading-[1] text-indigo-900">
                 {scenario.title}
               </h1>
-              <span className="rounded-full bg-gold-100 px-3 py-0.5 font-mono text-xs font-semibold text-gold-600">
+              <span className="rounded-sm bg-gold-100 px-3 py-0.5 font-mono text-xs font-semibold text-gold-600">
                 {dialect?.name ?? scenario.dialectId}
               </span>
             </div>

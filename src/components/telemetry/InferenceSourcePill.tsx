@@ -80,7 +80,7 @@ export function resolveInferencePillMeta(
     modelDisplay: model,
     ariaLabel: `Hybrid AI ready (${model})`,
     containerClass:
-      "bg-surface-raised text-text-secondary border border-border",
+      "bg-transparent text-text-secondary border border-ink/25 hover:border-ink",
     dotClass: "bg-edge-600",
   };
 }
@@ -120,7 +120,7 @@ export function InferenceSourcePill({
       aria-label={meta.ariaLabel}
       onClick={onOpenDetails}
       className={[
-        "inline-flex h-7 lg:h-8 items-center gap-2 rounded-lg px-3 text-xs font-medium transition-colors duration-200",
+        "inline-flex h-7 lg:h-8 items-center gap-2 px-3 text-xs font-medium transition-colors duration-200",
         "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 cursor-pointer",
         meta.containerClass,
         className,
@@ -131,7 +131,7 @@ export function InferenceSourcePill({
       <span
         aria-hidden="true"
         className={[
-          "inline-block size-2 rounded-full",
+          "inline-block size-2",
           meta.dotClass,
           streaming ? "animate-ping" : "",
         ]

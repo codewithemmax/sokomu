@@ -1,74 +1,90 @@
 @import "tailwindcss";
 
+/*
+ * Sokomu visual language: "Adire print".
+ * Flat undyed-cotton grounds, indigo ink, hard printed edges, no soft
+ * elevation. Gold and camwood are stamp colours, used sparingly. Tone
+ * colours stay semantic (H/M/L) and are never the only signal.
+ */
 @theme {
   --color-surface-base: #F7F5F0;
-  --color-surface-raised: #FFFFFF;
-  --color-surface-sunken: #EEEAE1;
-  --color-surface-inverse: #121A3F;
+  --color-surface-raised: #FCFAF5;
+  --color-surface-sunken: #ECE6D8;
+  --color-surface-inverse: #141A3C;
 
   --color-indigo-900: #121A3F;
-  --color-indigo-700: #26337A;
-  --color-indigo-500: #4457C4;
-  --color-indigo-100: #E3E7FB;
+  --color-indigo-700: #24318C;
+  --color-indigo-500: #3D51BF;
+  --color-indigo-100: #DDE0EE;
 
   --color-gold-600: #B7791F;
-  --color-gold-400: #E0A93B;
-  --color-gold-100: #FBF1DC;
+  --color-gold-400: #D9A23A;
+  --color-gold-100: #F2E5C6;
 
   --color-edge-600: #047857;
-  --color-edge-100: #D1FAE5;
+  --color-edge-100: #D5EEDF;
   --color-cloud-600: #0369A1;
-  --color-cloud-100: #E0F2FE;
+  --color-cloud-100: #DAEAF2;
   --color-cached-600: #475569;
-  --color-cached-100: #E2E8F0;
+  --color-cached-100: #E1E3E6;
 
   --color-success-600: #15803D;
   --color-warning-600: #B45309;
-  --color-danger-600: #B91C1C;
-  --color-danger-100: #FEE2E2;
+  --color-danger-600: #B3261E;
+  --color-danger-100: #F6DCD6;
   --color-offline-600: #7C2D12;
-  --color-offline-100: #FFEDD5;
+  --color-offline-100: #F6E0CC;
 
   --color-tone-high: #9D174D;
   --color-tone-mid: #3730A3;
   --color-tone-low: #0F766E;
 
-  --color-text-primary: #141829;
-  --color-text-secondary: #4A5068;
-  --color-text-muted: #6B7088;
-  --color-border: #D9D4C7;
+  --color-text-primary: #13172B;
+  --color-text-secondary: #454A5F;
+  --color-text-muted: #62667A;
+  --color-border: #CEC5B1;
 
-  --font-display: var(--font-noto-serif-display), "Noto Serif", Georgia, serif;
+  --color-ink: #141A3C;
+  --color-on-indigo: #F1ECE0;
+  --color-clay: #A3401F;
+  --color-clay-light: #F1DCD1;
+  --color-paper-line: rgba(20, 26, 60, 0.12);
+
+  --font-display: var(--font-archivo), "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
   --font-sans: var(--font-noto-sans), system-ui, "Segoe UI", sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
+  /* Printed edges: everything is near-square. */
+  --radius-xs: 1px;
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 3px;
+  --radius-xl: 3px;
+  --radius-2xl: 4px;
+  --radius-3xl: 4px;
 
-  --shadow-1: 0 1px 2px rgba(18, 26, 63, 0.08);
-  --shadow-2: 0 4px 12px rgba(18, 26, 63, 0.10);
-  --shadow-3: 0 12px 32px rgba(18, 26, 63, 0.16);
+  /* No soft elevation on the page; only overlays lift. */
+  --shadow-1: 0 0 #0000;
+  --shadow-2: 0 0 #0000;
+  --shadow-3: 0 28px 60px -24px rgba(20, 26, 60, 0.55);
 
   --ease-standard: cubic-bezier(0.2, 0, 0, 1);
-  --color-ink: #1D2433;
-  --color-clay: #A64B32;
-  --color-clay-light: #F2E3DB;
-  --color-paper-line: rgba(18, 26, 63, 0.11);
 }
 
 [data-theme="dark"] {
-  --color-surface-base: #0B1026;
-  --color-surface-raised: #131A3A;
-  --color-surface-sunken: #080C1E;
-  --color-surface-inverse: #F7F5F0;
-  --color-text-primary: #F2F3F8;
-  --color-text-secondary: #B4B9CF;
-  --color-text-muted: #8C92AD;
-  --color-border: #26305E;
+  --color-surface-base: #0D1130;
+  --color-surface-raised: #151A3E;
+  --color-surface-sunken: #090C24;
+  --color-surface-inverse: #F1ECE0;
+  --color-indigo-100: #1E2557;
+  --color-text-primary: #EFEAE0;
+  --color-text-secondary: #B9BBCB;
+  --color-text-muted: #8D91AA;
+  --color-border: #2B3264;
+  --color-ink: #EFEAE0;
+  --color-paper-line: rgba(239, 234, 224, 0.12);
   --color-edge-600: #34D399;
-  --color-edge-100: #052E22;
+  --color-edge-100: #072D22;
   --color-cloud-600: #38BDF8;
   --color-cloud-100: #072A40;
   --color-cached-600: #CBD5E1;
@@ -88,15 +104,17 @@ body {
   font-family: var(--font-sans);
   line-height: 1.6;
   font-feature-settings: "ccmp" 1, "mark" 1;
-  background-image:
-    linear-gradient(var(--color-paper-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--color-paper-line) 1px, transparent 1px);
-  background-size: 32px 32px;
-  background-position: -1px -1px;
+}
+
+/* Display type: semi-condensed, heavy, tight. */
+.font-display {
+  font-variation-settings: "wdth" 82;
+  font-weight: 750;
+  letter-spacing: -0.015em;
 }
 
 ::selection {
-  background: var(--color-indigo-100);
+  background: var(--color-gold-400);
   color: var(--color-indigo-900);
 }
 
@@ -110,13 +128,43 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
+/* Kept for compatibility: a flat raised sheet, no gradient. */
 .paper-surface {
   background-color: var(--color-surface-raised);
-  background-image: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.72),
-    rgba(238, 234, 225, 0.28)
-  );
+}
+
+/* Heavy printed rule above a block. */
+.ink-rule {
+  border-top: 3px solid var(--color-ink);
+}
+
+/* Section heading followed by a hairline running to the edge. */
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.875rem;
+}
+.section-head::after {
+  content: "";
+  flex: 1;
+  min-width: 2rem;
+  height: 1px;
+  background: var(--color-ink);
+  opacity: 0.35;
+  transform: translateY(-0.3em);
+}
+
+/*
+ * Adire resist field: rows of small undyed dots, as on oniko cloth.
+ * Use on indigo blocks only.
+ */
+.adire-field {
+  background-color: var(--color-indigo-900);
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(241, 236, 224, 0.16) 1.4px, transparent 1.6px),
+    radial-gradient(circle at 50% 50%, rgba(241, 236, 224, 0.08) 1px, transparent 1.2px);
+  background-size: 14px 14px, 14px 14px;
+  background-position: 0 0, 7px 7px;
 }
 
 @media (prefers-reduced-motion: reduce) {

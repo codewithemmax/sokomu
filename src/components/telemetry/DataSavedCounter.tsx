@@ -69,7 +69,7 @@ export function DataSavedCounter({
         aria-label={`Mobile data saved: ${mbLabel}, approximately ${nairaLabel}`}
         className={[
           "inline-flex flex-col items-end justify-center gap-0.5 rounded-[10px] px-2.5 py-1 text-right leading-none transition-colors",
-          "hover:bg-indigo-100/40 focus-visible:outline-2 focus-visible:outline-indigo-500 cursor-pointer",
+          "hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-indigo-500 cursor-pointer",
           className,
         ]
           .filter(Boolean)

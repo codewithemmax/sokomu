@@ -33,7 +33,7 @@ export function Tooltip({
           id={tooltipId}
           role="tooltip"
           className={[
-            "pointer-events-none absolute left-1/2 z-50 w-max max-w-xs -translate-x-1/2 rounded-lg bg-indigo-900 px-3 py-1.5 text-xs font-normal text-white shadow-[var(--shadow-2)]",
+            "pointer-events-none absolute left-1/2 z-50 w-max max-w-xs -translate-x-1/2 bg-indigo-900 px-2.5 py-1 text-xs font-normal text-on-indigo",
             placement === "bottom" ? "top-full mt-2" : "bottom-full mb-2",
           ].join(" ")}
         >

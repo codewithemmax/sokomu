@@ -146,7 +146,7 @@ function TrainerDashboardInner({
             </p>
             <Link
               href="/trainer/submit"
-              className="inline-flex rounded-[10px] bg-indigo-500 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
+              className="inline-flex border-2 border-indigo-900 bg-indigo-900 px-4 py-2 text-xs font-semibold text-on-indigo hover:bg-indigo-700 hover:border-indigo-700"
             >
               Open submission form &rarr;
             </Link>
@@ -197,9 +197,9 @@ export default function TrainerHomePage() {
   return (
     <AppShell>
       <div className="mx-auto max-w-5xl space-y-6">
-        <div className="flex flex-wrap items-end justify-between gap-4">
+        <div className="flex flex-wrap items-end justify-between gap-4 border-b-[3px] border-ink pb-5">
           <div>
-            <h1 className="font-display text-3xl font-semibold text-indigo-900">
+            <h1 className="font-display text-4xl sm:text-[2.75rem] leading-[0.98] text-indigo-900">
               Native Speaker Trainer Portal
             </h1>
             <p className="mt-1 text-sm text-text-secondary">

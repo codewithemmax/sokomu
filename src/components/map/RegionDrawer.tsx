@@ -36,7 +36,7 @@ export function RegionDrawer({
       <div className="space-y-4">
         <div className="flex items-start justify-between gap-3">
           <div>
-            <p className="font-mono text-xs font-semibold uppercase tracking-wider text-gold-600">
+            <p className="font-mono text-xs font-semibold text-gold-600">
               {dialect.region}
             </p>
             <h2 className="mt-0.5 font-display text-2xl font-semibold text-text-primary">
@@ -45,7 +45,7 @@ export function RegionDrawer({
           </div>
           <span
             className={[
-              "rounded-full px-2.5 py-1 font-mono text-xs font-semibold",
+              "rounded-sm px-2.5 py-1 font-mono text-xs font-semibold",
               stampState === "earned"
                 ? "bg-gold-100 text-gold-600 border border-gold-600/30"
                 : stampState === "in-progress"
@@ -62,7 +62,7 @@ export function RegionDrawer({
         </p>
 
         <div className="space-y-2.5 rounded-xl border border-border bg-surface-sunken p-3.5">
-          <p className="text-xs font-semibold uppercase tracking-wider text-text-muted">
+          <p className="font-mono text-xs font-semibold text-text-muted">
             Tonal Mastery ({dialect.name})
           </p>
           <ProgressBar
@@ -89,7 +89,7 @@ export function RegionDrawer({
         </div>
 
         <div className="space-y-2">
-          <p className="text-xs font-semibold uppercase tracking-wider text-text-muted">
+          <p className="font-mono text-xs font-semibold text-text-muted">
             Scenarios in {dialect.name}
           </p>
           <ul className="space-y-2">
@@ -102,7 +102,7 @@ export function RegionDrawer({
                 <li key={scenario.scenarioId}>
                   <Link
                     href={`/scenarios/${scenario.scenarioId}?tab=listen`}
-                    className="flex items-center justify-between gap-2 rounded-xl border border-border bg-surface-sunken px-3.5 py-2.5 text-sm transition-colors hover:bg-indigo-100/50 focus-visible:outline-2 focus-visible:outline-indigo-500"
+                    className="flex items-center justify-between gap-2 rounded-xl border border-border bg-surface-sunken px-3.5 py-2.5 text-sm transition-colors hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-indigo-500"
                   >
                     <div>
                       <p className="font-medium text-text-primary">
@@ -114,7 +114,7 @@ export function RegionDrawer({
                     </div>
                     <span
                       className={[
-                        "shrink-0 rounded-full px-2 py-0.5 font-mono text-[11px] font-medium",
+                        "shrink-0 rounded-sm px-2 py-0.5 font-mono text-[11px] font-medium",
                         isCached
                           ? "bg-gold-100 text-gold-600"
                           : "bg-cloud-100 text-cloud-600",
@@ -133,7 +133,7 @@ export function RegionDrawer({
       {primaryScenario ? (
         <Link
           href={`/scenarios/${primaryScenario.scenarioId}?tab=listen`}
-          className="inline-flex min-h-[44px] w-full items-center justify-center rounded-[10px] bg-indigo-700 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-indigo-900 focus-visible:outline-2 focus-visible:outline-indigo-500"
+          className="inline-flex min-h-[44px] w-full items-center justify-center border-2 border-indigo-900 bg-indigo-900 px-4 py-2.5 text-sm font-semibold text-on-indigo transition-colors hover:bg-indigo-700 hover:border-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-500"
         >
           Continue scenario: {primaryScenario.title}
         </Link>

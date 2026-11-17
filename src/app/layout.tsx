@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
-import {
-  JetBrains_Mono,
-  Noto_Sans,
-  Noto_Serif_Display,
-} from "next/font/google";
+import { Archivo, JetBrains_Mono, Noto_Sans } from "next/font/google";
 import { Providers } from "./providers";
 import "./globals.css";
 
-const notoSerifDisplay = Noto_Serif_Display({
-  variable: "--font-noto-serif-display",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin", "latin-ext"],
-  weight: ["600", "700"],
+  axes: ["wdth"],
   display: "swap",
 });
 
@@ -42,7 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${notoSerifDisplay.variable} ${notoSans.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${archivo.variable} ${notoSans.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-surface-base text-text-primary">
         <Providers>{children}</Providers>

@@ -57,7 +57,7 @@ export function DiagnosticsView() {
             >
               &larr; Back to settings
             </Link>
-            <h1 className="mt-1 font-display text-3xl font-semibold text-indigo-900">
+            <h1 className="mt-1 font-display text-4xl sm:text-[2.75rem] leading-[0.98] text-indigo-900">
               Hybrid AI &amp; Firebase Diagnostics
             </h1>
             <p className="mt-1 text-sm text-text-secondary">
@@ -71,7 +71,7 @@ export function DiagnosticsView() {
           <Card>
             <CardHeader>
               <CardTitle>Gemini Nano (Chrome AI)</CardTitle>
-              <span className="rounded-full bg-edge-100 px-2.5 py-0.5 font-mono text-xs font-semibold text-edge-600">
+              <span className="rounded-sm bg-edge-100 px-2.5 py-0.5 font-mono text-xs font-semibold text-edge-600">
                 {status.state}
               </span>
             </CardHeader>
@@ -107,7 +107,7 @@ export function DiagnosticsView() {
           <Card>
             <CardHeader>
               <CardTitle>Firebase App Check</CardTitle>
-              <span className="rounded-full bg-indigo-100 px-2.5 py-0.5 font-mono text-xs font-semibold text-indigo-700">
+              <span className="rounded-sm bg-indigo-100 px-2.5 py-0.5 font-mono text-xs font-semibold text-indigo-700">
                 {services?.appCheck ? "Initialized" : "Pending"}
               </span>
             </CardHeader>

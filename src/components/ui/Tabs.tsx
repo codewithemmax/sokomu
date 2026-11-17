@@ -28,7 +28,7 @@ export function Tabs<T extends string = string>({
     <div
       role="tablist"
       aria-label={ariaLabel}
-      className={`inline-flex flex-wrap items-center gap-1 rounded-xl border border-border bg-surface-sunken p-1 ${className}`}
+      className={`inline-flex flex-wrap items-end gap-x-5 gap-y-1 border-b border-ink/30 ${className}`}
     >
       {items.map((item) => {
         const isActive = item.id === activeTab;
@@ -43,17 +43,17 @@ export function Tabs<T extends string = string>({
             disabled={item.disabled}
             onClick={() => onChange(item.id)}
             className={[
-              "inline-flex min-h-[40px] items-center gap-2 rounded-[10px] px-4 py-2 text-sm font-medium transition-colors",
+              "-mb-px inline-flex min-h-[44px] items-center gap-2 border-b-[3px] px-0.5 pt-2 pb-1.5 text-sm font-medium transition-colors",
               "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500",
               isActive
-                ? "bg-surface-raised text-indigo-900 shadow-[var(--shadow-1)] font-semibold"
-                : "text-text-secondary hover:text-text-primary",
+                ? "border-ink text-text-primary font-semibold"
+                : "border-transparent text-text-secondary hover:border-ink/30 hover:text-text-primary",
               item.disabled ? "opacity-40 cursor-not-allowed" : "cursor-pointer",
             ].join(" ")}
           >
             <span>{item.label}</span>
             {item.badge !== undefined ? (
-              <span className="rounded-full bg-indigo-100 px-2 py-0.5 text-xs font-mono text-indigo-700">
+              <span className="bg-ink px-1.5 py-px text-[11px] font-mono text-surface-base">
                 {item.badge}
               </span>
             ) : null}

@@ -106,7 +106,7 @@ function EntriesWorkspace({ uid }: { uid: string }) {
                     <span className="tonal-text text-lg font-semibold text-indigo-900">
                       {entry.headword}
                     </span>
-                    <span className="rounded-full bg-edge-100 px-2 py-0.5 font-mono text-[11px] text-edge-600">
+                    <span className="rounded-sm bg-edge-100 px-2 py-0.5 font-mono text-[11px] text-edge-600">
                       Verified (trainer)
                     </span>
                   </div>
@@ -156,13 +156,13 @@ function EntriesWorkspace({ uid }: { uid: string }) {
                   </div>
                   <div className="flex items-center gap-2">
                     {sub.pendingSync ? (
-                      <span className="rounded-full border border-border bg-surface-raised px-2.5 py-0.5 font-mono text-[11px] text-text-muted">
+                      <span className="rounded-sm border border-border bg-surface-raised px-2.5 py-0.5 font-mono text-[11px] text-text-muted">
                         Will sync
                       </span>
                     ) : null}
                     <span
                       className={[
-                        "rounded-full px-2.5 py-0.5 font-mono text-[11px] font-medium uppercase",
+                        "rounded-sm px-2.5 py-0.5 font-mono text-[11px] font-medium uppercase",
                         sub.status === "approved"
                           ? "bg-edge-100 text-edge-600"
                           : sub.status === "rejected"
@@ -220,7 +220,7 @@ export default function TrainerEntriesPage() {
             >
               &larr; Back to Trainer Portal
             </Link>
-            <h1 className="mt-1 font-display text-3xl font-semibold text-indigo-900">
+            <h1 className="mt-1 font-display text-4xl sm:text-[2.75rem] leading-[0.98] text-indigo-900">
               Trainer Lexicon &amp; Rule Promotion
             </h1>
             <p className="mt-1 text-sm text-text-secondary">

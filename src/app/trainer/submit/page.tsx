@@ -39,7 +39,7 @@ export default function TrainerSubmitPage() {
             >
               &larr; Back to Trainer Portal
             </Link>
-            <h1 className="mt-1 font-display text-3xl font-semibold text-indigo-900">
+            <h1 className="mt-1 font-display text-4xl sm:text-[2.75rem] leading-[0.98] text-indigo-900">
               Submit Regional Dialect Entry
             </h1>
             <p className="mt-1 text-sm text-text-secondary">

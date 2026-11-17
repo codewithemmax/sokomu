@@ -240,7 +240,7 @@ export function NigeriaMap({
                 "focus-visible:outline-2 focus-visible:outline-indigo-500",
                 isSelected
                   ? "border-2 border-indigo-500 bg-surface-raised text-indigo-900"
-                  : "border-border bg-surface-raised/85 text-text-primary hover:bg-indigo-100/40",
+                  : "border-border bg-surface-raised/85 text-text-primary hover:bg-ink/5",
               ].join(" ")}
             >
               <span className="truncate">{dialect?.name ?? region.shortLabel}</span>

@@ -52,15 +52,15 @@ export function StampCard({
         .join(" ")}
     >
       <div className="flex w-full items-center justify-between gap-1 text-[11px]">
-        <span className="font-mono uppercase tracking-wider text-text-muted">
+        <span className="font-mono text-text-muted">
           {dialect.languageId.toUpperCase()}
         </span>
         {isEarned ? (
-          <span className="rounded-full bg-gold-600 px-2 py-0.5 font-mono text-[10px] font-semibold text-white">
+          <span className="rounded-sm bg-gold-600 px-2 py-0.5 font-mono text-[10px] font-semibold text-white">
             Earned
           </span>
         ) : isInProgress ? (
-          <span className="rounded-full bg-indigo-100 px-2 py-0.5 font-mono text-[10px] font-semibold text-indigo-700">
+          <span className="rounded-sm bg-indigo-100 px-2 py-0.5 font-mono text-[10px] font-semibold text-indigo-700">
             {safeProgress}%
           </span>
         ) : (

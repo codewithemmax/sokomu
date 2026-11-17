@@ -83,9 +83,9 @@ export default function SettingsPage() {
   return (
     <AppShell>
       <div className="mx-auto max-w-3xl space-y-6">
-        <div className="flex flex-wrap items-end justify-between gap-4">
+        <div className="flex flex-wrap items-end justify-between gap-4 border-b-[3px] border-ink pb-5">
           <div>
-            <h1 className="font-display text-3xl font-semibold text-indigo-900">
+            <h1 className="font-display text-4xl sm:text-[2.75rem] leading-[0.98] text-indigo-900">
               Account &amp; Learning Settings
             </h1>
             <p className="mt-1 text-sm text-text-secondary">
@@ -113,7 +113,7 @@ export default function SettingsPage() {
             </div>
             <span
               className={[
-                "rounded-full px-3 py-1 font-mono text-xs font-semibold",
+                "rounded-sm px-3 py-1 font-mono text-xs font-semibold",
                 isGuest
                   ? "bg-surface-sunken text-text-secondary"
                   : "bg-edge-100 text-edge-600",
