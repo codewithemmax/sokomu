@@ -58,7 +58,13 @@ export function getFirebase(): FirebaseServices {
   const auth = getAuth(app);
   const db = getFirestoreInstance(app);
   const remoteConfig = initRemoteConfig(app);
-  const ai = getAI(app, { backend: new GoogleAIBackend() });
+  // Limited-use App Check tokens (5-minute TTL, fresh per request) are what
+  // AI Logic accepts when replay protection is enforced; per the Firebase AI
+  // Logic App Check docs they also work when it is not.
+  const ai = getAI(app, {
+    backend: new GoogleAIBackend(),
+    useLimitedUseAppCheckTokens: true,
+  });
 
   services = { app, appCheck, auth, db, remoteConfig, ai };
   return services;
