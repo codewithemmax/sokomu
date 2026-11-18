@@ -90,7 +90,7 @@ export default function ProgressPage() {
     <AppShell>
       <div className="space-y-8">
         <div>
-          <h1 className="font-display text-4xl sm:text-[2.75rem] leading-[0.98] text-indigo-900">
+          <h1 className="font-display text-2xl sm:text-3xl font-extrabold text-text-primary">
             Cultural Mastery &amp; Data Saved Passport
           </h1>
           <p className="mt-1 text-sm text-text-secondary">
@@ -108,7 +108,7 @@ export default function ProgressPage() {
                   Aggregated across all Yoruba, Igbo, and Hausa tonal drills
                 </p>
               </div>
-              <span className="rounded-sm bg-indigo-100 px-3 py-1 font-mono text-xs font-semibold text-indigo-700">
+              <span className="rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold text-indigo-700">
                 Overall: {overallAccuracy}%
               </span>
             </CardHeader>
@@ -137,40 +137,40 @@ export default function ProgressPage() {
           <Card className="lg:col-span-5">
             <CardHeader>
               <CardTitle>Mobile Data &amp; Naira Saved</CardTitle>
-              <span className="rounded-sm bg-edge-100 px-2.5 py-0.5 font-mono text-xs font-semibold text-edge-600">
+              <span className="rounded-full bg-edge-100 px-2.5 py-0.5 text-xs font-semibold text-edge-600">
                 FR-TEL-03
               </span>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid grid-cols-2 gap-3">
-                <div className="rounded-xl border border-border bg-surface-sunken p-3">
+                <div className="rounded-xl border border-border bg-surface-base p-3">
                   <p className="text-xs text-text-muted">Data Saved</p>
-                  <p className="mt-1 font-mono text-xl font-semibold text-text-primary">
+                  <p className="mt-1 font-display text-xl font-extrabold text-text-primary">
                     {dataSaved.formattedMb}
                   </p>
                 </div>
-                <div className="rounded-xl border border-border bg-surface-sunken p-3">
+                <div className="rounded-xl border border-border bg-surface-base p-3">
                   <p className="text-xs text-text-muted">Naira Equivalent</p>
-                  <p className="mt-1 font-mono text-xl font-semibold text-gold-600">
+                  <p className="mt-1 font-display text-xl font-extrabold text-gold-600">
                     {dataSaved.formattedNaira}
                   </p>
                 </div>
               </div>
-              <div className="grid grid-cols-3 gap-2 text-center font-mono text-xs">
-                <div className="rounded-lg border border-border bg-surface-sunken p-2">
-                  <p className="text-[10px] text-text-muted">ON_DEVICE</p>
+              <div className="grid grid-cols-3 gap-2 text-center text-xs">
+                <div className="rounded-lg border border-border bg-surface-base p-2">
+                  <p className="text-xs text-text-muted">ON_DEVICE</p>
                   <p className="font-semibold text-edge-600">
                     {summary.onDeviceCount}
                   </p>
                 </div>
-                <div className="rounded-lg border border-border bg-surface-sunken p-2">
-                  <p className="text-[10px] text-text-muted">CACHED</p>
+                <div className="rounded-lg border border-border bg-surface-base p-2">
+                  <p className="text-xs text-text-muted">CACHED</p>
                   <p className="font-semibold text-gold-600">
                     {summary.cachedReplayCount}
                   </p>
                 </div>
-                <div className="rounded-lg border border-border bg-surface-sunken p-2">
-                  <p className="text-[10px] text-text-muted">IN_CLOUD</p>
+                <div className="rounded-lg border border-border bg-surface-base p-2">
+                  <p className="text-xs text-text-muted">IN_CLOUD</p>
                   <p className="font-semibold text-cloud-600">
                     {summary.cloudCount}
                   </p>

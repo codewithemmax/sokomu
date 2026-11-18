@@ -17,7 +17,7 @@ export function BottomTabBar() {
   return (
     <nav
       aria-label="Mobile bottom navigation"
-      className="fixed bottom-0 inset-x-0 z-40 flex h-16 md:hidden items-stretch justify-around border-t-[3px] border-ink bg-surface-base pb-[env(safe-area-inset-bottom)]"
+      className="fixed bottom-0 inset-x-0 z-40 flex md:hidden items-stretch justify-around border-t border-border bg-surface-raised px-1 pb-[env(safe-area-inset-bottom)]"
     >
       {MOBILE_TABS.map((tab) => {
         const isActive =
@@ -28,14 +28,21 @@ export function BottomTabBar() {
             href={tab.href}
             aria-current={isActive ? "page" : undefined}
             className={[
-              "relative flex flex-1 flex-col items-center justify-center gap-1 py-2 text-xs font-medium transition-colors",
-              "focus-visible:outline-2 focus-visible:outline-indigo-500",
+              "relative flex min-h-16 flex-1 flex-col items-center justify-center gap-1 text-xs transition-colors",
+              "focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-focus",
               isActive
-                ? "bg-indigo-900 text-gold-400 font-semibold"
-                : "text-text-muted hover:text-text-primary",
+                ? "font-semibold text-indigo-900"
+                : "font-medium text-text-secondary hover:text-text-primary",
             ].join(" ")}
           >
-            <Icon name={tab.icon as IconName} size={20} />
+            <span
+              className={[
+                "flex h-8 w-14 items-center justify-center rounded-[var(--radius-button)]",
+                isActive ? "bg-indigo-100 text-indigo-700" : "",
+              ].join(" ")}
+            >
+              <Icon name={tab.icon as IconName} size={20} />
+            </span>
             <span>{tab.label}</span>
           </Link>
         );

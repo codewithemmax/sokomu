@@ -80,7 +80,7 @@ export function TrainerGate({ children }: TrainerGateProps) {
           </p>
           <Link
             href="/map"
-            className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
+            className="inline-flex min-h-11 items-center text-xs font-medium text-indigo-700 hover:underline"
           >
             &larr; Return to Nigeria dialect map
           </Link>
@@ -116,7 +116,7 @@ export function TrainerGate({ children }: TrainerGateProps) {
             </Button>
             <Link
               href="/scenarios"
-              className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
+              className="inline-flex min-h-11 items-center text-xs font-medium text-indigo-700 hover:underline"
             >
               Continue learning as guest &rarr;
             </Link>
@@ -169,7 +169,7 @@ export function TrainerGate({ children }: TrainerGateProps) {
           <CardHeader>
             <div className="flex flex-wrap items-center justify-between gap-2">
               <CardTitle>Request Native Trainer Role</CardTitle>
-              <span className="rounded-sm bg-surface-sunken px-3 py-1 font-mono text-xs text-text-secondary">
+              <span className="rounded-full bg-surface-base px-3 py-1 text-xs text-text-secondary">
                 Current role: {role}
               </span>
             </div>
@@ -190,7 +190,7 @@ export function TrainerGate({ children }: TrainerGateProps) {
                   Trainer access request on file ({existingRequest.dialectId})
                 </p>
                 <p className="text-xs">{existingRequest.motivation}</p>
-                <p className="font-mono text-[11px]">
+                <p className="text-xs">
                   Once an admin grants role &quot;trainer&quot; on{" "}
                   <code>users/{user.uid}</code>, this portal unlocks automatically.
                 </p>
@@ -211,7 +211,7 @@ export function TrainerGate({ children }: TrainerGateProps) {
                   onChange={(event) =>
                     setRequestDialectId(event.target.value as DialectId)
                   }
-                  className="w-full rounded-[10px] border border-border bg-surface-base px-3 py-2.5 text-sm text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+                  className="w-full rounded-[var(--radius-input)] border border-border bg-surface-base px-3 py-2.5 text-sm text-text-primary focus-visible:outline-2 focus-visible:outline-focus"
                 >
                   {SEED_DIALECTS.map((dialect) => (
                     <option key={dialect.dialectId} value={dialect.dialectId}>
@@ -234,7 +234,7 @@ export function TrainerGate({ children }: TrainerGateProps) {
                   value={motivation}
                   onChange={(event) => setMotivation(event.target.value)}
                   placeholder="Describe your native dialect background (e.g. born and raised in Ijebu-Ode, familiar with tonal orthography)"
-                  className="w-full rounded-[10px] border border-border bg-surface-base px-3.5 py-2.5 text-sm text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+                  className="w-full rounded-[var(--radius-input)] border border-border bg-surface-base px-3.5 py-2.5 text-sm text-text-primary focus-visible:outline-2 focus-visible:outline-focus"
                 />
               </div>
 

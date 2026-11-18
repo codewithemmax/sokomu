@@ -46,23 +46,23 @@ export function TelemetryDrawer({ open, onClose }: TelemetryDrawerProps) {
     >
       <div className="space-y-5">
         <div className="grid grid-cols-3 gap-3">
-          <div className="rounded-xl border border-border bg-surface-sunken p-3">
-            <p className="text-[11px] font-medium text-text-muted">ON_DEVICE</p>
-            <p className="mt-1 font-mono text-lg font-semibold tabular-nums text-edge-600">
+          <div className="rounded-xl border border-border bg-surface-base p-3">
+            <p className="text-xs font-medium text-text-muted">ON_DEVICE</p>
+            <p className="mt-1 font-display text-lg font-extrabold tabular-nums text-edge-600">
               {summary.onDeviceCount}
             </p>
           </div>
-          <div className="rounded-xl border border-border bg-surface-sunken p-3">
-            <p className="text-[11px] font-medium text-text-muted">IN_CLOUD</p>
-            <p className="mt-1 font-mono text-lg font-semibold tabular-nums text-cloud-600">
+          <div className="rounded-xl border border-border bg-surface-base p-3">
+            <p className="text-xs font-medium text-text-muted">IN_CLOUD</p>
+            <p className="mt-1 font-display text-lg font-extrabold tabular-nums text-cloud-600">
               {summary.cloudCount}
             </p>
           </div>
-          <div className="rounded-xl border border-border bg-surface-sunken p-3">
-            <p className="text-[11px] font-medium text-text-muted">
+          <div className="rounded-xl border border-border bg-surface-base p-3">
+            <p className="text-xs font-medium text-text-muted">
               Local / Offline
             </p>
-            <p className="mt-1 font-mono text-lg font-semibold tabular-nums text-indigo-700">
+            <p className="mt-1 font-display text-lg font-extrabold tabular-nums text-indigo-700">
               {onDeviceShare}%
             </p>
           </div>
@@ -73,7 +73,7 @@ export function TelemetryDrawer({ open, onClose }: TelemetryDrawerProps) {
             <span className="text-xs font-semibold text-text-primary">
               Estimated Mobile Data Saved
             </span>
-            <span className="font-mono text-sm font-semibold tabular-nums text-gold-600">
+            <span className="text-sm font-semibold tabular-nums text-text-secondary">
               {dataSaved.formattedMb} ({dataSaved.formattedNaira})
             </span>
           </div>
@@ -84,7 +84,7 @@ export function TelemetryDrawer({ open, onClose }: TelemetryDrawerProps) {
         </div>
 
         <div>
-          <h3 className="mb-2.5 font-mono text-xs font-semibold text-text-muted">
+          <h3 className="mb-2.5 text-xs font-semibold text-text-muted">
             Last {recentEvents.length} Inference Events
           </h3>
           {recentEvents.length === 0 ? (
@@ -110,14 +110,14 @@ export function TelemetryDrawer({ open, onClose }: TelemetryDrawerProps) {
                       <p className="font-medium text-text-primary">
                         {formatFeatureLabel(event.feature)}
                       </p>
-                      <p className="font-mono text-[11px] text-text-muted">
+                      <p className="text-xs text-text-muted">
                         {timeStr}
                       </p>
                     </div>
-                    <div className="flex items-center gap-2 text-right font-mono">
+                    <div className="flex items-center gap-2 text-right">
                       <span
                         className={[
-                          "rounded-sm px-2 py-0.5 text-[11px] font-semibold",
+                          "rounded-full px-2 py-0.5 text-xs font-semibold",
                           event.source === "ON_DEVICE"
                             ? "bg-edge-100 text-edge-600"
                             : event.source === "IN_CLOUD"

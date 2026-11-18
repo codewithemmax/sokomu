@@ -133,12 +133,12 @@ export function ReviewQueue({
                     </p>
                   </div>
                   <div className="flex flex-wrap items-center gap-1.5">
-                    <span className="rounded-sm bg-indigo-100/70 px-2.5 py-0.5 font-mono text-[11px] font-medium text-indigo-700">
+                    <span className="rounded-full bg-indigo-100/70 px-2.5 py-0.5 text-xs font-medium text-indigo-700">
                       {dialect?.name ?? sub.dialectId}
                     </span>
                     <span
                       className={[
-                        "rounded-sm px-2.5 py-0.5 font-mono text-[11px] font-medium",
+                        "rounded-full px-2.5 py-0.5 text-xs font-medium",
                         isSelf
                           ? "bg-gold-100 text-offline-600"
                           : "bg-edge-100 text-edge-600",
@@ -149,7 +149,7 @@ export function ReviewQueue({
                         : "Ready for peer review"}
                     </span>
                     {sub.pendingSync ? (
-                      <span className="rounded-sm border border-border bg-surface-sunken px-2.5 py-0.5 font-mono text-[11px] text-text-muted">
+                      <span className="rounded-full border border-border bg-surface-base px-2.5 py-0.5 text-xs text-text-muted">
                         Will sync
                       </span>
                     ) : null}
@@ -178,7 +178,7 @@ export function ReviewQueue({
                 </div>
 
                 {sub.example ? (
-                  <p className="rounded-xl bg-surface-sunken px-3.5 py-2.5 text-xs text-text-secondary">
+                  <p className="rounded-xl bg-surface-base px-3.5 py-2.5 text-xs text-text-secondary">
                     <span className="tonal-text font-medium text-text-primary">
                       {sub.example.text}
                     </span>{" "}
@@ -193,7 +193,7 @@ export function ReviewQueue({
                 ) : null}
 
                 {isRejectOpen && !isSelf ? (
-                  <div className="space-y-2 rounded-xl border border-danger-600/30 bg-surface-sunken p-3">
+                  <div className="space-y-2 rounded-xl border border-danger-600/30 bg-surface-base p-3">
                     <label
                       htmlFor={`reject-reason-${sub.submissionId}`}
                       className="block text-xs font-medium text-text-primary"
@@ -206,7 +206,7 @@ export function ReviewQueue({
                       value={rejectionReason}
                       onChange={(event) => setRejectionReason(event.target.value)}
                       placeholder="Specify tone mark, sub-dot, or regional lexical correction needed"
-                      className="w-full rounded-[10px] border border-border bg-surface-base px-3 py-2 text-xs text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+                      className="w-full rounded-[var(--radius-input)] border border-border bg-surface-base px-3 py-2 text-xs text-text-primary focus-visible:outline-2 focus-visible:outline-focus"
                     />
                     <div className="flex flex-wrap justify-end gap-2">
                       <Button
@@ -235,12 +235,12 @@ export function ReviewQueue({
               </CardContent>
 
               <CardFooter className="justify-between gap-3">
-                <span className="font-mono text-[11px] text-text-muted">
+                <span className="text-xs text-text-muted">
                   ID: {sub.submissionId}
                 </span>
 
                 {isSelf ? (
-                  <p className="text-xs font-medium text-gold-600">
+                  <p className="text-xs font-medium text-text-secondary">
                     Self-approval blocked: a second verified trainer must review
                     this entry.
                   </p>

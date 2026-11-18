@@ -136,9 +136,9 @@ export default function MapDashboardPage() {
   return (
     <AppShell>
       <div className="space-y-8">
-        <div className="flex flex-wrap items-end justify-between gap-4 border-b-[3px] border-ink pb-5">
+        <div className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-5">
           <div>
-            <h1 className="tonal-text text-3xl sm:text-[2.5rem] font-bold leading-[1.15] tracking-tight text-indigo-900">
+            <h1 className="tonal-text font-display text-2xl sm:text-3xl font-extrabold text-text-primary">
               {greeting}, {learnerName}.
             </h1>
             <p className="mt-1 text-sm text-text-secondary">
@@ -158,7 +158,7 @@ export default function MapDashboardPage() {
           </div>
           <Link
             href="/onboarding"
-            className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
+            className="inline-flex min-h-11 items-center text-xs font-medium text-indigo-700 hover:underline"
           >
             Change dialect or goal &rarr;
           </Link>
@@ -195,7 +195,7 @@ export default function MapDashboardPage() {
             </h2>
             <Link
               href="/progress"
-              className="inline-flex min-h-10 shrink-0 items-center text-xs font-medium text-indigo-700 hover:underline"
+              className="inline-flex min-h-11 shrink-0 items-center text-xs font-medium text-indigo-700 hover:underline"
             >
               See full passport &rarr;
             </Link>
@@ -231,7 +231,7 @@ export default function MapDashboardPage() {
               <CardTitle>
                 Tonal Accuracy Mastery ({selectedDialect.name})
               </CardTitle>
-              <span className="font-mono text-xs text-text-muted">
+              <span className="text-xs text-text-muted">
                 H &middot; M &middot; L
               </span>
             </CardHeader>
@@ -260,14 +260,14 @@ export default function MapDashboardPage() {
           <Card>
             <CardHeader>
               <CardTitle>Mobile Data &amp; Naira Saved</CardTitle>
-              <span className="rounded-sm bg-edge-100 px-2.5 py-0.5 font-mono text-xs font-semibold text-edge-600">
+              <span className="rounded-full bg-edge-100 px-2.5 py-0.5 text-xs font-semibold text-edge-600">
                 ON_DEVICE + Cache
               </span>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="flex items-baseline justify-between">
                 <div>
-                  <p className="font-mono text-2xl font-semibold tabular-nums text-text-primary">
+                  <p className="font-display text-2xl font-extrabold tabular-nums text-text-primary">
                     {dataSaved.formattedMb}
                   </p>
                   <p className="text-xs text-text-muted">
@@ -275,7 +275,7 @@ export default function MapDashboardPage() {
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="font-mono text-xl font-semibold tabular-nums text-gold-600">
+                  <p className="font-display text-xl font-extrabold tabular-nums text-gold-600">
                     {dataSaved.formattedNaira}
                   </p>
                   <p className="text-xs text-text-muted">
@@ -284,15 +284,15 @@ export default function MapDashboardPage() {
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-3 pt-1 text-xs">
-                <div className="rounded-xl border border-border bg-surface-sunken p-2.5">
+                <div className="rounded-xl border border-border bg-surface-base p-2.5">
                   <span className="text-text-muted">On-device drills: </span>
-                  <span className="font-mono font-semibold text-edge-600">
+                  <span className="font-semibold text-edge-600">
                     {dataSaved.onDeviceCount}
                   </span>
                 </div>
-                <div className="rounded-xl border border-border bg-surface-sunken p-2.5">
+                <div className="rounded-xl border border-border bg-surface-base p-2.5">
                   <span className="text-text-muted">Cached replays: </span>
-                  <span className="font-mono font-semibold text-gold-600">
+                  <span className="font-semibold text-gold-600">
                     {dataSaved.cachedReplayCount}
                   </span>
                 </div>

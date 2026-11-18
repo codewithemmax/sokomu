@@ -23,20 +23,23 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const VARIANT_CLASSES: Record<ButtonVariant, string> = {
   primary:
-    "bg-indigo-900 text-on-indigo border-2 border-indigo-900 hover:bg-indigo-700 hover:border-indigo-700",
+    "bg-indigo-700 text-on-indigo border border-transparent hover:bg-indigo-900 active:bg-indigo-900 active:shadow-[inset_0_2px_0_rgba(0,0,0,0.25)]",
   secondary:
-    "bg-transparent text-text-primary border-2 border-ink hover:bg-ink hover:text-surface-base",
+    "bg-surface-raised text-ink border border-border hover:bg-surface-base active:bg-surface-sunken",
   ghost:
-    "bg-transparent text-text-secondary border-2 border-transparent underline-offset-4 hover:text-text-primary hover:underline",
-  gold: "bg-gold-400 text-indigo-900 border-2 border-gold-400 hover:bg-gold-600 hover:border-gold-600 hover:text-white",
+    "bg-transparent text-indigo-700 border border-transparent hover:bg-indigo-100 hover:text-indigo-900 active:bg-indigo-100",
+  gold: "bg-gold-100 text-ink border border-transparent hover:bg-gold-400/60 active:bg-gold-400/80",
   danger:
-    "bg-danger-600 text-white border-2 border-danger-600 hover:bg-transparent hover:text-danger-600",
+    "bg-danger-600 text-on-indigo border border-transparent hover:bg-offline-600",
 };
 
+const DISABLED_CLASSES =
+  "bg-surface-sunken text-text-muted border border-transparent cursor-not-allowed";
+
 const SIZE_CLASSES: Record<ButtonSize, string> = {
-  sm: "min-h-[40px] sm:min-h-[38px] px-3 py-1.5 text-xs rounded-sm",
-  md: "min-h-[44px] sm:min-h-[44px] px-4 py-2.5 text-sm rounded-sm",
-  lg: "min-h-[48px] px-6 py-3 text-base rounded-sm",
+  sm: "min-h-[44px] px-4 text-sm",
+  md: "min-h-[48px] px-5 text-base",
+  lg: "min-h-[56px] px-6 text-base",
 };
 
 export function Button({
@@ -55,6 +58,7 @@ export function Button({
   ...rest
 }: ButtonProps) {
   const isDisabled = Boolean(disabled || loading || offlineDimmed);
+  const showDisabledStyle = Boolean(disabled || offlineDimmed) && !loading;
   const effectiveTitle =
     offlineDimmed && !title ? "Needs connection" : title;
 
@@ -73,13 +77,12 @@ export function Button({
         onClick?.(event);
       }}
       className={[
-        "inline-flex items-center justify-center gap-2 font-semibold transition-colors duration-150",
-        "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500",
-        "active:translate-y-px",
-        VARIANT_CLASSES[variant],
+        "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-[var(--radius-button)] font-semibold leading-none transition-colors duration-150",
+        "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus",
+        showDisabledStyle ? DISABLED_CLASSES : VARIANT_CLASSES[variant],
         SIZE_CLASSES[size],
         fullWidth ? "w-full" : "",
-        isDisabled ? "opacity-40 cursor-not-allowed active:translate-y-0" : "cursor-pointer",
+        isDisabled ? "cursor-not-allowed" : "cursor-pointer",
         className,
       ]
         .filter(Boolean)
@@ -89,8 +92,12 @@ export function Button({
       {loading ? (
         <span
           aria-hidden="true"
-          className="inline-block size-4 rounded-full border-2 border-current border-t-transparent animate-spin"
-        />
+          className={`tone-loader ${variant === "primary" || variant === "danger" ? "on-indigo" : ""}`}
+        >
+          <i />
+          <i />
+          <i />
+        </span>
       ) : (
         leadingIcon
       )}

@@ -59,9 +59,9 @@ export default function ScenariosLibraryPage() {
   return (
     <AppShell>
       <div className="space-y-6">
-        <div className="flex flex-wrap items-end justify-between gap-4 border-b-[3px] border-ink pb-5">
+        <div className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-5">
           <div>
-            <h1 className="font-display text-4xl sm:text-[2.75rem] leading-[0.98] text-indigo-900">
+            <h1 className="font-display text-2xl sm:text-3xl font-extrabold text-text-primary">
               Cultural Scenarios
             </h1>
             <p className="mt-1 text-sm text-text-secondary">
@@ -71,22 +71,22 @@ export default function ScenariosLibraryPage() {
           </div>
           <Link
             href="/library"
-            className="inline-flex min-h-10 items-center text-xs sm:text-sm font-medium text-indigo-700 hover:underline"
+            className="inline-flex min-h-11 items-center text-xs sm:text-sm font-medium text-indigo-700 hover:underline"
           >
             Manage offline storage ({cachedScenarioIds.size} saved) &rarr;
           </Link>
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-3 border-y border-ink/25 py-3">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-y border-border py-3">
           <div className="flex flex-wrap items-center gap-2">
             <button
               type="button"
               onClick={() => setDialectFilter("all")}
               className={[
-                "inline-flex min-h-10 sm:min-h-0 items-center rounded-sm px-3.5 py-2 sm:px-3 sm:py-1.5 text-xs font-medium transition-colors cursor-pointer",
+                "inline-flex min-h-11 items-center rounded-[var(--radius-button)] px-4 text-sm font-medium transition-colors cursor-pointer",
                 dialectFilter === "all"
-                  ? "border border-indigo-900 bg-indigo-900 text-on-indigo"
-                  : "border border-ink/25 text-text-secondary hover:border-ink hover:text-text-primary",
+                  ? "border border-transparent bg-indigo-100 font-semibold text-indigo-900"
+                  : "border border-border bg-surface-raised text-text-secondary hover:border-text-muted hover:text-text-primary",
               ].join(" ")}
             >
               All dialects ({scenarios.length})
@@ -97,10 +97,10 @@ export default function ScenariosLibraryPage() {
                 type="button"
                 onClick={() => setDialectFilter(dialect.dialectId)}
                 className={[
-                  "inline-flex min-h-10 sm:min-h-0 items-center rounded-sm px-3.5 py-2 sm:px-3 sm:py-1.5 text-xs font-medium transition-colors cursor-pointer",
+                  "inline-flex min-h-11 items-center rounded-[var(--radius-button)] px-4 text-sm font-medium transition-colors cursor-pointer",
                   dialectFilter === dialect.dialectId
-                    ? "border border-indigo-900 bg-indigo-900 text-on-indigo"
-                    : "border border-ink/25 text-text-secondary hover:border-ink hover:text-text-primary",
+                    ? "border border-transparent bg-indigo-100 font-semibold text-indigo-900"
+                    : "border border-border bg-surface-raised text-text-secondary hover:border-text-muted hover:text-text-primary",
                 ].join(" ")}
               >
                 {dialect.name}
@@ -113,10 +113,10 @@ export default function ScenariosLibraryPage() {
             aria-pressed={onlyCached}
             onClick={() => setOnlyCached((v) => !v)}
             className={[
-              "inline-flex min-h-10 sm:min-h-0 items-center rounded-sm border px-3.5 py-2 sm:px-3 sm:py-1.5 font-mono text-xs font-medium transition-colors cursor-pointer",
+              "inline-flex min-h-11 items-center rounded-[var(--radius-button)] border px-4 text-sm font-medium transition-colors cursor-pointer",
               onlyCached
-                ? "border-gold-600 bg-gold-100 text-gold-600"
-                : "border-border bg-surface-sunken text-text-secondary",
+                ? "border-transparent bg-gold-100 font-semibold text-ink"
+                : "border-border bg-surface-base text-text-secondary",
             ].join(" ")}
           >
             {onlyCached ? "Showing saved offline only" : "Filter: Saved offline"}
@@ -134,7 +134,7 @@ export default function ScenariosLibraryPage() {
                 <div>
                   <CardHeader>
                     <div>
-                      <span className="font-mono text-xs font-semibold text-gold-600">
+                      <span className="text-xs font-semibold text-text-secondary">
                         {dialect?.name ?? scenario.dialectId} &middot;{" "}
                         {dialect?.region ?? ""}
                       </span>
@@ -144,9 +144,9 @@ export default function ScenariosLibraryPage() {
                     </div>
                     <span
                       className={[
-                        "shrink-0 rounded-sm px-2.5 py-0.5 font-mono text-xs font-semibold",
+                        "shrink-0 rounded-full px-2.5 py-0.5 text-xs font-semibold",
                         isCached
-                          ? "bg-gold-100 text-gold-600 border border-gold-600/30"
+                          ? "bg-gold-100 text-ink border border-transparent"
                           : "bg-cloud-100 text-cloud-600",
                       ].join(" ")}
                     >
@@ -158,7 +158,7 @@ export default function ScenariosLibraryPage() {
                     <p className="text-sm text-text-secondary">
                       {scenario.summary}
                     </p>
-                    <div className="rounded-xl border border-border bg-surface-sunken p-3 text-xs text-text-secondary">
+                    <div className="rounded-xl border border-border bg-surface-base p-3 text-xs text-text-secondary">
                       <strong className="text-text-primary">Speakers:</strong>{" "}
                       {scenario.speakers[0].displayName} &amp;{" "}
                       {scenario.speakers[1].displayName} &middot;{" "}
@@ -171,20 +171,20 @@ export default function ScenariosLibraryPage() {
                 <CardFooter>
                   <Link
                     href={`/scenarios/${scenario.scenarioId}?tab=listen`}
-                    className="inline-flex min-h-[40px] items-center justify-center border-2 border-indigo-900 bg-indigo-900 px-4 py-2 text-xs sm:text-sm font-semibold text-on-indigo hover:bg-indigo-700 hover:border-indigo-700"
+                    className="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-button)] border border-transparent bg-indigo-700 px-4 py-2 text-xs sm:text-sm font-semibold text-on-indigo hover:bg-indigo-900"
                   >
                     Listen
                   </Link>
                   <div className="flex items-center gap-2">
                     <Link
                       href={`/scenarios/${scenario.scenarioId}?tab=vocab`}
-                      className="inline-flex min-h-[40px] items-center justify-center border border-ink/50 bg-transparent px-3 py-2 text-xs font-medium text-text-primary hover:border-ink hover:bg-ink/5"
+                      className="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-button)] border border-border bg-surface-raised px-3 py-2 text-xs font-medium text-text-primary hover:bg-surface-base"
                     >
                       Vocabulary Quiz
                     </Link>
                     <Link
                       href={`/scenarios/${scenario.scenarioId}?tab=tone`}
-                      className="inline-flex min-h-[40px] items-center justify-center border border-ink/50 bg-transparent px-3 py-2 text-xs font-medium text-text-primary hover:border-ink hover:bg-ink/5"
+                      className="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-button)] border border-border bg-surface-raised px-3 py-2 text-xs font-medium text-text-primary hover:bg-surface-base"
                     >
                       Tone Drill
                     </Link>

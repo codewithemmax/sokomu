@@ -20,7 +20,7 @@ export function DemoAnnouncementBar() {
           <span className="inline-block size-2 rounded-full bg-gold-600" />
           <span>{announcement}</span>
         </div>
-        <span className="hidden font-mono text-[11px] text-gold-600 sm:inline">
+        <span className="hidden text-xs text-text-secondary sm:inline">
           Firebase Remote Config
         </span>
       </div>

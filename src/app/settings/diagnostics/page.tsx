@@ -53,11 +53,11 @@ export function DiagnosticsView() {
           <div>
             <Link
               href="/settings"
-              className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
+              className="inline-flex min-h-11 items-center text-xs font-medium text-indigo-700 hover:underline"
             >
               &larr; Back to settings
             </Link>
-            <h1 className="mt-1 font-display text-4xl sm:text-[2.75rem] leading-[0.98] text-indigo-900">
+            <h1 className="mt-1 font-display text-2xl sm:text-3xl font-extrabold text-text-primary">
               Hybrid AI &amp; Firebase Diagnostics
             </h1>
             <p className="mt-1 text-sm text-text-secondary">
@@ -71,14 +71,14 @@ export function DiagnosticsView() {
           <Card>
             <CardHeader>
               <CardTitle>Gemini Nano (Chrome AI)</CardTitle>
-              <span className="rounded-sm bg-edge-100 px-2.5 py-0.5 font-mono text-xs font-semibold text-edge-600">
+              <span className="rounded-full bg-edge-100 px-2.5 py-0.5 text-xs font-semibold text-edge-600">
                 {status.state}
               </span>
             </CardHeader>
             <CardContent className="space-y-3 text-xs text-text-secondary">
               <p>
                 Normalized readiness:{" "}
-                <strong className="font-mono text-text-primary">
+                <strong className="text-text-primary">
                   {statusState}
                 </strong>
               </p>
@@ -107,26 +107,26 @@ export function DiagnosticsView() {
           <Card>
             <CardHeader>
               <CardTitle>Firebase App Check</CardTitle>
-              <span className="rounded-sm bg-indigo-100 px-2.5 py-0.5 font-mono text-xs font-semibold text-indigo-700">
+              <span className="rounded-full bg-indigo-100 px-2.5 py-0.5 text-xs font-semibold text-indigo-700">
                 {services?.appCheck ? "Initialized" : "Pending"}
               </span>
             </CardHeader>
             <CardContent className="space-y-2 text-xs text-text-secondary">
               <p>
                 reCAPTCHA Enterprise key:{" "}
-                <strong className="font-mono text-text-primary">
+                <strong className="text-text-primary">
                   {hasAppCheckSiteKey ? "Configured" : "Missing"}
                 </strong>
               </p>
               <p>
                 Debug token mode:{" "}
-                <strong className="font-mono text-text-primary">
+                <strong className="text-text-primary">
                   {hasDebugTokenEnv ? "Enabled (dev/judge)" : "Disabled (prod)"}
                 </strong>
               </p>
               <p>
                 Firebase client ready:{" "}
-                <strong className="font-mono text-text-primary">
+                <strong className="text-text-primary">
                   {String(ready)}
                 </strong>
               </p>
@@ -136,7 +136,7 @@ export function DiagnosticsView() {
           <Card>
             <CardHeader>
               <CardTitle>Cloud Fallback Guard</CardTitle>
-              <span className="font-mono text-xs text-cloud-600">
+              <span className="text-xs text-cloud-600">
                 {cloudCountToday} /{" "}
                 {REMOTE_CONFIG_DEFAULTS.cloud_fallback_daily_limit} today
               </span>
@@ -198,11 +198,11 @@ export function DiagnosticsView() {
               <table className="w-full text-left text-xs">
                 <thead>
                   <tr className="border-b border-border text-text-muted">
-                    <th className="py-2 pr-4 font-mono">Key</th>
-                    <th className="py-2 font-mono">Default / Baseline Value</th>
+                    <th className="py-2 pr-4">Key</th>
+                    <th className="py-2">Default / Baseline Value</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-border font-mono">
+                <tbody className="divide-y divide-border">
                   {Object.entries(REMOTE_CONFIG_DEFAULTS).map(([key, val]) => (
                     <tr key={key}>
                       <td className="py-2 pr-4 font-semibold text-indigo-900 align-top">

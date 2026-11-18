@@ -83,9 +83,9 @@ export default function SettingsPage() {
   return (
     <AppShell>
       <div className="mx-auto max-w-3xl space-y-6">
-        <div className="flex flex-wrap items-end justify-between gap-4 border-b-[3px] border-ink pb-5">
+        <div className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-5">
           <div>
-            <h1 className="font-display text-4xl sm:text-[2.75rem] leading-[0.98] text-indigo-900">
+            <h1 className="font-display text-2xl sm:text-3xl font-extrabold text-text-primary">
               Account &amp; Learning Settings
             </h1>
             <p className="mt-1 text-sm text-text-secondary">
@@ -95,7 +95,7 @@ export default function SettingsPage() {
           </div>
           <Link
             href="/settings/diagnostics"
-            className="inline-flex min-h-10 items-center text-xs sm:text-sm font-medium text-indigo-700 hover:underline"
+            className="inline-flex min-h-11 items-center text-xs sm:text-sm font-medium text-indigo-700 hover:underline"
           >
             Open AI &amp; Remote Config Diagnostics &rarr;
           </Link>
@@ -106,16 +106,16 @@ export default function SettingsPage() {
             <div>
               <CardTitle>Passport Account</CardTitle>
               <p className="mt-0.5 text-xs text-text-muted">
-                Role: <span className="font-mono uppercase">{role}</span>{" "}
+                Role: <span className="">{role}</span>{" "}
                 &middot; UID:{" "}
                 <code className="font-mono">{user?.uid ?? "local-guest"}</code>
               </p>
             </div>
             <span
               className={[
-                "rounded-sm px-3 py-1 font-mono text-xs font-semibold",
+                "rounded-full px-3 py-1 text-xs font-semibold",
                 isGuest
-                  ? "bg-surface-sunken text-text-secondary"
+                  ? "bg-surface-base text-text-secondary"
                   : "bg-edge-100 text-edge-600",
               ].join(" ")}
             >
@@ -165,7 +165,7 @@ export default function SettingsPage() {
                   id="settings-language"
                   value={languageId}
                   onChange={(e) => setLanguageId(e.target.value as LanguageId)}
-                  className="mt-1 h-11 w-full rounded-[10px] border border-border bg-surface-sunken px-3 text-sm text-text-primary"
+                  className="mt-1 h-11 w-full rounded-[var(--radius-input)] border border-border bg-surface-sunken px-3 text-sm text-text-primary"
                 >
                   {SEED_LANGUAGES.map((l) => (
                     <option key={l.languageId} value={l.languageId}>
@@ -186,7 +186,7 @@ export default function SettingsPage() {
                   id="settings-dialect"
                   value={dialectId}
                   onChange={(e) => setDialectId(e.target.value as DialectId)}
-                  className="mt-1 h-11 w-full rounded-[10px] border border-border bg-surface-sunken px-3 text-sm text-text-primary"
+                  className="mt-1 h-11 w-full rounded-[var(--radius-input)] border border-border bg-surface-sunken px-3 text-sm text-text-primary"
                 >
                   {SEED_DIALECTS.map((d) => (
                     <option key={d.dialectId} value={d.dialectId}>
@@ -207,7 +207,7 @@ export default function SettingsPage() {
                   id="settings-goal"
                   value={goal}
                   onChange={(e) => setGoal(e.target.value as LearningGoal)}
-                  className="mt-1 h-11 w-full rounded-[10px] border border-border bg-surface-sunken px-3 text-sm text-text-primary"
+                  className="mt-1 h-11 w-full rounded-[var(--radius-input)] border border-border bg-surface-sunken px-3 text-sm text-text-primary"
                 >
                   <option value="elder-greetings">Elder greetings</option>
                   <option value="market">Market bargaining</option>
@@ -225,7 +225,7 @@ export default function SettingsPage() {
                 Save preferences
               </Button>
               {savedNotice ? (
-                <span className="font-mono text-xs text-edge-600">
+                <span className="text-xs text-edge-600">
                   Preferences saved locally and queued for sync.
                 </span>
               ) : null}
@@ -236,7 +236,7 @@ export default function SettingsPage() {
         <Card>
           <CardHeader>
             <CardTitle>Offline Sync Queue</CardTitle>
-            <span className="font-mono text-xs text-text-muted">
+            <span className="text-xs text-text-muted">
               {pendingSyncCount} pending item{pendingSyncCount === 1 ? "" : "s"}
             </span>
           </CardHeader>

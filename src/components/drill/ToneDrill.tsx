@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { PitchRule } from "@/components/ui/PitchRule";
 import { useHybridModel } from "@/hooks/useHybridModel";
 import type {
   InferenceSourceLabel,
@@ -103,7 +104,7 @@ export function ToneDrill({
     const avgPct = Math.round((totalScore / items.length) * 100);
     return (
       <Card className="space-y-4 text-center">
-        <p className="font-mono text-xs font-semibold text-edge-600">
+        <p className="text-xs font-semibold text-edge-600">
           Tonal Drill Complete
         </p>
         <h3 className="font-display text-2xl font-semibold text-text-primary">
@@ -135,30 +136,43 @@ export function ToneDrill({
   return (
     <div className="space-y-4">
       <Card className="space-y-5">
-        <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
-          <span className="font-mono font-semibold text-text-muted">
-            Tone Item {currentIndex + 1} of {items.length}
-          </span>
-          <span className="font-mono text-[11px] text-edge-600">
-            {source} &middot; {latencyMs} ms
-          </span>
-        </div>
-
-        <div className="space-y-1">
-          <h3 className="text-lg sm:text-xl font-semibold text-text-primary">
-            {currentItem.instruction}
-          </h3>
-          <p className="text-sm text-text-secondary">
-            Meaning: <strong>&ldquo;{currentItem.meaningEn}&rdquo;</strong>{" "}
-            &middot; {currentItem.syllableCount} syllable
-            {currentItem.syllableCount === 1 ? "" : "s"} &middot; Pattern:{" "}
-            <span className="font-mono font-semibold text-indigo-700">
-              {currentItem.expectedTonePattern.join(" \u00B7 ")}
+        <div className="space-y-5 rounded-[var(--radius-card)] bg-indigo-900 p-5 sm:p-8 text-on-indigo">
+          <div className="flex flex-wrap items-center justify-between gap-2 text-sm">
+            <span className="font-medium text-indigo-100">
+              Tone Item{" "}
+              <span className="font-display font-extrabold tabular-nums text-on-indigo">
+                {currentIndex + 1}
+              </span>{" "}
+              of {items.length}
             </span>
-          </p>
-          {currentItem.hint ? (
-            <p className="text-xs text-text-muted">Hint: {currentItem.hint}</p>
-          ) : null}
+            <span className="inline-flex h-7 items-center rounded-full bg-on-indigo/10 px-2.5 text-xs font-medium text-on-indigo">
+              {source} &middot; {latencyMs} ms
+            </span>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="font-display text-xl sm:text-2xl font-bold text-on-indigo">
+              {currentItem.instruction}
+            </h3>
+            <p className="text-sm text-indigo-100">
+              Meaning: <strong className="text-on-indigo">&ldquo;{currentItem.meaningEn}&rdquo;</strong>{" "}
+              &middot; {currentItem.syllableCount} syllable
+              {currentItem.syllableCount === 1 ? "" : "s"} &middot; Pattern:{" "}
+              <span className="font-semibold text-gold-400">
+                {currentItem.expectedTonePattern.join(" \u00B7 ")}
+              </span>
+            </p>
+            <PitchRule
+              pattern={currentItem.expectedTonePattern}
+              monochrome
+              staff
+              step={32}
+              className="text-gold-400"
+            />
+            {currentItem.hint ? (
+              <p className="text-sm text-indigo-100">Hint: {currentItem.hint}</p>
+            ) : null}
+          </div>
         </div>
 
         <div>
@@ -173,7 +187,7 @@ export function ToneDrill({
             onChange={(e) => setAnswer(e.target.value.normalize("NFC"))}
             disabled={gradingState !== null}
             placeholder="Type with diacritic picker below..."
-            className="tonal-text h-14 w-full rounded-[10px] border border-border bg-surface-sunken px-4 text-[1.75rem] sm:text-[2rem] font-medium text-text-primary focus:border-indigo-500 focus:outline-none"
+            className="tonal-text h-16 w-full rounded-[var(--radius-input)] border border-text-muted bg-surface-raised px-4 font-display text-xl sm:text-2xl font-bold text-text-primary placeholder:font-sans placeholder:text-base placeholder:font-normal placeholder:text-text-muted focus:border-focus focus:outline-2 focus:outline-offset-2 focus:outline-focus disabled:border-border disabled:bg-surface-sunken"
           />
         </div>
 
@@ -184,7 +198,7 @@ export function ToneDrill({
           targetRef={inputRef}
         />
 
-        <div className="flex items-center justify-between gap-3">
+        <div className="flex flex-wrap items-center justify-between gap-3">
           {gradingState === null ? (
             <>
               <Button

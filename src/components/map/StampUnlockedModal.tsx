@@ -41,7 +41,7 @@ export function StampUnlockedModal({
     >
       <div className="flex flex-col items-center space-y-4 py-2 text-center">
         {dialect ? (
-          <div className="rounded-2xl border-2 border-gold-600 bg-gold-100/70 p-4 shadow-[var(--shadow-2)]">
+          <div className="rounded-2xl border-2 border-gold-600 bg-gold-100/70 p-4">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={dialect.stampArt}
@@ -52,7 +52,7 @@ export function StampUnlockedModal({
         ) : null}
 
         <div className="space-y-1">
-          <p className="font-mono text-sm font-semibold text-gold-600">
+          <p className="text-sm font-semibold text-text-secondary">
             Accuracy: {accuracyPct}%
           </p>
           <p className="text-sm text-text-secondary">

@@ -68,8 +68,8 @@ export function DataSavedCounter({
         aria-live="polite"
         aria-label={`Mobile data saved: ${mbLabel}, approximately ${nairaLabel}`}
         className={[
-          "inline-flex flex-col items-end justify-center gap-0.5 rounded-[10px] px-2.5 py-1 text-right leading-none transition-colors",
-          "hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-indigo-500 cursor-pointer",
+          "inline-flex flex-col items-end justify-center gap-0.5 rounded-[var(--radius-input)] px-2.5 py-1 text-right leading-none transition-colors",
+          "hover:bg-surface-base focus-visible:outline-2 focus-visible:outline-focus cursor-pointer",
           className,
         ]
           .filter(Boolean)
@@ -77,15 +77,15 @@ export function DataSavedCounter({
       >
         <div className="flex items-center gap-1.5">
           {!compact ? (
-            <span className="hidden text-[11px] font-medium text-text-muted lg:inline">
+            <span className="hidden text-xs font-medium text-text-muted lg:inline">
               Data saved
             </span>
           ) : null}
-          <span className="font-mono text-xs sm:text-sm font-semibold tabular-nums text-text-primary">
+          <span className="text-xs sm:text-sm font-semibold tabular-nums text-text-primary">
             {mbLabel}
           </span>
         </div>
-        <span className="font-mono text-[11px] font-medium tabular-nums text-gold-600">
+        <span className="text-xs font-medium tabular-nums text-text-secondary">
           {nairaLabel}
         </span>
       </button>

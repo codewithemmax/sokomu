@@ -13,17 +13,17 @@ export function Card({
   children,
   ...rest
 }: CardProps) {
+  // v2: cards are flat (one hairline border); wells are borderless tints.
+  void elevated;
   const surfaceClass = sunken
-    ? "bg-surface-sunken border border-border"
-    : "bg-surface-raised border border-ink/25";
-  const shadowClass = elevated ? "shadow-[var(--shadow-1)]" : "";
+    ? "bg-surface-base"
+    : "bg-surface-raised border border-border";
 
   return (
     <div
       className={[
-        "rounded-none p-4 lg:p-6",
+        "rounded-[var(--radius-card)] p-4 lg:p-6",
         surfaceClass,
-        shadowClass,
         className,
       ]
         .filter(Boolean)
@@ -54,7 +54,7 @@ export function CardTitle({
 }: HTMLAttributes<HTMLHeadingElement>) {
   return (
     <h3
-      className={`font-display text-[1.3rem] leading-[1.2] text-text-primary ${className}`}
+      className={`font-display text-lg font-semibold leading-tight text-text-primary ${className}`}
       {...rest}
     >
       {children}

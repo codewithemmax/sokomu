@@ -1,4 +1,5 @@
 import type { Tone } from "@/types/domain";
+import { ToneStaff } from "./ToneStaff";
 
 export interface ToneChipProps {
   syllable: string;
@@ -7,25 +8,16 @@ export interface ToneChipProps {
   className?: string;
 }
 
-const TONE_STYLES: Record<
-  Tone,
-  { border: string; text: string; label: string }
-> = {
-  H: {
-    border: "border-b-[3px] border-b-tone-high",
-    text: "text-tone-high",
-    label: "H (High)",
-  },
-  M: {
-    border: "border-b-[3px] border-b-tone-mid",
-    text: "text-tone-mid",
-    label: "M (Mid)",
-  },
-  L: {
-    border: "border-b-[3px] border-b-tone-low",
-    text: "text-tone-low",
-    label: "L (Low)",
-  },
+const TONE_LABEL: Record<Tone, string> = {
+  H: "H (High)",
+  M: "M (Mid)",
+  L: "L (Low)",
+};
+
+const TONE_TEXT: Record<Tone, string> = {
+  H: "text-tone-high",
+  M: "text-tone-mid",
+  L: "text-tone-low",
 };
 
 export function ToneChip({
@@ -34,31 +26,31 @@ export function ToneChip({
   correct,
   className = "",
 }: ToneChipProps) {
-  const style = TONE_STYLES[tone] ?? TONE_STYLES.M;
-  const statusBorder =
+  const safeTone: Tone = TONE_LABEL[tone] ? tone : "M";
+  const statusClass =
     correct === true
-      ? "outline outline-1 -outline-offset-1 outline-success-600/60 bg-edge-100/50"
+      ? "border-2 border-success-600 bg-surface-raised"
       : correct === false
-        ? "outline outline-1 -outline-offset-1 outline-danger-600/60 bg-danger-100/60"
-        : "bg-surface-sunken";
+        ? "border-2 border-danger-600 bg-danger-100"
+        : "border border-border bg-surface-raised";
 
   return (
     <span
-      aria-label={`Syllable ${syllable}, tone ${style.label}`}
+      aria-label={`Syllable ${syllable}, tone ${TONE_LABEL[safeTone]}`}
       className={[
-        "inline-flex items-baseline gap-1.5 px-2.5 py-1",
-        style.border,
-        statusBorder,
+        "inline-flex min-h-9 items-center gap-2 rounded-full py-1 pl-2.5 pr-3",
+        statusClass,
         className,
       ]
         .filter(Boolean)
         .join(" ")}
     >
-      <span className="tonal-text text-base font-semibold text-text-primary">
+      <ToneStaff tone={safeTone} />
+      <span className="tonal-text font-display text-base font-bold text-text-primary">
         {syllable}
       </span>
-      <span className={`font-mono text-[11px] font-bold ${style.text}`}>
-        {tone}
+      <span className={`text-xs font-semibold ${TONE_TEXT[safeTone]}`}>
+        {safeTone}
       </span>
     </span>
   );

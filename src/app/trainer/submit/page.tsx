@@ -35,11 +35,11 @@ export default function TrainerSubmitPage() {
           <div>
             <Link
               href="/trainer"
-              className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
+              className="inline-flex min-h-11 items-center text-xs font-medium text-indigo-700 hover:underline"
             >
               &larr; Back to Trainer Portal
             </Link>
-            <h1 className="mt-1 font-display text-4xl sm:text-[2.75rem] leading-[0.98] text-indigo-900">
+            <h1 className="mt-1 font-display text-2xl sm:text-3xl font-extrabold text-text-primary">
               Submit Regional Dialect Entry
             </h1>
             <p className="mt-1 text-sm text-text-secondary">
@@ -49,7 +49,7 @@ export default function TrainerSubmitPage() {
           </div>
           <Link
             href="/trainer/queue"
-            className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
+            className="inline-flex min-h-11 items-center text-xs font-medium text-indigo-700 hover:underline"
           >
             Open peer review queue &rarr;
           </Link>

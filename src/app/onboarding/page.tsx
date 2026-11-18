@@ -140,7 +140,7 @@ export default function OnboardingPage() {
     <AppShell hideNavigation>
       <div className="mx-auto max-w-2xl space-y-6">
         <div className="space-y-2">
-          <div className="flex items-center justify-between text-xs font-mono text-text-muted">
+          <div className="flex items-center justify-between text-xs text-text-muted">
             <span>Step {stepIndex} of 4</span>
             <span>Cultural Path Setup</span>
           </div>
@@ -170,10 +170,10 @@ export default function OnboardingPage() {
                     onClick={() => handleLanguageSelect(lang.languageId)}
                     className={[
                       "flex flex-col items-start justify-between rounded-2xl border p-4 text-left transition-all cursor-pointer",
-                      "focus-visible:outline-2 focus-visible:outline-indigo-500",
+                      "focus-visible:outline-2 focus-visible:outline-focus",
                       isSelected
-                        ? "border-ink bg-surface-raised shadow-[inset_4px_0_0_var(--color-gold-400)]"
-                        : "border-ink/25 bg-transparent hover:border-ink",
+                        ? "border-indigo-700 bg-indigo-100 text-indigo-900"
+                        : "border-border bg-surface-raised hover:bg-surface-base hover:border-text-muted",
                     ].join(" ")}
                   >
                     <div>
@@ -186,7 +186,7 @@ export default function OnboardingPage() {
                     </div>
                     <div className="mt-3 flex w-full items-center justify-between text-xs text-text-muted">
                       <span className="tonal-text">&ldquo;{lang.greeting}&rdquo;</span>
-                      <span className="font-mono">{lang.toneSystem}</span>
+                      <span className="">{lang.toneSystem}</span>
                     </div>
                   </button>
                 );
@@ -221,10 +221,10 @@ export default function OnboardingPage() {
                     }}
                     className={[
                       "flex w-full items-center justify-between gap-4 rounded-2xl border p-4 text-left transition-all cursor-pointer",
-                      "focus-visible:outline-2 focus-visible:outline-indigo-500",
+                      "focus-visible:outline-2 focus-visible:outline-focus",
                       isSelected
-                        ? "border-ink bg-surface-raised shadow-[inset_4px_0_0_var(--color-gold-400)]"
-                        : "border-ink/25 bg-transparent hover:border-ink",
+                        ? "border-indigo-700 bg-indigo-100 text-indigo-900"
+                        : "border-border bg-surface-raised hover:bg-surface-base hover:border-text-muted",
                     ].join(" ")}
                   >
                     <div className="space-y-1">
@@ -232,7 +232,7 @@ export default function OnboardingPage() {
                         <span className="font-display text-lg font-semibold text-text-primary">
                           {dialect.name}
                         </span>
-                        <span className="rounded-sm bg-gold-100 px-2.5 py-0.5 font-mono text-xs text-gold-600">
+                        <span className="rounded-full bg-gold-100 text-ink px-2.5 py-0.5 text-xs">
                           {dialect.region}
                         </span>
                       </div>
@@ -284,10 +284,10 @@ export default function OnboardingPage() {
                     }}
                     className={[
                       "flex w-full flex-col rounded-2xl border p-4 text-left transition-all cursor-pointer",
-                      "focus-visible:outline-2 focus-visible:outline-indigo-500",
+                      "focus-visible:outline-2 focus-visible:outline-focus",
                       isSelected
-                        ? "border-ink bg-surface-raised shadow-[inset_4px_0_0_var(--color-gold-400)]"
-                        : "border-ink/25 bg-transparent hover:border-ink",
+                        ? "border-indigo-700 bg-indigo-100 text-indigo-900"
+                        : "border-border bg-surface-raised hover:bg-surface-base hover:border-text-muted",
                     ].join(" ")}
                   >
                     <span className="font-semibold text-text-primary">
@@ -322,14 +322,14 @@ export default function OnboardingPage() {
               </div>
             </CardHeader>
             <CardContent className="space-y-5">
-              <div className="rounded-2xl border border-border bg-surface-sunken p-4">
+              <div className="rounded-2xl border border-border bg-surface-base p-4">
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-semibold text-text-primary">
                     Detected Engine Status
                   </span>
                   <span
                     className={[
-                      "rounded-sm px-3 py-1 font-mono text-xs font-semibold",
+                      "rounded-full px-3 py-1 text-xs font-semibold",
                       status.state === "ready"
                         ? "bg-edge-100 text-edge-600"
                         : "bg-cloud-100 text-cloud-600",

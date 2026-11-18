@@ -227,15 +227,15 @@ function ScenarioDetailInner() {
           <div className="space-y-1">
             <Link
               href="/scenarios"
-              className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
+              className="inline-flex min-h-11 items-center text-xs font-medium text-indigo-700 hover:underline"
             >
               &larr; Back to scenarios
             </Link>
             <div className="flex flex-wrap items-center gap-2.5">
-              <h1 className="font-display text-3xl sm:text-[2.5rem] leading-[1] text-indigo-900">
+              <h1 className="font-display text-2xl sm:text-3xl font-extrabold text-text-primary">
                 {scenario.title}
               </h1>
-              <span className="rounded-sm bg-gold-100 px-3 py-0.5 font-mono text-xs font-semibold text-gold-600">
+              <span className="rounded-full bg-gold-100 text-ink px-3 py-0.5 text-xs font-semibold">
                 {dialect?.name ?? scenario.dialectId}
               </span>
             </div>
@@ -278,7 +278,7 @@ function ScenarioDetailInner() {
               <Card>
                 <CardHeader>
                   <CardTitle>Dialogue Transcript</CardTitle>
-                  <span className="font-mono text-xs text-text-muted">
+                  <span className="text-xs text-text-muted">
                     {scenario.script.length} lines
                   </span>
                 </CardHeader>
@@ -294,10 +294,10 @@ function ScenarioDetailInner() {
                             "rounded-xl border p-3.5 transition-colors cursor-pointer",
                             isCurrent
                               ? "border-indigo-500 bg-indigo-100/60"
-                              : "border-border bg-surface-sunken hover:bg-surface-sunken/70",
+                              : "border-border bg-surface-base hover:bg-surface-base/70",
                           ].join(" ")}
                         >
-                          <p className="text-xs font-mono font-semibold text-indigo-700">
+                          <p className="text-xs font-semibold text-indigo-700">
                             {speakerById.get(line.speakerId) ?? line.speakerId}
                           </p>
                           <p className="tonal-text mt-1 text-lg sm:text-xl font-medium text-text-primary">
@@ -329,7 +329,7 @@ function ScenarioDetailInner() {
               <Card>
                 <CardHeader>
                   <CardTitle>Words in This Scene</CardTitle>
-                  <span className="font-mono text-xs text-text-muted">
+                  <span className="text-xs text-text-muted">
                     NFC Grounded
                   </span>
                 </CardHeader>
@@ -337,7 +337,7 @@ function ScenarioDetailInner() {
                   {glossary.map((entry) => (
                     <div
                       key={entry.entryId}
-                      className="rounded-xl border border-border bg-surface-sunken p-3 space-y-2"
+                      className="rounded-xl border border-border bg-surface-base p-3 space-y-2"
                     >
                       <div className="flex items-baseline justify-between gap-2">
                         <span className="tonal-text text-base font-semibold text-text-primary">
@@ -374,7 +374,7 @@ function ScenarioDetailInner() {
           <div className="mx-auto max-w-3xl space-y-4">
             {loadingDrill || !quizOutcome ? (
               <Card className="p-8 text-center">
-                <p className="font-mono text-sm text-text-secondary">
+                <p className="text-sm text-text-secondary">
                   Generating structured vocabulary quiz via Firebase AI Logic...
                 </p>
               </Card>
@@ -396,7 +396,7 @@ function ScenarioDetailInner() {
           <div className="mx-auto max-w-3xl space-y-4">
             {loadingDrill || !toneDrillOutcome ? (
               <Card className="p-8 text-center">
-                <p className="font-mono text-sm text-text-secondary">
+                <p className="text-sm text-text-secondary">
                   Preparing NFC tonal minimal-pair drill...
                 </p>
               </Card>
