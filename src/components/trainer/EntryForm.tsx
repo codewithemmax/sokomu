@@ -249,11 +249,11 @@ export function EntryForm({
           <div className="flex flex-wrap items-center justify-between gap-2">
             <CardTitle>1. Dialect &amp; Headword</CardTitle>
             {!online ? (
-              <span className="rounded-sm bg-gold-100 px-3 py-1 font-mono text-xs font-medium text-offline-600">
+              <span className="rounded-full bg-gold-100 text-ink px-3 py-1 text-xs font-medium text-offline-600">
                 Offline queue ready (Will sync)
               </span>
             ) : (
-              <span className="rounded-sm bg-edge-100 px-3 py-1 font-mono text-xs font-medium text-edge-600">
+              <span className="rounded-full bg-edge-100 px-3 py-1 text-xs font-medium text-edge-600">
                 Online &middot; NFC normalized
               </span>
             )}
@@ -272,7 +272,7 @@ export function EntryForm({
                 id="trainer-dialect"
                 value={dialectId}
                 onChange={(event) => setDialectId(event.target.value as DialectId)}
-                className="w-full rounded-[10px] border border-border bg-surface-base px-3 py-2.5 text-sm text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+                className="w-full rounded-[var(--radius-input)] border border-border bg-surface-base px-3 py-2.5 text-sm text-text-primary focus-visible:outline-2 focus-visible:outline-focus"
               >
                 {SEED_DIALECTS.map((d) => (
                   <option key={d.dialectId} value={d.dialectId}>
@@ -293,7 +293,7 @@ export function EntryForm({
                 id="trainer-scenario"
                 value={scenarioId}
                 onChange={(event) => setScenarioId(event.target.value)}
-                className="w-full rounded-[10px] border border-border bg-surface-base px-3 py-2.5 text-sm text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+                className="w-full rounded-[var(--radius-input)] border border-border bg-surface-base px-3 py-2.5 text-sm text-text-primary focus-visible:outline-2 focus-visible:outline-focus"
               >
                 <option value="">General dialect lexicon</option>
                 {scenariosForDialect.map((sc) => (
@@ -322,7 +322,7 @@ export function EntryForm({
                 onFocus={() => setPickerTarget("headword")}
                 onChange={(event) => setHeadword(nfc(event.target.value))}
                 placeholder="e.g. Wọn kò rí i"
-                className="w-full rounded-[10px] border border-border bg-surface-base px-3.5 py-2.5 tonal-text text-base text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+                className="w-full rounded-[var(--radius-input)] border border-border bg-surface-base px-3.5 py-2.5 tonal-text text-base text-text-primary focus-visible:outline-2 focus-visible:outline-focus"
               />
             </div>
 
@@ -341,7 +341,7 @@ export function EntryForm({
                 onFocus={() => setPickerTarget("standard")}
                 onChange={(event) => setStandardForm(nfc(event.target.value))}
                 placeholder="Standard Yoruba / Igbo / Hausa form"
-                className="w-full rounded-[10px] border border-border bg-surface-base px-3.5 py-2.5 tonal-text text-base text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+                className="w-full rounded-[var(--radius-input)] border border-border bg-surface-base px-3.5 py-2.5 tonal-text text-base text-text-primary focus-visible:outline-2 focus-visible:outline-focus"
               />
             </div>
           </div>
@@ -360,15 +360,15 @@ export function EntryForm({
               value={glossEn}
               onChange={(event) => setGlossEn(event.target.value)}
               placeholder="Concise English meaning and register note"
-              className="w-full rounded-[10px] border border-border bg-surface-base px-3.5 py-2.5 text-sm text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+              className="w-full rounded-[var(--radius-input)] border border-border bg-surface-base px-3.5 py-2.5 text-sm text-text-primary focus-visible:outline-2 focus-visible:outline-focus"
             />
           </div>
 
-          <div className="space-y-2 rounded-xl border border-border bg-surface-sunken p-3">
+          <div className="space-y-2 rounded-xl border border-border bg-surface-base p-3">
             <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-text-secondary">
               <span>
                 Active diacritic target:{" "}
-                <strong className="font-mono text-indigo-900">
+                <strong className="text-indigo-900">
                   {pickerTarget === "headword"
                     ? "Headword"
                     : pickerTarget === "standard"
@@ -376,7 +376,7 @@ export function EntryForm({
                       : "Example sentence"}
                 </strong>
               </span>
-              <span className="text-[11px] text-text-muted">
+              <span className="text-xs text-text-muted">
                 Focus a field above or below to switch insertion target.
               </span>
             </div>
@@ -420,9 +420,9 @@ export function EntryForm({
             {syllables.map((syl, index) => (
               <div
                 key={`syllable-row-${index}`}
-                className="flex flex-wrap items-center gap-2 rounded-xl border border-border bg-surface-sunken p-2.5"
+                className="flex flex-wrap items-center gap-2 rounded-xl border border-border bg-surface-base p-2.5"
               >
-                <span className="w-6 text-center font-mono text-xs text-text-muted">
+                <span className="w-6 text-center text-xs text-text-muted">
                   #{index + 1}
                 </span>
                 <label className="sr-only" htmlFor={`syllable-input-${index}`}>
@@ -436,7 +436,7 @@ export function EntryForm({
                     handleSyllableTextChange(index, event.target.value)
                   }
                   placeholder={`Syl ${index + 1}`}
-                  className="min-w-28 flex-1 rounded-[10px] border border-border bg-surface-base px-3 py-1.5 tonal-text text-base text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+                  className="min-w-28 flex-1 rounded-[var(--radius-input)] border border-border bg-surface-base px-3 py-1.5 tonal-text text-base text-text-primary focus-visible:outline-2 focus-visible:outline-focus"
                 />
 
                 <div
@@ -454,10 +454,10 @@ export function EntryForm({
                         aria-label={`Set syllable ${index + 1} tone ${opt.label}`}
                         onClick={() => handleToneChange(index, opt.tone)}
                         className={[
-                          "rounded-[8px] border px-2.5 py-1 font-mono text-xs font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-indigo-500",
+                          "rounded-[8px] border px-2.5 py-1 text-xs font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-focus",
                           selected
                             ? opt.activeClass
-                            : "border-border bg-surface-raised text-text-secondary hover:bg-ink/5",
+                            : "border-border bg-surface-raised text-text-secondary hover:bg-surface-base",
                         ].join(" ")}
                       >
                         {opt.tone}
@@ -471,7 +471,7 @@ export function EntryForm({
                     type="button"
                     onClick={() => handleRemoveSyllable(index)}
                     aria-label={`Remove syllable ${index + 1}`}
-                    className="rounded-[8px] px-2 py-1 text-xs font-medium text-danger-600 hover:bg-danger-100 focus-visible:outline-2 focus-visible:outline-indigo-500"
+                    className="rounded-[8px] px-2 py-1 text-xs font-medium text-danger-600 hover:bg-danger-100 focus-visible:outline-2 focus-visible:outline-focus"
                   >
                     Remove
                   </button>
@@ -509,7 +509,7 @@ export function EntryForm({
               aria-live="polite"
             >
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <p className="font-mono text-xs font-semibold text-indigo-900">
+                <p className="text-xs font-semibold text-indigo-900">
                   AI Orthography &amp; Tone Check (Advisory only)
                 </p>
                 <InferenceSourcePill
@@ -575,7 +575,7 @@ export function EntryForm({
                 onFocus={() => setPickerTarget("example")}
                 onChange={(event) => setExampleLine(nfc(event.target.value))}
                 placeholder="Natural everyday sentence"
-                className="w-full rounded-[10px] border border-border bg-surface-base px-3.5 py-2.5 tonal-text text-sm text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+                className="w-full rounded-[var(--radius-input)] border border-border bg-surface-base px-3.5 py-2.5 tonal-text text-sm text-text-primary focus-visible:outline-2 focus-visible:outline-focus"
               />
             </div>
 
@@ -592,7 +592,7 @@ export function EntryForm({
                 value={exampleGlossEn}
                 onChange={(event) => setExampleGlossEn(event.target.value)}
                 placeholder="Natural English translation"
-                className="w-full rounded-[10px] border border-border bg-surface-base px-3.5 py-2.5 text-sm text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+                className="w-full rounded-[var(--radius-input)] border border-border bg-surface-base px-3.5 py-2.5 text-sm text-text-primary focus-visible:outline-2 focus-visible:outline-focus"
               />
             </div>
           </div>
@@ -610,7 +610,7 @@ export function EntryForm({
               value={note}
               onChange={(event) => setNote(event.target.value)}
               placeholder="Explain tone assimilation, elder-respect register, or regional variation"
-              className="w-full rounded-[10px] border border-border bg-surface-base px-3.5 py-2.5 text-sm text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+              className="w-full rounded-[var(--radius-input)] border border-border bg-surface-base px-3.5 py-2.5 text-sm text-text-primary focus-visible:outline-2 focus-visible:outline-focus"
             />
           </div>
         </CardContent>

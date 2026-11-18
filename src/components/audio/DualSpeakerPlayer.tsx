@@ -1,5 +1,6 @@
 "use client";
 
+import { CloudDownload, Database, TriangleAlert, WifiOff } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -236,45 +237,71 @@ export function DualSpeakerPlayer({
     <Card className="space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div>
-          <p className="font-mono text-xs font-semibold text-text-muted">
+          <p className="font-display text-base font-bold text-text-primary">
             24 kHz Dual-Speaker PCM Player
           </p>
-          <p className="text-xs text-text-secondary">
+          <p className="text-sm text-text-secondary">
             {speakerA.displayName} ({speakerA.role}) &amp;{" "}
             {speakerB.displayName} ({speakerB.role})
           </p>
         </div>
 
         {cacheState === "cached" ? (
-          <span className="inline-flex items-center gap-1.5 rounded-sm border border-gold-600/30 bg-gold-100 px-3 py-1 font-mono text-xs font-semibold text-gold-600">
+          <span className="inline-flex h-8 items-center gap-1.5 rounded-full bg-cached-100 px-3 text-sm font-medium text-text-primary">
+            <Database aria-hidden="true" size={16} strokeWidth={1.5} className="text-cached-600" />
             <span>Saved offline &middot; {cachedMbLabel}</span>
           </span>
         ) : cacheState === "streaming" ? (
-          <span className="inline-flex items-center gap-1.5 rounded-sm border border-cloud-600/30 bg-cloud-100 px-3 py-1 font-mono text-xs font-semibold text-cloud-600">
-            <span className="inline-block size-2 rounded-full bg-cloud-600 animate-ping" />
+          <span className="inline-flex h-8 items-center gap-1.5 rounded-full bg-cloud-100 px-3 text-sm font-medium text-text-primary">
+            <span aria-hidden="true" className="tone-loader">
+              <i />
+              <i />
+              <i />
+            </span>
             <span>IN_CLOUD &middot; streaming</span>
           </span>
         ) : (
-          <span className="inline-flex items-center gap-1.5 rounded-sm border border-border bg-surface-sunken px-3 py-1 font-mono text-xs text-text-muted">
+          <span className="inline-flex h-8 items-center gap-1.5 rounded-full border border-border bg-surface-base px-3 text-sm font-medium text-text-secondary">
+            <CloudDownload aria-hidden="true" size={16} strokeWidth={1.5} />
             Not saved ({cachedMbLabel})
           </span>
         )}
       </div>
 
-      <div className="space-y-2 rounded-xl border border-border bg-surface-sunken p-3">
+      <div className="space-y-2">
         {[speakerA, speakerB].map((speaker, laneIdx) => {
-          const isLaneActive = !playing || activeSpeakerId === speaker.id;
-          const barColor =
-            laneIdx === 0 ? "bg-gold-600" : "bg-indigo-500";
+          const isCurrentSpeaker = playing && activeSpeakerId === speaker.id;
+          const barColor = isCurrentSpeaker
+            ? laneIdx === 0
+              ? "bg-gold-400"
+              : "bg-on-indigo"
+            : laneIdx === 0
+              ? "bg-gold-600"
+              : "bg-indigo-500";
           return (
             <div
               key={speaker.id}
               className={[
-                "flex h-10 items-center gap-3 transition-opacity duration-200",
-                isLaneActive ? "opacity-100" : "opacity-35",
+                "flex h-14 items-center gap-3 rounded-[var(--radius-button)] px-3 transition-colors duration-200",
+                isCurrentSpeaker
+                  ? "bg-indigo-900 text-on-indigo"
+                  : "bg-surface-base text-text-primary",
               ].join(" ")}
             >
-              <span className="w-20 sm:w-28 shrink-0 truncate text-xs font-semibold text-text-primary">
+              <span
+                aria-hidden="true"
+                className={[
+                  "flex size-8 shrink-0 items-center justify-center rounded-full text-sm font-semibold",
+                  isCurrentSpeaker
+                    ? "bg-on-indigo/15 text-on-indigo"
+                    : laneIdx === 0
+                      ? "bg-gold-100 text-ink"
+                      : "bg-indigo-100 text-indigo-900",
+                ].join(" ")}
+              >
+                {speaker.displayName.slice(0, 1)}
+              </span>
+              <span className="w-16 sm:w-24 shrink-0 truncate text-sm font-semibold">
                 {speaker.displayName}
               </span>
               <div
@@ -292,9 +319,9 @@ export function DualSpeakerPlayer({
                       key={`${speaker.id}-${barIdx}`}
                       style={{ height: `${heightPct}%` }}
                       className={[
-                        "min-w-[1px] flex-1 rounded-full transition-all duration-150",
+                        "min-w-[1px] flex-1 rounded-[1px] transition-all duration-150",
                         barColor,
-                        isPlayed ? "opacity-100" : "opacity-55",
+                        isPlayed || !playing ? "opacity-100" : "opacity-45",
                       ].join(" ")}
                     />
                   );
@@ -321,18 +348,19 @@ export function DualSpeakerPlayer({
                   : "Stream & save for offline"}
             </Button>
           ) : (
-            <span className="text-xs text-text-muted">
+            <span className="text-sm text-text-secondary">
               Cloud synthesis disabled by Remote Config.
             </span>
           )}
 
-          <span className="font-mono text-xs tabular-nums text-text-secondary">
+          <span className="font-display text-sm font-bold tabular-nums text-text-primary">
             {formatDurationClock(elapsedMs)} / {formatDurationClock(durationMs)}
           </span>
         </div>
 
         {isCloudBlockedOffline ? (
-          <p className="text-xs font-medium text-offline-600">
+          <p className="flex items-center gap-1.5 text-sm font-medium text-offline-600">
+            <WifiOff aria-hidden="true" size={16} strokeWidth={1.5} className="shrink-0" />
             Audio not cached yet. Connect once to save it; vocabulary and tone
             drills work offline right now.
           </p>
@@ -342,9 +370,12 @@ export function DualSpeakerPlayer({
       {errorMessage ? (
         <div
           role="alert"
-          className="flex items-center justify-between gap-3 rounded-xl border border-danger-600/30 bg-surface-sunken px-3.5 py-2.5 text-xs text-danger-600"
+          className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-danger-600 bg-surface-raised px-4 py-3 text-sm text-danger-600"
         >
-          <span>{errorMessage}</span>
+          <span className="flex items-center gap-2">
+            <TriangleAlert aria-hidden="true" size={18} strokeWidth={1.5} className="shrink-0" />
+            {errorMessage}
+          </span>
           <Button
             size="sm"
             variant="secondary"

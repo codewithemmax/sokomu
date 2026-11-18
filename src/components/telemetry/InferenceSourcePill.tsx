@@ -1,5 +1,6 @@
 "use client";
 
+import { Cloud, Cpu, Database, type LucideIcon } from "lucide-react";
 import { useInferenceTelemetry } from "@/hooks/useInferenceTelemetry";
 import { useRemoteConfigString } from "@/hooks/useRemoteConfigValue";
 import type { InferenceSourceLabel } from "@/types/ai";
@@ -42,8 +43,8 @@ export function resolveInferencePillMeta(
       modelDisplay: model,
       ariaLabel: `Last response generated on device by ${model}${latencySuffix}`,
       containerClass:
-        "bg-edge-100 text-edge-600 border border-edge-600/30",
-      dotClass: "bg-edge-600",
+        "bg-edge-100 text-text-primary border border-transparent",
+      dotClass: "text-edge-600",
     };
   }
 
@@ -55,8 +56,8 @@ export function resolveInferencePillMeta(
       modelDisplay: model,
       ariaLabel: `Last response generated in cloud by ${model}${latencySuffix}`,
       containerClass:
-        "bg-cloud-100 text-cloud-600 border border-cloud-600/30",
-      dotClass: "bg-cloud-600",
+        "bg-cloud-100 text-text-primary border border-transparent",
+      dotClass: "text-cloud-600",
     };
   }
 
@@ -68,8 +69,8 @@ export function resolveInferencePillMeta(
       modelDisplay: model,
       ariaLabel: `Last response served offline from local cache${latencySuffix}`,
       containerClass:
-        "bg-cached-100 text-cached-600 border border-cached-600/30",
-      dotClass: "bg-cached-600",
+        "bg-cached-100 text-text-primary border border-transparent",
+      dotClass: "text-cached-600",
     };
   }
 
@@ -80,10 +81,21 @@ export function resolveInferencePillMeta(
     modelDisplay: model,
     ariaLabel: `Hybrid AI ready (${model})`,
     containerClass:
-      "bg-transparent text-text-secondary border border-ink/25 hover:border-ink",
-    dotClass: "bg-edge-600",
+      "bg-surface-base text-text-secondary border border-border",
+    dotClass: "text-edge-600",
   };
 }
+
+/** Sentence-case visible labels and icons; meta labels stay for telemetry. */
+const PILL_DISPLAY: Record<
+  PillSourceState,
+  { label: string; short: string; icon: LucideIcon }
+> = {
+  ON_DEVICE: { label: "On-device", short: "Device", icon: Cpu },
+  IN_CLOUD: { label: "Cloud", short: "Cloud", icon: Cloud },
+  CACHED_FALLBACK: { label: "Offline, cached", short: "Cached", icon: Database },
+  IDLE: { label: "On-device ready", short: "Ready", icon: Cpu },
+};
 
 export function InferenceSourcePill({
   source,
@@ -112,6 +124,9 @@ export function InferenceSourcePill({
     effectiveLatency,
   );
 
+  const display = PILL_DISPLAY[effectiveSource] ?? PILL_DISPLAY.IDLE;
+  const SourceIcon = display.icon;
+
   return (
     <button
       type="button"
@@ -120,35 +135,35 @@ export function InferenceSourcePill({
       aria-label={meta.ariaLabel}
       onClick={onOpenDetails}
       className={[
-        "inline-flex h-7 lg:h-8 items-center gap-2 px-3 text-xs font-medium transition-colors duration-200",
-        "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 cursor-pointer",
+        "inline-flex h-8 items-center gap-1.5 rounded-full px-3 text-sm font-medium transition-colors duration-200 hover:brightness-[0.97]",
+        "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus cursor-pointer",
         meta.containerClass,
         className,
       ]
         .filter(Boolean)
         .join(" ")}
     >
-      <span
-        aria-hidden="true"
-        className={[
-          "inline-block size-2",
-          meta.dotClass,
-          streaming ? "animate-ping" : "",
-        ]
-          .filter(Boolean)
-          .join(" ")}
-      />
-      <span className="font-mono font-semibold tracking-tight sm:hidden">
-        {meta.shortMobileLabel}
-      </span>
-      <span className="hidden font-mono font-semibold tracking-tight sm:inline">
-        {meta.badgeLabel}
-      </span>
-      <span className="hidden text-[11px] opacity-85 md:inline">
+      {streaming ? (
+        <span aria-hidden="true" className="tone-loader">
+          <i />
+          <i />
+          <i />
+        </span>
+      ) : (
+        <SourceIcon
+          aria-hidden="true"
+          size={16}
+          strokeWidth={1.5}
+          className={`shrink-0 ${meta.dotClass}`}
+        />
+      )}
+      <span className="sm:hidden">{display.short}</span>
+      <span className="hidden sm:inline">{display.label}</span>
+      <span className="hidden text-xs text-text-secondary md:inline">
         {meta.modelDisplay}
       </span>
       {typeof effectiveLatency === "number" && effectiveLatency > 0 ? (
-        <span className="hidden font-mono tabular-nums text-[11px] opacity-80 sm:inline">
+        <span className="hidden tabular-nums text-xs text-text-secondary sm:inline">
           {Math.round(effectiveLatency)} ms
         </span>
       ) : null}

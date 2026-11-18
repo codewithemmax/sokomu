@@ -91,7 +91,7 @@ export function Toaster({
           <div
             key={item.id}
             role="status"
-            className={`flex min-w-[260px] max-w-sm items-start justify-between gap-3 rounded-xl border-l-4 px-4 py-3 shadow-[var(--shadow-2)] ${TONE_CLASSES[tone]}`}
+            className={`flex min-w-[260px] max-w-sm items-start justify-between gap-3 rounded-xl border-l-4 px-4 py-3 ${TONE_CLASSES[tone]}`}
           >
             <div>
               <p className="text-sm font-semibold">{item.title}</p>

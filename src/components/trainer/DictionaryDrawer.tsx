@@ -165,7 +165,7 @@ export function DictionaryDrawer({
                 scenarioId ? `&scenarioId=${encodeURIComponent(scenarioId)}` : ""
               }`}
               onClick={onClose}
-              className="inline-flex min-h-10 items-center border-2 border-indigo-900 bg-indigo-900 px-3.5 py-2 text-xs font-semibold text-on-indigo hover:bg-indigo-700 hover:border-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-500"
+              className="inline-flex min-h-11 items-center rounded-[var(--radius-button)] border border-transparent bg-indigo-700 px-3.5 py-2 text-xs font-semibold text-on-indigo hover:bg-indigo-900 focus-visible:outline-2 focus-visible:outline-focus"
             >
               Trainer: add word &rarr;
             </Link>
@@ -184,7 +184,7 @@ export function DictionaryDrawer({
             value={search}
             onChange={(event) => setSearch(event.target.value)}
             placeholder="Search dialect words or English..."
-            className="w-full rounded-[10px] border border-border bg-surface-base px-3.5 py-2.5 text-sm text-text-primary placeholder:text-text-muted focus-visible:outline-2 focus-visible:outline-indigo-500"
+            className="w-full rounded-[var(--radius-input)] border border-border bg-surface-base px-3.5 py-2.5 text-sm text-text-primary placeholder:text-text-muted focus-visible:outline-2 focus-visible:outline-focus"
           />
         </div>
 
@@ -202,14 +202,14 @@ export function DictionaryDrawer({
                 aria-pressed={active}
                 onClick={() => setFilter(btn.id)}
                 className={[
-                  "inline-flex min-h-10 sm:min-h-0 items-center gap-1.5 rounded-sm px-3.5 py-2 sm:px-3 sm:py-1 text-xs font-medium transition-colors focus-visible:outline-2 focus-visible:outline-indigo-500",
+                  "inline-flex min-h-11 items-center gap-1.5 rounded-[var(--radius-button)] px-4 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-focus",
                   active
-                    ? "border border-indigo-900 bg-indigo-900 text-on-indigo"
-                    : "border border-border bg-surface-sunken text-text-secondary hover:bg-ink/5",
+                    ? "border border-transparent bg-indigo-100 font-semibold text-indigo-900"
+                    : "border border-border bg-surface-base text-text-secondary hover:bg-surface-base",
                 ].join(" ")}
               >
                 <span>{btn.label}</span>
-                <span className="font-mono text-[11px] opacity-85">
+                <span className="text-xs opacity-85">
                   {btn.count}
                 </span>
               </button>
@@ -227,7 +227,7 @@ export function DictionaryDrawer({
         ((showVerified ? filteredVerified.length : 0) +
           (showPending ? filteredPending.length : 0) ===
           0) ? (
-          <div className="rounded-xl border border-border bg-surface-sunken p-4 text-sm text-text-secondary">
+          <div className="rounded-xl border border-border bg-surface-base p-4 text-sm text-text-secondary">
             No matching entries found in this filter. Try switching to Verified
             or clearing the search box.
           </div>
@@ -238,7 +238,7 @@ export function DictionaryDrawer({
             filteredPending.map((sub) => (
               <article
                 key={sub.submissionId}
-                className="rounded-xl border border-gold-400/60 bg-surface-sunken p-4 space-y-2.5"
+                className="rounded-xl border border-gold-400/60 bg-surface-base p-4 space-y-2.5"
               >
                 <div className="flex flex-wrap items-start justify-between gap-2">
                   <div>
@@ -254,11 +254,11 @@ export function DictionaryDrawer({
                     ) : null}
                   </div>
                   <div className="flex flex-wrap items-center gap-1.5">
-                    <span className="rounded-sm bg-gold-100 px-2.5 py-0.5 font-mono text-[11px] font-medium text-offline-600">
+                    <span className="rounded-full bg-gold-100 text-ink px-2.5 py-0.5 text-xs font-medium text-offline-600">
                       Pending peer review
                     </span>
                     {sub.pendingSync ? (
-                      <span className="rounded-sm bg-surface-raised border border-border px-2.5 py-0.5 font-mono text-[11px] text-text-secondary">
+                      <span className="rounded-full bg-surface-raised border border-border px-2.5 py-0.5 text-xs text-text-secondary">
                         Will sync
                       </span>
                     ) : null}
@@ -305,7 +305,7 @@ export function DictionaryDrawer({
                   </div>
                   <span
                     className={[
-                      "rounded-sm px-2.5 py-0.5 font-mono text-[11px] font-medium",
+                      "rounded-full px-2.5 py-0.5 text-xs font-medium",
                       entry.source === "trainer"
                         ? "bg-edge-100 text-edge-600"
                         : "bg-indigo-100/70 text-indigo-700",
@@ -326,7 +326,7 @@ export function DictionaryDrawer({
                   ))}
                 </div>
                 {entry.example ? (
-                  <p className="rounded-lg bg-surface-sunken px-3 py-2 text-xs text-text-secondary">
+                  <p className="rounded-lg bg-surface-base px-3 py-2 text-xs text-text-secondary">
                     <span className="tonal-text font-medium text-text-primary">
                       {entry.example.text}
                     </span>{" "}

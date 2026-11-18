@@ -220,7 +220,7 @@ export function DiacriticPicker({
       role="toolbar"
       aria-label="Indigenous diacritic and tone keyboard"
       onKeyDown={handleToolbarKeyDown}
-      className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-border bg-surface-sunken p-3"
+      className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-border bg-surface-base p-3"
     >
       {letters.length > 0 ? (
         <div className="flex flex-wrap items-center gap-2">
@@ -232,7 +232,7 @@ export function DiacriticPicker({
               aria-label={item.label}
               onPointerDown={(e) => e.preventDefault()}
               onClick={() => applyAction({ kind: "letter", char: item.char })}
-              className="tonal-text inline-flex size-11 items-center justify-center rounded-[10px] border border-border bg-surface-raised text-xl font-medium text-text-primary shadow-[var(--shadow-1)] transition-transform active:scale-95 hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-indigo-500 cursor-pointer"
+              className="tonal-text inline-flex size-11 items-center justify-center rounded-[var(--radius-input)] border border-border bg-surface-raised text-xl font-medium text-text-primary transition-transform active:scale-95 hover:bg-surface-base focus-visible:outline-2 focus-visible:outline-focus cursor-pointer"
             >
               {item.char}
             </button>
@@ -248,37 +248,37 @@ export function DiacriticPicker({
             aria-label="Apply high tone (acute mark, Alt+1)"
             onPointerDown={(e) => e.preventDefault()}
             onClick={() => applyAction({ kind: "tone", tone: "H" })}
-            className="inline-flex h-11 items-center gap-1.5 rounded-[10px] border border-tone-high/30 bg-surface-raised px-3 text-sm font-semibold text-tone-high shadow-[var(--shadow-1)] hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-indigo-500 cursor-pointer"
+            className="inline-flex h-11 items-center gap-1.5 rounded-[var(--radius-input)] border border-tone-high/30 bg-surface-raised px-3 text-sm font-semibold text-tone-high hover:bg-surface-base focus-visible:outline-2 focus-visible:outline-focus cursor-pointer"
           >
             <span>{"\u25CC\u0301 High"}</span>
-            <sub className="font-mono text-[10px]">H</sub>
+            <sub className="text-xs">H</sub>
           </button>
           <button
             type="button"
             aria-label="Apply mid tone (Alt+2)"
             onPointerDown={(e) => e.preventDefault()}
             onClick={() => applyAction({ kind: "tone", tone: "M" })}
-            className="inline-flex h-11 items-center gap-1.5 rounded-[10px] border border-tone-mid/30 bg-surface-raised px-3 text-sm font-semibold text-tone-mid shadow-[var(--shadow-1)] hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-indigo-500 cursor-pointer"
+            className="inline-flex h-11 items-center gap-1.5 rounded-[var(--radius-input)] border border-tone-mid/30 bg-surface-raised px-3 text-sm font-semibold text-tone-mid hover:bg-surface-base focus-visible:outline-2 focus-visible:outline-focus cursor-pointer"
           >
             <span>{showMidMacron ? "\u25CC\u0304 Mid" : "Mid"}</span>
-            <sub className="font-mono text-[10px]">M</sub>
+            <sub className="text-xs">M</sub>
           </button>
           <button
             type="button"
             aria-label="Apply low tone (grave mark, Alt+3)"
             onPointerDown={(e) => e.preventDefault()}
             onClick={() => applyAction({ kind: "tone", tone: "L" })}
-            className="inline-flex h-11 items-center gap-1.5 rounded-[10px] border border-tone-low/30 bg-surface-raised px-3 text-sm font-semibold text-tone-low shadow-[var(--shadow-1)] hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-indigo-500 cursor-pointer"
+            className="inline-flex h-11 items-center gap-1.5 rounded-[var(--radius-input)] border border-tone-low/30 bg-surface-raised px-3 text-sm font-semibold text-tone-low hover:bg-surface-base focus-visible:outline-2 focus-visible:outline-focus cursor-pointer"
           >
             <span>{"\u25CC\u0300 Low"}</span>
-            <sub className="font-mono text-[10px]">L</sub>
+            <sub className="text-xs">L</sub>
           </button>
           <button
             type="button"
             aria-label="Clear tone mark from character before cursor (Alt+0)"
             onPointerDown={(e) => e.preventDefault()}
             onClick={() => applyAction({ kind: "clear_tone" })}
-            className="inline-flex h-11 items-center rounded-[10px] border border-border bg-surface-raised px-3 text-xs font-medium text-text-secondary hover:bg-surface-sunken focus-visible:outline-2 focus-visible:outline-indigo-500 cursor-pointer"
+            className="inline-flex h-11 items-center rounded-[var(--radius-input)] border border-border bg-surface-raised px-3 text-xs font-medium text-text-secondary hover:bg-surface-sunken focus-visible:outline-2 focus-visible:outline-focus cursor-pointer"
           >
             Clear
           </button>

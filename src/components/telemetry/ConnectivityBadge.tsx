@@ -1,5 +1,6 @@
 "use client";
 
+import { Wifi, WifiOff } from "lucide-react";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 
 export interface ConnectivityBadgeProps {
@@ -20,21 +21,20 @@ export function ConnectivityBadge({
       aria-live="polite"
       aria-label={isOnline ? "Network status: Online" : "Network status: Offline"}
       className={[
-        "inline-flex h-7 items-center gap-1.5 px-2.5 font-mono text-xs font-medium transition-colors duration-100",
+        "inline-flex h-8 items-center gap-1.5 rounded-full px-3 text-sm font-medium transition-colors duration-100",
         isOnline
-          ? "bg-transparent text-text-secondary border border-ink/25"
-          : "bg-offline-100 text-offline-600 border border-offline-600/30 font-semibold",
+          ? "bg-surface-raised text-text-primary border border-border"
+          : "bg-offline-100 text-offline-600 border border-transparent",
         className,
       ]
         .filter(Boolean)
         .join(" ")}
     >
-      <span
-        aria-hidden="true"
-        className={`inline-block size-2 ${
-          isOnline ? "bg-success-600" : "bg-offline-600"
-        }`}
-      />
+      {isOnline ? (
+        <Wifi aria-hidden="true" size={16} strokeWidth={1.5} className="shrink-0 text-success-600" />
+      ) : (
+        <WifiOff aria-hidden="true" size={16} strokeWidth={1.5} className="shrink-0 text-offline-600" />
+      )}
       <span>{isOnline ? "Online" : "Offline"}</span>
     </span>
   );

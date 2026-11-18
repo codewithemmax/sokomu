@@ -180,12 +180,12 @@ export function NigeriaMap({
   );
 
   return (
-    <div className="relative w-full overflow-hidden rounded-2xl border border-border bg-surface-sunken p-3 sm:p-5">
+    <div className="relative w-full overflow-hidden rounded-2xl border border-border bg-surface-base p-3 sm:p-5">
       <div className="mb-3 flex flex-wrap items-center justify-between gap-2 text-xs">
         <span className="font-semibold text-text-primary">
           Interactive Dialect Regions (8)
         </span>
-        <div className="flex items-center gap-3 text-[11px] text-text-secondary">
+        <div className="flex items-center gap-3 text-xs text-text-secondary">
           <span className="inline-flex items-center gap-1.5">
             <span className="inline-block size-2.5 rounded-xs bg-gold-400 border border-gold-600" />
             Earned stamp
@@ -237,10 +237,10 @@ export function NigeriaMap({
               onClick={() => onSelectDialect(region.dialectId)}
               className={[
                 "flex min-h-[44px] items-center justify-between gap-2 rounded-xl border px-3 py-2 text-left text-xs font-semibold transition-colors cursor-pointer",
-                "focus-visible:outline-2 focus-visible:outline-indigo-500",
+                "focus-visible:outline-2 focus-visible:outline-focus",
                 isSelected
                   ? "border-2 border-indigo-500 bg-surface-raised text-indigo-900"
-                  : "border-border bg-surface-raised/85 text-text-primary hover:bg-ink/5",
+                  : "border-border bg-surface-raised/85 text-text-primary hover:bg-surface-base",
               ].join(" ")}
             >
               <span className="truncate">{dialect?.name ?? region.shortLabel}</span>

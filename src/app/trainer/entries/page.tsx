@@ -55,7 +55,7 @@ function EntriesWorkspace({ uid }: { uid: string }) {
             id="entries-dialect"
             value={dialectId}
             onChange={(event) => setDialectId(event.target.value as DialectId)}
-            className="rounded-[10px] border border-border bg-surface-base px-3 py-2 text-xs text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+            className="rounded-[var(--radius-input)] border border-border bg-surface-base px-3 py-2 text-xs text-text-primary focus-visible:outline-2 focus-visible:outline-focus"
           >
             {SEED_DIALECTS.map((d) => (
               <option key={d.dialectId} value={d.dialectId}>
@@ -100,13 +100,13 @@ function EntriesWorkspace({ uid }: { uid: string }) {
               {approvedTrainerEntries.map((entry) => (
                 <div
                   key={entry.entryId}
-                  className="rounded-xl border border-border bg-surface-sunken p-3.5 space-y-2"
+                  className="rounded-xl border border-border bg-surface-base p-3.5 space-y-2"
                 >
                   <div className="flex items-baseline justify-between gap-2">
                     <span className="tonal-text text-lg font-semibold text-indigo-900">
                       {entry.headword}
                     </span>
-                    <span className="rounded-sm bg-edge-100 px-2 py-0.5 font-mono text-[11px] text-edge-600">
+                    <span className="rounded-full bg-edge-100 px-2 py-0.5 text-xs text-edge-600">
                       Verified (trainer)
                     </span>
                   </div>
@@ -141,7 +141,7 @@ function EntriesWorkspace({ uid }: { uid: string }) {
               {mySubmissions.map((sub) => (
                 <div
                   key={sub.submissionId}
-                  className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border bg-surface-sunken p-3"
+                  className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border bg-surface-base p-3"
                 >
                   <div>
                     <p className="tonal-text text-base font-semibold text-indigo-900">
@@ -156,13 +156,13 @@ function EntriesWorkspace({ uid }: { uid: string }) {
                   </div>
                   <div className="flex items-center gap-2">
                     {sub.pendingSync ? (
-                      <span className="rounded-sm border border-border bg-surface-raised px-2.5 py-0.5 font-mono text-[11px] text-text-muted">
+                      <span className="rounded-full border border-border bg-surface-raised px-2.5 py-0.5 text-xs text-text-muted">
                         Will sync
                       </span>
                     ) : null}
                     <span
                       className={[
-                        "rounded-sm px-2.5 py-0.5 font-mono text-[11px] font-medium uppercase",
+                        "rounded-full px-2.5 py-0.5 text-xs font-medium",
                         sub.status === "approved"
                           ? "bg-edge-100 text-edge-600"
                           : sub.status === "rejected"
@@ -193,7 +193,7 @@ function EntriesWorkspace({ uid }: { uid: string }) {
             Remote Config so Gemini Nano and Cloud prompts enforce them without a
             client redeploy.
           </p>
-          <p className="font-mono text-xs text-text-muted">
+          <p className="text-xs text-text-muted">
             Runbook: docs/remote-config-dialect-promotion.md
           </p>
         </CardContent>
@@ -216,11 +216,11 @@ export default function TrainerEntriesPage() {
           <div>
             <Link
               href="/trainer"
-              className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
+              className="inline-flex min-h-11 items-center text-xs font-medium text-indigo-700 hover:underline"
             >
               &larr; Back to Trainer Portal
             </Link>
-            <h1 className="mt-1 font-display text-4xl sm:text-[2.75rem] leading-[0.98] text-indigo-900">
+            <h1 className="mt-1 font-display text-2xl sm:text-3xl font-extrabold text-text-primary">
               Trainer Lexicon &amp; Rule Promotion
             </h1>
             <p className="mt-1 text-sm text-text-secondary">
@@ -230,7 +230,7 @@ export default function TrainerEntriesPage() {
           </div>
           <Link
             href="/trainer/submit"
-            className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
+            className="inline-flex min-h-11 items-center text-xs font-medium text-indigo-700 hover:underline"
           >
             + Submit new entry &rarr;
           </Link>

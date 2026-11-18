@@ -34,9 +34,9 @@ export function LeftRail() {
   return (
     <aside
       aria-label="Primary navigation"
-      className="hidden md:flex md:w-[72px] lg:w-[240px] shrink-0 flex-col justify-between border-r border-ink/20 bg-surface-base px-2 lg:px-4 py-7"
+      className="hidden md:flex md:w-[72px] lg:w-[248px] shrink-0 flex-col justify-between gap-6 bg-surface-base px-2 lg:px-3 py-6"
     >
-      <nav className="space-y-0.5">
+      <nav className="flex flex-col gap-1">
         {PRIMARY_NAV_ITEMS.map((item) => {
           const isActive =
             pathname === item.href || pathname.startsWith(`${item.href}/`);
@@ -46,38 +46,38 @@ export function LeftRail() {
               href={item.href}
               aria-current={isActive ? "page" : undefined}
               className={[
-                "relative flex min-h-[44px] items-center justify-center lg:justify-start gap-3 border-l-4 px-3 py-2.5 text-sm font-medium transition-colors",
-                "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500",
+                "relative flex min-h-12 items-center justify-center lg:justify-start gap-3 rounded-[var(--radius-button)] px-3 text-base transition-colors",
+                "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus",
                 isActive
-                  ? "border-l-gold-400 bg-indigo-900 text-on-indigo font-semibold"
-                  : "border-l-transparent text-text-secondary hover:border-l-ink/30 hover:text-text-primary",
+                  ? "bg-indigo-100 font-semibold text-indigo-900"
+                  : "font-medium text-text-secondary hover:bg-surface-base hover:text-text-primary",
               ].join(" ")}
             >
-              <span className={isActive ? "text-gold-400" : "text-text-muted"}><Icon name={item.icon} size={19} /></span>
+              <span className={isActive ? "text-indigo-700" : "text-text-secondary"}><Icon name={item.icon} size={20} /></span>
               <span className="hidden lg:inline">{item.label}</span>
             </Link>
           );
         })}
       </nav>
 
-      <div className="hidden lg:block space-y-2 border-t-[3px] border-ink px-1 pt-3 text-xs">
+      <div className="hidden lg:flex flex-col gap-2 rounded-[var(--radius-card)] border border-border bg-surface-raised p-4 text-sm">
         <div className="flex items-center justify-between">
-          <span className="font-mono font-semibold text-text-primary">
+          <span className="font-semibold text-text-primary">
             {nanoLabel}
           </span>
           <span
             aria-hidden="true"
-            className={`inline-block size-2 ${
+            className={`inline-block size-2 rounded-full ${
               statusState === "ready" ? "bg-edge-600" : "bg-gold-600"
             }`}
           />
         </div>
-        <p className="text-[11px] text-text-muted">
+        <p className="text-xs text-text-secondary">
           Firebase AI Logic Hybrid Mode
         </p>
         <Link
           href="/diagnostics"
-          className="inline-block text-[11px] font-semibold text-indigo-700 underline decoration-1 underline-offset-4 hover:decoration-2"
+          className="inline-flex min-h-11 items-center text-sm font-semibold text-indigo-700 underline-offset-4 hover:text-indigo-900 hover:underline"
         >
           Open AI Diagnostics &rarr;
         </Link>

@@ -1,3 +1,4 @@
+import { Check, X } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import type { InferenceSourceLabel, TonalGrading } from "@/types/ai";
 import { ToneChip } from "./ToneChip";
@@ -20,28 +21,33 @@ export function FeedbackCard({
   return (
     <Card
       className={[
-        "space-y-4 border-l-4",
-        grading.isCorrect ? "border-l-success-600" : "border-l-danger-600",
+        "space-y-4",
+        grading.isCorrect ? "border-success-600!" : "border-danger-600!",
       ].join(" ")}
     >
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="flex items-center gap-2">
           <span
             className={[
-              "rounded-sm px-2.5 py-0.5 text-xs font-semibold",
+              "inline-flex h-8 items-center gap-1.5 rounded-full px-3 text-sm font-medium",
               grading.isCorrect
-                ? "bg-edge-100 text-edge-600"
-                : "bg-offline-100 text-danger-600",
+                ? "border border-success-600 bg-surface-raised text-success-600"
+                : "bg-danger-100 text-danger-600",
             ].join(" ")}
           >
+            {grading.isCorrect ? (
+              <Check aria-hidden="true" size={16} strokeWidth={2} />
+            ) : (
+              <X aria-hidden="true" size={16} strokeWidth={2} />
+            )}
             {grading.isCorrect ? "Correct tones" : "Tone mismatch"}
           </span>
-          <span className="font-mono text-xs text-text-muted">
+          <span className="text-xs text-text-muted">
             Score: {Math.round(grading.score * 100)}%
           </span>
         </div>
 
-        <span className="font-mono text-[11px] text-text-muted">
+        <span className="text-xs text-text-muted">
           {source}
           {typeof latencyMs === "number" ? ` \u00B7 ${latencyMs} ms` : ""}
         </span>
@@ -51,7 +57,7 @@ export function FeedbackCard({
         {grading.syllables.map((syl, index) => (
           <div
             key={`${syl.expected}-${index}`}
-            className="flex items-center gap-1.5 rounded-lg border border-border bg-surface-sunken px-2.5 py-1.5 text-xs"
+            className="flex items-center gap-1.5 rounded-[var(--radius-button)] bg-surface-base px-3 py-2 text-sm"
           >
             <ToneChip
               syllable={syl.expected}

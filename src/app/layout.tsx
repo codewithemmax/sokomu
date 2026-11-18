@@ -1,28 +1,12 @@
 import type { Metadata } from "next";
-import { Archivo, JetBrains_Mono, Noto_Sans } from "next/font/google";
+// Fonts are self-hosted from @fontsource-variable packages, so builds never
+// need to reach Google Fonts. Each file declares per-subset @font-face rules
+// with unicode-range; browsers fetch only the subsets a page actually uses
+// (Latin Extended covers Yoruba, Igbo and Hausa diacritics).
+import "@fontsource-variable/inter/wght.css";
+import "@fontsource-variable/plus-jakarta-sans/wght.css";
 import { Providers } from "./providers";
 import "./globals.css";
-
-const archivo = Archivo({
-  variable: "--font-archivo",
-  subsets: ["latin", "latin-ext"],
-  axes: ["wdth"],
-  display: "swap",
-});
-
-const notoSans = Noto_Sans({
-  variable: "--font-noto-sans",
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  weight: ["500", "600"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Sokomu | Speak, Learn, Everywhere",
@@ -36,11 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${archivo.variable} ${notoSans.variable} ${jetbrainsMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-surface-base text-text-primary">
+    <html lang="en" className="h-full antialiased">
+      <body className="min-h-full flex flex-col bg-surface-raised text-text-primary">
         <Providers>{children}</Providers>
       </body>
     </html>

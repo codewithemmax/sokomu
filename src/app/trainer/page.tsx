@@ -60,7 +60,7 @@ function TrainerDashboardInner({
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="font-mono text-3xl font-semibold text-indigo-900">
+            <p className="font-display text-3xl font-extrabold text-indigo-900">
               {pendingReviewCount}
             </p>
             <p className="mt-1 text-xs text-text-muted">
@@ -76,11 +76,11 @@ function TrainerDashboardInner({
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="font-mono text-3xl font-semibold text-indigo-900">
+            <p className="font-display text-3xl font-extrabold text-indigo-900">
               {mySubmissionsCount}
             </p>
             <p className="mt-1 text-xs text-text-muted">
-              Role: <span className="font-mono">{role}</span>
+              Role: <span className="">{role}</span>
             </p>
           </CardContent>
         </Card>
@@ -92,7 +92,7 @@ function TrainerDashboardInner({
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="font-mono text-3xl font-semibold text-tone-mid">
+            <p className="font-display text-3xl font-extrabold text-tone-mid">
               {approvedCount}
             </p>
             <p className="mt-1 text-xs text-text-muted">
@@ -108,7 +108,7 @@ function TrainerDashboardInner({
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-2">
-            <p className="font-mono text-3xl font-semibold text-gold-600">
+            <p className="font-display text-3xl font-extrabold text-gold-600">
               {pendingSyncCount}
             </p>
             {pendingSyncCount > 0 ? (
@@ -146,7 +146,7 @@ function TrainerDashboardInner({
             </p>
             <Link
               href="/trainer/submit"
-              className="inline-flex border-2 border-indigo-900 bg-indigo-900 px-4 py-2 text-xs font-semibold text-on-indigo hover:bg-indigo-700 hover:border-indigo-700"
+              className="inline-flex rounded-[var(--radius-button)] border border-transparent bg-indigo-700 px-4 py-2 text-xs font-semibold text-on-indigo hover:bg-indigo-900"
             >
               Open submission form &rarr;
             </Link>
@@ -164,7 +164,7 @@ function TrainerDashboardInner({
             </p>
             <Link
               href="/trainer/queue"
-              className="inline-flex rounded-[10px] border border-border bg-surface-base px-4 py-2 text-xs font-medium text-text-primary hover:bg-surface-sunken"
+              className="inline-flex rounded-[var(--radius-input)] border border-border bg-surface-base px-4 py-2 text-xs font-medium text-text-primary hover:bg-surface-base"
             >
               Review pending ({pendingReviewCount}) &rarr;
             </Link>
@@ -182,7 +182,7 @@ function TrainerDashboardInner({
             </p>
             <Link
               href="/trainer/entries"
-              className="inline-flex rounded-[10px] border border-border bg-surface-base px-4 py-2 text-xs font-medium text-text-primary hover:bg-surface-sunken"
+              className="inline-flex rounded-[var(--radius-input)] border border-border bg-surface-base px-4 py-2 text-xs font-medium text-text-primary hover:bg-surface-base"
             >
               Browse lexicon &rarr;
             </Link>
@@ -197,9 +197,9 @@ export default function TrainerHomePage() {
   return (
     <AppShell>
       <div className="mx-auto max-w-5xl space-y-6">
-        <div className="flex flex-wrap items-end justify-between gap-4 border-b-[3px] border-ink pb-5">
+        <div className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-5">
           <div>
-            <h1 className="font-display text-4xl sm:text-[2.75rem] leading-[0.98] text-indigo-900">
+            <h1 className="font-display text-2xl sm:text-3xl font-extrabold text-text-primary">
               Native Speaker Trainer Portal
             </h1>
             <p className="mt-1 text-sm text-text-secondary">
@@ -209,7 +209,7 @@ export default function TrainerHomePage() {
           </div>
           <Link
             href="/scenarios"
-            className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
+            className="inline-flex min-h-11 items-center text-xs font-medium text-indigo-700 hover:underline"
           >
             Back to learner scenarios &rarr;
           </Link>

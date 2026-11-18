@@ -39,32 +39,32 @@ export function StampCard({
       aria-label={`${dialect.name} stamp: ${state}, ${safeProgress}% progress`}
       className={[
         "group relative flex w-[144px] sm:w-full shrink-0 flex-col items-center justify-between rounded-2xl p-3.5 text-left transition-all duration-200",
-        "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 cursor-pointer",
+        "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus cursor-pointer",
         selected
-          ? "border-2 border-indigo-500 bg-surface-raised shadow-[0_0_0_1px_rgba(68,87,196,0.12),var(--shadow-2)]"
+          ? "border-2 border-indigo-500 bg-surface-raised "
           : isEarned
-            ? "border-2 border-gold-600 bg-gold-100/60 shadow-[var(--shadow-1)]"
+            ? "border-2 border-gold-600 bg-gold-100/60"
             : isInProgress
-              ? "border border-indigo-500 bg-surface-raised shadow-[var(--shadow-1)]"
+              ? "border border-indigo-500 bg-surface-raised"
               : "border border-dashed border-border bg-surface-raised/80 hover:border-indigo-300",
       ]
         .filter(Boolean)
         .join(" ")}
     >
-      <div className="flex w-full items-center justify-between gap-1 text-[11px]">
-        <span className="font-mono text-text-muted">
+      <div className="flex w-full items-center justify-between gap-1 text-xs">
+        <span className="text-text-muted">
           {dialect.languageId.toUpperCase()}
         </span>
         {isEarned ? (
-          <span className="rounded-sm bg-gold-600 px-2 py-0.5 font-mono text-[10px] font-semibold text-white">
+          <span className="rounded-full bg-gold-400 px-2.5 py-0.5 text-xs font-semibold text-ink">
             Earned
           </span>
         ) : isInProgress ? (
-          <span className="rounded-sm bg-indigo-100 px-2 py-0.5 font-mono text-[10px] font-semibold text-indigo-700">
+          <span className="rounded-full bg-indigo-100 px-2 py-0.5 text-xs font-semibold text-indigo-700">
             {safeProgress}%
           </span>
         ) : (
-          <span className="font-mono text-[10px] text-text-muted">Locked</span>
+          <span className="text-xs text-text-muted">Locked</span>
         )}
       </div>
 

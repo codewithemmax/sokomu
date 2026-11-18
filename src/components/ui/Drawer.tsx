@@ -58,7 +58,7 @@ export function Drawer({
       aria-labelledby={titleId}
     >
       <div
-        className="fixed inset-0 bg-indigo-900/50 transition-opacity"
+        className="fixed inset-0 bg-ink/50 transition-opacity"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -66,25 +66,25 @@ export function Drawer({
         ref={panelRef}
         tabIndex={-1}
         className={[
-          "relative z-10 flex w-full flex-col bg-surface-raised border-t-[3px] lg:border-t-0 lg:border-l-[3px] border-ink shadow-[var(--shadow-3)] focus:outline-none",
-          "mt-auto max-h-[88dvh] rounded-none lg:mt-16 lg:max-h-[calc(100dvh-4rem)] lg:rounded-none",
+          "relative z-10 flex w-full flex-col bg-surface-raised shadow-[var(--shadow-float)] focus:outline-none",
+          "mt-auto max-h-[88dvh] rounded-t-[var(--radius-card)] lg:mt-16 lg:max-h-[calc(100dvh-4rem)] lg:rounded-none lg:rounded-tl-[var(--radius-card)]",
           widthClassName,
         ].join(" ")}
       >
         <div className="flex items-start justify-between gap-4 border-b border-border px-5 py-4">
           <div>
-            <h2 id={titleId} className="font-display text-xl text-text-primary">
+            <h2 id={titleId} className="font-display text-xl font-bold text-text-primary">
               {title}
             </h2>
             {subtitle ? (
-              <p className="mt-0.5 text-xs text-text-muted">{subtitle}</p>
+              <p className="mt-0.5 text-sm text-text-secondary">{subtitle}</p>
             ) : null}
           </div>
           <button
             type="button"
             onClick={onClose}
             aria-label="Close panel"
-            className="inline-flex size-10 shrink-0 items-center justify-center border border-transparent text-text-secondary hover:border-ink hover:text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+            className="inline-flex size-11 shrink-0 items-center justify-center rounded-[var(--radius-button)] text-text-secondary hover:bg-surface-base hover:text-text-primary focus-visible:outline-2 focus-visible:outline-focus"
           >
             <span aria-hidden="true" className="text-lg leading-none">
               &times;

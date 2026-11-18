@@ -93,9 +93,9 @@ export default function OfflineLibraryPage() {
   return (
     <AppShell>
       <div className="space-y-6">
-        <div className="flex flex-wrap items-end justify-between gap-4 border-b-[3px] border-ink pb-5">
+        <div className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-5">
           <div>
-            <h1 className="font-display text-4xl sm:text-[2.75rem] leading-[0.98] text-indigo-900">
+            <h1 className="font-display text-2xl sm:text-3xl font-extrabold text-text-primary">
               Offline Audio &amp; Scenario Library
             </h1>
             <p className="mt-1 text-sm text-text-secondary">
@@ -125,10 +125,10 @@ export default function OfflineLibraryPage() {
             </div>
             <span
               className={[
-                "rounded-sm px-3 py-1 font-mono text-xs font-semibold",
+                "rounded-full px-3 py-1 text-xs font-semibold",
                 storageInfo.persisted
                   ? "bg-edge-100 text-edge-600"
-                  : "bg-gold-100 text-gold-600",
+                  : "bg-gold-100 text-ink",
               ].join(" ")}
             >
               {storageInfo.persisted
@@ -138,21 +138,21 @@ export default function OfflineLibraryPage() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-              <div className="rounded-xl border border-border bg-surface-sunken p-3">
+              <div className="rounded-xl border border-border bg-surface-base p-3">
                 <p className="text-xs text-text-muted">Cached PCM Audio</p>
-                <p className="mt-1 font-mono text-lg font-semibold text-gold-600">
+                <p className="mt-1 font-display text-lg font-extrabold text-gold-600">
                   {formatStorageBytes(totalCachedPcmBytes)}
                 </p>
               </div>
-              <div className="rounded-xl border border-border bg-surface-sunken p-3">
+              <div className="rounded-xl border border-border bg-surface-base p-3">
                 <p className="text-xs text-text-muted">Origin Usage</p>
-                <p className="mt-1 font-mono text-lg font-semibold text-text-primary">
+                <p className="mt-1 font-display text-lg font-extrabold text-text-primary">
                   {formatStorageBytes(storageInfo.usageBytes)}
                 </p>
               </div>
-              <div className="rounded-xl border border-border bg-surface-sunken p-3">
+              <div className="rounded-xl border border-border bg-surface-base p-3">
                 <p className="text-xs text-text-muted">Saved Dialogues</p>
-                <p className="mt-1 font-mono text-lg font-semibold text-indigo-700">
+                <p className="mt-1 font-display text-lg font-extrabold text-indigo-700">
                   {records.length}
                 </p>
               </div>
@@ -199,7 +199,7 @@ export default function OfflineLibraryPage() {
             <div className="pt-2">
               <Link
                 href="/scenarios"
-                className="inline-flex min-h-[44px] items-center justify-center border-2 border-indigo-900 bg-indigo-900 px-5 py-2.5 text-sm font-semibold text-on-indigo hover:bg-indigo-700 hover:border-indigo-700"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-[var(--radius-button)] border border-transparent bg-indigo-700 px-5 py-2.5 text-sm font-semibold text-on-indigo hover:bg-indigo-900"
               >
                 Browse scenarios &rarr;
               </Link>
@@ -219,23 +219,23 @@ export default function OfflineLibraryPage() {
                   <div>
                     <CardHeader>
                       <div>
-                        <span className="font-mono text-xs font-semibold text-gold-600">
+                        <span className="text-xs font-semibold text-text-secondary">
                           {dialect?.name ?? record.scenarioId}
                         </span>
                         <CardTitle className="mt-0.5 font-display text-xl">
                           {scenario?.title ?? record.scenarioId}
                         </CardTitle>
                       </div>
-                      <span className="rounded-sm bg-gold-100 px-2.5 py-0.5 font-mono text-xs font-semibold text-gold-600">
+                      <span className="rounded-full bg-gold-100 text-ink px-2.5 py-0.5 text-xs font-semibold">
                         {formatStorageBytes(record.bytes)}
                       </span>
                     </CardHeader>
                     <CardContent className="space-y-1 text-xs text-text-secondary">
                       <p>
-                        Duration: <strong className="font-mono">{durationSec}s</strong>{" "}
+                        Duration: <strong className="">{durationSec}s</strong>{" "}
                         &middot; {record.sampleRate} Hz mono PCM
                       </p>
-                      <p className="font-mono text-[11px] text-text-muted">
+                      <p className="text-xs text-text-muted">
                         Model: {record.ttsModel} &middot; Hash:{" "}
                         {record.promptHash}
                       </p>
@@ -244,7 +244,7 @@ export default function OfflineLibraryPage() {
                   <CardFooter>
                     <Link
                       href={`/scenarios/${record.scenarioId}?tab=listen`}
-                      className="inline-flex min-h-[40px] items-center justify-center rounded-[10px] bg-gold-600 px-4 py-2 text-xs font-medium text-white hover:bg-gold-600/90"
+                      className="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-input)] bg-gold-100 px-4 py-2 text-sm font-semibold text-ink hover:bg-gold-400/60"
                     >
                       Replay offline
                     </Link>

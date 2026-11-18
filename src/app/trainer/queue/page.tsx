@@ -56,7 +56,7 @@ function QueueWorkspace({ uid }: { uid: string }) {
             onChange={(event) =>
               setSelectedDialect(event.target.value as DialectId | "all")
             }
-            className="rounded-[10px] border border-border bg-surface-base px-3 py-2 text-xs text-text-primary focus-visible:outline-2 focus-visible:outline-indigo-500"
+            className="rounded-[var(--radius-input)] border border-border bg-surface-base px-3 py-2 text-xs text-text-primary focus-visible:outline-2 focus-visible:outline-focus"
           >
             <option value="all">All dialects</option>
             {SEED_DIALECTS.map((d) => (
@@ -95,11 +95,11 @@ export default function TrainerQueuePage() {
           <div>
             <Link
               href="/trainer"
-              className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
+              className="inline-flex min-h-11 items-center text-xs font-medium text-indigo-700 hover:underline"
             >
               &larr; Back to Trainer Portal
             </Link>
-            <h1 className="mt-1 font-display text-4xl sm:text-[2.75rem] leading-[0.98] text-indigo-900">
+            <h1 className="mt-1 font-display text-2xl sm:text-3xl font-extrabold text-text-primary">
               Peer Review Queue
             </h1>
             <p className="mt-1 text-sm text-text-secondary">
@@ -110,7 +110,7 @@ export default function TrainerQueuePage() {
           </div>
           <Link
             href="/trainer/submit"
-            className="inline-flex min-h-10 items-center text-xs font-medium text-indigo-700 hover:underline"
+            className="inline-flex min-h-11 items-center text-xs font-medium text-indigo-700 hover:underline"
           >
             + Submit new entry &rarr;
           </Link>
