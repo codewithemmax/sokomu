@@ -13,6 +13,10 @@ import {
   getCloudFallbackCountToday,
   resetCloudFallbackUsage,
 } from "@/lib/ai/config";
+import {
+  appCheckDebugToken,
+  recaptchaEnterpriseSiteKey,
+} from "@/lib/firebase/config";
 import { refreshRemoteConfig } from "@/lib/firebase/remote-config";
 import { REMOTE_CONFIG_DEFAULTS } from "@/lib/firebase/remote-config-defaults";
 
@@ -29,12 +33,8 @@ export function DiagnosticsView() {
     setCloudCountToday(getCloudFallbackCountToday());
   }, []);
 
-  const hasAppCheckSiteKey = Boolean(
-    process.env.NEXT_PUBLIC_RECAPTCHA_ENTERPRISE_SITE_KEY,
-  );
-  const hasDebugTokenEnv = Boolean(
-    process.env.NEXT_PUBLIC_FIREBASE_APPCHECK_DEBUG_TOKEN,
-  );
+  const hasAppCheckSiteKey = Boolean(recaptchaEnterpriseSiteKey);
+  const hasDebugTokenEnv = Boolean(appCheckDebugToken);
 
   const handleRefreshRemoteConfig = async () => {
     if (!services?.remoteConfig) return;
