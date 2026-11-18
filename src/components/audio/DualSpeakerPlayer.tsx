@@ -168,6 +168,9 @@ export function DualSpeakerPlayer({
       playerRef.current ??= new PcmStreamPlayer();
       const player = playerRef.current;
       player.stop();
+      // Unlock audio while still inside the click; after the first await the
+      // browser no longer treats this as a user gesture.
+      player.prime();
 
       setPlaying(true);
       setElapsedMs(0);

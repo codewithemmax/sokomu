@@ -16,6 +16,7 @@ import {
   estimatePcmDurationMs,
   PCM_SAMPLE_RATE,
   pcm16LeToFloat32,
+  PcmStreamPlayer,
 } from "@/lib/audio/pcm-player";
 import { clearAllAudioCache, getCachedAudio } from "@/lib/db/audio-cache";
 import {
@@ -187,5 +188,55 @@ describe("Multi-speaker TTS streaming, caching, offline replay, and error handli
     }
     expect(disabledError).toBeInstanceOf(TtsSynthesisError);
     expect((disabledError as TtsSynthesisError).code).toBe("TTS_DISABLED");
+  });
+});
+
+describe("PcmStreamPlayer audio unlock (autoplay policy)", () => {
+  test("prime() creates and resumes a suspended AudioContext synchronously", () => {
+    const calls: string[] = [];
+    class FakeAudioContext {
+      state: "suspended" | "running" | "closed" = "suspended";
+      currentTime = 0;
+      destination = {};
+      constructor() {
+        calls.push("create");
+      }
+      resume() {
+        calls.push("resume");
+        this.state = "running";
+        return Promise.resolve();
+      }
+      createBuffer(_ch: number, length: number) {
+        return { duration: length / PCM_SAMPLE_RATE, copyToChannel() {} };
+      }
+      createBufferSource() {
+        return {
+          buffer: null as unknown,
+          onended: null as unknown,
+          connect() {},
+          start() {
+            calls.push("start");
+          },
+          stop() {},
+        };
+      }
+      close() {
+        this.state = "closed";
+        return Promise.resolve();
+      }
+    }
+
+    const g = globalThis as unknown as { window?: unknown };
+    const previousWindow = g.window;
+    g.window = { AudioContext: FakeAudioContext };
+    try {
+      const player = new PcmStreamPlayer();
+      player.prime();
+      // Context exists, was resumed, and a silent unlock buffer was started,
+      // all before any await.
+      expect(calls).toEqual(["create", "resume", "start"]);
+    } finally {
+      g.window = previousWindow;
+    }
   });
 });

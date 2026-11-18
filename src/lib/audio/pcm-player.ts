@@ -88,6 +88,9 @@ export class PcmStreamPlayer {
     }
 
     const ctx = this.ensureContext();
+    if (ctx.state === "suspended") {
+      void ctx.resume().catch(() => undefined);
+    }
     const audioBuffer = ctx.createBuffer(1, samples.length, PCM_SAMPLE_RATE);
     audioBuffer.copyToChannel(new Float32Array(samples), 0);
 
@@ -122,6 +125,24 @@ export class PcmStreamPlayer {
     this.activeSources.clear();
     this.carry = null;
     this.nextStart = 0;
+  }
+
+  /**
+   * Create and unlock the AudioContext. Must be called synchronously inside a
+   * user gesture (click/tap) BEFORE any await: browsers keep contexts created
+   * outside a gesture suspended, which makes playback silent. Also plays one
+   * silent sample, which iOS Safari needs to fully unlock output.
+   */
+  prime(): void {
+    const ctx = this.ensureContext();
+    if (ctx.state === "suspended") {
+      void ctx.resume().catch(() => undefined);
+    }
+    const silent = ctx.createBuffer(1, 1, PCM_SAMPLE_RATE);
+    const src = ctx.createBufferSource();
+    src.buffer = silent;
+    src.connect(ctx.destination);
+    src.start(0);
   }
 
   async resume(): Promise<void> {
