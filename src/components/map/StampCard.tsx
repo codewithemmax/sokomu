@@ -9,6 +9,8 @@ export interface StampCardProps {
   progress: number;
   earnedAt?: number;
   selected?: boolean;
+  /** Fill the parent grid cell instead of the fixed width used in horizontal scrollers. */
+  fluid?: boolean;
   onSelect: (dialect: Dialect) => void;
 }
 
@@ -18,6 +20,7 @@ export function StampCard({
   progress,
   earnedAt,
   selected = false,
+  fluid = false,
   onSelect,
 }: StampCardProps) {
   const safeProgress = Math.min(100, Math.max(0, Math.round(progress)));
@@ -38,7 +41,8 @@ export function StampCard({
       onClick={() => onSelect(dialect)}
       aria-label={`${dialect.name} stamp: ${state}, ${safeProgress}% progress`}
       className={[
-        "group relative flex w-[144px] sm:w-full shrink-0 flex-col items-center justify-between rounded-2xl p-3.5 text-left transition-all duration-200",
+        fluid ? "w-full min-w-0" : "w-[144px] sm:w-full shrink-0",
+        "group relative flex flex-col items-center justify-between rounded-2xl p-3.5 text-left transition-all duration-200",
         "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus cursor-pointer",
         selected
           ? "border-2 border-indigo-500 bg-surface-raised "

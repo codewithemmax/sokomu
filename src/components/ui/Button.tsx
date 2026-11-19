@@ -77,7 +77,7 @@ export function Button({
         onClick?.(event);
       }}
       className={[
-        "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-[var(--radius-button)] font-semibold leading-none transition-colors duration-150",
+        "inline-flex items-center justify-center gap-2 text-center rounded-[var(--radius-button)] font-semibold leading-tight transition-colors duration-150",
         "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus",
         showDisabledStyle ? DISABLED_CLASSES : VARIANT_CLASSES[variant],
         SIZE_CLASSES[size],

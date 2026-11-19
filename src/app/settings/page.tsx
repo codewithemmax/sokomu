@@ -102,18 +102,18 @@ export default function SettingsPage() {
         </div>
 
         <Card>
-          <CardHeader>
-            <div>
+          <CardHeader className="flex-wrap">
+            <div className="min-w-0">
               <CardTitle>Passport Account</CardTitle>
               <p className="mt-0.5 text-xs text-text-muted">
                 Role: <span className="">{role}</span>{" "}
                 &middot; UID:{" "}
-                <code className="font-mono">{user?.uid ?? "local-guest"}</code>
+                <code className="font-mono break-all">{user?.uid ?? "local-guest"}</code>
               </p>
             </div>
             <span
               className={[
-                "rounded-full px-3 py-1 text-xs font-semibold",
+                "shrink-0 whitespace-nowrap rounded-full px-3 py-1 text-xs font-semibold",
                 isGuest
                   ? "bg-surface-base text-text-secondary"
                   : "bg-edge-100 text-edge-600",

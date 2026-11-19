@@ -243,7 +243,7 @@ export function NigeriaMap({
                   : "border-border bg-surface-raised/85 text-text-primary hover:bg-surface-base",
               ].join(" ")}
             >
-              <span className="truncate">{dialect?.name ?? region.shortLabel}</span>
+              <span className="min-w-0 break-words leading-tight">{dialect?.name ?? region.shortLabel}</span>
               <span
                 aria-hidden="true"
                 className={[

@@ -10,7 +10,7 @@ export default function OfflinePage() {
         </div>
 
         <div className="space-y-2">
-          <h1 className="font-display text-3xl leading-[1.05] text-indigo-900">
+          <h1 className="font-display text-2xl sm:text-3xl leading-[1.05] text-indigo-900">
             You are offline, and your practice continues
           </h1>
           <p className="text-sm leading-relaxed text-text-secondary">
