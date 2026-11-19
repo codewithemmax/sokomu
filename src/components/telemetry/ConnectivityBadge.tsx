@@ -5,11 +5,17 @@ import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 
 export interface ConnectivityBadgeProps {
   online?: boolean;
+  /**
+   * Below the `sm` breakpoint, show only the Wi-Fi icon while online so the
+   * header fits on 360px phones. The Offline state always keeps its text.
+   */
+  compactWhenOnline?: boolean;
   className?: string;
 }
 
 export function ConnectivityBadge({
   online,
+  compactWhenOnline = false,
   className = "",
 }: ConnectivityBadgeProps) {
   const hookOnline = useOnlineStatus();
@@ -35,7 +41,9 @@ export function ConnectivityBadge({
       ) : (
         <WifiOff aria-hidden="true" size={16} strokeWidth={1.5} className="shrink-0 text-offline-600" />
       )}
-      <span>{isOnline ? "Online" : "Offline"}</span>
+      <span className={isOnline && compactWhenOnline ? "max-sm:sr-only" : undefined}>
+        {isOnline ? "Online" : "Offline"}
+      </span>
     </span>
   );
 }

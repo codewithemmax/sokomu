@@ -84,8 +84,10 @@ export function TelemetryHeaderBar({
                 alt=""
                 className="size-8 shrink-0 rounded-[var(--radius-button)]"
               />
-              <span className="flex flex-col">
-                <span className="font-display text-xl font-extrabold leading-none tracking-[-0.02em] text-text-primary">
+              {/* Wordmark drops to screen-reader only on very narrow
+                  viewports (e.g. 360px phones with enlarged system text). */}
+              <span className="flex flex-col max-[349px]:sr-only">
+                <span className="font-display text-lg sm:text-xl font-extrabold leading-none tracking-[-0.02em] text-text-primary">
                   Sokomu
                 </span>
                 <span className="hidden sm:block mt-1 text-xs leading-none text-text-secondary">
@@ -108,7 +110,10 @@ export function TelemetryHeaderBar({
               onOpenDetails={onOpenTelemetryDrawer}
               className="h-11 px-3 text-xs sm:h-8 sm:text-sm"
             />
-            <ConnectivityBadge className="h-11 px-3 text-xs sm:h-8 sm:text-sm" />
+            <ConnectivityBadge
+              compactWhenOnline
+              className="h-11 px-3 text-xs sm:h-8 sm:text-sm"
+            />
           </div>
 
           <Link
