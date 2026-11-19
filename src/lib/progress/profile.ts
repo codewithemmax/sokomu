@@ -78,7 +78,11 @@ export async function saveUserProfilePreferences(
   try {
     const { db } = getFirebase();
     // Write only learner-editable fields so Firestore rules (role immutability) pass.
-    await setDoc(
+    // Not awaited: setDoc only resolves once the server acknowledges the write,
+    // which can take a very long time on slow mobile data. The persistent
+    // local cache queues the write and syncs it when the network allows, and
+    // the IndexedDB profile above is already the source of truth for the UI.
+    void setDoc(
       userDocRef(input.uid, db),
       {
         uid: input.uid,
@@ -91,9 +95,11 @@ export async function saveUserProfilePreferences(
         updatedAt: next.updatedAt,
       },
       { merge: true },
-    );
+    ).catch(() => {
+      // Keep local IndexedDB profile when Firestore rejects the write.
+    });
   } catch {
-    // Keep local IndexedDB profile when Firestore write is unavailable.
+    // Keep local IndexedDB profile when Firestore is unavailable.
   }
 
   return next;

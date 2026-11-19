@@ -25,6 +25,9 @@ import type {
 
 type OnboardingStep = "language" | "dialect" | "goal" | "readiness";
 
+/** Longest the "Enter Cultural Map" button waits for anonymous sign-in. */
+const AUTH_WAIT_MS = 4000;
+
 const GOALS: readonly {
   id: LearningGoal;
   title: string;
@@ -94,21 +97,52 @@ export default function OnboardingPage() {
     setStep("dialect");
   };
 
+  // Fetch the map route's code while the learner is still choosing options.
+  useEffect(() => {
+    router.prefetch("/map");
+  }, [router]);
+
   const handleFinishOnboarding = async () => {
     setSaving(true);
     try {
       let uid: string | null = null;
       let displayName: string | null = null;
       let isAnonymous = true;
+      const preferences = {
+        languageId,
+        dialectId,
+        goal,
+        nanoStatus: statusState,
+      };
 
       if (online) {
-        try {
-          const user = await ensureAnonymousUser();
+        // Anonymous sign-in can stall on slow mobile data. Wait briefly, then
+        // continue with a local profile; if sign-in finishes later, the
+        // profile is re-saved with the uid so it still syncs to Firestore.
+        const authPromise = ensureAnonymousUser();
+        const user = await Promise.race([
+          authPromise.catch(() => null),
+          new Promise<null>((resolve) =>
+            setTimeout(() => resolve(null), AUTH_WAIT_MS),
+          ),
+        ]);
+        if (user) {
           uid = user.uid;
           displayName = user.displayName;
           isAnonymous = user.isAnonymous;
-        } catch {
-          // Proceed with local guest profile when auth is unavailable.
+        } else {
+          void authPromise
+            .then((lateUser) =>
+              saveUserProfilePreferences({
+                uid: lateUser.uid,
+                displayName: lateUser.displayName,
+                isAnonymous: lateUser.isAnonymous,
+                ...preferences,
+              }),
+            )
+            .catch(() => {
+              // Stay on the local guest profile when auth is unavailable.
+            });
         }
       }
 
@@ -116,10 +150,7 @@ export default function OnboardingPage() {
         uid,
         displayName,
         isAnonymous,
-        languageId,
-        dialectId,
-        goal,
-        nanoStatus: statusState,
+        ...preferences,
       });
       router.push("/map");
     } finally {
