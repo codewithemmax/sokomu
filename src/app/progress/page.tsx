@@ -143,34 +143,34 @@ export default function ProgressPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid grid-cols-2 gap-3">
-                <div className="rounded-xl border border-border bg-surface-base p-3">
+                <div className="rounded-xl border border-border bg-surface-base p-2.5 sm:p-3">
                   <p className="text-xs text-text-muted">Data Saved</p>
-                  <p className="mt-1 font-display text-xl font-extrabold text-text-primary">
+                  <p className="mt-1 font-display text-lg sm:text-xl font-extrabold text-text-primary">
                     {dataSaved.formattedMb}
                   </p>
                 </div>
-                <div className="rounded-xl border border-border bg-surface-base p-3">
+                <div className="rounded-xl border border-border bg-surface-base p-2.5 sm:p-3">
                   <p className="text-xs text-text-muted">Naira Equivalent</p>
-                  <p className="mt-1 font-display text-xl font-extrabold text-gold-600">
+                  <p className="mt-1 font-display text-lg sm:text-xl font-extrabold text-gold-600">
                     {dataSaved.formattedNaira}
                   </p>
                 </div>
               </div>
               <div className="grid grid-cols-3 gap-2 text-center text-xs">
-                <div className="rounded-lg border border-border bg-surface-base p-2">
-                  <p className="text-xs text-text-muted">ON_DEVICE</p>
+                <div className="rounded-lg border border-border bg-surface-base px-1.5 py-2 sm:p-2">
+                  <p className="text-xs text-text-muted [overflow-wrap:anywhere]">ON_DEVICE</p>
                   <p className="font-semibold text-edge-600">
                     {summary.onDeviceCount}
                   </p>
                 </div>
-                <div className="rounded-lg border border-border bg-surface-base p-2">
-                  <p className="text-xs text-text-muted">CACHED</p>
+                <div className="rounded-lg border border-border bg-surface-base px-1.5 py-2 sm:p-2">
+                  <p className="text-xs text-text-muted [overflow-wrap:anywhere]">CACHED</p>
                   <p className="font-semibold text-gold-600">
                     {summary.cachedReplayCount}
                   </p>
                 </div>
-                <div className="rounded-lg border border-border bg-surface-base p-2">
-                  <p className="text-xs text-text-muted">IN_CLOUD</p>
+                <div className="rounded-lg border border-border bg-surface-base px-1.5 py-2 sm:p-2">
+                  <p className="text-xs text-text-muted [overflow-wrap:anywhere]">IN_CLOUD</p>
                   <p className="font-semibold text-cloud-600">
                     {summary.cloudCount}
                   </p>
@@ -190,7 +190,7 @@ export default function ProgressPage() {
           >
             Regional Dialect Stamps ({stamps.length} of {SEED_DIALECTS.length})
           </h2>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
             {SEED_DIALECTS.map((dialect) => {
               const p = progressMap[dialect.dialectId];
               const scores = p ? Object.values(p.scenarioScores) : [];
@@ -205,6 +205,7 @@ export default function ProgressPage() {
 
               return (
                 <StampCard
+                  fluid
                   key={dialect.dialectId}
                   dialect={dialect}
                   state={state}

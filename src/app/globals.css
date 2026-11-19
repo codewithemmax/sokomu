@@ -124,6 +124,10 @@
 @layer base {
   html {
     background-color: var(--color-surface-raised);
+    /* Stop mobile browsers from "boosting" text sizes on their own.
+       Tailwind's preflight only sets the -webkit- prefixed form. */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   body {

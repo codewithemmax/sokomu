@@ -134,7 +134,7 @@ export default function LandingPage() {
           className="grid grid-cols-1 gap-6 lg:grid-cols-12"
         >
           <Card className="lg:col-span-7">
-            <CardHeader>
+            <CardHeader className="flex-wrap">
               <CardTitle id="minimal-pairs-heading">
                 Why tone and regional dialect matter
               </CardTitle>
@@ -170,7 +170,7 @@ export default function LandingPage() {
           </Card>
 
           <Card className="lg:col-span-5">
-            <CardHeader>
+            <CardHeader className="flex-wrap">
               <CardTitle>Hybrid AI Architecture</CardTitle>
               <span className="inline-flex h-7 shrink-0 items-center rounded-full bg-cloud-100 px-2.5 text-xs font-medium text-text-primary">
                 Firebase AI Logic

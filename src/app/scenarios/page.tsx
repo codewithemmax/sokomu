@@ -168,14 +168,14 @@ export default function ScenariosLibraryPage() {
                   </CardContent>
                 </div>
 
-                <CardFooter>
+                <CardFooter className="flex-wrap">
                   <Link
                     href={`/scenarios/${scenario.scenarioId}?tab=listen`}
                     className="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-button)] border border-transparent bg-indigo-700 px-4 py-2 text-xs sm:text-sm font-semibold text-on-indigo hover:bg-indigo-900"
                   >
                     Listen
                   </Link>
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center gap-2">
                     <Link
                       href={`/scenarios/${scenario.scenarioId}?tab=vocab`}
                       className="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-button)] border border-border bg-surface-raised px-3 py-2 text-xs font-medium text-text-primary hover:bg-surface-base"

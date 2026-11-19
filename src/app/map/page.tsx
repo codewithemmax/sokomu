@@ -237,19 +237,19 @@ export default function MapDashboardPage() {
             </CardHeader>
             <CardContent className="space-y-3">
               <ProgressBar
-                label="High tone (\u0301 acute)"
+                label={"High tone (◌́ acute)"}
                 value={computeTonalAccuracyPercent(selectedProgress.tonal.H)}
                 showValueLabel
                 tone="tone-high"
               />
               <ProgressBar
-                label="Mid tone (unmarked / \u0304 macron)"
+                label={"Mid tone (unmarked / ◌̄ macron)"}
                 value={computeTonalAccuracyPercent(selectedProgress.tonal.M)}
                 showValueLabel
                 tone="tone-mid"
               />
               <ProgressBar
-                label="Low tone (\u0300 grave)"
+                label={"Low tone (◌̀ grave)"}
                 value={computeTonalAccuracyPercent(selectedProgress.tonal.L)}
                 showValueLabel
                 tone="tone-low"
@@ -279,7 +279,7 @@ export default function MapDashboardPage() {
                     {dataSaved.formattedNaira}
                   </p>
                   <p className="text-xs text-text-muted">
-                    At \u20A6{dataSaved.nairaPerMb.toFixed(2)}/MB
+                    At {"\u20A6"}{dataSaved.nairaPerMb.toFixed(2)}/MB
                   </p>
                 </div>
               </div>

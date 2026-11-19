@@ -79,7 +79,7 @@ export function TelemetryDrawer({ open, onClose }: TelemetryDrawerProps) {
           </div>
           <p className="mt-1 text-xs text-text-secondary">
             Calculated at {dataSaved.cloudDrillKb} KB per on-device drill plus
-            cached 24 kHz PCM replays (\u20A6{dataSaved.nairaPerMb.toFixed(2)}/MB).
+            cached 24 kHz PCM replays ({"\u20A6"}{dataSaved.nairaPerMb.toFixed(2)}/MB).
           </p>
         </div>
 
